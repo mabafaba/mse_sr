@@ -3,9 +3,63 @@
 
 
 
+* 
+  fix multiplicity abstract
+
+  due flows 
+
+  For this, we focus on the characteristics of places and take into account interactions between places.
+
+  This is interdependence between places is widely
+
+  based on  .. based on the assumption
+
+
+  simultaneously satifies plural
+
+
+  It should observe how places are distributed across characteristics BECAUSE....
+
+
+
+  We demonstrate with a combinatorical example how spatial relationships can be taken into account by observering configurations at multiple scales   
+
+
+  Fix formula 5:
+
+  d_i^{dn} = .... x_i+n
+
+
+  capture that for example pattern e) in SPACEBAR
+
+
+
+  be computationally less
+
+
+   we can instead estimate the probability of  INSTEAD OF WHAT
+
+
+
+  comparison to existing measures not true
+
+
+  
+
+
+
+
+
+
+
+
 * NOW
 [ ] remove assumptions about the readers opinion
 [ ] biases
+
+
+
+
 * TO DO
   
 
