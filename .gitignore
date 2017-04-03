@@ -7,7 +7,7 @@
 # except folders:
 !code/
 code/*
-!code/scripts/
+!code/scripts/*
 
 # except files:
 !main2.Rnw
