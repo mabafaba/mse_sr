@@ -1,0 +1,18 @@
+# Ignore everything
+*
+!.gitignore
+!*/
+
+
+# except folders:
+!code/*
+code/*/
+!code/scripts
+
+
+# except files:
+!main2.Rnw
+!master.bib
+!main.org
+!main.R
+!main2.pdf

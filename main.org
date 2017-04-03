@@ -1,0 +1,223 @@
+
+** SCIENTIFIC REPORT SUBMISSION GUIDELINES
+
+
+
+* NOW
+[ ] remove assumptions about the readers opinion
+[ ] biases
+* TO DO
+  
+
+  - [ ] list of biases and sensitivities
+  - [ ] sensitivity analysis?
+      - [ ] half resolution
+      - [ ] different (smaller if possible) or fewer radii
+
+  - [ ] APPENDIX
+    - [ ] data
+      - [ ] groups table
+      - [ ] original data plot
+      - [ ] summary
+      - [ ] selection bias
+    - [ ] code description
+    - [ ] 
+
+
+- [ ] GLOBAL
+  - [ ] go through text again, fix grammar
+  - [ ] rethink structure
+  - [ ] link all numbers with sweave (regex search Rnw file for numbers)
+
+
+- [ ] discussion
+
+
+*** BIASES
+  - data selection for diversity
+  - city edge
+  - first outside, then inside
+
+
+
+* toy models
+
+- nongeospace entropy: all the same (ref?)
+
+- geospace Entropy
+  - a) highest because geo=phase
+  - x) lowest bacause uneven
+  - maup
+  - compare unif and casc 
+  - conclusion: inherently different goal AND result
+
+- we can visualise the state
+  - aggregated figure
+    => segregated variation depending on scale of segregation
+    => what we tried to get: a) is the same everywhere, fullyseg two types, sorted&casc keep variation
+  - sorted > casc,but scales not viewed separately, but in conjunction. values (2D, only 2 scales; medium, large)
+   => difference bewteen sorted and multiplicative
+
+  ===> how would you draw a high entropy pattern? patches of different sizes, mixed, etc. etc. no simple, must COMPLEXITYYYYY!!!
+  bring it home again: complexity = high entropy.
+  If:
+   -interdependent
+     -emergent
+    then: 
+  geometrical complexity will arise over time by pure chance.
+
+
+
+* case study
+  - 
+
+
+
+ * R ***********
+  - [ ] geospace entropy
+  - [ ] plot
+    - [ ] aggregated synthetic
+    - [ ] 2d phase space
+
+
+
+
+
+
+
+
+
+
+
+
+* orgmode shortcuts
+-   apfl k 1: collapse
+  - apfl k j: expand
+  - -c - [ ] 
+  - -cc - [X] 
+  - -f --> CONTENT
+  - ff => CONTENT
+  - ~ REASON
+  - d 2017-01-19 21:06 
+
+* meta
+
+
+* daily  
+
+
+
+* meta:
+  - first write with described plots and function names
+    -> then write plot functions
+    -> then write analysis
+
+
+
+***    todo [0/2]
+
+
+- [ ] add other methods
+  - [ ] non spatial shannon
+  - [ ] batty pure spatial
+  - [ ] Theil
+
+ - [ ]  plots [0/3]
+  - [ ] decide which ones are needed. 
+  - [ ] add to text with description and nonexistent function names
+  - [ ] write plot functions  
+
+ - [ ]  write 
+
+  - [ ] abstract
+    - [ ] why
+    - [ ] method
+    - [ ] results
+
+  - [ ] motivate method
+  - [ ] results
+        - more plots and details
+  - [ ] discussion
+        - from wilson!
+  - [ ] appendix
+
+
+
+
+
+*** TODO REORGANISED:
+  - [ ] learn: results vs. discussion?
+  - [ ] results content:
+    - explain artefacts
+    - state results
+    - non speculative reasons for results
+
+
+
+
+
+
+
+
+
+
+* code description 
+  - load_data :function:
+    - delete temp files
+    - for each working, leaisure all, for each year:
+      -  shp2raster_fast :function:
+        -gdal_rasterize(resolution, "where" clause)
+    - bind to list and return
+
+  - analysis :function: :::
+    - for each: specifiedlags_matrix :function:
+    ~ gives a list of matrices with all lags, for all categories, for all years.
+      - for each lag: aggregate_pattern_average_matrix :function:
+        - calc how many values will be counted (compensate for edge pixels)
+        - moving window sum
+        - devide by number of counted values (= mean with edge effects considered)
+    - for each: raster_entropy_reps :function:
+    ~ transforms spatial matrix to list of observations, calculates probability and returns entropy, spatial prob matrix & original data
+      - raster2rep :function:
+        - make 3d array (pixels x categories x scales)
+        - bindata :function: bin the values
+          - correct rounding errors
+          - bin 
+        - collapse 3d array and return 2d matrix (1 row per pixel)
+      - concatenate columns of matrix representation to string
+      - count occurences per unique string
+      - divide by total occurances
+      - use as probabilities in SUM p log p
+      -done
+
+
+
+    - delete temp files
+    - for each working, leaisure all, for each year:
+    - rasterize
+    - for each cat & year:
+    ~ give a list of matrices with all lags, for all categories, for all years.
+      - for each lag:
+         - calc how many values will be counted (compensate for edge pixels)
+         - moving window sum
+         - devide by number of counted values (= mean with edge effects considered)
+      - for each year, each cat:
+      ~ transforms spatial matrix to list of observations, calculates probability and returns entropy, spatial prob matrix & original data
+          - make 3d array (pixels x categories x scales)
+          - correct rounding errors
+          - bin values 
+          - collapse 3d array and return 2d matrix (1 row per pixel, columns for cats and scales)
+        - concatenate columns of matrix representation to single string per row (= per pixel)
+        - count occurences of all unique strings
+        - divide by total occurances
+        - use as probabilities in SUM p log p
+        -done
+
+
+
+
+
+
+
+
+  - plots ::function:
