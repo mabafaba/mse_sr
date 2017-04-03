@@ -5,9 +5,9 @@
 
 
 # except folders:
+!code/
+code/*
 !code/scripts/
-!code/*
-!code/scripts
 
 
 # except files:
