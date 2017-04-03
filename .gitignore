@@ -9,7 +9,6 @@
 code/*
 !code/scripts/
 
-
 # except files:
 !main2.Rnw
 !master.bib
