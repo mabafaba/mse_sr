@@ -17,7 +17,7 @@
 
 % \affil[+]{these authors contributed equally to this work}
 
-\keywords{entropy, stspatial, cities}
+\keywords{entropy, spatial, cities, complexity, urban}
 
 \begin{abstract}
 We propose a multiscale measure of entropy for spatial configurations in the context of cities. Existing approaches usually use entropy as a proxy for spatial evenness or disorder, and translate the phase space from statistical mechanics literally to the geographical space. In contrast, we focus on building an interpretation of entropy that is conceptually consistent with statistical mechanics as well as the view of cities as complex systems. For this, we focus on the characteristics of places and, most importantly, take into account interactions between them.\\
@@ -276,14 +276,13 @@ Figure \ref{fig:real_vs_null_entropies}  shows the development of entropy over t
 For all cases, entropy increases until 1935, stagnates around 1965 and then slightly decreases until 2005. This is based on the non spatial entropy of the global distribution of functions, as almost the entire area is undeveloped in the beginning and almost filled entirely in the end.
 We compare the observed patterns with three null models that are constructed to preserve the global amount of different land uses and differ only in the spatial configuration. The configurations for comparison are shown in figure \ref{fig:real_vs_null_rasters}
 \begin{itemize}
-\item spatially random uniform spread: The pixels of the original data are redistributed in a fully random fashion. This would be the most likely distribution if the phase space was directly taken from the geographical space. 
-\item compact mixed-use growth: The pixels of the original data are redistributed in a fully random fashion, but separated between developed and undeveloped land and fit perfectly compactly to the east edge, corresponding to the general direction of growth in the original data. 
-\item compact segregated growth: The pixels of the original are sorted by function and fit perfectly compact to the east edge.
+\item spatially random uniform spread: The pixels of the original data are reallocated in a random order. This would be the maximum entropy distribution if the phase space was directly taken from the geographical space. 
+\item compact mixed-use growth: The pixels of the original data are redistributed in a fully random fashion, but separated between developed and undeveloped land and fit compactly to the east edge, corresponding to the general direction of growth in the original data. 
+\item compact segregated growth: The pixels of the original are sorted by function and fit compactly to the east edge.
 \end{itemize}
 
 
-The observed multiscale entropy of West London is significantly higher than all three null models. Especially between 1915 and 1960, entropy increases in the observed data, while the null models stagnate. The grayscale images in figure \ref{fig:real_vs_null_rasters} show the probability of each pixel's state.\\
-
+The observed multiscale entropy of West London is significantly higher than all three null models. Especially between 1915 and 1960, entropy increases in the observed data, while the null models stagnate. The grayscale images in figure \ref{fig:real_vs_null_rasters} show the probability of each pixel's state to investigate which places contribute to the total entropy.\\
 
 \noindent In the spatially uniform randomised case, unique places appear only beyond a certain global density, where only very small segregated clusters appear by chance. In the early stages entropy would be higher if growth was more concentrated, and later if there were also larger segregated and non segregated local concentrations.
 
@@ -292,7 +291,7 @@ In the compactly segregated case, the most unique places are along the edges bet
 
 \noindent All of these alterations would change the null model patterns closer to what we actually observe:
 
-\noindent First, clusters of different sizes with varying degree of functional segregation. Second, no strict city edge. In the language of urbanists, we could call this \emph{polycentricity} and \emph{sprawl}. From this perspective, we can give an explanation of the polycentric sprawl that dominates the growth patterns of the observed area in terms of entropy: Unless significant restrictions are in place, there are simply overwhelmingly more combinations of individual choices that lead to polycentric sprawl, making it the most likely pattern to occur. \\
+\noindent First, clusters of different sizes with varying degree of functional segregation. Second, no strict city edge. In the language of urbanists, we could call this \emph{polycentricity}\cite{polycentricity} and \emph{sprawl}\cite{sprawl}. From this perspective, we can give an explanation of the polycentric sprawl that dominates the growth patterns of the observed area in terms of entropy: Unless significant restrictions are in place, there are simply overwhelmingly more combinations of individual choices that lead to polycentric sprawl, making it the most likely pattern to occur. \\
 
 There are great limitiations in terms of data and methodology that make any conclusions or generalisations speculative. First of all, we are only observing a small window of the city, and as the city grows the city edge passes through our field of view. Furthermore, the results may be biased towards higher entropy because in the original data collection, the area was selected specifically for it's high functional diversity.\cite{stanilovData1} \\
 In terms of methodology the functional categories, the aggregation function, the scale of rasterisation, the selection of neighbourhood scales and their rectangular shape are all rather arbitrary. While sufficient to demonstrate the basic ideas, neighbourhood sizes and shapes as well as the aggregation function could use a network based measure of distance, take into account subjective travel cost and relate to insights into the actual connectivity between places. 
