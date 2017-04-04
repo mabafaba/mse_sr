@@ -22,9 +22,9 @@
 
 
 ** CHANGES
-*** WHAT YOU MEAN WITH SCALES IS NOT CLEAR 
 
 *** global
+  - WHAT YOU MEAN WITH SCALES IS NOT CLEAR 
   - non capital after colon
   - don't say "groups of measures" as they are now "basic phase space definitions" 
   - "DEVIL SAYS": BUT THE HIGHEST ENTROPY IS COMPLETELY RANDOM????
@@ -50,6 +50,7 @@
    - but don't say not "in contrary to intuition" 
 
 *** A multiscale approach to entropy in cities
+
   -  summary longer
   - "In thermodynamics, the word entropy refers to an agreed definition of the phase space unless stated otherwise." WEIRD. 
      -> instead "..it is commonly understood in thermodynamics that if one refers to phase space..",
@@ -60,64 +61,55 @@
   - "None of the reviewed approaches simultaneously satisfy both main requirements that we identified above for a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena." AWKWARD: above, after what??? .. "we are interested into measures that reflect the idea that take into considerations" non of the just described..
     - In contrast to the existing.. FIRST, and say how places are distributed ..
 
+*** multiscale phase space
+  -introduce: what I want to measure: individual in a city related to sclaes. what you mean by scales?
+  - THE INDIVIDUAL IN THE URBAN CONTEXT. 
+  - "IMPORTANT SENTENCE: I KNOW RANDOM WOULD BE MAXIMUM USUALLY BUT..."  
+    - But in this situation not measuring that. NOt geo, so Not spatially random
+  - what I mean by scales in the system? in the following an example, using two colors.... illustrate how scales are incorporated.
+  - WHAT DO YOOU MEAN by different scales!! exactly
+  - relate to scales
+  - "But.. why is it not spatially random buhu ???" (everyone et. al., 2017)
+  -  "Im going to illustrate with an example how in an urban system the scales are considered."" Before this talk about the different neighbourhoods
+
+
 *** SPATIAL DEPENDENCE
   - not clear;
   - inside multiscale phase space as an example of why introducing scales
   - dont call it "spatial dependence" 
 
 
+
 *** multiscale entropy phase space:
-    - WHAT DO YOOU MEAN by different scales!! exactly
-    - relate to scales
-    - "But.. why is it not spatially random buhu ???" (everyone et. al., 2017)
-    -  "Im going to illustrate with an example how in an urban system the scales are considered."" Before this talk about the different neighbourhoods
+
+
+
+*** EQUATIONS
+  - vectors bold or with arrow
+  - fix d_0
+  -f(x_i^{d_0},..
+  - x_^{dn}
+  - TODO: PSEUDOCODE
+  - i+d indexing is nonesense
+  - define state: 
+    - 1. scalar 1 number
+    - 2. vector, multiple scales
+    - 3. matrix  greek letter PSI
 
 
 
 
+*** RESULTS
+  -  why ramdomised similar?
+    - y-axis scale
+    - patterns similar after 1935
 
-
-
-todo:
--multiscale entropy phasespace
--introduce: what I want to measure: individual in a city related to sclaes. what you mean by scales?
-- THE INDIVIDUAL IN THE URBAN CONTEXT. 
-- "IMPORTANT SENTENCE: I KNOW RANDOM WOULD BE MAXIMUM USUALLY"  
-- But in this situation not measuring that. NOt geo, so Not spatially random
-- what I mean by scales in the system? in the following an example, using two colors.... illustrate how scales are incorporated.
-
-- introduce measure.
-
-- define phase space
-  - state as a set of characteristics according to all the characteristics
-
-  - VECTORS ARE BOLD OR ARROW
-
-f(x_i^{d_0},
-
-x_^{dn}
-
-PSEUDOCODE
-points in space
-x_i_{d0}
-define state 
-
-i+d indexing is nonesense
-1. scalar 1 number
-2. bold vector
-3. matrix  greek letter PSY as the state of the 
-
-?why similar
-
-
-figure allrasters: a)b)c)d)e)
-figure allrasters: year on X
-figure allrasters:when is 1935? label years
-
-
--figure:multiscale results: NOT CONTINUOUS MEASURE: ADD POINTS!!!
-
-- number of rounds in methodology
+*** PLOTS
+  - raster plots: a)b)c)d)e)
+  - raster plots: years on X axis
+  - raster plots:when is 1935? label years
+  - multiscale results plot: NOT CONTINUOUS MEASURE: ADD POINTS!!!
+  - number of runs for pvalues? -> methodology
 
 
 
