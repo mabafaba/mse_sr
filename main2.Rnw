@@ -37,9 +37,9 @@ By comparing synthetic patterns, we show that if elements of a system interact s
 \setlength\parindent{0pt}
 
 \section*{Introduction}
-Batty recognises not only a ``literature gap'', but ``an entirely new research agenda'' and states that ``substantive interpretations of entropy measures [\ldots] have not been well developed. [\ldots] I sketch the need for new and different entropy measures that enable us to see how equilibrium spatial distributions can be generated as the outcomes of dynamic processes''\cite{Batty2010}. Entropy in thermodynamics is a concept relating the fast, microscopic behaviour to the slow, macroscopic dynamics of a system. We therefore see it as a suitable tool to be used in studying the relationship between the fast dynamics of individual behaviour and the slow, larger scale dynamics of change in urban structures. \\ 
+Entropy in thermodynamics is a concept relating the fast, microscopic behaviour to the slow, macroscopic dynamics of a system. We therefore see it as a suitable tool to be used in studying the relationship between the fast dynamics of individual behaviour and the slow, larger scale dynamics of change in urban structures. Batty recognises not only a ``literature gap'', but ``an entirely new research agenda'' for spatial entropy measures for cities and states that ``substantive interpretations of entropy measures [\ldots] have not been well developed. [\ldots] I sketch the need for new and different entropy measures that enable us to see how equilibrium spatial distributions can be generated as the outcomes of dynamic processes''\cite{Batty2010}. \\ 
 
-Existing measures of entropy in an urban context are either non-spatial, or use the mathematical properties of entropy as a proxy for spatial evenness. In this paper, we attempt to formulate a measure of entropy that is instead conceptually consistent with entropy in statistical mechanics and an understanding of cities as complex systems: \newline
+Entropy is a measure of how evenly observations in a system are distributed in the space of possible states they can be in. This space is called the phase space. Fore more even distributions in the phase space there are more permutations of which exact observation is in which state, which is why they can be overwhelmingly more likely, and so we expect entropy to increase over time. Existing measures of entropy in an urban context are either non-spatial, or use the mathematical properties of entropy as a proxy for spatial evenness. In this paper, we attempt to formulate a measure of entropy that is instead conceptually consistent with entropy in statistical mechanics and an understanding of cities as complex systems: \newline
 Viewing cities as complex systems brought a fundamental shift in our understanding of how cities function, grow, and change over time\cite{Jane,NewScience,CitiesAndComplexity,allen1997cities}. Essential to this view is that a city ``self-organizes out of millions of individual decisions, a global order built out of local interactions''\cite[p.38]{JohnsonEmergence}. What people do in the city has an impact on its spatial structure over long periods of time \cite{Portugali1,AllenCoevolution}. It follows that in terms of state probabilites, a measure of morphological entropy should relate to how the city is used. Instead of measuring spatial evenness - the uncertainty about where things are - we attempt to measure the uncertainty about urban life that is built into the spatial structure of the city.\\
 
 Two fundamental aspects differentiate our approach from existing spatial measures of entropy:
@@ -55,7 +55,7 @@ We differentiate the existing measures of spatial entropy based on their phase s
 Entropy is defined as\cite{Shannon}:
 \begin{equation}
 \label{eq:continuous_entropy}
- H = \int{f(x) \log(f(x))}
+ H = - \int{f(x) \log(f(x))}
 \end{equation}
 Where $f(x)$ is the probability density of a continuous phase space. The equivalent to equation \ref{eq:continuous_entropy} in the discrete phase space is \cite{Shannon}:
 \begin{equation}
@@ -173,7 +173,7 @@ $g$. The entropy is then
 \label{eq:theoretical_multiscale_phasespace}
 \int_{a \in \phi}{- g(a) \log{g(a)}}
 \end{equation}
-for all $a$ where $p(a)>0$.\\
+for all $a$ where $g(a)>0$.\\
 
 There are strong conceptual parallels to the difference between Boltzman's and Gibbs' phase space in statistical mechanics. For $c$ characteristics observed at $n$ scales, the phase space has $c * n$ dimensions, signifcantly more than the $c$ dimensional space that could be used if we ignored interactions between places. A similar increase in the number of dimensions happens when moving from the Boltzman phase space to the Gibbs phase space that deals with interacting particles in statistical mechanics. Nonetheless, the relationship between the Boltzmann entropy and the Gibbs entropy is far more complex \cite{GibbsVSBoltzmann}, and their precise interpretations still debated \cite{GibbsDiscussion2015}. 
 
