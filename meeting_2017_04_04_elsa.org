@@ -27,9 +27,9 @@
 
 ** requested changes
 
-  *** global [0/6]
+  *** global [1/6]
     - [ ] WHAT YOU MEAN WITH SCALES IS NOT CLEAR 
-    - [ ] non capital after colon
+    - [X] non capital after colon
     - [ ] don't say "groups of measures" as they are now "basic phase space definitions" 
     - [ ] "DEVIL SAYS": BUT THE HIGHEST ENTROPY IS COMPLETELY RANDOM????
     - [ ] LOGICAL LINK MISSING: spatial dependence of places VS. multiple scales
