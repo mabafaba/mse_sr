@@ -1,7 +1,6 @@
 * I'M CURRENTLY WORKING ON..
-  - [ ] equation indices
-  - [ ] 
-
+  - [X]  equation indices
+  - [ ]  introduction 
 
 
 
@@ -36,12 +35,12 @@
     - [ ] LOGICAL LINK MISSING: spatial dependence of places VS. multiple scales
     - [ ] why different scales, what they mean; relate to questions
 
-  *** introduction [0/7]
+  *** introduction [1/7]
     - [ ] first paragraph:
       - [ ] phrase stronger
       - [ ] after first sentence: what does it mean? evenness? make stronger
     - [ ] explain why complex systems: in context of the entropy im measuring, how
-    - [ ] put batty "literature gap"... into introduction
+    - [X] put batty "literature gap"... into introduction
     - [ ] "we show that the randomness in what people do.." instant reject
     - [ ] paragraph in the introduction to explain exactly what I am measuring
     - [ ] last paragraph of introduction needs to be extended to half a page:
@@ -81,13 +80,13 @@
     - [ ] inside multiscale phase space as an example of why introducing scales
     - [ ] dont call it "spatial dependence" 
 
-  *** equations [1/7]
-    - [ ] vectors bold or with arrow
+  *** equations [4/6]
+    - [X] vectors bold or with arrow
     - [x] fix d_0
-    - [ ] x_i^{dn}
+    - [X] x_i^{dn}
     - [ ] TODO: PSEUDOCODE
-    - [ ] i+d indexing is nonesense
-    - [ ] define state: 
+    - [X] i+d indexing is nonesense
+    - [X] define state: 
       -  1. scalar 1 number
       - 2. vector, multiple scales
       - 3. matrix  greek letter PSI
@@ -99,6 +98,10 @@
     -  [ ] why ramdomised similar?
       - y-axis scale
       - patterns similar after 1935
+
+*** discussion
+  - fix incosistency caused by bits that moved to the introduction
+
 
   *** plots [0/6]
     - [ ] raster plots: a)b)c)d)e)
