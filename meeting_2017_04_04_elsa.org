@@ -1,6 +1,6 @@
 
 
-* Questions to ask
+* QUESTIONS
 
   - matrix indices correct?
   - number of phase space dimensions in \Phi{...} ok?
@@ -8,9 +8,9 @@
   - text right after eq: 7:: should this part go to "common phase space definitions for spatial entropy" ?
 
 
-* COMMENTS
+* COMMENTS ELSA
 
-** META
+** meta
   - think. you are explaining to a person
   - exaggerate and be clear
   - what does it mean? 
@@ -21,7 +21,7 @@
  -abstract
 
 
-** CHANGES
+** changes
 
 *** global
   - WHAT YOU MEAN WITH SCALES IS NOT CLEAR 
@@ -73,7 +73,7 @@
   -  "Im going to illustrate with an example how in an urban system the scales are considered."" Before this talk about the different neighbourhoods
 
 
-*** SPATIAL DEPENDENCE
+*** spatial dependence
   - not clear;
   - inside multiscale phase space as an example of why introducing scales
   - dont call it "spatial dependence" 
@@ -84,7 +84,7 @@
 
 
 
-*** EQUATIONS
+*** equations
   - vectors bold or with arrow
   - fix d_0
   -f(x_i^{d_0},..
@@ -99,12 +99,12 @@
 
 
 
-*** RESULTS
+*** results
   -  why ramdomised similar?
     - y-axis scale
     - patterns similar after 1935
 
-*** PLOTS
+*** plots
   - raster plots: a)b)c)d)e)
   - raster plots: years on X axis
   - raster plots:when is 1935? label years
