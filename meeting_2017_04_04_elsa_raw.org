@@ -1,27 +1,14 @@
-* TEST
-** TEST
-*** TEST
 
-*** TEST
-** TEST
-* TEST
-
-*** TEST
-  *** TEST
-    ** TEST
-
-* TEST
-  ** TEST
 
 
 *** META
-  - think. you are explaining to a person
+  - think. you are explaining to a  person
   - exaggerate and be clear
   - what does it mean? 
-  - rejected by a physicist 
-  - repetitive is ok
+  - rejected by a physicist.
+  - can be repetitive
 
-** Questions I wanted to ask
+** QUESTIONS
 
   - matrix indices
   - number of phase space dimensions
@@ -31,12 +18,13 @@
   - after eq: 7:: should this go to "common phase space definitions for spatial entropy" ?
 
 
-** what we said to discuss later
- -abstract
+** pick up
+-abstract
 
 
 
-** CHANGES
+
+  ** CHANGES
 - WHAT YOU MEAN WITH SCALES NOT CLEAR
 
 
