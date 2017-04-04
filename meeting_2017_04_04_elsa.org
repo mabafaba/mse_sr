@@ -1,3 +1,8 @@
+* I'M CURRENTLY WORKING ON..
+  - [ ] equation indices
+  - [ ] 
+
+
 
 
 * QUESTIONS [2/4]
@@ -21,7 +26,7 @@
  - [ ] abstract
 
 
-** changes
+** requested changes
 
   *** global [0/6]
     - [ ] WHAT YOU MEAN WITH SCALES IS NOT CLEAR 
@@ -76,11 +81,10 @@
     - [ ] inside multiscale phase space as an example of why introducing scales
     - [ ] dont call it "spatial dependence" 
 
-  *** equations [0/8]
+  *** equations [1/7]
     - [ ] vectors bold or with arrow
-    - [ ] fix d_0
-    - [ ] f(x_i^{d_0},..
-    - [ ] x_^{dn}
+    - [x] fix d_0
+    - [ ] x_i^{dn}
     - [ ] TODO: PSEUDOCODE
     - [ ] i+d indexing is nonesense
     - [ ] define state: 
