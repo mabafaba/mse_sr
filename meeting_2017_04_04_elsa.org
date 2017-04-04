@@ -1,0 +1,171 @@
+
+
+
+*** META
+  - think. you are explaining to a  person
+  - exaggerate and be clear
+  - what does it mean? 
+  - rejected by a physicist.
+  - can be repetitive
+
+** QUESTIONS
+
+  - matrix indices
+  - number of phase space dimensions
+
+  - structure: results together
+
+  - after eq: 7:: should this go to "common phase space definitions for spatial entropy" ?
+
+
+** pick up
+-abstract
+
+
+
+
+  ** CHANGES
+- WHAT YOU MEAN WITH SCALES NOT CLEAR
+
+
+- introduction:
+  first paragraph:
+    - phrase stronger
+    - after first sentence: what does it mean? evenness? make stronger
+
+  - explain why complex systems: in context of the entropy im measuring, how
+
+- batty "literature gap" into introduction
+- non capital after colon
+
+- "we show that the randomness in what people do.." instant reject; explain exactly what you are measuring
+
+- paragraph in the introduction to explain exactly what I am measuring
+
+- last paragraph of introduction needs to be extended to half a page:
+    - explain very carefully what i measure
+    - new definition of entropy for scales
+    - introducing scales
+    - experiments on simulation: how performs according to patterns
+    - case study to show evolution in time
+    - contrast traditional with new measure
+    - in order to take use
+    - last intro paragraph: very specific about how, and why the fully random case is not maximum entropy
+
+- INTRO: ABSOLUTELY CLEAR WHY. I AM GOING TO SHOW THIS!
+- 
+
+- but don't say not "contrary to intuition" if its against the 
+
+
+- "A multiscale approach to entropy in cities" summary longer
+
+- "In thermodynamics, the word entropy refers to an agreed definition of the phase space unless stated otherwise." WEIRD.
+..it is commonly understood in thermodynamics that if one refers to phase space, ... expand 
+
+
+- figure 1 after figure 2
+
+- fix "groups" phase space no longer groups but definitions.
+
+- "None of the reviewed approaches simultaneously satisfy both main requirements that we identified above for a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena." AWKWARD: above, after what??? .. "we are interested into measures that reflect the idea that take into considerations" non of the just described
+.. In contrast to the existing.. FIRST, and say how places are distributed ..
+
+- SPATIAL DEPENDENCE: 
+  - not clear; 
+  - inside multiscale phase space as an example of why introducing scales
+  - 
+
+
+  - multiscale entropy phase space:
+    - WHAT DO YOOU MEAN by different scales!! exactly
+    - you haven't
+    - relate to scales
+    - But.. its all random??? 
+
+* dont call spatial dependence
+* put in multiscale entropy
+* "Im going to illustrate with an example how in an urban system the scales are considered."" Before this talk about the different neighbourhoods
+
+"DEVIL SAYS": BUT THE HIGHEST ENTROPY IS COMPLETELY RANDOM????
+LINK: spatial dependence of places VS. multiple scales
+
+
+- why different scales, what they mean; relate to questions
+
+
+
+
+todo:
+-multiscale entropy phasespace
+-introduce: what I want to measure: individual in a city related to sclaes. what you mean by scales?
+- THE INDIVIDUAL IN THE URBAN CONTEXT. 
+- "IMPORTANT SENTENCE: I KNOW RANDOM WOULD BE MAXIMUM USUALLY"  
+- But in this situation not measuring that. NOt geo, so Not spatially random
+- what I mean by scales in the system? in the following an example, using two colors.... illustrate how scales are incorporated.
+
+- introduce measure.
+
+- define phase space
+  - state as a set of characteristics according to all the characteristics
+
+  - VECTORS ARE BOLD OR ARROW
+
+f(x_i^{d_0},
+
+x_^{dn}
+
+PSEUDOCODE
+points in space
+x_i_{d0}
+define state 
+
+i+d indexing is nonesense
+1. scalar 1 number
+2. bold vector
+3. matrix  greek letter PSY as the state of the 
+
+?why similar
+
+
+figure allrasters: a)b)c)d)e)
+figure allrasters: year on X
+figure allrasters:when is 1935? label years
+
+
+-figure:multiscale results: NOT CONTINUOUS MEASURE: ADD POINTS!!!
+
+- number of rounds in methodology
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
