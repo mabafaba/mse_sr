@@ -91,14 +91,14 @@
     - [X] very specific about how, and why the fully random case is not maximum entropy
   - [X] but don't say not "in contrary to intuition" 
 
-*** A multiscale approach to entropy in cities [0/3]
+*** A multiscale approach to entropy in cities [2/4]
 
   - [ ] summary longer
-  - [ ] "In thermodynamics, the word entropy refers to an agreed definition of the phase space unless stated otherwise." WEIRD. 
+  - [X] "In thermodynamics, the word entropy refers to an agreed definition of the phase space unless stated otherwise." WEIRD. 
      -> instead "..it is commonly understood in thermodynamics that if one refers to phase space..",
      - then expand more into specifics in thermodynamics 
 
-  - [ ] "None of the reviewed approaches simultaneously satisfy both main requirements that we identified above for a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena." AWKWARD: above, after what??? .. "we are interested into measures that reflect the idea that take into considerations" non of the just described..
+  - [X] "None of the reviewed approaches simultaneously satisfy both main requirements that we identified above for a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena." AWKWARD: above, after what??? .. "we are interested into measures that reflect the idea that take into considerations" non of the just described..
   - [ ] In contrast to the existing.. FIRST, and say how places are distributed ..
 
 *** multiscale phase space [0/8]
