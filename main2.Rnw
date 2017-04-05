@@ -269,18 +269,21 @@ This may seem rather abstract. However, it should apply to any system in which e
 For further details on the data collection see Stanilov et al.\cite{stanilovData1}
 
 \subsection*{entropy estimation}
-To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters)} scales of observation at \Sexpr{paste(paste(lagsINmeters,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$\ref{placestatematrix}equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within. Further details on the data and preprocessing can be found in the supplementary material \ref{appendix}.
+To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters)} scales of observation at \Sexpr{paste(paste(lagsINmeters,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$\ref{placestatematrix}equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.
 
-\subsection*{results}
-Figure \ref{fig:real_vs_null_entropies}  shows the development of entropy over time in comparison to three null models and non spatial entropy.
-
-For all cases, entropy increases until 1935, stagnates around 1965 and then slightly decreases until 2005. This is based on the non spatial entropy of the global distribution of functions, as almost the entire area is undeveloped in the beginning and almost filled entirely in the end.
-We compare the observed patterns with three null models that are constructed to preserve the global amount of different land uses and differ only in the spatial configuration. The configurations for comparison are shown in figure \ref{fig:real_vs_null_rasters}
+\\ We compare the observed patterns with three null models that are constructed to preserve the global amount of different land uses and differ only in the spatial configuration. The configurations for comparison are shown in figure \ref{fig:real_vs_null_rasters}
 \begin{itemize}
 \item spatially random uniform spread: the pixels of the original data are reallocated in a random order. This would be the maximum entropy distribution if the phase space was directly taken from the geographical space. 
 \item compact mixed-use growth: the pixels of the original data are redistributed in a fully random fashion, but separated between developed and undeveloped land and fit compactly to the east edge, corresponding to the general direction of growth in the original data. 
 \item compact segregated growth: the pixels of the original are sorted by function and fit compactly to the east edge.
 \end{itemize}
+
+Further details on the data, preprocessing and the construction of the null models can be found in the supplementary material \ref{appendix}.
+
+\subsection*{results}
+Figure \ref{fig:real_vs_null_entropies}  shows the development of entropy over time in comparison to three null models and non spatial entropy.
+
+For all cases, entropy increases until 1935, stagnates around 1965 and then slightly decreases until 2005. This is based on the non spatial entropy of the global distribution of functions, as almost the entire area is undeveloped in the beginning and almost filled entirely in the end.
 
 
 The observed multiscale entropy of West London is significantly higher than all three null models. Especially between 1915 and 1960, entropy increases in the observed data, while the null models stagnate. The grayscale images in figure \ref{fig:real_vs_null_rasters} show the probability of each pixel's state to investigate which places contribute to the total entropy.\\

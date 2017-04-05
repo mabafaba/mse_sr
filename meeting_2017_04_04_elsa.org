@@ -11,7 +11,7 @@
 
 
 * COMMENTS ELSA
-** not sorted [8/8]
+** not sorted [10/10]
 
   - [X] We found an approach to a similar problem.. rewrite
     - [X] dont justify
@@ -40,8 +40,8 @@
 
   - figure: boxplot, random repititions, clear
   - [X] DATA: reference to supplementary information
-  - ENTROPY ESTIMATION: reference supplementary information
-  - null models not in results section
+  - [X] ENTROPY ESTIMATION: reference supplementary information
+  - [X] null models not in results section
 
   - sensitivity : of course dependent on the framework, qualitatively not sensitive
   - Discussion: fractal stuff: Boxcounting etc. 
