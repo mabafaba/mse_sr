@@ -101,9 +101,9 @@
   - [X] "None of the reviewed approaches simultaneously satisfy both main requirements that we identified above for a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena." AWKWARD: above, after what??? .. "we are interested into measures that reflect the idea that take into considerations" non of the just described..
   - [X] In contrast to the existing.. FIRST, and say how places are distributed ..
 
-*** multiscale phase space [0/8]
-  - [ ] introduce: what I want to measure: individual in a city related to scales. what you mean by scales?
-  - [ ] THE INDIVIDUAL IN THE URBAN CONTEXT. 
+*** multiscale phase space [2/8]
+  - [X] introduce: what I want to measure: individual in a city related to scales. what you mean by scales?
+  - [X] THE INDIVIDUAL IN THE URBAN CONTEXT. 
   - [ ] "IMPORTANT SENTENCE: I KNOW RANDOM WOULD BE MAXIMUM USUALLY BUT..."  
     - [ ] But in this situation not measuring that. NOt geo, so Not spatially random
   - [ ] what I mean by scales in the system? in the following an example, using two colors.... illustrate how scales are incorporated.
