@@ -13,11 +13,11 @@
 * COMMENTS ELSA
 ** not sorted
 
-- We found an approach to a similar problem.. rewrite
-  - dont justify
+- [X] We found an approach to a similar problem.. rewrite
+  - [X] dont justify
   - phase space != physical space
   - scales
-  - other people “scales in entropy have been considered in time series… ”
+  - [X] other people “scales in entropy have been considered in time series… ”
   - not in configuration
 - definition of simple vs. complex?
 
