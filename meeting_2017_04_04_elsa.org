@@ -11,7 +11,7 @@
 
 
 * COMMENTS ELSA
-** not sorted [4/4]
+** not sorted [6/6]
 
   - [X] We found an approach to a similar problem.. rewrite
     - [X] dont justify
@@ -26,17 +26,17 @@
     - [X] MOVE to “common phase space definitions”
   - paragraphs space
   - [X] “matrix 6” reference once then call PSI
-  - The most important simplification…. unclear. 
+  - [X] The most important simplification…. unclear. 
     - “we impose a further simplication of the sytem into the method, by defining a descrete set of values for all the elements in matrix PSI that will be given by  the bins obtained by the values after aggregation….”
-  - Example patterns = EXPERIMENTS : SIMULATED PATTERNS 
+  - [X] Example patterns = EXPERIMENTS : SIMULATED PATTERNS 
   - transition sentence before examle patterns: in the following section we will
 
   - WHAT IS COMPLEX / WHAT IS SIMPLE??? 
-  - patterns that smooth out
-  - maybe not fractal? so can’t say fractal
-  - HOW TO DEFINE COMPLEX?
-  - the complexity of the pattern is condidered with respect to … 
-  - simple where smooth out easily at different scales
+    - patterns that smooth out
+    - maybe not fractal? so can’t say fractal
+    - HOW TO DEFINE COMPLEX?
+    - the complexity of the pattern is condidered with respect to … 
+    - simple where smooth out easily at different scales
 
   - figure: boxplot, random repititions, clear
   - DATA: reference to supplementary information

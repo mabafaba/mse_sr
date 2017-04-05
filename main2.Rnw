@@ -182,7 +182,7 @@ There are strong conceptual parallels to the difference between Boltzman's and G
 
 \subsection*{Multiscale Entropy Estimation}
 
-The practical entropy estimation in our example patterns and case study is as simple as possible without compromising the general concept. 
+The practical entropy estimation in our simulated patterns and case study is as simple as possible without compromising the general concept. 
 We use simplified square neighbourhoods with varying side length because it makes the results easy to trace, is computationally convenient and is sufficient to demonstrate the concept. \\
 We then calculate the place state matrix $\Psi$using the mean as the aggregation function in equation \ref{multiscale_vector} for the same reasons.\\
 
@@ -190,8 +190,10 @@ We discretise the phase space by defining a descrete set of values for all the e
 
 Discretising the phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating eucledian distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions.\\
 
+In this chapter, we summarised existing measures of entropy in cities, developed a new multiscale phase space definition and a method to estimate multiscale entropy. In the following chapter it is applied to simulated patterns. 
 
-\section*{Example patterns}
+
+\section*{Simulated Patterns}
 Here we use synthetic spatial patterns to first show how the results of our new method are inherently different from existing phase space definitions. We then compare the multiscale entropies of patterns with different structures and show that if interactions between places are accounted for, complex patterns have a higher entropy than simple ones.
 
 Randomised simulated patterns corresponding to the patterns in figure \ref{fig:synthetic} have the multiscale entropies shown in figure \ref{fig:synthetic_boxplot}.  Each cell corresponds to a "place", and each cell's colour defines the only characteristic of that place.
