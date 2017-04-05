@@ -113,10 +113,10 @@
   -  [ ] "Im going to illustrate with an example how in an urban system the scales are considered."" Before this talk about the different neighbourhoods
 
 
-*** spatial dependence [0/3]
+*** spatial dependence [2/3]
   - [ ] not clear;
-  - [ ] inside multiscale phase space as an example of why introducing scales
-  - [ ] dont call it "spatial dependence" 
+  - [X] inside multiscale phase space as an example of why introducing scales
+  - [X] dont call it "spatial dependence" 
 
 *** equations [4/6]
   - [X] vectors bold or with arrow

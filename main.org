@@ -2,6 +2,20 @@
 ** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
 * summary multiscale approach to entropy in cities
+- before: introduction. complexity, not geographical phase space, characteristics.. 
+
+- now: a multiscale approach to entropy in cities.
+  - what exactly are you doing?
+    - OLD!!!
+    -> we now explain exactly what we are doing. For this:
+    - review how e is defined.
+    - review existing approaches, and what exactly they are measuring
+    - (other mentionings of entropy)
+    - NEW !!!
+    - example??
+    - 
+
+
   - entropy formula
   - metaphors
   - phase space in thermodynamics
