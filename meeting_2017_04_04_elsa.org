@@ -65,32 +65,31 @@
 
 ** requested changes
 
-*** global [1/6]
+*** global [2/5]
   - [ ] WHAT YOU MEAN WITH SCALES IS NOT CLEAR 
   - [X] non capital after colon
-  - [ ] don't say "groups of measures" as they are now "basic phase space definitions" 
+  - [X] don't say "groups of measures" as they are now "basic phase space definitions" 
   - [ ] "DEVIL SAYS": BUT THE HIGHEST ENTROPY IS COMPLETELY RANDOM????
   - [ ] LOGICAL LINK MISSING: spatial dependence of places VS. multiple scales
-  - [ ] why different scales, what they mean; relate to questions
 
-*** introduction [1/8]
-  - [ ] explain entropy and how it relates to spatial evenness
-  - [ ] first paragraph:
-    - [ ] phrase stronger
-    - [ ] after first sentence: what does it mean? evenness? make stronger
-  - [ ] explain why complex systems: in context of the entropy im measuring, how
+*** introduction [8/8]
+  - [X] explain entropy and how it relates to spatial evenness
+  - [X] first paragraph:
+    - [X] phrase stronger
+    - [X] after first sentence: what does it mean? evenness? make stronger
+  - [X] explain why complex systems: in context of the entropy im measuring, how
   - [X] put batty "literature gap"... into introduction
-  - [ ] "we show that the randomness in what people do.." instant reject
-  - [ ] paragraph in the introduction to explain exactly what I am measuring
-  - [ ] last paragraph of introduction needs to be extended to half a page:
-    - [ ] explain very carefully what i measure
-    - [ ] new definition of entropy for scales
-    - [ ] introducing scales
-    - [ ] experiments on simulation: how performs according to patterns
-    - [ ] case study to show evolution in time
-    - [ ] ontrast traditional with new measure
-    - [ ] very specific about how, and why the fully random case is not maximum entropy
-  - [ ] but don't say not "in contrary to intuition" 
+  - [X] "we show that the randomness in what people do.." instant reject
+  - [X] paragraph in the introduction to explain exactly what I am measuring
+  - [X] last paragraph of introduction needs to be extended to half a page:
+    - [X] explain very carefully what i measure
+    - [X] new definition of entropy for scales
+    - [X] introducing scales
+    - [X] experiments on simulation: how performs according to patterns
+    - [X] case study to show evolution in time
+    - [X] ontrast traditional with new measure
+    - [X] very specific about how, and why the fully random case is not maximum entropy
+  - [X] but don't say not "in contrary to intuition" 
 
 *** A multiscale approach to entropy in cities [0/3]
 
