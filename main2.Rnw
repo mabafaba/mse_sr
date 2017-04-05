@@ -184,9 +184,9 @@ There are strong conceptual parallels to the difference between Boltzman's and G
 
 The practical entropy estimation in our example patterns and case study is as simple as possible without compromising the general concept. 
 We use simplified square neighbourhoods with varying side length because it makes the results easy to trace, is computationally convenient and is sufficient to demonstrate the concept. \\
-We then calculate the place state matrix \ref{placestatematrix} using the mean as the aggregation function in equation \ref{multiscale_vector} for the same reasons.\\
+We then calculate the place state matrix $\Psi$using the mean as the aggregation function in equation \ref{multiscale_vector} for the same reasons.\\
 
-The most important simplification is that we not only use a finite number of discrete scales, but also set a finite number of discrete values for all elements in the place state matrix \ref{placestatematrix} by binning its values equidistantly after the aggregation. Places are assumed to have the same state if and only if their state matrices are exactly identical. Because this simplified phase space is discrete, we can estimate the probability of discrete states directly from their frequency and estimate the system's entropy directly with equation \ref{eq:shannon_entropy}. \\
+The most important simplification is that we not only use a finite number of discrete scales, but also set a finite number of discrete values for all elements in the place state matrix $\Psi$\ref{placestatematrix} by binning its values equidistantly after the aggregation. Places are assumed to have the same state if and only if their state matrices are exactly identical. Because this simplified phase space is discrete, we can estimate the probability of discrete states directly from their frequency and estimate the system's entropy directly with equation \ref{eq:shannon_entropy}. \\
 
 Discretising the phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating eucledian distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions.\\
 
@@ -215,7 +215,7 @@ The patterns are \Sexpr{syntheticsize} pixels wide and high. For "Neighbourhoods
 
 
 \subsection*{comparison to existing measures}
-In the non spatial phase space observing only global characteristic proportions, we can directly tell that all patterns would display the same entropy as long as they differ only in the spatial configuration. Because in all patterns approximately half the pixles are black, their entropy according to equation \ref{eq:shannon_entropy} is $H_{non spatial} = \log(2)$. We could reduce the multiscale entropy phase space to this by using only the $x_i^{d_0,c}$ column on the left of matrix \ref{placestatematrix}.\\
+In the non spatial phase space observing only global characteristic proportions, we can directly tell that all patterns would display the same entropy as long as they differ only in the spatial configuration. Because in all patterns approximately half the pixles are black, their entropy according to equation \ref{eq:shannon_entropy} is $H_{non spatial} = \log(2)$. We could reduce the multiscale entropy phase space to this by using only the $x_i^{d_0,c}$ column on the left of $\Psi$.\\
 
 Measures of entropy using the geographical space directly as the phase space are essentially measures of how evenly elements are distributed across different zones. We split the patterns into square zones with a side length of \Sexpr{geospace_aggregationfactor} pixels, and count the number of black pixels as in figure \ref{fig:syntheticgeospace_zones}.\\ 
 \begin{figure}[ht]
@@ -267,7 +267,7 @@ This may seem rather abstract. However, it should apply to any system in which e
 For further details on the data collection see Stanilov et al.\cite{stanilovData1}
 
 \subsection*{entropy estimation}
-To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters)} scales of observation at \Sexpr{paste(paste(lagsINmeters,"m",sep=""),collapse=", ")}. We discretise the values in the place state matrix \ref{placestatematrix} equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.
+To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters)} scales of observation at \Sexpr{paste(paste(lagsINmeters,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$\ref{placestatematrix}equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.
 
 \subsection*{results}
 Figure \ref{fig:real_vs_null_entropies}  shows the development of entropy over time in comparison to three null models and non spatial entropy.

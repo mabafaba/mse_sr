@@ -21,9 +21,9 @@
   - not in configuration
 - definition of simple vs. complex?
 
-- Boxcounting.. not there; in discussion after patterns (cascades. 
-- time series should start from entropy at different scales..
-  - MOVE to “common phase space definitions”
+- [X] Boxcounting.. not there; in discussion after patterns (cascades. 
+- [X] time series should start from entropy at different scales..
+  - [X] MOVE to “common phase space definitions”
 - paragraphs space
 - “matrix 6” reference once then call PSI
 - The most important simplification…. unclear. 
