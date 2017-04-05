@@ -11,9 +11,16 @@
     - review how e is defined.
     - review existing approaches, and what exactly they are measuring
     - (other mentionings of entropy)
+    - multiscale in time series
+  - clarify the requirements for new measure.
+
     - NEW !!!
-    - example??
-    - 
+    - combinatorical example 
+    - formally define the multiscale phase space, in wich each state is given by a matrix containing multiple characteristics aggregated in neighbourhoods of different sizes.
+
+    (boltzmann & gibbs)
+
+    - finally we introduce a set of simplifications and explain how entropy can be estimated in practice.
 
 
   - entropy formula

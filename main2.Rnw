@@ -75,8 +75,9 @@ In our case study we measure the change in multiscale entropy in land use patter
 
 
 \section*{A multiscale approach to entropy in cities}
-We differentiate the existing measures of spatial entropy based on their phase space definitions. After identifying their limitations, we give a combinatorical explanation of how the number of microstates changes if we take into account interdependencies between places at different scales. Finally we introduce the phase space of our multiscale entropy.  
-\subsection*{Common phase space definitions for spatial entropy}
+In this chapter we summarise existing research and introduce the multiscale entropy measure in detail. First, we revisit the formal definition of entropy and the phase space in statistical mechanics. We then use them to summarize existing approaches to entropy in cities based on two typical interpretations of the phase space. After this  review of previous research we establish its shortcomings, and recapulate our requirements for a new measure of entropy to observe place's characteristics and take into account interactions. With a combinatorical example we show why a multiscale approach is suitable for this. Finally, we formally define the theoretical multiscale phase space in wich each state is given by a matrix containing multiple characteristics aggregated in neighbourhoods of different sizes, and introduce simplifications to achieve a practical method for multiscale entropy estimation.\\
+
+\subsection*{Entropy in Statistical Mechanics}
 Entropy is defined as\cite{Shannon}:
 \begin{equation}
 \label{eq:continuous_entropy}
@@ -96,7 +97,10 @@ which reduces to the Boltzman entropy $S$ if all probabilites $p$ are the same:
 
 ``where $\Omega$ is the total number of microstates available to the system''\cite[p.44]{BoltzmannOmega}. All microstates can be allocated a location in the phase space. If the phase space is discrete, we can count the positive integer number of accessible microstates.\\
 
-The highest entropy is always given by a uniform distribution in the phase space, leading to sometimes misleading but common metaphors for entropy \cite{EntropyMetaphors}: if the entropy of a system is high, the state of a randomly selected element is unpredictable and ``uncertain'', and if we are uncertain about where things are in a system, one might describe it as ``disordered''. It is commonly understood in thermodynamics that if one refers to the Boltzman phase space, it usually relates to the six dimensional phase space that defines a particle's state by its location and momentum. Similarily, the Gibbs phase space relates to the 6N dimensional phase space describing the location and momentum of all N particles in the system. For cities on the other hand, fundamental conceptual differences between interpretations of entropy come down to different definitions of the phase space dimensions.
+The highest entropy is always given by a uniform distribution in the phase space, leading to sometimes misleading but common metaphors for entropy \cite{EntropyMetaphors}: if the entropy of a system is high, the state of a randomly selected element is unpredictable and ``uncertain'', and if we are uncertain about where things are in a system, one might describe it as ``disordered''. It is commonly understood in thermodynamics that if one refers to the Boltzman phase space, it usually relates to the six dimensional phase space that defines a particle's state by its location and momentum. Similarily, the Gibbs phase space relates to the 6N dimensional phase space describing the location and momentum of all N particles in the system.\cite{GibbsVSBoltzmann}
+
+\subsection*{Common Phase Space Definitions for Spatial Entropy}
+In contrary to thermodynamics where usually there is a general consesus about what the degrees of freedom of a system are, there are fundamental differences between interpretations of entropy in cities, and they come down to different definitions of the phase space dimensions.
 \begin{itemize}
 \item{The first essential approach in the literature takes the word ``space'' literally and defines the phase space as the geographical space.\cite{SpatialEntropyBatty1974,Batty2010,BattyMorphetKiril2012} The highest entropy is then given by a pattern with a uniform distribution in geographical space as in pattern a) of figure \ref{fig:synthetic}. This interpretation answers the question: How uncertain is the absolute location of a place with a given characteristic?}
 
@@ -111,11 +115,6 @@ Entropy in an urban context also appears in Wilson's spatial interaction models\
 Scales in entropy have been considered in time series - Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} use entropy to measure complexity in medical time series. This ``has become a prevailing method to quantify the complexity of signals. It has been used successfully'' \cite{MultiscaleEntropyReview} in numerous fields of research, but to our knowledge not in a spatial context. In contrary to our approach, a single entropy value is produced from integrating over entropies after coarse graining at different scales. By adding the entropies, different scales are viewed as independent systems.\\ 
 % In practice this would capture that for example pattern e) in \ref{fig:synthetic} has a wide variety of values across all neighbourhood sizes, but ignore that small low value neighbourhoods lie very predictably in large low value neighbourhoods and vice versa.
 
-In contrast to the existing measures of entropy, we want to answer the question: how uncertain is what a randomly selected resident does, based on the structure of the city? For places in the city this would mean: how uncertain are the characteristics of places a person could be in, considering that the characteristics of a place are defined not only by its own value, but also by the characteristics of the places around it? In that sense, none of the approaches described above is a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena. Instead we need a measure that fulfills the following requirements:
-\begin{itemize}
-\item{It should observe how places are distributed across characteristics, to reflect the certainty about what people do in them.}
-\item{It should reflect that the characteristics of places spatially depend on each other, because the surroundings of a place fundamentally alters how it can be used.}
-\end{itemize}
 
 
 % We can draw four random places from patterns a) and b) and look at their own values and their neighbourhoods as in figure \ref{fig:samples}
@@ -145,6 +144,11 @@ In contrast to the existing measures of entropy, we want to answer the question:
 
 
 \subsection*{The Multiscale Entropy Phase Space}
+In contrast to the existing measures of entropy discussed above, we want to answer the question: how uncertain is what a randomly selected resident does, based on the structure of the city? For places in the city this would mean: how uncertain are the characteristics of places a person could be in, considering that the characteristics of a place are defined not only by its own value, but also by the characteristics of the places around it? In that sense, none of the approaches described above is a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena. Instead we need a measure that fulfills the following requirements:
+\begin{itemize}
+\item{It should observe how places are distributed across characteristics, to reflect the certainty about what people do in them.}
+\item{It should reflect that the characteristics of places spatially depend on each other, because the surroundings of a place fundamentally alters how it can be used.}
+\end{itemize}
 
 %\subsection*{Spatial dependence}
 We demonstrate with a combinatorical example how spatial relationships can be taken into account by observering configurations at multiple scales.\\
