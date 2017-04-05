@@ -43,13 +43,13 @@
   - [X] ENTROPY ESTIMATION: reference supplementary information
   - [X] null models not in results section
 
-  - sensitivity : of course dependent on the framework, qualitatively not sensitive
-  - Discussion: fractal stuff: Boxcounting etc. 
-  - fractal organisation; hadrien’s paper
+  - [ ] sensitivity : of course dependent on the framework, qualitatively not sensitive
+  - [ ] Discussion: fractal stuff: Boxcounting etc. 
+  - [ ] fractal organisation; hadrien’s paper
 
-  - http://www.sciencedirect.com/science/article/pii/S0378437117300341
+  - [ ] http://www.sciencedirect.com/science/article/pii/S0378437117300341
 
-  - recommended references
+  - [ ] recommended references
 
 
 ** meta [0/5]
@@ -73,7 +73,7 @@
   - [ ] LOGICAL LINK MISSING: spatial dependence of places VS. multiple scales
   - [ ] why different scales, what they mean; relate to questions
 
-*** introduction [1/7]
+*** introduction [1/8]
   - [ ] explain entropy and how it relates to spatial evenness
   - [ ] first paragraph:
     - [ ] phrase stronger

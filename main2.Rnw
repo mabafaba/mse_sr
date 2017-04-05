@@ -37,16 +37,41 @@ By comparing synthetic patterns, we show that if elements of a system interact s
 \setlength\parindent{0pt}
 
 \section*{Introduction}
+% why entropy?
 Entropy in thermodynamics is a concept relating the fast, microscopic behaviour to the slow, macroscopic dynamics of a system. We therefore see it as a suitable tool to be used in studying the relationship between the fast dynamics of individual behaviour and the slow, larger scale dynamics of change in urban structures. Batty recognises not only a ``literature gap'', but ``an entirely new research agenda'' for spatial entropy measures for cities and states that ``substantive interpretations of entropy measures [\ldots] have not been well developed. [\ldots] I sketch the need for new and different entropy measures that enable us to see how equilibrium spatial distributions can be generated as the outcomes of dynamic processes''\cite{Batty2010}. \\ 
 
-Existing measures of entropy in an urban context are either non-spatial, or use the mathematical properties of entropy as a proxy for spatial evenness. In this paper, we attempt to formulate a measure of entropy that is instead conceptually consistent with entropy in statistical mechanics and an understanding of cities as complex systems: \newline
-Viewing cities as complex systems brought a fundamental shift in our understanding of how cities function, grow, and change over time\cite{Jane,NewScience,CitiesAndComplexity,allen1997cities}. Essential to this view is that a city ``self-organizes out of millions of individual decisions, a global order built out of local interactions''\cite[p.38]{JohnsonEmergence}. What people do in the city has an impact on its spatial structure over long periods of time \cite{Portugali1,AllenCoevolution}. It follows that in terms of state probabilites, a measure of morphological entropy should relate to how the city is used. Instead of measuring spatial evenness - the uncertainty about where things are - we attempt to measure the uncertainty about urban life that is built into the spatial structure of the city.\\
+% what is entropy?
+In its essence, entropy in statistical mechanics is concerned with the ``number of ways [\ldots] by which a given macroscopic state can be realized''\cite{LiveEarthEntropy}.
+If more combinations of the possible microstates of the elements in a system constitue the same macroscopic state of that system, that macroscopic state has higher entropy and is more likely to occur. The space of possible microstates of elements is called the phase space. The more evenly elements are distributed across the phase space, the greater the entropy.
+There are for example more ways to distribute molecules evenly in a room than to place them all in one corner. Molecules do float around randomly in space and randomly exchange energy, and so in a phase space with dimensions describing their position and momentum, they are most likely to be distributed as evenly as possible.\cite{GeneralPropertiesOfEntropy}\\
 
-Two fundamental aspects differentiate our approach from existing spatial measures of entropy:
-First, Boltzman's entropy assumes that interactions between particles are neglectable. Existing measures of entropy inherit this for cities, and assume that there were no interactions between places. We recognise that different places are highly dependent on each other due to flows and interactions between the people in them. This interdependence between places is widely recognised in geography in general\cite{Tobler1970}, urban theory\cite{Jane,NotATree} and quantitatively demonstrated for example in the success of spatial interaction models\cite{WilsonFamily,SpatialInteraction1,GisModels,WilsonSIMretail}, and further in the study of agglomeration economics \cite{agglomerationEconomics} and neighbourhood effects \cite{neighbourhoodeffects}. Our new measure takes relationships between places into account with a multiscale approach.\newline
-Second, existing measures mostly use the geographical space directly as the phase space. The phase space in statistical mechanics is the space of possible states of observed elements \cite{GeneralPropertiesOfEntropy}. In thermodynamics location makes sense as part of the phase space, because particles actually do float around in space randomly. Buildings do not float around in space randomly. We are not interested in the randomness of geographic coordinates, but in the randomness of how people could use the city depending on its physical structure. Our phase space dimensions describe the characteristics of different places, based on the assumption that what people can do in two places differs if the places have different characteristics.\\
+% phase space in cities?
+Buildings do not float around in space randomly, and they do not have a momentum. To define a relevant phase space for urban morphology, we must carefully consider the processes that produce the spatial patterns in cities. 
 
-We show that the randomness in what people can do in a city is not necessarily maximised if urban structures are completely randomised spatially. Instead, spatially complex patterns give the highest randomness in the variety of available types of interdependent places. In our case study we measure the change in entropy in land use patterns in west London in seven time steps from 1875 to 2005, and the results suggest that the observed polycentric sprawl can be explained as the growth pattern with the highest entropy.
+% existing measures
+Existing measures of entropy in an urban context are either non-spatial, or use the geographical space directly as the phase space. Entropy then becomes a proxy for spatial evenness. While on the surface this phase space is very similar to thermodynamics, it is not necessarily representative of how the macroscopic state of a city evolves.
+%multiscale entropy: differences
+In this paper, we attempt to formulate a measure of entropy that is conceptually consistent with entropy in statistical mechanics and an understanding of cities as complex systems. Two fundamental aspects thus differentiate our approach from existing spatial measures of entropy:\\
+
+%1. complex systems:  Characteristics
+First, the phase space dimensions reflect characteristics of places instead of absolute locations, because cities are complex systems: 
+Viewing cities as complex systems brought a fundamental shift in our understanding of how cities function, grow, and change over time\cite{Jane,NewScience,CitiesAndComplexity,allen1997cities}. Essential to this view is that a city ``self-organizes out of millions of individual decisions, a global order built out of local interactions''\cite[p.38]{JohnsonEmergence}. What people do in the city has an impact on its spatial structure over long periods of time \cite{Portugali1,AllenCoevolution}.
+It follows that in terms of state probabilites, a measure of morphological entropy should relate to how the city is used. 
+We are not interested in the randomness of geographic coordinates, but in the randomness of how people could use the city depending on its physical structure. Our phase space dimensions describe the characteristics of different places, based on the assumption that what people can do in two places differs if the places have different characteristics. If there are more combinations of possible use for a city's morphological macrostate, there are also more ways that macrostate can be realised.
+Instead of measuring spatial evenness - the uncertainty about where things are - we attempt to measure the uncertainty about urban life that is built into the spatial structure of the city.\\
+
+% 2. Interactions.
+Second, the phase space dimensions reflect that places in a city are inherently dependent on each other.
+Boltzman's entropy assumes that interactions between particles are neglectable. Existing measures of entropy inherit this for cities, and assume that there were no interactions between places. We recognise that different places are highly dependent on each other due to flows and interactions between the people in them. This interdependence between places is widely recognised in geography in general\cite{Tobler1970}, urban theory\cite{Jane,NotATree} and quantitatively demonstrated for example in the success of spatial interaction models\cite{WilsonFamily,SpatialInteraction1,GisModels,WilsonSIMretail}, and further in the study of agglomeration economics \cite{agglomerationEconomics} and neighbourhood effects \cite{neighbourhoodeffects}.
+It follows that the states of individual places must be entangled spatially, because in terms of how they are used, places in a city are entangled spatially as well. In that sense the state of an observed place should in some way also incorporate the characteristics of surrounding places.
+
+Our new measure observes the characteristics of places, and takes relationships between places into account with a multiscale approach: We observe the characteristics of a place at multiple scales by aggregating the characteristics of neighbourhoods with different sizes around it. The resulting values then define its position in the phase space. The state of a place is then not only given by its own characteristic, but also the characteristics of the directly adjacent places, its local neighbourhood and larger scale surroundings.\\
+
+%% Multiscale entropy
+By no means we ever question that greater randomness and a more even probability distribution in the phase space results in higher entropy.  That is by definition a physical, statistical and mathematical fact. It must be very clear that the phase space here is not equivalent to the geographical space. Randomness in the phase space is not equivalent to randomness in the geographical space. There is no reason to assume that in cities spatially uniform patterns can occur through the largest number of combinations of individual use. There is no reason to assume that the geographical space should be the phase space, nor that spatial randomness should automatically mean randomness in the phase space. This does not in any way violate the fact that greater randomness of microstates and an even distribution in the phase space result in higher entropy.  Our methods and results are perfectly consistent with this.\\
+
+That being said, our analysis of simulated patterns shows that urban structures that are completely randomised spatially do not simultaneously have the highest randomness in a phase space that describes the variety of available types of interdependent places. Instead, we can show that spatially complex patterns are most evenly distributed in the multiscale phase space and have the highest entropy. That they are not evenly distributed in geographical space is in perfect harmony with the fact that greater randomness means greater entropy, because \emph{the geographical space is not the phase space}. 
+In our case study we measure the change in multiscale entropy in land use patterns in West London in seven time steps from 1875 to 2005, and the results suggest that the observed polycentric sprawl can be explained as the growth pattern with the highest entropy. 
 
 
 \section*{A multiscale approach to entropy in cities}
@@ -69,7 +94,7 @@ which reduces to the Boltzman entropy $S$ if all probabilites $p$ are the same:
  S = k_B \log(\Omega)
 \end{equation}
 
-``where $\Omega$ is the total number of microstates available to the system''\cite[p.44]{BoltzmannOmega}. More intuitively, it relates directly to the ``number of ways [\ldots] by which a given macroscopic state can be realized''\cite{LiveEarthEntropy}. All microstates can be allocated a location in the phase space. If the phase space is discrete, we can count the positive integer number of accessible microstates.\\
+``where $\Omega$ is the total number of microstates available to the system''\cite[p.44]{BoltzmannOmega}. All microstates can be allocated a location in the phase space. If the phase space is discrete, we can count the positive integer number of accessible microstates.\\
 
 The highest entropy is always given by a uniform distribution in the phase space, leading to sometimes misleading but common metaphors for entropy \cite{EntropyMetaphors}: if the entropy of a system is high, the state of a randomly selected element is unpredictable and ``uncertain'', and if we are uncertain about where things are in a system, one might describe it as ``disordered''. In thermodynamics, the word entropy refers to an agreed definition of the phase space unless stated otherwise. For cities on the other hand, fundamental conceptual differences between interpretations of entropy come down to different definitions of the phase space dimensions.
 \begin{itemize}
@@ -269,24 +294,27 @@ This may seem rather abstract. However, it should apply to any system in which e
 For further details on the data collection see Stanilov et al.\cite{stanilovData1}
 
 \subsection*{entropy estimation}
-To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters)} scales of observation at \Sexpr{paste(paste(lagsINmeters,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$\ref{placestatematrix}equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.
+To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters)} scales of observation at \Sexpr{paste(paste(lagsINmeters,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$ equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.\\
 
-\\ We compare the observed patterns with three null models that are constructed to preserve the global amount of different land uses and differ only in the spatial configuration. The configurations for comparison are shown in figure \ref{fig:real_vs_null_rasters}
+We compare the observed patterns with three null models that are constructed to preserve the global amount of different land uses and differ only in the spatial configuration. The configurations for comparison are shown in figure \ref{fig:real_vs_null_rasters}
 \begin{itemize}
 \item spatially random uniform spread: the pixels of the original data are reallocated in a random order. This would be the maximum entropy distribution if the phase space was directly taken from the geographical space. 
 \item compact mixed-use growth: the pixels of the original data are redistributed in a fully random fashion, but separated between developed and undeveloped land and fit compactly to the east edge, corresponding to the general direction of growth in the original data. 
 \item compact segregated growth: the pixels of the original are sorted by function and fit compactly to the east edge.
 \end{itemize}
 
+We also compute the non spatial entropy of the global proportion of functions for each year.
+
 Further details on the data, preprocessing and the construction of the null models can be found in the supplementary material \ref{appendix}.
 
 \subsection*{results}
 Figure \ref{fig:real_vs_null_entropies}  shows the development of entropy over time in comparison to three null models and non spatial entropy.
 
-For all cases, entropy increases until 1935, stagnates around 1965 and then slightly decreases until 2005. This is based on the non spatial entropy of the global distribution of functions, as almost the entire area is undeveloped in the beginning and almost filled entirely in the end.
+For all cases, entropy generally increases until 1935, stagnates around 1965 and then slightly decreases until 2005. This is based on the non spatial entropy of the global distribution of functions, as almost the entire area is undeveloped in the beginning and almost filled entirely in the end.\\
 
+The observed multiscale entropy of West London is significantly higher than all three null models. Especially between 1915 and 1960, entropy increases in the observed data, while the null models stagnate. \\
 
-The observed multiscale entropy of West London is significantly higher than all three null models. Especially between 1915 and 1960, entropy increases in the observed data, while the null models stagnate. The grayscale images in figure \ref{fig:real_vs_null_rasters} show the probability of each pixel's state to investigate which places contribute to the total entropy.\\
+\noindent The grayscale images in figure \ref{fig:real_vs_null_rasters} show the probability of each pixel's state to investigate which places contribute to the total entropy. 
 
 \noindent In the spatially uniform randomised case, unique places appear only beyond a certain global density, where only very small segregated clusters appear by chance. In the early stages entropy would be higher if growth was more concentrated, and later if there were also larger segregated and non segregated local concentrations.
 
