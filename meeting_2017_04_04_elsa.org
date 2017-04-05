@@ -11,45 +11,45 @@
 
 
 * COMMENTS ELSA
-** not sorted
+** not sorted [4/4]
 
-- [X] We found an approach to a similar problem.. rewrite
-  - [X] dont justify
-  - phase space != physical space
-  - scales
-  - [X] other people “scales in entropy have been considered in time series… ”
-  - not in configuration
-- definition of simple vs. complex?
+  - [X] We found an approach to a similar problem.. rewrite
+    - [X] dont justify
+    - phase space != physical space
+    - scales
+    - [X] other people “scales in entropy have been considered in time series… ”
+    - not in configuration
+  - definition of simple vs. complex?
 
-- [X] Boxcounting.. not there; in discussion after patterns (cascades. 
-- [X] time series should start from entropy at different scales..
-  - [X] MOVE to “common phase space definitions”
-- paragraphs space
-- “matrix 6” reference once then call PSI
-- The most important simplification…. unclear. 
-  - “we impose a further simplication of the sytem into the method, by defining a descrete set of values for all the elements in matrix PSI that will be given by  the bins obtained by the values after aggregation….”
-- Example patterns = EXPERIMENTS : SIMULATED PATTERNS 
-- transition sentence before examle patterns: in the following section we will
+  - [X] Boxcounting.. not there; in discussion after patterns (cascades. 
+  - [X] time series should start from entropy at different scales..
+    - [X] MOVE to “common phase space definitions”
+  - paragraphs space
+  - [X] “matrix 6” reference once then call PSI
+  - The most important simplification…. unclear. 
+    - “we impose a further simplication of the sytem into the method, by defining a descrete set of values for all the elements in matrix PSI that will be given by  the bins obtained by the values after aggregation….”
+  - Example patterns = EXPERIMENTS : SIMULATED PATTERNS 
+  - transition sentence before examle patterns: in the following section we will
 
-- WHAT IS COMPLEX / WHAT IS SIMPLE??? 
-- patterns that smooth out
-- maybe not fractal? so can’t say fractal
-- HOW TO DEFINE COMPLEX?
-- the complexity of the pattern is condidered with respect to … 
-- simple where smooth out easily at different scales
+  - WHAT IS COMPLEX / WHAT IS SIMPLE??? 
+  - patterns that smooth out
+  - maybe not fractal? so can’t say fractal
+  - HOW TO DEFINE COMPLEX?
+  - the complexity of the pattern is condidered with respect to … 
+  - simple where smooth out easily at different scales
 
-- figure: boxplot, random repititions, clear
-- DATA: reference to supplementary information
-- ENTROPY ESTIMATION: reference supplementary information
-- null models not in results section
+  - figure: boxplot, random repititions, clear
+  - DATA: reference to supplementary information
+  - ENTROPY ESTIMATION: reference supplementary information
+  - null models not in results section
 
-- sensitivity : of course dependent on the framework, qualitatively not sensitive
-- Discussion: fractal stuff: Boxcounting etc. 
-- fractal organisation; hadrien’s paper
+  - sensitivity : of course dependent on the framework, qualitatively not sensitive
+  - Discussion: fractal stuff: Boxcounting etc. 
+  - fractal organisation; hadrien’s paper
 
-- http://www.sciencedirect.com/science/article/pii/S0378437117300341
+  - http://www.sciencedirect.com/science/article/pii/S0378437117300341
 
-- recommended references
+  - recommended references
 
 
 ** meta [0/5]
