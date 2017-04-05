@@ -11,7 +11,7 @@
 
 
 * COMMENTS ELSA
-** not sorted [10/10]
+** not sorted [10/15]
 
   - [X] We found an approach to a similar problem.. rewrite
     - [X] dont justify
@@ -99,7 +99,7 @@
      - then expand more into specifics in thermodynamics 
 
   - [ ] "None of the reviewed approaches simultaneously satisfy both main requirements that we identified above for a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena." AWKWARD: above, after what??? .. "we are interested into measures that reflect the idea that take into considerations" non of the just described..
-    - In contrast to the existing.. FIRST, and say how places are distributed ..
+  - [ ] In contrast to the existing.. FIRST, and say how places are distributed ..
 
 *** multiscale phase space [0/8]
   - [ ] introduce: what I want to measure: individual in a city related to sclaes. what you mean by scales?
