@@ -118,23 +118,6 @@ In contrast to the existing measures of entropy, we want to answer the question:
 \end{itemize}
 
 
-\subsection*{Spatial dependence}
-We demonstrate with a combinatorical example how spatial relationships can be taken into account by observering configurations at multiple scales.\\
-
-As a thought experiment, we construct a pattern by arranging individual pixels into groups of two, then arranging these groups into groups of four and so on. We observe the randomness involved in each step of the process.\newline
-Individual pixels can be white or black. The color of a random pixel can be very predictable (low entropy), for example if all pixels are black. Or it can be distributed in a less predictable, more random way, for example if half of the pixels are black and the other half white. So far this corresponds to the non spatial Shannon entropy, or group 2 in the common phase space definitions above.\newline
-The next step takes into account that each pixel's characteristic should also depend on what kind of pixel is next to it. We form pairs of two pixels that will be arranged next to each other in the final pattern. this can be done in a very predictable way: entropy is low if all 2-pixel combinations are exactly the same, for example if every single white pixel is next to one black pixel and vice versa. They could instead be combined in a less predictable way: for example if one third of the combinations has two black pixels, one third has one white and one black pixel and one third has two black pixels. There is clearly less certainty and higher entropy in the spatial combinations of the second case.\\
-These groups of two can then be combined into groups of four, again in more or less predictable ways and so on, until the pattern is complete.
-If we make the least predictable, or, the maximum entropy choice in every step of building the spatial configuration, we must end up with a nontrivial pattern like the linear pattern in figure \ref{fig:linearpattern}.
-
-\begin{figure}[ht]
-   \centering
-   \includegraphics[width=1.0\textwidth]{./paper_sr_format/linearpattern.png}
-   \caption{a linear pattern with equal probability to find any combination of 2 or 4 adjacent pixels (when divided into non overlapping segments)}
-   \label{fig:linearpattern}
-\end{figure}
-Again: the phase space here is \emph{not} the geographical space. We associate high entropy \emph{not} with randomness in absolut positions in a pattern, but instead  with randomness in the \emph{spatial configurations}. 
-
 % We can draw four random places from patterns a) and b) and look at their own values and their neighbourhoods as in figure \ref{fig:samples}
 % How much uncertainty is there about the value of the place itself and the mean value of its neighbourhood?
 % In both patterns we are equally likely to draw a black or a white pixel. But in pattern a)  we can be certain that it will be in an ``even mix'' type of neighbourhood. In pattern g) on the other hand the type of neigbhourhood is much harder to predict.
@@ -162,6 +145,23 @@ Again: the phase space here is \emph{not} the geographical space. We associate h
 
 
 \subsection*{The Multiscale Entropy Phase Space}
+
+%\subsection*{Spatial dependence}
+We demonstrate with a combinatorical example how spatial relationships can be taken into account by observering configurations at multiple scales.\\
+As a thought experiment, we construct a pattern by arranging individual pixels into groups of two, then arranging these groups into groups of four and so on. We observe the randomness involved in each step of the process.\newline
+Individual pixels can be white or black. The color of a random pixel can be very predictable (low entropy), for example if all pixels are black. Or it can be distributed in a less predictable, more random way, for example if half of the pixels are black and the other half white. So far this corresponds to the non spatial Shannon entropy, or group 2 in the common phase space definitions above.\newline
+The next step takes into account that each pixel's characteristic should also depend on what kind of pixel is next to it. We form pairs of two pixels that will be arranged next to each other in the final pattern. this can be done in a very predictable way: entropy is low if all 2-pixel combinations are exactly the same, for example if every single white pixel is next to one black pixel and vice versa. They could instead be combined in a less predictable way: for example if one third of the combinations has two black pixels, one third has one white and one black pixel and one third has two black pixels. There is clearly less certainty and higher entropy in the spatial combinations of the second case.\\
+These groups of two can then be combined into groups of four, again in more or less predictable ways and so on, until the pattern is complete.
+If we make the least predictable, or, the maximum entropy choice in every step of building the spatial configuration, we must end up with a nontrivial pattern like the linear pattern in figure \ref{fig:linearpattern}.
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=1.0\textwidth]{./paper_sr_format/linearpattern.png}
+   \caption{a linear pattern with equal probability to find any combination of 2 or 4 adjacent pixels (when divided into non overlapping segments)}
+   \label{fig:linearpattern}
+\end{figure}
+Again: the phase space here is \emph{not} the geographical space. We associate high entropy \emph{not} with randomness in absolut positions in a pattern, but instead  with randomness in the \emph{spatial configurations}. \\
+
 Imagine the patterns in figure \ref{fig:synthetic} were real cities, and black and white pixels would refer to residential and commercial buildings. Taking into account the surroundings of each pixel, pattern a) only has two different types of places: residential or commercial buildings, but always in mixed blocks in mixed neighbourhoods in mixed districts of a homogeneously mixed city. Pattern g) has a much larger variety of spatial configurations.\\
 We want to extend the description used to compare individual buildings from ``a residential building'' to something like ``a residential building in a mixed use block in a mainly commercial district that is surrounded by residential areas''. 
 

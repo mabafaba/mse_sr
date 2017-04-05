@@ -1,7 +1,21 @@
 
 ** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
+* summary multiscale approach to entropy in cities
+  - entropy formula
+  - metaphors
+  - phase space in thermodynamics
+  - in cities unclear
+  - common:
+    - geospace
+    - non spatial
+    - combo
+  - other entropy in cities
+  - time series
+  - goal of our measure
+  - requirements
 
+  - spatial dependence
 
 * NOW
 
@@ -40,7 +54,8 @@
 
 
 
-* toy models
+* toy models  - [ ] why different scales, what they mean; relate to questions
+
 
 - nongeospace entropy: all the same (ref?)
 
