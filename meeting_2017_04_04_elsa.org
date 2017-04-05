@@ -91,9 +91,9 @@
     - [X] very specific about how, and why the fully random case is not maximum entropy
   - [X] but don't say not "in contrary to intuition" 
 
-*** A multiscale approach to entropy in cities [3/4]
+*** A multiscale approach to entropy in cities [4/4]
 
-  - [ ] summary longer
+  - [X] summary longer
   - [X] "In thermodynamics, the word entropy refers to an agreed definition of the phase space unless stated otherwise." WEIRD. 
      -> instead "..it is commonly understood in thermodynamics that if one refers to phase space..",
      - then expand more into specifics in thermodynamics 
@@ -101,16 +101,16 @@
   - [X] "None of the reviewed approaches simultaneously satisfy both main requirements that we identified above for a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena." AWKWARD: above, after what??? .. "we are interested into measures that reflect the idea that take into considerations" non of the just described..
   - [X] In contrast to the existing.. FIRST, and say how places are distributed ..
 
-*** multiscale phase space [2/8]
+*** multiscale phase space [7/8]
   - [X] introduce: what I want to measure: individual in a city related to scales. what you mean by scales?
   - [X] THE INDIVIDUAL IN THE URBAN CONTEXT. 
-  - [ ] "IMPORTANT SENTENCE: I KNOW RANDOM WOULD BE MAXIMUM USUALLY BUT..."  
-    - [ ] But in this situation not measuring that. NOt geo, so Not spatially random
-  - [ ] what I mean by scales in the system? in the following an example, using two colors.... illustrate how scales are incorporated.
-  - [ ] WHAT DO YOOU MEAN by different scales!! exactly
+  - [X] "IMPORTANT SENTENCE: I KNOW RANDOM WOULD BE MAXIMUM USUALLY BUT..."  
+    - [X] But in this situation not measuring that. NOt geo, so Not spatially random
+  - [X] what I mean by scales in the system? in the following an example, using two colors.... illustrate how scales are incorporated.
+  - [X] WHAT DO YOOU MEAN by different scales!! exactly
   - [ ] relate to scales
-  - [ ] "But.. why is it not spatially random buhu ???" (everyone et. al., 2017)
-  -  [ ] "Im going to illustrate with an example how in an urban system the scales are considered."" Before this talk about the different neighbourhoods
+  - [X] "But.. why is it not spatially random buhu ???" (everyone et. al., 2017)
+  -  [X] "Im going to illustrate with an example how in an urban system the scales are considered."" Before this talk about the different neighbourhoods
 
 
 *** spatial dependence [2/3]
@@ -118,21 +118,18 @@
   - [X] inside multiscale phase space as an example of why introducing scales
   - [X] dont call it "spatial dependence" 
 
-*** equations [4/6]
+*** equations [5/6]
   - [X] vectors bold or with arrow
   - [x] fix d_0
   - [X] x_i^{dn}
-  - [ ] TODO: PSEUDOCODE
+  - [X] TODO: PSEUDOCODE
   - [X] i+d indexing is nonesense
   - [X] define state: 
     -  1. scalar 1 number
     - 2. vector, multiple scales
     - 3. matrix  greek letter PSI
 
-
-
-
-*** results
+*** results [/]
   -  [ ] why ramdomised similar?
     - y-axis scale
     - patterns similar after 1935
@@ -141,7 +138,7 @@
   - fix incosistency caused by bits that moved to the introduction
 
 
-  *** plots [0/6]
+*** plots [0/6]
     - [ ] raster plots: a)b)c)d)e)
     - [ ] raster plots: years on X axis
     - [ ] raster plots:when is 1935? label years
