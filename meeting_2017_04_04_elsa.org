@@ -2,7 +2,7 @@
 
 
 
-* QUESTIONS [2/4]
+* REMAINING QUESTIONS [2/4]
 
   - [X] matrix indices correct?
   - [ ] number of phase space dimensions in \Phi{...} ok?
@@ -52,12 +52,12 @@
   - [ ] recommended references
 
 
-** meta [0/5]
+** meta [3/5]
   - [ ] think. you are explaining to a person
-  - [ ] exaggerate and be clear
-  - [ ] what does it mean? 
+  - [X] exaggerate and be clear
+  - [X] what does it mean? 
   - [ ] rejected by a physicist 
-  - [ ] repetitive is ok
+  - [X] repetitive is ok
 
 ** what we said to discuss later [0/1]
  - [ ] abstract
@@ -65,12 +65,12 @@
 
 ** requested changes
 
-*** global [2/5]
-  - [ ] WHAT YOU MEAN WITH SCALES IS NOT CLEAR 
+*** global [5/5]
+  - [X] WHAT YOU MEAN WITH SCALES IS NOT CLEAR 
   - [X] non capital after colon
   - [X] don't say "groups of measures" as they are now "basic phase space definitions" 
-  - [ ] "DEVIL SAYS": BUT THE HIGHEST ENTROPY IS COMPLETELY RANDOM????
-  - [ ] LOGICAL LINK MISSING: spatial dependence of places VS. multiple scales
+  - [X] "DEVIL SAYS": BUT THE HIGHEST ENTROPY IS COMPLETELY RANDOM????
+  - [X] LOGICAL LINK MISSING: spatial dependence of places VS. multiple scales
 
 *** introduction [8/8]
   - [X] explain entropy and how it relates to spatial evenness
@@ -101,20 +101,20 @@
   - [X] "None of the reviewed approaches simultaneously satisfy both main requirements that we identified above for a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena." AWKWARD: above, after what??? .. "we are interested into measures that reflect the idea that take into considerations" non of the just described..
   - [X] In contrast to the existing.. FIRST, and say how places are distributed ..
 
-*** multiscale phase space [7/8]
+*** multiscale phase space [8/8]
   - [X] introduce: what I want to measure: individual in a city related to scales. what you mean by scales?
   - [X] THE INDIVIDUAL IN THE URBAN CONTEXT. 
   - [X] "IMPORTANT SENTENCE: I KNOW RANDOM WOULD BE MAXIMUM USUALLY BUT..."  
     - [X] But in this situation not measuring that. NOt geo, so Not spatially random
   - [X] what I mean by scales in the system? in the following an example, using two colors.... illustrate how scales are incorporated.
   - [X] WHAT DO YOOU MEAN by different scales!! exactly
-  - [ ] relate to scales
+  - [X] relate to scales
   - [X] "But.. why is it not spatially random buhu ???" (everyone et. al., 2017)
   -  [X] "Im going to illustrate with an example how in an urban system the scales are considered."" Before this talk about the different neighbourhoods
 
 
 *** spatial dependence [2/3]
-  - [ ] not clear;
+  - [ ] not clear (critique too unspecific);
   - [X] inside multiscale phase space as an example of why introducing scales
   - [X] dont call it "spatial dependence" 
 
@@ -129,7 +129,7 @@
     - 2. vector, multiple scales
     - 3. matrix  greek letter PSI
 
-*** results [/]
+*** results [0/1]
   -  [ ] why ramdomised similar?
     - y-axis scale
     - patterns similar after 1935
