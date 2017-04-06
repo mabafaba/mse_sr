@@ -1,5 +1,9 @@
 
-** SCIENTIFIC REPORT SUBMISSION GUIDELINES
+//** SCIENTIFIC REPORT SUBMISSION GUIDELINES
+
+* ASK ELSA
+  - time series not well placed
+  - combinatorical example necessary? 
 
 
 * NOW
@@ -15,12 +19,11 @@
 
   - [ ] APPENDIX
     - [ ] data
-      - [ ] groups table
+      - [X] groups table
       - [ ] original data plot
       - [ ] summary
-      - [ ] selection bias
-    - [ ] code description
-    - [ ] 
+      - [X] selection bias
+    - [ ] code description 
 
 
 - [ ] GLOBAL
@@ -29,7 +32,6 @@
   - [ ] link all numbers with sweave (regex search Rnw file for numbers)
 
 
-- [ ] discussion
 
 
 *** BIASES
@@ -39,50 +41,8 @@
 
 
 
-* toy models  - [ ] why different scales, what they mean; relate to questions
-
-
-- nongeospace entropy: all the same (ref?)
-
-- geospace Entropy
-  - a) highest because geo=phase
-  - x) lowest bacause uneven
-  - maup
-  - compare unif and casc 
-  - conclusion: inherently different goal AND result
-
-- we can visualise the state
-  - aggregated figure
-    => segregated variation depending on scale of segregation
-    => what we tried to get: a) is the same everywhere, fullyseg two types, sorted&casc keep variation
-  - sorted > casc,but scales not viewed separately, but in conjunction. values (2D, only 2 scales; medium, large)
-   => difference bewteen sorted and multiplicative
-
-  ===> how would you draw a high entropy pattern? patches of different sizes, mixed, etc. etc. no simple, must COMPLEXITYYYYY!!!
-  bring it home again: complexity = high entropy.
-  If:
-   -interdependent
-     -emergent
-    then: 
-  geometrical complexity will arise over time by pure chance.
-
-
-
-* case study
-  - 
-
-
-
  * R ***********
-  - [ ] geospace entropy
-  - [ ] plot
-    - [ ] aggregated synthetic
-    - [ ] 2d phase space
-
-
-
-
-
+ - [ ] many synthetic GEOGRAPHIC phase space box plots!
 
 
 
