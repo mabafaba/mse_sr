@@ -6,9 +6,11 @@
 
 # except folders:
 !code/
-code/*
-!code/scripts/*
 
+!code/scripts/*
+code/data
+code/run_temp
+code_output
 # except files:
 !main2.Rnw
 !master.bib
