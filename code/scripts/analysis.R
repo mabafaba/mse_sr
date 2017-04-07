@@ -135,7 +135,7 @@ analysis_synthetic_many<-function(runs_synthetic){
           )
 
   entropies_geospace_many_mean<-rowMeans(entropies_geospace_many)
-  entropies_geospace_confidence_intervals<-apply(entropies_many,1,confidence_intervals)
+  entropies_geospace_confidence_intervals<-apply(entropies_geospace_many,1,confidence_intervals)
 
 
   return(

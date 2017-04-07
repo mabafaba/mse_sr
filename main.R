@@ -23,7 +23,7 @@ geospace_aggregationfactor = 32
 synth_phasespace_plot_scales=c(3,5)
 runs=200
 
-
+dev.off.all()
 
 data<-load_data(src,layerNames)
 results<-analysis(data)
@@ -37,7 +37,6 @@ synthetic<-make_data(syntheticsize)
 results_synthetic<-analysis_synthetic(synthetic,lags=lags,geospace_aggregationfactor=geospace_aggregationfactor)
 
 synthetic_many_results<-analysis_synthetic_many(2)
-
 
 plots_synthetic(results_synthetic,"synthetic")
 

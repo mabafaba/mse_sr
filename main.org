@@ -7,9 +7,12 @@
 
 
 * NOW
-
+ - [ ] fix subheadings (plots)
 
 * TO DO
+  - [ ] "black pixel frequencies" -> "black pixel probabilities"
+  - [ ] phase space plot labels a-c
+  - [ ] parameters of entropy estimation in synthetic data
   - [ ] say which log base in ∑ p log p
   - [ ] make plots float
   - [ ] letters for plots

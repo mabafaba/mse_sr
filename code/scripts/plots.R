@@ -40,34 +40,42 @@ plots<-function(results,nullmod,prefix, synth_phasespace_plot_scales){
 
 	# plotting most unique and common places:
 
-		for(year in c(1:length(years)) ){
-			pdf(paste0("./code/output/",prefix,"most_unique",years[year],".pdf"),10,length(lags)*5)
-			plot_top_entropy(results,10,0,whichyears=year)
-			dev.off.all()
-			jpeg(paste0("./code/output/",prefix,"most_unique",years[year],".jpg"),10,length(lags)*5,res=100,units = 'in')
-			plot_top_entropy(results,10,0,whichyears=year)
-			dev.off.all()
-		}
+		# for(year in c(1:length(years)) ){
+		# 	pdf(paste0("./code/output/",prefix,"most_unique",years[year],".pdf"),10,length(lags)*5)
+		# 	plot_top_entropy(results,10,0,whichyears=year)
+		# 	dev.off.all()
+		# 	jpeg(paste0("./code/output/",prefix,"most_unique",years[year],".jpg"),10,length(lags)*5,res=100,units = 'in')
+		# 	plot_top_entropy(results,10,0,whichyears=year)
+		# 	dev.off.all()
+		# }
 
 
 }
 
-
-plots_synthetic<-function(results,prefix){
+plots_synthetic<-function(results,prefix,synthetic_many_results){
 
 #plotting patterns only:
-pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),15*length(results$entropies),15)
-par(mfrow=c(1,length(results$entropies)))
+pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),15*length(results$entropies),17)
+par(mfrow=c(1,length(results$entropies))
+	,mai=c(2,0,0,0))
 for( i in c(1:length(results$entropies)) ){
 		plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95))
-
+		title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
+			,cex.sub=10
+			,outer=FALSE
+			,line=+10)
 		}
 dev.off.all()
 
-jpeg(paste0("./code/output/",prefix,"synthetic_patterns.jpg"),15*length(results$entropies),15,res=100,units = 'in')
-par(mfrow=c(1,length(results$entropies)))
+jpeg(paste0("./code/output/",prefix,"synthetic_patterns.jpg"),15*length(results$entropies),17,res=100,units = 'in')
+par(mfrow=c(1,length(results$entropies))
+	,mai=c(2,0,0,0))
 for( i in c(1:length(results$entropies)) ){
 		plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95))
+		title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
+			,cex.sub=10
+			,outer=FALSE
+			,line=+10)
 		}
 dev.off.all()
 
@@ -166,40 +174,49 @@ dev.off.all()
 
 # plotting geospace entropies
 pdf(paste0("./code/output/",prefix,"geospace_entropy.pdf"),10,10)
-par(mfrow=c(1,1))
-mars<-par("mar")
-par(mar=c(mars[1]+1,mars[2:4]))
-mp<-barplot(unlist(results_synthetic$geospace$ents)
-	# ,ylim=c(results$geospace$entsmin,results$geospace$entsmax)
-	,col="black"
-	,ylab="entropy"
-	,las=2
-	# ,axisnames = FALSE
-	)
-text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
+# par(mfrow=c(1,1))
+# mars<-par("mar")
+# par(mar=c(mars[1]+1,mars[2:4]))
+# mp<-barplot(unlist(results_synthetic$geospace$ents)
+# 	# ,ylim=c(results$geospace$entsmin,results$geospace$entsmax)
+# 	,col="black"
+# 	,ylab="entropy"
+# 	,las=2
+# 	# ,axisnames = FALSE
+# 	)
+# text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
+plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
+
 dev.off.all()
 
 jpeg(paste0("./code/output/",prefix,"geospace_entropy.jpg"),10,10,res=100,units = 'in')
-par(mfrow=c(1,1))
-par("mar")
-mars<-par("mar")
-par(mar=c(mars[1]+1,mars[2:4]))
-par(mar=c(12,12,12,12))
-mp<-barplot(unlist(results_synthetic$geospace$ents)
-	# ,ylim=c(results$geospace$entsmin,results$geospace$entsmax)
-	,col="black"
-	,ylab="entropy"
-	,las=2
-	# ,axisnames = FALSE
-	)
-text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
+# par(mfrow=c(1,1))
+# par("mar")
+# mars<-par("mar")
+# par(mar=c(mars[1]+1,mars[2:4]))
+# par(mar=c(12,12,12,12))
+# mp<-barplot(unlist(results_synthetic$geospace$ents)
+# 	# ,ylim=c(results$geospace$entsmin,results$geospace$entsmax)
+# 	,col="black"
+# 	,ylab="entropy"
+# 	,las=2
+# 	# ,axisnames = FALSE
+# 	)
+# text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
+plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 dev.off.all()
-
 
 # plotting geospace frequencies
 pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),21,3)
 par(mfrow=c(1,7))
-lapply(results$geospace$probs,function(x){barplot(sort(x),col="black",space=0.5)})
+for (i in c(1:7)) {
+	barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5)
+		title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
+		,cex.sub=2
+		,outer=FALSE
+		,line=+2)
+	
+}
 dev.off.all()
 jpeg(paste0("./code/output/",prefix,"geospace_frequency.jpg"),21,3,res=100,units = 'in')
 par(mfrow=c(1,7))
@@ -207,10 +224,10 @@ lapply(results$geospace$probs,function(x){barplot(sort(x),col="black",space=0.5)
 dev.off.all()
 
 pdf(paste0("./code/output/",prefix,"boxplot.pdf"),10,10)
-plot_synthetic_entropies_barchart_w_confidence(synthetic_many_results)
+plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
 dev.off.all()
 jpeg(paste0("./code/output/",prefix,"boxplot.jpg"),10,10,res=100,units = 'in')
-plot_synthetic_entropies_barchart_w_confidence(synthetic_many_results)
+plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
 dev.off.all()
 
 }
@@ -327,8 +344,6 @@ lapply(results$geospace$aggregated,plotr,cols= gray.colors(100,start = 0.1, end 
 
 
 
-
-
 # plotting nullmodel and data results:::
 plot_real_vs_null_entropies<-function(results,nullmod){
 	par(mfrow=c(1,1))
@@ -358,11 +373,11 @@ plot_real_vs_null_entropies<-function(results,nullmod){
 	 # segregated model doesn't have confidence intervals
 	 # polygon(c(years,rev(years)),c(nullmod$compactsegregated_many_confidence_intervals[1,],rev(nullmod$compactsegregated_many_confidence_intervals[2,]))
 	 # 	,col = rgb(0.5,0.5,0.5), border = FALSE)
-	 lines(years, nullmod$compactmixed_many_entropies_mean, lwd = 2,col=rgb(0,1,0))
-	 lines(years, nullmod$randomised_many_entropies_mean, lwd = 2,col=rgb(1,0,0))
-	 lines(years, nullmod$compactsegregated_many_entropies_mean, lwd = 2,col=rgb(0,0,1))
-	 lines(years, nullmod$compactsegregated_many_entropies_mean, lwd = 2,col=rgb(0,0,1))
-	 lines(years,results$entropies$aspatial$entropies,col="black",lty=3)
+	 lines(years, nullmod$compactmixed_many_entropies_mean, lwd = 2,col=rgb(0,1,0),type="b",pch=20)
+	 lines(years, nullmod$randomised_many_entropies_mean, lwd = 2,col=rgb(1,0,0),type="b",pch=20)
+	 lines(years, nullmod$compactsegregated_many_entropies_mean, lwd = 2,col=rgb(0,0,1),type="b",pch=20)
+	 lines(years, nullmod$compactsegregated_many_entropies_mean, lwd = 2,col=rgb(0,0,1),type="b",pch=20)
+	 lines(years,results$entropies$aspatial$entropies,col="black",lty=3,type="b",pch=20)
 	# many lines:
 	# apply(nullmod$randomised_many_entropies,1,function(x){lines(years,x,col=rgb(1,0,0,0.4),lty=3)})
 	# apply(nullmod$compactmixed_many_entropies,1,function(x){lines(years,x,col=rgb(0,1,0,0.4),lty=3)})
@@ -383,27 +398,33 @@ plot_real_vs_null_entropies<-function(results,nullmod){
        , yjust = 0)
 
 }
-
-
-
-
+dev.off.all()
 # probability rasters:
 plot_real_vs_null_probability_rasters<-function(results,nullmod,log=T){
-par(mfrow=c(7,8),mar=c(0.5,0.5,0.5,0.5))
-for(i in c(1:7)){
-localProbabilities(nullmod$randomised_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
-combined_data_raster_plot(nullmod$randomised,i)
+	par(mfrow=c(7,8),mar=c(0.5,0.5,0.5,0.5)
+		,oma=c(10,10,0,0))
+	for(i in c(1:7)){
+	localProbabilities(nullmod$randomised_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
+	title(years,outer=TRUE,side=1)
+	if(i==1){
+		title("randomised spatially")
+	}
+	?title
+	combined_data_raster_plot(nullmod$randomised,i)
 
-localProbabilities(nullmod$compactmixed_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
-combined_data_raster_plot(nullmod$compactmixed,i)
+	localProbabilities(nullmod$compactmixed_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
+	if(i==1){title("compact mixed")}
+	combined_data_raster_plot(nullmod$compactmixed,i)
 
-localProbabilities(nullmod$compactsegregated_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
-combined_data_raster_plot(nullmod$compactsegregated,i)
+	localProbabilities(nullmod$compactsegregated_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
+	if(i==1){title("compact segregated")}
+	combined_data_raster_plot(nullmod$compactsegregated,i)
+	
+	localProbabilities(results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
+	if(i==1){title("original data")}
+	combined_data_raster_plot(results$data,i)
 
-localProbabilities(results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
-combined_data_raster_plot(results$data,i)
-
-}
+	}
 }
 plot_top_entropy <-function(results,howmanytop=5,howmanyflop=5,whichyears=c(1:7) ){
 	distances<-(lags-1)/2
@@ -519,21 +540,42 @@ boxplot(x = t(synthetic_many_results$entropies_geospace[,]),data=t(synthetic_man
 
 
 plot_synthetic_entropies_geospace_points_w_confidence<-function(synthetic_many_results){
-plot(synthetic_many_results$entropies_geospace_mean,xaxt="n",pch=20,cex=1.5)
-axis(1,at=1:length(synthetic_many_results$entropies_geospace_mean),labels=synthetic_names,las=2)
+plot(synthetic_many_results$entropies_geospace_mean,xaxt="n",pch=1,cex=1
+	,ylim= c( min(synthetic_many_results$entropies_geospace_confidence_intervals)
+			  ,max(synthetic_many_results$entropies_geospace_confidence_intervals))
+			,xlab="n"
+				,ylab="Enropy (geographical phase space)")
+axis(1,at=1:length(synthetic_many_results$entropies_geospace_mean),labels=synthetic_names,las=2
+	)
+
 
 segments(
 	c(1:length(synthetic_many_results$entropies_geospace_mean)),
 	synthetic_many_results$entropies_geospace_confidence_intervals[1,],
 	c(1:length(synthetic_many_results$entropies_geospace_mean)),
 	synthetic_many_results$entropies_geospace_confidence_intervals[2,]
-	)
+	,lwd=1)
 
 
-for(i in c(1:length(synthetic_many_results$entropies_geospace_mean)){
-})
+
 
 }
 
 
 
+plot_synthetic_entropies_points_w_confidence<-function(synthetic_many_results){
+plot(synthetic_many_results$entropies_mean,xaxt="n",pch=1,cex=1
+	,ylim= c( min(synthetic_many_results$entropies_confidence_intervals)
+			  ,max(synthetic_many_results$entropies_confidence_intervals))
+	,xlab="n"
+	,ylab="Enropy (multiscale phase space)")
+axis(1,at=1:length(synthetic_many_results$entropies_mean),labels=synthetic_names,las=2)
+
+segments(
+	c(1:length(synthetic_many_results$entropies_mean)),
+	synthetic_many_results$entropies_confidence_intervals[1,],
+	c(1:length(synthetic_many_results$entropies_mean)),
+	synthetic_many_results$entropies_confidence_intervals[2,]
+	,lwd=1)
+
+}
