@@ -247,7 +247,7 @@ dev.off.all()
 
 }
 
-localProbabilities<-function(mrep,rasterbase,quants,plot=T,log=T){
+localProbabilities<-function(mrep,rasterbase,quants,plot=T,log=T,ylab=""){
 	globalprobs<-table(mrep)/sum(table(mrep))
 	localprobs<-as.vector(globalprobs[as.character(mrep)])
 	probsraster<-  rasterbase
@@ -276,11 +276,11 @@ localProbabilities<-function(mrep,rasterbase,quants,plot=T,log=T){
 		# plotr(probsraster,min(probsraster[])-0.0000001,max(probsraster[]),cols=c(col))
 		# plotr(probsraster,min(probsraster[])-0.0000001,max(probsraster[]),cols=c(col),legend=T)
 		if(log){
-		plotr(probsraster,-15,1,cols=c(col))
-		plotr(probsraster,-15,1,cols=c(col),legend=T)
+		plotr(probsraster,-15,1,cols=c(col),ylab=ylab)
+		plotr(probsraster,-15,1,cols=c(col),legend=T,ylab=ylab)
 		}else{
-		plotr(probsraster,0,1,cols=c(col))
-		plotr(probsraster,0,1,cols=c(col),legend=T)			
+		plotr(probsraster,0,1,cols=c(col),ylab=ylab)
+		plotr(probsraster,0,1,cols=c(col),legend=T,ylab=ylab)			
 		}
 
 	}
@@ -344,6 +344,7 @@ lapply(results$geospace$aggregated,plotr,cols= gray.colors(100,start = 0.1, end 
 
 
 
+
 # plotting nullmodel and data results:::
 plot_real_vs_null_entropies<-function(results,nullmod){
 	par(mfrow=c(1,1))
@@ -364,7 +365,6 @@ plot_real_vs_null_entropies<-function(results,nullmod){
 	# x axis and vertical lines:
 	axis(1, at=years, las=2)
 	abline(v=years,col="grey",lwd=0.5)
-
 # confidence intervals:
 	 polygon(c(years,rev(years)),c(nullmod$compactmixed_many_confidence_intervals[1,],rev(nullmod$compactmixed_many_confidence_intervals[2,]))
 	 	,col = rgb(0,0,0,0.3), border = FALSE)
@@ -402,30 +402,34 @@ dev.off.all()
 # probability rasters:
 plot_real_vs_null_probability_rasters<-function(results,nullmod,log=T){
 	par(mfrow=c(7,8),mar=c(0.5,0.5,0.5,0.5)
-		,oma=c(10,10,0,0))
+		,oma=c(0,10,10,0))
+
+  		par(xpd=NA)
 	for(i in c(1:7)){
 	localProbabilities(nullmod$randomised_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
-	title(years,outer=TRUE,side=1)
-	if(i==1){
-		title("randomised spatially")
-	}
-	?title
+mtext(years[i],2)
+	if(i==1){title("randomised spatially",cex=10)}
 	combined_data_raster_plot(nullmod$randomised,i)
+mtext(years[i],2)
 
 	localProbabilities(nullmod$compactmixed_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
-	if(i==1){title("compact mixed")}
+	if(i==1){title("compact mixed",cex=10)}
 	combined_data_raster_plot(nullmod$compactmixed,i)
+mtext(years[i],2)
 
 	localProbabilities(nullmod$compactsegregated_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
-	if(i==1){title("compact segregated")}
+	if(i==1){title("compact segregated",cex=10)}
 	combined_data_raster_plot(nullmod$compactsegregated,i)
 	
 	localProbabilities(results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
-	if(i==1){title("original data")}
+	if(i==1){title("original data",cex=10)}
 	combined_data_raster_plot(results$data,i)
 
+
 	}
+
 }
+?text
 plot_top_entropy <-function(results,howmanytop=5,howmanyflop=5,whichyears=c(1:7) ){
 	distances<-(lags-1)/2
 

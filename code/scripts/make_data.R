@@ -107,7 +107,7 @@ makesegregated_random<-function(width,cells){
 # NULL MODEL FROM DATA
 randomise_spatially<-function(data){
 for(i in 1:7){
-  randomised<-data
+randomised<-data
 live<-(data[["live"]][[i]][])
 work<-(data[["work"]][[i]][])
 leisure<-(data[["leisure"]][[i]][])

@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 % \setcounter{secnumdepth}{10}
 %\setcounter{tocdepth}{10}
-\usepackage[nomarkers,figuresonly]{endfloat}
+%\usepackage[nomarkers,figuresonly]{float}
 
 \title{Spatial Multiscale entropy}
 
@@ -35,7 +35,7 @@ By comparing synthetic patterns, we show that if elements of a system interact s
 
 \thispagestyle{empty}
 \setlength\parindent{0pt}
-
+\chapter{Test}
 \section*{Introduction}
 % why entropy?
 Entropy in thermodynamics is a concept relating the fast, microscopic behaviour to the slow, macroscopic dynamics of a system. We therefore see it as a suitable tool to be used in studying the relationship between the fast dynamics of individual behaviour and the slow, larger scale dynamics of change in urban structures. Batty recognises not only a ``literature gap'', but ``an entirely new research agenda'' for spatial entropy measures for cities and states that ``substantive interpretations of entropy measures [\ldots] have not been well developed. [\ldots] I sketch the need for new and different entropy measures that enable us to see how equilibrium spatial distributions can be generated as the outcomes of dynamic processes''\cite{Batty2010}. \\ 
@@ -102,7 +102,7 @@ The highest entropy is always given by a uniform distribution in the phase space
 It is commonly understood in thermodynamics that if one refers to the Boltzman phase space, it usually relates to the six dimensional phase space that defines a particle's state by its location and momentum. Similarily, the Gibbs phase space relates to the 6N dimensional phase space describing the location and momentum of all N particles in the system.\cite{GibbsVSBoltzmann}
 
 \subsection*{Common Phase Space Definitions for Spatial Entropy}
-In contrary to thermodynamics where usually there is a general consesus about what the the parameters of a microstate are, there are fundamental differences between interpretations of entropy in cities, and they come down to different definitions of the phase space dimensions.
+In contrast to thermodynamics where usually there is a general consesus about what the the parameters of a microstate are, there are fundamental differences between interpretations of entropy in cities, and they come down to different definitions of the phase space dimensions.
 \begin{itemize}
 \item{The first essential approach in the literature takes the word ``space'' literally and defines the phase space as the geographical space.\cite{SpatialEntropyBatty1974,Batty2010,BattyMorphetKiril2012} The highest entropy is then given by a pattern with a uniform distribution in geographical space as in pattern a) of figure \ref{fig:synthetic}. This interpretation answers the question: How uncertain is the absolute location of a place with a given characteristic?}
 
@@ -112,9 +112,12 @@ This interpretation answers the question: how uncertain is the characteristic of
 \item{Most reviewed approaches to spatial entropy use a combination of the two phase spaces above. They are measures of spatial evenness widely discussed in the literature on measures of segregation \cite{Theil1971,duncan1955,GiniIndex,DIndex,EtaSquared,White1983,morgan1983,Logan,LiebersonCarter,MasseyDanton,WongSegregation,Taeuber1969}. They have the highest entropy if entropy is maximised in both phase spaces above at the same time. It answers the question: how evenly are observations of different types or characteristics distributed geographically?}
 \end{itemize}
 
+
+
+
 Entropy in an urban context also appears in Wilson's spatial interaction models\cite{Wilson1970}, and there are attempts to discuss the energy and resources entering and exiting an urban systems in releation to entropy.\cite{EcosystemEntropy} These approaches to entropy in cities are very remote from our approach and not discussed here.\\
 
-Entropy across multiple scales has been applied to measure complexity in time series, for example by Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} for medical time series. This ``has become a prevailing method to quantify the complexity of signals. It has been used successfully'' \cite{MultiscaleEntropyReview} in numerous fields of research, but to our knowledge not in a spatial context. In contrary to our approach, a single entropy value is produced from integrating over entropies after coarse graining at different scales. By adding the entropies, different scales are viewed as independent systems.\\ 
+Entropy across multiple scales has been applied to measure complexity in time series, for example by Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} for medical time series. This ``has become a prevailing method to quantify the complexity of signals. It has been used successfully'' \cite{MultiscaleEntropyReview} in numerous fields of research, but to our knowledge not in a spatial context. In contrast to our approach, a single entropy value is produced from integrating over entropies after coarse graining at different scales. By adding the entropies, different scales are viewed as independent systems.\\ 
 % In practice this would capture that for example pattern e) in \ref{fig:synthetic} has a wide variety of values across all neighbourhood sizes, but ignore that small low value neighbourhoods lie very predictably in large low value neighbourhoods and vice versa.
 
 
@@ -131,7 +134,7 @@ Entropy across multiple scales has been applied to measure complexity in time se
 % $$C(N) = C(N/2)^2 \quad \text{with} \quad C(1) = 2  $$
 
 % Then $$ C(N)= 2^N$$
-
+f
 
 % The maximum entropy with $2^N$ states is $\log{\left(2^N\right)}$. There are $\log_2{N}$ steps of combining groups, and each steps adds an entropy of $\log{2}$. We can split the total entropy $\log{\left(2^N\right)}$ in the partial entropies added by each step of combining groups:
 
@@ -162,7 +165,7 @@ If we make the least predictable, or, the maximum entropy choice in every step o
 
 \begin{figure}[ht]
    \centering
-   \includegraphics[width=1.0\textwidth]{./paper_sr_format/linearpattern.png}
+   \includegraphics[width=\textwidth]{./paper_sr_format/linearpattern.png}
    \caption{a linear pattern with equal probability to find any combination of 2 or 4 adjacent pixels (when divided into non overlapping segments)}
    \label{fig:linearpattern}
 \end{figure}
@@ -233,7 +236,7 @@ When we speak of ``complex patterns'' here, we mean patterns which could be desc
 The patterns are \Sexpr{syntheticsize} pixels wide and high. For "Neighbourhoods" that go over the edge of the pattern, the invisible part is assumed to have the same proportion of values as the visible part. We bin the mean values in three categories: mainly low values (mean 0-0.33), mixed (mean 0.33-0.66) and mainly high values (mean 0.66-1.0). We use 5 different scales with neighbourhood side lengths with \Sexpr{paste(paste(lags[-length(lags)],collapse = ", "), "and", lags[length(lags)])} pixels.
 \begin{figure}[ht]
    \centering
-   \includegraphics[width=1.0\textwidth]{./code/output/syntheticsynthetic_patterns.jpg}
+   \includegraphics[width=\textwidth]{./code/output/syntheticsynthetic_patterns.jpg}
    \caption{patterns a) - g)}
    \label{fig:synthetic}
 \end{figure}
@@ -241,7 +244,7 @@ The patterns are \Sexpr{syntheticsize} pixels wide and high. For "Neighbourhoods
 \begin{figure}[ht]
 
    \centering
-   \includegraphics[width=1.0\textwidth]{./code/output/syntheticboxplot.jpg}
+   \includegraphics[width=\textwidth]{./code/output/syntheticboxplot.jpg}
    \caption{multiscale entropy for patterns a) - g)}
    \label{fig:synthetic_boxplot}
 \end{figure}
@@ -255,7 +258,7 @@ In the non spatial phase space observing only global characteristic proportions,
 Measures of entropy using the geographical space directly as the phase space are essentially measures of how evenly elements are distributed across different zones. We split the patterns into square zones with a side length of \Sexpr{geospace_aggregationfactor} pixels, and count the number of black pixels as in figure \ref{fig:syntheticgeospace_zones}.\\ 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=1.0\textwidth]{./code/output/syntheticgeospace_zones.jpg}
+    \includegraphics[width=\textwidth]{./code/output/syntheticgeospace_zones.jpg}
    \caption{probability to find black pixels in zones for the geographical phase space}
    \label{fig:syntheticgeospace_zones}
 \end{figure}
@@ -263,7 +266,7 @@ This approach is inherently different from our measure in its goals and results.
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=1.0\textwidth]{./code/output/syntheticgeospace_entropy.jpg}
+    \includegraphics[width=\textwidth]{./code/output/syntheticgeospace_entropy.jpg}
    \caption{Entropies for patterns in figure \ref{fig:synthetic} in the geographical phase space}
    \label{fig:syntheticgeospace_entropy}
 \end{figure}
@@ -273,7 +276,7 @@ The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=1.0\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
+    \includegraphics[width=\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
    \caption{black pixel frequencies in the zones of the geographical phase space, patterns a)-g) in figure \ref{fig:synthetic}}
    \label{fig:syntheticgeospace_frequency}
 \end{figure}
@@ -292,7 +295,7 @@ This may seem rather abstract. However, it should apply to any system in which e
 \begin{figure}[ht]
 
    \centering
-   \includegraphics[width=1.0\textwidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
+   \includegraphics[width=\textwidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
    \caption{phase space distributions for patterns a) - g) at scales of \Sexpr{lags[synth_phasespace_plot_scales[1]]} and \Sexpr{lags[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
    \label{fig:syntheticsynthetic_patterns_phasespace}
 \end{figure}
@@ -339,7 +342,7 @@ In terms of methodology the functional categories, the aggregation function, the
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=1.0\textwidth]{./code/output/real_vs_null_entropies.jpg}
+    \includegraphics[width=\textwidth]{./code/output/real_vs_null_entropies.jpg}
    \caption{Multiscale entropy in West London over time compared to 3 null models}
    \label{fig:real_vs_null_entropies}
 \end{figure}
@@ -348,7 +351,7 @@ In terms of methodology the functional categories, the aggregation function, the
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=1.0\textwidth]{./code/output/real_vs_null_rasters.jpg}
+    \includegraphics[width=\textwidth]{./code/output/real_vs_null_rasters.jpg}
    \caption{The probability of each pixel's state, and the corresponding spatial distribution of functions. From left to right: random pixel allocation, compact mixed use growth, compact segregated growth and observed data. Global proportion of functions and observed data correspond to \Sexpr{paste(years,collapse=", ")} from top to bottom. Grey: undeveloped or no data. Red: residential. Blue: commercial. Black: leisure. Grayscale images decreasing probability with increasing brightness (logarithmic)}
    \label{fig:real_vs_null_rasters}
 \end{figure}
