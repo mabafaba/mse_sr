@@ -78,24 +78,24 @@ In our case study we measure the change in multiscale entropy in land use patter
 In this chapter we summarise existing research and introduce the multiscale entropy measure in detail. First, we revisit the formal definition of entropy and the phase space in statistical mechanics. We then use them to summarize existing approaches to entropy in cities based on two typical interpretations of the phase space. After this  review of previous research we establish its shortcomings, and recapulate our requirements for a new measure of entropy to observe place's characteristics and take into account interactions. With a combinatorical example we show why a multiscale approach is suitable for this. Finally, we formally define the theoretical multiscale phase space in which each state is given by a matrix containing multiple characteristics aggregated in neighbourhoods of different sizes, and introduce simplifications to achieve a practical method for multiscale entropy estimation.\\
 
 \subsection*{Entropy in Statistical Mechanics}
-Entropy is defined as\cite{Shannon}:
+Entropy is defined as\cite{Shannon}
 \begin{equation}
 \label{eq:continuous_entropy}
- H = - \int{f(x) \log(f(x))}
+ H = - \int{\! f(x) \log(f(x)) \, \mathrm{d}x}
 \end{equation}
-Where $f(x)$ is the probability density of a continuous phase space. The equivalent to equation \ref{eq:continuous_entropy} in the discrete phase space is \cite{Shannon}:
+where $f(x)$ is the probability density of a continuous phase space. The equivalent to equation \ref{eq:continuous_entropy} in the discrete phase space is \cite{Shannon}:
 \begin{equation}
 \label{eq:shannon_entropy}
  H = -\sum{p \log{p}}
 \end{equation}
 
-which reduces to the Boltzman entropy $S$ if all probabilites $p$ are the same:
+which reduces to the Boltzman entropy $S$ if all microstate probabilites $p$ are the same:
 \begin{equation}
 \label{eq:boltzman_entropy}
  S = k_B \log(\Omega)
 \end{equation}
 
-``where $\Omega$ is the total number of microstates available to the system''\cite[p.44]{BoltzmannOmega}. All microstates can be allocated a location in the phase space. If the phase space is discrete, we can count the number of possible permutations that produce the same macrostate.\\
+Where $k_B$ is the Boltzmann constant and $\Omega$ the number of accessible microstates\cite[p.44]{BoltzmannOmega}. All microstates can be allocated a location in the phase space. If the phase space is discrete, we can count the number of possible permutations that produce the same macrostate.\\
 
 The highest entropy is always given by a uniform distribution in the phase space, leading to sometimes misleading but common metaphors for entropy \cite{EntropyMetaphors}: if the entropy of a system is high, the state of a randomly selected element is unpredictable and ``uncertain'', and if we are uncertain about where things are in a system, one might describe it as ``disordered''. \\
 
@@ -134,7 +134,7 @@ Entropy across multiple scales has been applied to measure complexity in time se
 % $$C(N) = C(N/2)^2 \quad \text{with} \quad C(1) = 2  $$
 
 % Then $$ C(N)= 2^N$$
-f
+
 
 % The maximum entropy with $2^N$ states is $\log{\left(2^N\right)}$. There are $\log_2{N}$ steps of combining groups, and each steps adds an entropy of $\log{2}$. We can split the total entropy $\log{\left(2^N\right)}$ in the partial entropies added by each step of combining groups:
 
@@ -173,19 +173,19 @@ Again: the phase space here is \emph{not} the geographical space. We associate h
 
 This makes sense intuitively if relate this back to cities. Imagine the patterns in figure \ref{fig:synthetic} were real cities, and black and white pixels would refer to residential and commercial buildings. Of course pattern a) is more evenly distributed in space, but this is not what we are interested in. Taking into account the surroundings of each pixel, pattern a) only has two different types of places: residential or commercial buildings, but always in mixed blocks in mixed neighbourhoods in mixed districts of a homogeneously mixed city. Pattern g) has a much larger variety of spatial configurations. If we pick a single place at random, we have the same probability to pick a ``residential'' or a ``commercial building'' in both cases, but in pattern g) there is much less certainty about the type of neighbourhood it is in. We want to extend the description used to compare individual buildings from ``a residential building'' to something like ``a residential building in a mixed use block which itself lies in a mainly commercial district that is surrounded by residential areas''. All of these surroundings at different scales should be part of the state of that place: if the direct surroundings and larger scale neighbourhoods of two places are identical, their function is more simmilar. In reverse, if two places are identical but their surroundings fundamentally different, they can be used in different ways and their states should differ. So what ``Multiple scales'' means is that the state of a place includes values describing not only the place's own characteristics, but some aggregate description of its environments within increasing distance: its immediate surroundings, its local neighbourhood and its larger scale environment. 
 
-Therefore we define for our quantitative measure the phase space like this: the first dimension of the phase space is the value of a place's own characteristic. We then add further phase space dimensions describing the place's surroundings at different scales. When we consider only one characteristic, the state of each place $x_i$ in the city is given by the vector
+Therefore we define for our quantitative measure the phase space like this: the first dimension of the phase space is the value of a place's own characteristic. We then add further phase space dimensions describing the place's surroundings at $n$ different scales. When we consider only one characteristic, the state of each place $x_i$ in the city is given by the vector
 \begin{equation}
 \label{c_state_vector}	
 \vec{x_i} = (x_i^{d_0}, x_i^{d_1}, \ldots, x_i^{d_n})
 \end{equation} 
 \bigskip
 
-Where $x_i^{d_0}$ is the value of the place itself, and $x_i^{d_n}$ is given by the values of all places within distance $d_n$ from $x_i$, aggregated by a function:
+Where $x_i^{d_0}$ is the local value of characteristic of place $x_i$ itself, and $x_i^{d_n}$ is given by the local characteristics' values of all places within distance $d_n$ from $x_i$, aggregated by a function:
 \begin{equation}
 \label{multiscale_vector}
 x_i^{d_n} = f(x_{k_1}^{d_0},x_{k_2}^{d_0}, \ldots, x_{k_m}^{d_0})
 \end{equation}
-for all $x_{k}^{d_0}$ within distance $d_n$ from $x_i$. What this achieves is that we can distinguish between locally identical places based on what kind of area they are in, because the state of a place is literally a function of its surroundings. 
+for all $x_{k}^{d_0}$ of the $m$ places within distance $d_n$ from $x_i$. What this achieves is that we can distinguish between locally identical places based on what kind of area they are in, because the state of a place is literally a function of its surroundings. 
 
 Extending this to $c$ scalar characteristics, the whole state of a place in the system is given by the matrix
 \begin{equation}
@@ -200,30 +200,30 @@ x_i^{d_0,c} & x_i^{d_1,c} & \ldots & x_i^{d_n,c}\cr
 
 \bigskip
 
-Imagine a number of identical offices. One of them is in a central business district, one of them on the countryside, one on an oil platform and another in the dessert. The way they are or can be used is fundamentally different because the spatial context is. The matrix $\Psi$ takes that context into account. In reverse, the way the ocean / countryside / business district / dessert around them are used is altered as well, and the presence of the office building appears in their state matrices.
+To exemplify how $\Psi$ adds the spatial context of a place to its state imagine a number of identical offices. One of them is in a central business district, one of them on the countryside, one on an oil platform and another in the dessert. The way they are or can be used is fundamentally different because the spatial context is. That context appears in $\Psi$. In reverse, the way the ocean / countryside / business district / dessert around them are used is altered as well, and the presence of the office building appears in their state matrices.
 
-Theoretically, the continuous phase space $\phi^{(n+1)*k}$ is then the space of all possible place state matrices $x \in \phi$.
+Theoretically, the continuous phase space $\phi^{(n+1)*k}$ that includes $c$ characteristics at $n$ scales is then the space of all possible place state matrices $x \in \phi$.
 The states of all places in the system are distributed in $\phi$ with the probability density distribution
-$g$. The entropy is then 
+$g$. The multiscale entropy $H_{ms}$ is then 
 \begin{equation}
 \label{eq:theoretical_multiscale_phasespace}
-\int_{a \in \phi}{- g(a) \log{g(a)}}
+H_{ms} = \int_{a \in \phi}{\! - g(a) \log{g(a)}} \, \mathrm{d}a
 \end{equation}
-for all $a$ where $g(a)>0$.\\
+for all possible states $a$ where $g(a)>0$.\\
 
-There are strong conceptual parallels to the difference between Boltzman's and Gibbs' phase space in statistical mechanics. For $c$ characteristics observed at $n$ scales, the phase space has $c * n$ dimensions, signifcantly more than the $c$ dimensional space that could be used if we ignored interactions between places. A similar increase in the number of dimensions happens when moving from the Boltzman phase space to the Gibbs phase space that deals with interacting particles in statistical mechanics. Nonetheless, the relationship between the Boltzmann entropy and the Gibbs entropy is far more complex \cite{GibbsVSBoltzmann}, and their precise interpretations still debated \cite{GibbsDiscussion2015}. 
+There are strong conceptual parallels to the difference between Boltzman's and Gibbs' phase space in statistical mechanics. For $c$ characteristics observed at $n$ scales, the phase space has $c * n$ dimensions, signifcantly more than the $c$ dimensional space that could be used if we ignored interactions between places. A similar increase in the number of dimensions happens when moving from the Boltzman phase space to the Gibbs phase space that deals with interacting particles in statistical mechanics. Nonetheless, we are not moving moving to a Gibbs space, and the relationship between the Boltzmann entropy and the Gibbs entropy is far more complex \cite{GibbsVSBoltzmann}, and their precise interpretations still debated \cite{GibbsDiscussion2015}. 
 
 \subsection*{Multiscale Entropy Estimation}
 
 The practical entropy estimation in our simulated patterns and case study is as simple as possible without compromising the general concept. 
 We use simplified square neighbourhoods with varying side length because it makes the results easy to trace, is computationally convenient and is sufficient to demonstrate the concept. \\
-We then calculate the place state matrix $\Psi$using the mean as the aggregation function in equation \ref{multiscale_vector} for the same reasons.\\
+We then calculate the place state matrix $\Psi$ using the mean as the aggregation function in equation \ref{multiscale_vector} for the same reasons.\\
 
 We discretise the phase space by defining a descrete set of values for all the elements in matrix $\Psi$ that will be given by bining the values after the aggregation. Places are assumed to have the same state if and only if their state matrices are exactly identical. Because this simplified phase space is discrete, we can estimate the probability of discrete states directly from their frequency and estimate the system's entropy directly with equation \ref{eq:shannon_entropy}. \\
 
 Discretising the phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating eucledian distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions.\\
 
-In this chapter we summarised existing measures of entropy in cities, developed a new multiscale phase space definition and a method to estimate multiscale entropy. In the following chapter it is applied to simulated patterns. 
+In the following chapter the multiscale entropy estimation method is applied to simulated patterns. 
 
 
 \section*{Simulated Patterns}
