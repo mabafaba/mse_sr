@@ -14,11 +14,12 @@ makeallsynthetic_random<-function(width){
   cascade[which(cascade>=cascmedian)]<-1
   cascade<-raster(cascade)
   segregated2<-raster(makesegregated_random(width,2))
-  segregated8<-raster(makesegregated_random(width,8))
-  segregated32<-raster(makesegregated_random(width,32))
+  # segregated8<-raster(makesegregated_random(width,8))
+  # segregated32<-raster(makesegregated_random(width,32))
+  segregated16<-raster(makesegregated_random(width,32))
   sorted<-(raster(matrix(c(1:width^2)/width^2,width,width)))
   oneoverf<-raster(makeOneOverF(width))
-  return(list(unif,segregated32,segregated8,segregated2,sorted,oneoverf,cascade))
+  return(list(unif,segregated16,segregated2,sorted,oneoverf,cascade))
 }
 
 

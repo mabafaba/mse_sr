@@ -1,3 +1,7 @@
+h2w<-function(height){
+return(height*3/2)
+}
+mfrowsynth<-c(2,3)
 setParDefaults<-function(font=TRUE,border=TRUE,axis=TRUE,xpd=FALSE){
 	if(font){par(family = "serif")}
 	if(border){par(plot.frame=FALSE,bty="n")}
@@ -66,14 +70,14 @@ plots<-function(results,nullmod,prefix, synth_phasespace_plot_scales){
 }
 
 plots_synthetic<-function(results,prefix,synthetic_many_results){
-
 #plotting patterns only:
-pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),15*length(results$entropies),17)
-par(mfrow=c(1,length(results$entropies))
+h<-15*length(results_synthetic$entropies)/2
+pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),h2w(h),h+2)
+par(mfrow=c(2,length(results_synthetic$entropies)/2)
 	,mai=c(2,0,0,0))
 setParDefaults()
-for( i in c(1:length(results$entropies)) ){
-		plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95))
+for( i in c(1:length(results_synthetic$entropies)) ){
+		plotr(results_synthetic$data[[i]],cols=gray.colors(500, start = 0, end = 0.95))
 		title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 			,cex.sub=10
 			,outer=FALSE
@@ -81,8 +85,8 @@ for( i in c(1:length(results$entropies)) ){
 		}
 dev.off.all()
 
-jpeg(paste0("./code/output/",prefix,"synthetic_patterns.jpg"),15*length(results$entropies),17,res=100,units = 'in')
-par(mfrow=c(1,length(results$entropies))
+jpeg(paste0("./code/output/",prefix,"synthetic_patterns.jpg"),h2w(h),h+2,res=100,units = 'in')
+par(mfrow=c(2,length(results$entropies)/2)
 	,mai=c(2,0,0,0))
 setParDefaults()
 for( i in c(1:length(results$entropies)) ){
@@ -125,8 +129,9 @@ dev.off.all()
 
 
 	# plotting phase spaces:
-	pdf(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.pdf"),3*length(results$lags[[1]]),3)
-	par(mfrow=c(1,length(results$entropies)))
+	h<-3*length(results$lags[[1]])/2
+	pdf(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.pdf"),h2w(h),h)
+	par(mfrow=mfrowsynth)
 	par(mar=c(4,3,4,3))
 	setParDefaults()
 	subs=paste0("",letters[1:10],")")
@@ -156,8 +161,8 @@ dev.off.all()
 	}
 	dev.off.all()
 
-	jpeg(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.jpg"),3*length(results$lags[[1]]),3,res=100,units = 'in')
-	par(mfrow=c(1,length(results$entropies)))
+	jpeg(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.jpg"),h2w(h),h,res=100,units = 'in')
+	par(mfrow=mfrowsynth)
 	par(mar=c(4,3,4,3))
 	setParDefaults()
 	subs=paste0("pattern ",letters[1:10],")")
@@ -197,12 +202,13 @@ dev.off.all()
 
 
 # plotting geospace zones:
-pdf(paste0("./code/output/",prefix,"geospace_zones.pdf"),70,10)
+h<-10*length(synthetic_names)/2
+pdf(paste0("./code/output/",prefix,"geospace_zones.pdf"),h2w(h),h)
 setParDefaults()
 plot_synthetic_geospace_zones(results)
 dev.off.all()
 
-jpeg(paste0("./code/output/",prefix,"geospace_zones.jpg"),70,10,res=100,units = 'in')
+jpeg(paste0("./code/output/",prefix,"geospace_zones.jpg"),h2w(h),h,res=100,units = 'in')
 setParDefaults()
 plot_synthetic_geospace_zones(results)
 dev.off.all()
@@ -220,10 +226,11 @@ plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 dev.off.all()
 
 # plotting geospace frequencies
-pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),21,3)
-par(mfrow=c(1,7))
+h<-3
+pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),h2w(h),h)
+par(mfrow=mfrowsynth)
 setParDefaults()
-for (i in c(1:7)) {
+for (i in c(1:length(results$geospace$probs))) {
 	barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5)
 		# title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 		  title(main = NULL, sub = paste0(letters[i],")")
@@ -234,8 +241,8 @@ for (i in c(1:7)) {
 	
 }
 dev.off.all()
-jpeg(paste0("./code/output/",prefix,"geospace_frequency.jpg"),21,3,res=100,units = 'in')
-par(mfrow=c(1,7))
+jpeg(paste0("./code/output/",prefix,"geospace_frequency.jpg"),h2w(h),h,res=100,units = 'in')
+par(mfrow=mfrowsynth)
 setParDefaults()
 lapply(results$geospace$probs,function(x){barplot(sort(x),col="black",space=0.5)})
 dev.off.all()
@@ -343,7 +350,7 @@ combined_data_raster_plot<-function(data,i,cropextend=NA){
 
 plot_synthetic_geospace_zones<-function(results){
 # dev.new(width=length(results$data)*5, height=5)
-par(mfrow=c(1,7))
+par(mfrow=mfrowsynth)
 setParDefaults()
 lapply(results$geospace$aggregated,plotr,cols= gray.colors(100,start = 0.1, end = 1))
 }
@@ -523,10 +530,9 @@ plot_top_entropy <-function(results,howmanytop=5,howmanyflop=5,whichyears=c(1:7)
 }
 
 
-
 plot_synthetic_entropies_barchart_w_confidence<-function(synthetic_many_results){
 barplot(synthetic_many_results$entropies_mean,col="black")
-text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
+text((c(1:length(synthetic_many_results$entropies_mean))*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
 boxplot(x = t(synthetic_many_results$entropies[,]),data=t(synthetic_many_results$entropies), main="",
         xlab="",
         names=  paste(letters[1:length(synthetic_names)],")",c(" uniform"," segregated:\n32*32 cells", " segregated\n8*8 cells"," segregated:\n2*2 cells"," sorted"," 1/f noise"," additive\ncascade"),sep="")
@@ -548,7 +554,7 @@ text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), x
 
 boxplot(x = t(synthetic_many_results$entropies_geospace[,]),data=t(synthetic_many_results$entropies_geospace), main="",
         xlab="",
-        names=  paste(letters[1:7],")",c(" uniform"," segregated:\n32*32 cells", " segregated\n8*8 cells"," segregated:\n2*2 cells"," sorted"," 1/f noise"," additive\ncascade"),sep="")
+        names=  paste(letters[1:length(synthetic_names)],")",c(" uniform"," segregated:\n32*32 cells", " segregated\n8*8 cells"," segregated:\n2*2 cells"," sorted"," 1/f noise"," additive\ncascade"),sep="")
         ,ylab="multiscale entropy",
         outline = F,
         range=0,
