@@ -14,7 +14,7 @@ makeallsynthetic_random<-function(width){
   cascade[which(cascade>=cascmedian)]<-1
   cascade<-raster(cascade)
   segregated2<-raster(makesegregated_random(width,2))
-  segregated8<-raster(makesegregated_random(width,8))
+  segregated16<-raster(makesegregated_random(width,16))
   segregated32<-raster(makesegregated_random(width,32))
   sorted<-(raster(matrix(c(1:width^2)/width^2,width,width)))
   oneoverf<-raster(makeOneOverF(width))
@@ -106,8 +106,8 @@ makesegregated_random<-function(width,cells){
 
 # NULL MODEL FROM DATA
 randomise_spatially<-function(data){
-for(i in 1:7){
 randomised<-data
+for(i in 1:7){
 live<-(data[["live"]][[i]][])
 work<-(data[["work"]][[i]][])
 leisure<-(data[["leisure"]][[i]][])

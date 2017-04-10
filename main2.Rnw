@@ -35,7 +35,6 @@ By comparing synthetic patterns, we show that if elements of a system interact s
 
 \thispagestyle{empty}
 \setlength\parindent{0pt}
-\chapter{Test}
 \section*{Introduction}
 % why entropy?
 Entropy in thermodynamics is a concept relating the fast, microscopic behaviour to the slow, macroscopic dynamics of a system. We therefore see it as a suitable tool to be used in studying the relationship between the fast dynamics of individual behaviour and the slow, larger scale dynamics of change in urban structures. Batty recognises not only a ``literature gap'', but ``an entirely new research agenda'' for spatial entropy measures for cities and states that ``substantive interpretations of entropy measures [\ldots] have not been well developed. [\ldots] I sketch the need for new and different entropy measures that enable us to see how equilibrium spatial distributions can be generated as the outcomes of dynamic processes''\cite{Batty2010}. \\ 
@@ -252,12 +251,20 @@ Measures of entropy using the geographical space directly as the phase space are
    \label{fig:syntheticgeospace_zones}
 \end{figure}
 This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} a)), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} c) and d)).
-\begin{minipage}{.5\textwidth}
+
 \begin{figure}[ht]
-   \centering
-    \includegraphics[width=0.49\textwidth]{./code/output/syntheticgeospace_entropy.jpg}
-   \caption{Entropies for patterns in figure \ref{fig:synthetic} in the geographical phase space}
-   \label{fig:syntheticgeospace_entropy}
+	\begin{minipage}{.5\textwidth}
+	   \centering
+	    \includegraphics[width=0.8\textwidth]{./code/output/syntheticgeospace_entropy.jpg}
+	   \caption{Geographical phase space entropy, patterns fig. \ref{fig:synthetic}}
+	   \label{fig:syntheticgeospace_entropy}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+	   \centering
+	   \includegraphics[width=0.8\textwidth]{./code/output/syntheticboxplot.jpg}
+	   \caption{Multiscale entropy, patterns fig. \ref{fig:synthetic}}
+	   \label{fig:synthetic_boxplot}
+	\end{minipage}%
 \end{figure}
 
 
@@ -274,14 +281,6 @@ The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace
 \subsection*{multiscale entropy and complexity}
 
 The simulated patterns corresponding to the patterns in figure \ref{fig:synthetic} have the multiscale entropies shown in figure \ref{fig:synthetic_boxplot}.  
-
-
-\begin{figure}[ht]
-   \centering
-   \includegraphics[width=0.49\textwidth]{./code/output/syntheticboxplot.jpg}
-   \caption{multiscale entropy for patterns a) - g)}
-   \label{fig:synthetic_boxplot}
-\end{figure}
 
 
 To show how spatially complex patterns have the highest entropy if interactions between locations are taken into account, we take a closer look at the distributions in the multiscale phase space for the synthetic patterns. Figure \ref{fig:syntheticsynthetic_patterns_phasespace} shows two dimensions of the multiscale phase space, specifically at the scales of \Sexpr{lags[synth_phasespace_plot_scales[1]]} and \Sexpr{lags[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length.
@@ -343,7 +342,7 @@ In terms of methodology the functional categories, the aggregation function, the
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=\textwidth]{./code/output/real_vs_null_entropies.jpg}
+    \includegraphics[width=0.5\textwidth]{./code/output/real_vs_null_entropies.jpg}
    \caption{Multiscale entropy in West London over time compared to 3 null models}
    \label{fig:real_vs_null_entropies}
 \end{figure}
@@ -566,21 +565,23 @@ NECESSARY?
 
 % \noindent LaTeX formats citations and references automatically using the bibliography records in your .bib file, which you can edit via the project menu. Use the cite command for an inline citation, e.g.  \cite{Figueredo:2009dg}.
 
-% \section*{Acknowledgements (not compulsory)}
+\section*{Acknowledgements}
+Carlos, Clémentine, Hadrien, Mike?
+Mechanicity
+Elsa's money
 
-% Acknowledgements should be brief, and should not include thanks to anonymous referees and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
-
-% \section*{Author contributions statement}
-
+\section*{Author contributions statement}
+?
 % Must include all authors, identified by initials, for example:
 % A.A. conceived the experiment(s),  A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results.  All authors reviewed the manuscript. 
 
-% \section*{Additional information}
+\section*{Additional information}
+The authors declare no competing financial interests.
+
 % To include, in this order: \textbf{Accession codes} (where applicable); \textbf{Competing financial interests} (mandatory statement). 
 
 % The corresponding author is responsible for submitting a \href{http://www.nature.com/srep/policies/index.html#competing}{competing financial interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file.
 
-% The author(s) declare no competing financial interests.
 
 
 % \begin{figure}[ht][ht]
@@ -605,6 +606,15 @@ NECESSARY?
 % \end{table}
 
 % Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
+
+
+
+
+
+
+
+
+
 
 
 \end{document}

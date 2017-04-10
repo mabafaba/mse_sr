@@ -10,7 +10,10 @@
  - [ ] fix subheadings (plots)
 
 * TO DO
+  - [ ] phase space plots: axis labels not visible
+  - [ ] results legend outside plot
   - [ ] "black pixel frequencies" -> "black pixel probabilities"
+  - [ ] figure 3 headings
   - [ ] phase space plot labels a-c
   - [ ] parameters of entropy estimation in synthetic data
   - [ ] say which log base in ∑ p log p

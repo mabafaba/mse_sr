@@ -33,16 +33,7 @@ synthetic<-make_data(syntheticsize)
 results_synthetic<-analysis_synthetic(synthetic,lags=lags,geospace_aggregationfactor=geospace_aggregationfactor)
 
 synthetic_many_results<-analysis_synthetic_many(2)
-setParDefaults()
-setParDefaults
-plot_real_vs_null_entropies(results,nullmod)
-defaultaxis(xat=years)
-par(yaxt=)
-axis()
-dev.off.all()
-par(xaxt="n")
-plot(1,1,xaxt="n")
-axis(1)
+
 plots(results,nullmod,"")
 plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
 dev.off.all()

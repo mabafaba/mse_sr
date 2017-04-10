@@ -9,13 +9,13 @@ shp2raster_fast<-function(file,uniquename,layer,resolution, where="1=1"){
 }
 
 
-plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,ylab=""){
+plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,ylab="",bty="n"){
   # values must lie between 0 and 1
   raster[]<-round(raster[],6)
 #   cols<-palette(gray(seq(0.95,0,len = 99)))
 # cols<-c("blue","blue","red","red")
 # cols<-c("#1133AA","#AA1133")
-  par(bty= "n",xpd=NA)
+  par(bty= bty,xpd=NA)
   if(!legend){
     plot( raster,
           col=cols, breaks=seq(min,max,length.out=length(cols)+1)
@@ -23,7 +23,7 @@ plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,yl
           ,legend.args=list(text='Elevation (m)', side=4, font=2, line=2.5, cex=0.8)
           , legend=F
           ,useRaster=F) 
-    par(bty= "n",xpd=NA) # remove the box
+    par(bty= bty,xpd=NA) # remove the box
   }else if(!is.na(breaks)){
     plot(raster, legend.only=TRUE
          , col=cols,
@@ -47,7 +47,6 @@ plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,yl
 
 
   }
-  par(bty= "o",xpd=NA) # set the box
 }
 
 

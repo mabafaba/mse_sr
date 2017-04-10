@@ -1,6 +1,6 @@
 setParDefaults<-function(font=TRUE,border=TRUE,axis=TRUE,xpd=FALSE){
 	if(font){par(family = "serif")}
-	if(border){par(plot.frame=FALSE,bty="n")}
+	if(border){par(bty="n")}
 	if(axis){par(xaxt="n")
 			 par(yaxt="n")}
 	if(xpd){par(xpd=NA)}
@@ -33,14 +33,19 @@ plots<-function(results,nullmod,prefix, synth_phasespace_plot_scales){
 
 
 	# entropies over time: real vs. null:
-		pdf(paste0("./code/output/",prefix,"real_vs_null_entropies.pdf"),5,5)
+		pdf(paste0("./code/output/",prefix,"real_vs_null_entropies.pdf"),7,7)
 		setParDefaults()
 		plot_real_vs_null_entropies(results,nullmod)
 		dev.off.all()
-		jpeg(paste0("./code/output/",prefix,"real_vs_null_entropies.jpg"),5,5,res=300,units = 'in')
+		jpeg(paste0("./code/output/",prefix,"real_vs_null_entropies.jpg"),7,7,res=300,units = 'in')
 		setParDefaults()
 		plot_real_vs_null_entropies(results,nullmod)
 		dev.off.all()
+
+
+
+
+
 	# probability rasters and regular rasters vor real and null:
 		pdf(paste0("./code/output/",prefix,"real_vs_null_rasters.pdf"),5*8*2,5*7)
 		setParDefaults()
@@ -70,10 +75,10 @@ plots_synthetic<-function(results,prefix,synthetic_many_results){
 #plotting patterns only:
 pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),15*length(results$entropies),17)
 par(mfrow=c(1,length(results$entropies))
-	,mai=c(2,0,0,0))
+	,mai=c(2,1,0,0))
 setParDefaults()
 for( i in c(1:length(results$entropies)) ){
-		plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95))
+		plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 1),bty="o")
 		title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 			,cex.sub=10
 			,outer=FALSE
@@ -83,10 +88,10 @@ dev.off.all()
 
 jpeg(paste0("./code/output/",prefix,"synthetic_patterns.jpg"),15*length(results$entropies),17,res=100,units = 'in')
 par(mfrow=c(1,length(results$entropies))
-	,mai=c(2,0,0,0))
+	,mai=c(2,1,0,0))
 setParDefaults()
 for( i in c(1:length(results$entropies)) ){
-		plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95))
+		plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 1),bty="o")
 		title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 			,cex.sub=10
 			,outer=FALSE
@@ -107,7 +112,7 @@ setParDefaults()
 for( i in c(1:length(results$lags)) ){
 	for( j in c(1:length(results$lags[[1]])) ){
 
-		plotr(results$lags[[i]][[j]], cols=gray.colors(100,start = 0.1, end = 1))
+		plotr(results$lags[[i]][[j]], cols=gray.colors(100,start = 0.1, end = 1),bty="o")
 		}
 	}
 dev.off.all()
@@ -118,7 +123,7 @@ setParDefaults()
 for( i in c(1:length(results$lags)) ){
 	for( j in c(1:length(results$lags[[1]])) ){
 
-		plotr(results$lags[[i]][[j]], cols=gray.colors(100,start = 0.1, end = 1))
+		plotr(results$lags[[i]][[j]], cols=gray.colors(100,start = 0.1, end = 1),bty="o")
 		}
 	}
 dev.off.all()
@@ -160,7 +165,7 @@ dev.off.all()
 	par(mfrow=c(1,length(results$entropies)))
 	par(mar=c(4,3,4,3))
 	setParDefaults()
-	subs=paste0("pattern ",letters[1:10],")")
+	subs=paste0("",letters[1:10],")")
 	for( i in c(1:length(results$entropies)) ){
 		eqscplot(as.vector(results$lags[[i]][[synth_phasespace_plot_scales[1]]]),as.vector(results$lags[[i]][[synth_phasespace_plot_scales[2]]])
 			,xlim=c(0,1),ylim=c(0,1)
@@ -219,34 +224,52 @@ setParDefaults()
 plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 dev.off.all()
 
-# plotting geospace frequencies
-pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),21,3)
-par(mfrow=c(1,7))
+# plotting geospace entropies WIDE
+pdf(paste0("./code/output/",prefix,"geospace_entropy_WIDE.pdf"),14,3)
 setParDefaults()
+plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
+dev.off.all()
+
+jpeg(paste0("./code/output/",prefix,"geospace_entropy_WIDE.jpg"),14,3,res=100,units = 'in')
+setParDefaults()
+plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
+dev.off.all()
+
+
+# plotting geospace frequencies
+pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),14,2)
+par(mfrow=c(1,7))
+par(mai=c(0.6,0.3,0.1,0))
+setParDefaults()
+maxv_frequencies<-max(unlist(results_synthetic$geospace$probs))
 for (i in c(1:7)) {
-	barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5)
+	barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5,ylim=c(0,maxv_frequencies))
 		# title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 		  title(main = NULL, sub = paste0(letters[i],")")
 
 		,cex.sub=2
 		,outer=FALSE
 		,line=+2)
-	
+if(i==1){defaultaxis(yat=c(0,maxv_frequencies),ylab=c(0,round(maxv_frequencies,2)),plotx=FALSE)}
+par(mai=c(0.6,0.1,0.1,0))
 }
 dev.off.all()
-jpeg(paste0("./code/output/",prefix,"geospace_frequency.jpg"),21,3,res=100,units = 'in')
+jpeg(paste0("./code/output/",prefix,"geospace_frequency.jpg"),14,2,res=100,units = 'in')
 par(mfrow=c(1,7))
+par(mai=c(0.6,0.3,0.1,0))
 setParDefaults()
-lapply(results$geospace$probs,function(x){barplot(sort(x),col="black",space=0.5)})
-dev.off.all()
+maxv_frequencies<-max(unlist(results_synthetic$geospace$probs))
+for (i in c(1:7)) {
+	barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5,ylim=c(0,maxv_frequencies))
+		# title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
+		  title(main = NULL, sub = paste0(letters[i],")")
 
-pdf(paste0("./code/output/",prefix,"boxplot.pdf"),5,5)
-setParDefaults()
-plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
-dev.off.all()
-jpeg(paste0("./code/output/",prefix,"boxplot.jpg"),5,5,res=100,units = 'in')
-setParDefaults()
-plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
+		,cex.sub=2
+		,outer=FALSE
+		,line=+2)
+if(i==1){defaultaxis(yat=c(0,maxv_frequencies),ylab=c(0,round(maxv_frequencies,2)),plotx=FALSE)}
+par(mai=c(0.6,0.1,0.1,0))
+}
 dev.off.all()
 
 }
@@ -296,10 +319,10 @@ localProbabilities<-function(mrep,rasterbase,quants,plot=T,log=T,ylab=""){
 		# plotr(probsraster,min(probsraster[])-0.0000001,max(probsraster[]),cols=c(col),legend=T)
 		if(log){
 		plotr(probsraster,-15,1,cols=c(col),ylab=ylab)
-		plotr(probsraster,-15,1,cols=c(col),legend=T,ylab=ylab)
+		# plotr(probsraster,-15,1,cols=c(col),legend=T,ylab=ylab)
 		}else{
 		plotr(probsraster,0,1,cols=c(col),ylab=ylab)
-		plotr(probsraster,0,1,cols=c(col),legend=T,ylab=ylab)			
+		# plotr(probsraster,0,1,cols=c(col),legend=T,ylab=ylab)			
 		}
 
 	}
@@ -345,7 +368,7 @@ plot_synthetic_geospace_zones<-function(results){
 # dev.new(width=length(results$data)*5, height=5)
 par(mfrow=c(1,7))
 setParDefaults()
-lapply(results$geospace$aggregated,plotr,cols= gray.colors(100,start = 0.1, end = 1))
+lapply(results$geospace$aggregated,plotr,cols= gray.colors(100,start = 0.1, end = 1),bty="o")
 }
 # test<-geo_phase_space(synthetic,64)
 # par(mfrow=c(5,7))
@@ -408,7 +431,11 @@ plot_real_vs_null_entropies<-function(results,nullmod){
  	#lines(years, nullmod$compactmixed_many_confidence_intervals[2,], col="red",lty=2)
  	#lines(years, nullmod$compactmixed_many_confidence_intervals[1,], col="red",lty=2)
 # legend:
-	 legend(1980,0
+	 par(xpd=NA)
+	 legend("topleft",
+	 	# max(unlist(lapply(
+					# results$entropies$combined
+					# ,function(x){x$entropy})))
 	 	,legend= c("observed","random spread","random compact","segregated","non spatial","0.05 confidence")
 	 	,col = c(rgb(0,0,0),rgb(1,0,0),rgb(0,1,0),rgb(0,0,1),rgb(0,0,0),rgb(0,0,0,0.3))
        ,border = NA
@@ -563,7 +590,7 @@ boxplot(x = t(synthetic_many_results$entropies_geospace[,]),data=t(synthetic_man
 plot_synthetic_entropies_geospace_points_w_confidence<-function(synthetic_many_results){
 setParDefaults()
 par(omi=c(0,0,0,0))
-plot(synthetic_many_results$entropies_geospace_mean,xaxt="n",pch=1,cex=1
+plot(synthetic_many_results$entropies_geospace_mean,xaxt="n",pch=20,cex=1
 	,ylim= c( min(synthetic_many_results$entropies_geospace_confidence_intervals)
 			  ,max(synthetic_many_results$entropies_geospace_confidence_intervals))
 			,xlab="pattern"
@@ -578,6 +605,17 @@ segments(
 	c(1:length(synthetic_many_results$entropies_geospace_mean)),
 	synthetic_many_results$entropies_geospace_confidence_intervals[2,]
 	,lwd=1)
+horizontal_confidence_line_width=0.2
+segments(
+	x0 = c(1:7)-(horizontal_confidence_line_width/2),
+	x1 = c(1:7)+(horizontal_confidence_line_width/2),
+	y0 = synthetic_many_results$entropies_geospace_confidence_intervals[1,],
+	y1 = synthetic_many_results$entropies_geospace_confidence_intervals[1,])
+segments(
+	x0 = c(1:7)-(horizontal_confidence_line_width/2),
+	x1 = c(1:7)+(horizontal_confidence_line_width/2),
+	y0 = synthetic_many_results$entropies_geospace_confidence_intervals[2,],
+	y1 = synthetic_many_results$entropies_geospace_confidence_intervals[2,])
 
 
 
@@ -588,7 +626,7 @@ segments(
 plot_synthetic_entropies_points_w_confidence<-function(synthetic_many_results){
 setParDefaults()
 par(omi=c(0,0,0,0))
-plot(synthetic_many_results$entropies_mean,xaxt="n",pch=1,cex=1
+plot(synthetic_many_results$entropies_mean,xaxt="n",pch=20,cex=1
 	,ylim= c( min(synthetic_many_results$entropies_confidence_intervals)
 			  ,max(synthetic_many_results$entropies_confidence_intervals))
 	,xlab="pattern"
@@ -604,16 +642,34 @@ segments(
 	c(1:length(synthetic_many_results$entropies_mean)),
 	synthetic_many_results$entropies_confidence_intervals[2,]
 	,lwd=1)
+horizontal_confidence_line_width=0.2
+segments(
+	x0 = c(1:7)-(horizontal_confidence_line_width/2),
+	x1 = c(1:7)+(horizontal_confidence_line_width/2),
+	y0 = synthetic_many_results$entropies_confidence_intervals[1,],
+	y1 = synthetic_many_results$entropies_confidence_intervals[1,])
+segments(
+	x0 = c(1:7)-(horizontal_confidence_line_width/2),
+	x1 = c(1:7)+(horizontal_confidence_line_width/2),
+	y0 = synthetic_many_results$entropies_confidence_intervals[2,],
+	y1 = synthetic_many_results$entropies_confidence_intervals[2,])
+
 
 }
 
-defaultaxis<-function(xat=NULL,yat=NULL,xlab=xat,ylab=yat,xcol.ticks="gray",ycol.ticks="gray",ticks=1,xlas=1){
+defaultaxis<-function(xat=NULL,yat=NULL,xlab=xat,ylab=yat,xcol.ticks="gray",ycol.ticks="gray",ticks=1,xlas=1,plotx=TRUE,ploty=TRUE){
 	xaxtbefore<-par("xaxt")
 	yaxtbefore<-par("yaxt")
 	par(xaxt="s",yaxt="s")
 	if(is.null(xlab)){xlab=TRUE}
 	if(is.null(ylab)){ylab=TRUE}
-	axis(side=1,at  = xat,lwd=0,lwd.ticks=ticks,col.ticks=xcol.ticks,labels=xlab,tick=TRUE,las=xlas)
-	axis(side=2,at  = yat,lwd=0,lwd.ticks=ticks,col.ticks=ycol.ticks,labels=ylab,tick=TRUE)
+	if(plotx){axis(side=1,at  = xat,lwd=0,lwd.ticks=ticks,col.ticks=xcol.ticks,labels=xlab,tick=TRUE,las=xlas)}
+	if(ploty){axis(side=2,at  = yat,lwd=0,lwd.ticks=ticks,col.ticks=ycol.ticks,labels=ylab,tick=TRUE)}
 	par(xaxt=xaxtbefore,yaxt=yaxtbefore)
 }
+
+
+plots(results,nullmod,"")
+plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
+dev.off.all()
+Sweave("main2.Rnw")
