@@ -542,7 +542,7 @@ boxplot(x = t(synthetic_many_results$entropies[,]),data=t(synthetic_many_results
 
 }
 plot_synthetic_entropies_geospace_barchart_w_confidence<-function(synthetic_many_results){
-par(omi=c(1.5,0,0,0))
+par(omi=c(0,0,0,0))
 barplot(synthetic_many_results$entropies_geospace_mean,col="black")
 text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
 
@@ -562,7 +562,7 @@ boxplot(x = t(synthetic_many_results$entropies_geospace[,]),data=t(synthetic_man
 }
 plot_synthetic_entropies_geospace_points_w_confidence<-function(synthetic_many_results){
 setParDefaults()
-par(omi=c(1.5,0,0,0))
+par(omi=c(0,0,0,0))
 plot(synthetic_many_results$entropies_geospace_mean,xaxt="n",pch=1,cex=1
 	,ylim= c( min(synthetic_many_results$entropies_geospace_confidence_intervals)
 			  ,max(synthetic_many_results$entropies_geospace_confidence_intervals))
@@ -587,7 +587,7 @@ segments(
 
 plot_synthetic_entropies_points_w_confidence<-function(synthetic_many_results){
 setParDefaults()
-par(omi=c(1.5,0,0,0))
+par(omi=c(0,0,0,0))
 plot(synthetic_many_results$entropies_mean,xaxt="n",pch=1,cex=1
 	,ylim= c( min(synthetic_many_results$entropies_confidence_intervals)
 			  ,max(synthetic_many_results$entropies_confidence_intervals))

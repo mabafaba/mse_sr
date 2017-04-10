@@ -252,7 +252,7 @@ Measures of entropy using the geographical space directly as the phase space are
    \label{fig:syntheticgeospace_zones}
 \end{figure}
 This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} a)), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} c) and d)).
-
+\begin{minipage}{.5\textwidth}
 \begin{figure}[ht]
    \centering
     \includegraphics[width=0.49\textwidth]{./code/output/syntheticgeospace_entropy.jpg}
@@ -277,7 +277,6 @@ The simulated patterns corresponding to the patterns in figure \ref{fig:syntheti
 
 
 \begin{figure}[ht]
-
    \centering
    \includegraphics[width=0.49\textwidth]{./code/output/syntheticboxplot.jpg}
    \caption{multiscale entropy for patterns a) - g)}
