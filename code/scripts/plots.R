@@ -1,3 +1,12 @@
+setParDefaults<-function(font=TRUE,border=TRUE,axis=TRUE,xpd=FALSE){
+	if(font){par(family = "serif")}
+	if(border){par(plot.frame=FALSE,bty="n")}
+	if(axis){par(xaxt="n")
+			 par(yaxt="n")}
+	if(xpd){par(xpd=NA)}
+}
+
+
 
 dev.off.all<-function(){
 	if(length(dev.list())!=0){
@@ -24,11 +33,11 @@ plots<-function(results,nullmod,prefix, synth_phasespace_plot_scales){
 
 
 	# entropies over time: real vs. null:
-		pdf(paste0("./code/output/",prefix,"real_vs_null_entropies.pdf"),10,10)
+		pdf(paste0("./code/output/",prefix,"real_vs_null_entropies.pdf"),5,5)
 		setParDefaults()
 		plot_real_vs_null_entropies(results,nullmod)
 		dev.off.all()
-		jpeg(paste0("./code/output/",prefix,"real_vs_null_entropies.jpg"),10,10,res=300,units = 'in')
+		jpeg(paste0("./code/output/",prefix,"real_vs_null_entropies.jpg"),5,5,res=300,units = 'in')
 		setParDefaults()
 		plot_real_vs_null_entropies(results,nullmod)
 		dev.off.all()
@@ -117,28 +126,35 @@ dev.off.all()
 
 	# plotting phase spaces:
 	pdf(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.pdf"),3*length(results$lags[[1]]),3)
-		par(mfrow=c(1,length(results$entropies)))
-		par(mar=c(4,3,4,3))
-		setParDefaults()
-		subs=paste0("pattern ",letters[1:10],")")
-		for( i in c(1:length(results$entropies)) ){
-			eqscplot(as.vector(results$lags[[i]][[synth_phasespace_plot_scales[1]]]),as.vector(results$lags[[i]][[synth_phasespace_plot_scales[2]]])
-				,xlim=c(0,1),ylim=c(0,1)
-				,pch='.',col=rgb(0,0,0,0.01)
-				,ratio = 1
-				,tol=0.04
-				,xaxp  = c(0, 1, 1)
-				,yaxp  = c(0, 1, 1)
-				,cex=5
-				,xlab=expression(x[i]^{1})
-				,ylab=expression(x[i]^{2})
-				,main=subs[i])
+	par(mfrow=c(1,length(results$entropies)))
+	par(mar=c(4,3,4,3))
+	setParDefaults()
+	subs=paste0("",letters[1:10],")")
+	for( i in c(1:length(results$entropies)) ){
+		eqscplot(as.vector(results$lags[[i]][[synth_phasespace_plot_scales[1]]]),as.vector(results$lags[[i]][[synth_phasespace_plot_scales[2]]])
+			,xlim=c(0,1),ylim=c(0,1)
+			,pch='.',col=rgb(0,0,0,0.05)
+			,ratio = 1
+			,tol=0.04
+			,cex=5
+			,xlab=expression(x[i]^{1})
+			,ylab=expression(x[i]^{2})
+			,main=subs[i]
+			,xaxt="n"
+			,yaxt="n")
+		defaultaxis(xat=c(0:3)/3,yat=c(0:3)/3,xlab=c("0","1/3","2/3","1"),ylab=c("0","1/3","2/3","1"))
+		gridlines<-cbind(
+			c(c(1:2)/3,0,0)
+			,c(0,0,c(1:2)/3)
+			,c(c(1:2)/3,1,1)
+			,c(1,1,c(1:2)/3)
+						)
+		apply(gridlines,1,function(x){
+		lines(c(x[1],x[3]),c(x[2],x[4]),col="grey")
+		})
 
-			abline(v=c(1:2)/3,col="grey",lwd=0.3)
-			abline(h=c(1:2)/3,col="grey",lwd=0.3)
-		}
+	}
 	dev.off.all()
-
 
 	jpeg(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.jpg"),3*length(results$lags[[1]]),3,res=100,units = 'in')
 	par(mfrow=c(1,length(results$entropies)))
@@ -151,15 +167,23 @@ dev.off.all()
 			,pch='.',col=rgb(0,0,0,0.05)
 			,ratio = 1
 			,tol=0.04
-			,xaxp  = c(0, 1, 1)
-			,yaxp  = c(0, 1, 1)
 			,cex=5
 			,xlab=expression(x[i]^{1})
 			,ylab=expression(x[i]^{2})
-			,main=subs[i])
+			,main=subs[i]
+			,xaxt="n"
+			,yaxt="n")
+		defaultaxis(xat=c(0:3)/3,yat=c(0:3)/3,xlab=c("0","1/3","2/3","1"),ylab=c("0","1/3","2/3","1"))
+		gridlines<-cbind(
+			c(c(1:2)/3,0,0)
+			,c(0,0,c(1:2)/3)
+			,c(c(1:2)/3,1,1)
+			,c(1,1,c(1:2)/3)
+						)
+		apply(gridlines,1,function(x){
+		lines(c(x[1],x[3]),c(x[2],x[4]),col="grey")
+		})
 
-		abline(v=c(1:2)/3,col="grey",lwd=0.3)
-		abline(h=c(1:2)/3,col="grey",lwd=0.3)
 	}
 	dev.off.all()
 
@@ -185,12 +209,12 @@ dev.off.all()
 
 
 # plotting geospace entropies
-pdf(paste0("./code/output/",prefix,"geospace_entropy.pdf"),10,10)
+pdf(paste0("./code/output/",prefix,"geospace_entropy.pdf"),5,5)
 setParDefaults()
 plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 dev.off.all()
 
-jpeg(paste0("./code/output/",prefix,"geospace_entropy.jpg"),10,10,res=100,units = 'in')
+jpeg(paste0("./code/output/",prefix,"geospace_entropy.jpg"),5,5,res=100,units = 'in')
 setParDefaults()
 plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 dev.off.all()
@@ -201,7 +225,9 @@ par(mfrow=c(1,7))
 setParDefaults()
 for (i in c(1:7)) {
 	barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5)
-		title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
+		# title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
+		  title(main = NULL, sub = paste0(letters[i],")")
+
 		,cex.sub=2
 		,outer=FALSE
 		,line=+2)
@@ -214,11 +240,11 @@ setParDefaults()
 lapply(results$geospace$probs,function(x){barplot(sort(x),col="black",space=0.5)})
 dev.off.all()
 
-pdf(paste0("./code/output/",prefix,"boxplot.pdf"),10,10)
+pdf(paste0("./code/output/",prefix,"boxplot.pdf"),5,5)
 setParDefaults()
 plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
 dev.off.all()
-jpeg(paste0("./code/output/",prefix,"boxplot.jpg"),10,10,res=100,units = 'in')
+jpeg(paste0("./code/output/",prefix,"boxplot.jpg"),5,5,res=100,units = 'in')
 setParDefaults()
 plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
 dev.off.all()
@@ -318,6 +344,7 @@ combined_data_raster_plot<-function(data,i,cropextend=NA){
 plot_synthetic_geospace_zones<-function(results){
 # dev.new(width=length(results$data)*5, height=5)
 par(mfrow=c(1,7))
+setParDefaults()
 lapply(results$geospace$aggregated,plotr,cols= gray.colors(100,start = 0.1, end = 1))
 }
 # test<-geo_phase_space(synthetic,64)
@@ -356,7 +383,9 @@ plot_real_vs_null_entropies<-function(results,nullmod){
 		,lwd = 2)
 
 	# x axis and vertical lines:
-	axis(1, at=years, las=2)
+	# axis(1, at=years, las=2)
+	defaultaxis(xat=years)
+
 	abline(v=years,col="grey",lwd=0.5)
 # confidence intervals:
 	 polygon(c(years,rev(years)),c(nullmod$compactmixed_many_confidence_intervals[1,],rev(nullmod$compactmixed_many_confidence_intervals[2,]))
@@ -378,7 +407,6 @@ plot_real_vs_null_entropies<-function(results,nullmod){
  	#add red lines on borders of polygon
  	#lines(years, nullmod$compactmixed_many_confidence_intervals[2,], col="red",lty=2)
  	#lines(years, nullmod$compactmixed_many_confidence_intervals[1,], col="red",lty=2)
-
 # legend:
 	 legend(1980,0
 	 	,legend= c("observed","random spread","random compact","segregated","non spatial","0.05 confidence")
@@ -392,7 +420,6 @@ plot_real_vs_null_entropies<-function(results,nullmod){
 
 }
 dev.off.all()
-?title
 # probability rasters:
 plot_real_vs_null_probability_rasters<-function(results,nullmod,log=T){
 	par(mfrow=c(7,8),mar=c(0.5,0.5,0.5,0.5)
@@ -498,13 +525,11 @@ plot_top_entropy <-function(results,howmanytop=5,howmanyflop=5,whichyears=c(1:7)
 
 
 plot_synthetic_entropies_barchart_w_confidence<-function(synthetic_many_results){
-synthetic_many_results$entropies
 barplot(synthetic_many_results$entropies_mean,col="black")
 text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
-synthetic_many_results$entropies[,]
 boxplot(x = t(synthetic_many_results$entropies[,]),data=t(synthetic_many_results$entropies), main="",
         xlab="",
-        names=  paste(letters[1:7],")",c(" uniform"," segregated:\n32*32 cells", " segregated\n8*8 cells"," segregated:\n2*2 cells"," sorted"," 1/f noise"," additive\ncascade"),sep="")
+        names=  paste(letters[1:length(synthetic_names)],")",c(" uniform"," segregated:\n32*32 cells", " segregated\n8*8 cells"," segregated:\n2*2 cells"," sorted"," 1/f noise"," additive\ncascade"),sep="")
         ,ylab="multiscale entropy",
         outline = F,
         range=0,
@@ -517,6 +542,7 @@ boxplot(x = t(synthetic_many_results$entropies[,]),data=t(synthetic_many_results
 
 }
 plot_synthetic_entropies_geospace_barchart_w_confidence<-function(synthetic_many_results){
+par(omi=c(1.5,0,0,0))
 barplot(synthetic_many_results$entropies_geospace_mean,col="black")
 text((c(1:7)*1.2)-0.5,0, labels = synthetic_names, srt = 45, adj = c(1.1,1.1), xpd = TRUE, cex=.9)
 
@@ -534,18 +560,18 @@ boxplot(x = t(synthetic_many_results$entropies_geospace[,]),data=t(synthetic_man
         )
 
 }
-
-
 plot_synthetic_entropies_geospace_points_w_confidence<-function(synthetic_many_results){
+setParDefaults()
+par(omi=c(1.5,0,0,0))
 plot(synthetic_many_results$entropies_geospace_mean,xaxt="n",pch=1,cex=1
 	,ylim= c( min(synthetic_many_results$entropies_geospace_confidence_intervals)
 			  ,max(synthetic_many_results$entropies_geospace_confidence_intervals))
-			,xlab="n"
-				,ylab="Enropy (geographical phase space)")
-axis(1,at=1:length(synthetic_many_results$entropies_geospace_mean),labels=synthetic_names,las=2
-	)
-
-
+			,xlab="pattern"
+				,ylab="Entropy (geographical phase space)")
+par(xaxt="s",yaxt="s")
+defaultaxis(xat=1:length(synthetic_many_results$entropies_geospace_mean),xlab=paste0(letters[1:length(synthetic_names)],")"),xlas=1
+	,xcol.ticks=NA)
+abline(h=synthetic_many_results$entropies_geospace_mean,lty="solid",col="gray",lwd=0.2)
 segments(
 	c(1:length(synthetic_many_results$entropies_geospace_mean)),
 	synthetic_many_results$entropies_geospace_confidence_intervals[1,],
@@ -559,14 +585,18 @@ segments(
 }
 
 
-
 plot_synthetic_entropies_points_w_confidence<-function(synthetic_many_results){
+setParDefaults()
+par(omi=c(1.5,0,0,0))
 plot(synthetic_many_results$entropies_mean,xaxt="n",pch=1,cex=1
 	,ylim= c( min(synthetic_many_results$entropies_confidence_intervals)
 			  ,max(synthetic_many_results$entropies_confidence_intervals))
-	,xlab="n"
+	,xlab="pattern"
 	,ylab="Enropy (multiscale phase space)")
-axis(1,at=1:length(synthetic_many_results$entropies_mean),labels=synthetic_names,las=2)
+par(xaxt="s",yaxt="s")
+defaultaxis(xat=1:length(synthetic_many_results$entropies_mean),xlab=paste0(letters[1:length(synthetic_names)],")"),xlas=1
+	,xcol.ticks=NA)
+abline(h=synthetic_many_results$entropies_mean,lty="solid",col="gray",lwd=0.2)
 
 segments(
 	c(1:length(synthetic_many_results$entropies_mean)),
@@ -577,10 +607,13 @@ segments(
 
 }
 
-
-setParDefaults<-function(font=TRUE,border=TRUE){
-	if(font){par(family = "serif")}
-	if(border){par(frame.plot=FALSE)}
-	
+defaultaxis<-function(xat=NULL,yat=NULL,xlab=xat,ylab=yat,xcol.ticks="gray",ycol.ticks="gray",ticks=1,xlas=1){
+	xaxtbefore<-par("xaxt")
+	yaxtbefore<-par("yaxt")
+	par(xaxt="s",yaxt="s")
+	if(is.null(xlab)){xlab=TRUE}
+	if(is.null(ylab)){ylab=TRUE}
+	axis(side=1,at  = xat,lwd=0,lwd.ticks=ticks,col.ticks=xcol.ticks,labels=xlab,tick=TRUE,las=xlas)
+	axis(side=2,at  = yat,lwd=0,lwd.ticks=ticks,col.ticks=ycol.ticks,labels=ylab,tick=TRUE)
+	par(xaxt=xaxtbefore,yaxt=yaxtbefore)
 }
-

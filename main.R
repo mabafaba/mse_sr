@@ -16,38 +16,34 @@ lagsINmeters<-c(50,150,450,1350,4050)
 years<-c(1875,1895,1915,1935,1960,1985,2005)
 synthetic_names<-c("uniform random","segregated 32x32 fields","segregated 8x8 fields","segregated 2x2 fields","sorted","1/f noise","additive cascade")
 syntheticsize<-128
-pixelWidth<-50
+pixelWidth<-200
 lags=lagsINmeters/pixelWidth
 lags=2*round((lags+1)/2)-1
 geospace_aggregationfactor = 32
 synth_phasespace_plot_scales=c(3,5)
-runs=200
+runs=5
 
 dev.off.all()
-
 data<-load_data(src,layerNames)
 results<-analysis(data)
-saveRDS(results,"results.RDS")
 nullmod<-analysis_null(data,runs)
-saveRDS(nullmod,"nullmod.RDS")
 
-plots(results,nullmod,"")
 
 synthetic<-make_data(syntheticsize)
 results_synthetic<-analysis_synthetic(synthetic,lags=lags,geospace_aggregationfactor=geospace_aggregationfactor)
 
 synthetic_many_results<-analysis_synthetic_many(2)
-
-plots_synthetic(results_synthetic,"synthetic")
-
-
-Sweave("main2.Rnw")
+setParDefaults()
+setParDefaults
+plot_real_vs_null_entropies(results,nullmod)
+defaultaxis(xat=years)
+par(yaxt=)
+axis()
 dev.off.all()
-
-
-plots
-
-length(nullmod$randomised$work[[1]])
-length(nullmod$compactmixed$work[[1]])
-
-length(nullmod$randomised[[1]][[1]][])2
+par(xaxt="n")
+plot(1,1,xaxt="n")
+axis(1)
+plots(results,nullmod,"")
+plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
+dev.off.all()
+Sweave("main2.Rnw")
