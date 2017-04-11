@@ -436,7 +436,8 @@ We then count how many vectors of each unique combination we find in the data an
 
 We repeat the randomised null models as well as the synthetic patterns \Sexpr{runs} times. The confidence intervals of the null models are too small to be visible in the plot because the number of pixels is a large sample within each randomised run already.
 
-The synthetic patterns are produced as follows:\\
+\subsection*{Simulated Patterns}
+The synthetic patterns have a side length of \Sexpr{syntheticsize} are produced as follows:\\
 
 \textbf{pattern \Sexpr{synthfig_letters["unif"]} Uniformly random:}\\
 All pixels are set to 0 or 1 with equal probability.\\
@@ -452,6 +453,8 @@ A matrix is filled with 0's an 1's, with the probability to receive a 1 increasi
 
 \textbf{pattern \Sexpr{synthfig_letters["casc"]} additive cascade:}\\
 four different values are set and stored, their exact values are not relevant. A 2 by 2 matrix is created. Each pixel of the matrix is randomly set to one of the values. Each pixel is then expanded to 4 pixels, and randomly one of the four values is added to each of these. The process is repeated until the matrix target size is reached. Then, all values lower than the median are set to zero, all others to 1. 
+
+The patterns are produced and analysed \Sexpr{runs} times. 
 
 
 

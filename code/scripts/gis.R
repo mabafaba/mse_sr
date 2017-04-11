@@ -17,15 +17,17 @@ plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,yl
 # cols<-c("#1133AA","#AA1133")
   par(bty= bty,xpd=NA)
   if(!legend){
-    image( raster,
+    image(raster,
           col=cols, breaks=seq(min,max,length.out=length(cols)+1)
           ,axes=FALSE
-          ,useRaster=F) 
+          ,useRaster=F
+          ) 
     par(bty= bty,xpd=NA) # remove the box
   }else if(!is.na(breaks)){
     plot(raster, legend.only=TRUE
          , col=cols,
          breaks=breaks,
+         axes=FALSE,
          legend.width = 2,
          axis.args=list(at=seq(0,1,0.2),
                         labels=seq(0,1,0.2), 
@@ -37,6 +39,7 @@ plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,yl
     image(raster, legend.only=TRUE
          , col=cols,
          legend.width = 2,
+
          axis.args=list(at=seq(0,1,0.2),
                         labels=seq(0,1,0.2), 
                         cex.axis=0.6),

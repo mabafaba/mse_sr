@@ -25,13 +25,13 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 	names(synthfig_letters)<-synthetic_names_abb
 	syntheticsize<-64
 	geospace_aggregationfactor = 32
-	lags_synthetic=c(3,9,32)
-	synth_phasespace_plot_scales=c(3,5)
+	lags_synthetic=c(3,9,31)
+	synth_phasespace_plot_scales=c(2,3)
 # analysis synthetic
 	lags<-lags_synthetic
 	synthetic<-make_data(syntheticsize)
 	results_synthetic<-analysis_synthetic(synthetic,lags=lags,geospace_aggregationfactor=geospace_aggregationfactor)
-	synthetic_many_results<-analysis_synthetic_many(runs_synthetic)
+	synthetic_many_results<-analysis_synthetic_many(runs)
 
 
 
@@ -43,18 +43,12 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 # analysis real
 	data<-load_data(src,layerNames)
 	results<-analysis(data)
-	nullmod<-analysis_null(data,runs_nullmod)
+	nullmod<-analysis_null(data,runs)
 
-
-
-
-
-dev.off.all()
-
-plots(results,nullmod,"")
-plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
-dev.off.all()
-Sweave("main2.Rnw")
-
-
-?legend
+# plots
+	dev.off.all()
+	plots(results,nullmod,"")
+	plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
+	dev.off.all()
+# sweave
+	Sweave("main2.Rnw")

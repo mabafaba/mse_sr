@@ -1,29 +1,26 @@
 
 //** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
-* ASK ELSA
-  - time series not well placed
-  - combinatorical example necessary? 
+* TODO ALL
 
+** NOW
 
-* NOW
- - [ ] fix subheadings (plots)
-
-* TO DO [7/15]
-  - [ ] phase space plot axis visiblity
+** NEXT [11/16]
+  - [X] remove borders around pattern AGAIN.....
+  - [X] remove zones y axis label
+  - [X] phase space plot axis visiblity & correct labels
   - [ ] remove quotes in appendix
-  - [ ] biases & sensitivities
   - [X] geospace subheadings
   - [X] geospace frequencies subheadings
   - [X] "black pixel frequencies" -> "black pixel probabilities"
   - [X] figure 3 headings
   - [X] phase space plot labels a-c
-  - [ ] parameters of entropy estimation in synthetic data
+  - [X] parameters of entropy estimation in synthetic data
   - [ ] say which log base in ∑ p log p
   - [X] make plots float
   - [X] letters for plots
   - [ ] list of biases and sensitivities
-  - [ ] sensitivity analysis?
+  - [ ] sensitivity analysis decide parameters
       - [ ] half resolution
       - [ ] different (smaller if possible) or fewer radii
 
@@ -43,6 +40,56 @@
   - [ ] proof read: Pattern letters ok?
  
 
+
+
+
+
+
+** LATER
+  - [ ] solve figure order. a) remove fig2 refs b) change order
+  - [ ] Leibovichi ::: http://s3.amazonaws.com/academia.edu.documents/6823842/DL_2009COSIT09_LNCS.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1491864076&Signature=OcQuu%2BA1G5P0UhC7bax77gEUXeA%3D&response-content-disposition=inline%3B%20filename%3DDefining_spatial_entropy_from_multivaria.pdf
+      - [ ] read
+      - [ ] understand
+      - [ ] add
+  - [ ] always log base 2
+
+
+
+* NOT ACTIONABLE (NEEDS SPLITTING)
+  - [ ] make it nice for the archive
+  - [ ] biases & sensitivities
+
+
+
+
+** REQUIRES INFO
+  - [ ] acknowledgements final
+  - [ ] LETTER :::
+      - why suitable for the journal
+      - why relevant to the reader
+      - who to ask?
+
+
+
+
+
+
+* OTHERS:
+  - [ ] email kirril :elsa:
+  - [ ] fellow of casa! :elsa:
+  - [ ] send cover letter examples :elsa:
+
+
+
+
+
+
+
+
+
+
+
+* NOTES
 
 
 *** BIASES

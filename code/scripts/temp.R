@@ -1,5 +1,6 @@
 setParDefaults()
-plot(1,1,xlim=c(0,1),ylim=c(0,1))
+plot(1,1,xlim=c(0,1),ylim=c(0,1),xaxt="n")
+l t n
 abline(v=c(1:2)/3,col="grey",lwd=0.3)
 			lines()
 			abline(h=c(1:2)/3,col="grey",lwd=0.3)
@@ -8,9 +9,6 @@ abline(v=c(1:2)/3,col="grey",lwd=0.3)
 require(plotrix)
 plotCI(x, F, ui=U, li=L)
 
-
-
-1.
 
 
 
