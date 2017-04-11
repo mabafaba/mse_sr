@@ -9,19 +9,19 @@
 * NOW
  - [ ] fix subheadings (plots)
 
-* TO DO
-  - [ ] remove qutes in appendix
-  - [ ] proof read: Pattern letters ok?
+* TO DO [7/15]
+  - [ ] phase space plot axis visiblity
+  - [ ] remove quotes in appendix
   - [ ] biases & sensitivities
-  - [ ] geospace subheadings
-  - [ ] geospace frequencies subheadings
-  - [ ] "black pixel frequencies" -> "black pixel probabilities"
-  - [ ] figure 3 headings
-  - [ ] phase space plot labels a-c
+  - [X] geospace subheadings
+  - [X] geospace frequencies subheadings
+  - [X] "black pixel frequencies" -> "black pixel probabilities"
+  - [X] figure 3 headings
+  - [X] phase space plot labels a-c
   - [ ] parameters of entropy estimation in synthetic data
   - [ ] say which log base in ∑ p log p
-  - [ ] make plots float
-  - [ ] letters for plots
+  - [X] make plots float
+  - [X] letters for plots
   - [ ] list of biases and sensitivities
   - [ ] sensitivity analysis?
       - [ ] half resolution
@@ -40,7 +40,8 @@
   - [ ] go through text again, fix grammar
   - [ ] rethink structure
   - [ ] link all numbers with sweave (regex search Rnw file for numbers)
-
+  - [ ] proof read: Pattern letters ok?
+ 
 
 
 

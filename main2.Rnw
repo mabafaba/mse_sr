@@ -231,7 +231,7 @@ In the following chapter the multiscale entropy estimation method is applied to 
 \section*{Simulated Patterns}
 Here we measure the entropy of synthetic spatial patterns according to the two essential phase space definitions in the literature, and according to our multiscale entropy measure. We first show how the results of our new method are inherently different from the non spatial phase space and the geographical phase space. We then compare the multiscale entropies of patterns with different structures and show that if interactions between places are accounted for, complex patterns have a higher entropy than simple ones.\\
 
-We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{fig:synthetic}. The patterns are \Sexpr{syntheticsize} pixels wide and high. Each pixel corresponds to a "place". Each pixel is assigned a value from 0 to 1 (black to white), defining the only characteristic of that place. For ``neighbourhoods'' that go over the edge of the pattern, the invisible part is assumed to have the same proportion of values as the visible part. We bin the mean values in three categories: mainly low values (mean 0-0.33), mixed (mean 0.33-0.66) and mainly high values (mean 0.66-1.0). We use 5 different scales with neighbourhood side lengths with \Sexpr{paste(paste(lags[-length(lags)],collapse = ", "), "and", lags[length(lags)])} pixels.
+We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{fig:synthetic}. The patterns are \Sexpr{syntheticsize} pixels wide and high. Each pixel corresponds to a "place". Each pixel is assigned a value from 0 to 1 (black to white), defining the only characteristic of that place. For ``neighbourhoods'' that go over the edge of the pattern, the invisible part is assumed to have the same proportion of values as the visible part. We bin the mean values in three categories: mainly low values (mean 0-0.33), mixed (mean 0.33-0.66) and mainly high values (mean 0.66-1.0). We use \Sexpr{length(lags_synthetic)} different scales with neighbourhood side lengths with \Sexpr{paste(paste(lags[-length(lags)],collapse = ", "), "and", lags[length(lags)])} pixels.
 %
 \begin{figure}[ht]
    \centering
@@ -277,7 +277,7 @@ The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace
 \begin{figure}[ht]
    \centering
     \includegraphics[width=0.8\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
-   \caption{black pixel frequencies in the zones of the geographical phase space, patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]} in figure \ref{fig:synthetic}}
+   \caption{black pixel probabilities in the zones of the geographical phase space, patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]} in figure \ref{fig:synthetic}}
    \label{fig:syntheticgeospace_frequency}
 \end{figure}
 
@@ -434,7 +434,7 @@ The rasterised data is split into subsets containing each only one of the catego
 We now have a spatial matrix for each category at each scale of observation. The values are transformed into a single matrix with a row for each pixel, and column for each scale, giving a vector for each pixel with the total proportion of each category at each scale as a value between 0 and 1. The values are discretised in 3 equidistant bins, split at $1/3$ and $2/3$. The number of bins changes the total number of possible states and should return a reasonable proportion between possible states and observations. The binning is more than a technical question; One could ask how different two places need to be in their proportion of functions to have different states.
 We then count how many vectors of each unique combination we find in the data and calculate the entropy from the probabilities directly.\\
 
-We repeat the randomised null models as well as the synthetic patterns 200 times. The confidence intervals of the null models are too small to be visible in the plot because the number of pixels is a large sample within each randomised run already.
+We repeat the randomised null models as well as the synthetic patterns \Sexpr{runs} times. The confidence intervals of the null models are too small to be visible in the plot because the number of pixels is a large sample within each randomised run already.
 
 The synthetic patterns are produced as follows:\\
 
