@@ -1,31 +1,22 @@
 
 //** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
-* TODO ALL
+* TODO ALL [/]
 
-** NOW
+** NOW [/]
 
-** NEXT [12/16]
+** NEXT [0/8]
 
-  - [ ] remove quotes in appendix
 
-  - [ ] list of biases and sensitivities
-  - [ ] sensitivity analysis decide parameters
-      - [ ] half resolution
-      - [ ] different (smaller if possible) or fewer radii
-
-  - [ ] APPENDIX
+  - APPENDIX
     - [ ] data
-      - [X] groups table
       - [ ] original data plot
       - [ ] summary
-      - [X] selection bias
     - [ ] code description 
 
 
-- [ ] GLOBAL
+ - GLOBAL
   - [ ] go through text again, fix grammar
-  - [ ] rethink structure
   - [ ] link all numbers with sweave (regex search Rnw file for numbers)
   - [ ] proof read: Pattern letters ok?
   - [ ] all appendix referrenced?
@@ -35,7 +26,7 @@
 
 
 
-** LATER
+** LATER [0/3]
   - [ ] solve figure order. a) remove fig2 refs b) change order
   - [ ] Leibovichi ::: http://s3.amazonaws.com/academia.edu.documents/6823842/DL_2009COSIT09_LNCS.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1491864076&Signature=OcQuu%2BA1G5P0UhC7bax77gEUXeA%3D&response-content-disposition=inline%3B%20filename%3DDefining_spatial_entropy_from_multivaria.pdf
       - [ ] read
@@ -45,14 +36,24 @@
 
 
 
-** NOT ACTIONABLE (NEEDS SPLITTING)
+** REQUIRES DECISION
+  - [ ] remove quotes in appendix
+  - [ ] list of biases and sensitivities
+  - [ ] sensitivity analysis decide parameters
+      - [ ] half resolution
+      - [ ] different (smaller if possible) or fewer radii
+  - [ ] rethink structure
+
+
+
+** NOT ACTIONABLE (NEEDS SPLITTING) [0/2]
   - [ ] make it nice for the archive
   - [ ] biases & sensitivities
 
 
 
 
-** REQUIRES INFO
+** REQUIRES INFO [0/2]
   - [ ] acknowledgements final
   - [ ] LETTER :::
       - why suitable for the journal
@@ -61,12 +62,20 @@
 
 
 
-** IN THE END
 
 
 
+** IN THE END [/]
+ 
 
-** ARCHIVED (since April 13)
+
+** CHASE [0/3]
+  - [ ] email kirril :elsa:
+  - [ ] fellow of casa! :elsa:
+  - [ ] send cover letter examples :elsa:
+
+
+** ARCHIVED (since April 13) [14/14]
   - [X] geospace subheadings
   - [X] geospace frequencies subheadings
   - [X] "black pixel frequencies" -> "black pixel probabilities"
@@ -79,11 +88,6 @@
   - [X] remove borders around pattern AGAIN.....
   - [X] remove zones y axis label
   - [X] phase space plot axis visiblity & correct labels
-
-** CHASE:
-  - [ ] email kirril :elsa:
-  - [ ] fellow of casa! :elsa:
-  - [ ] send cover letter examples :elsa:
 
 
 
