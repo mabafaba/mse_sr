@@ -35,15 +35,14 @@ By comparing synthetic patterns, we show that if elements of a system interact s
 
 \thispagestyle{empty}
 \setlength\parindent{0pt}
-\chapter{Test}
 \section*{Introduction}
 % why entropy?
 Entropy in thermodynamics is a concept relating the fast, microscopic behaviour to the slow, macroscopic dynamics of a system. We therefore see it as a suitable tool to be used in studying the relationship between the fast dynamics of individual behaviour and the slow, larger scale dynamics of change in urban structures. Batty recognises not only a ``literature gap'', but ``an entirely new research agenda'' for spatial entropy measures for cities and states that ``substantive interpretations of entropy measures [\ldots] have not been well developed. [\ldots] I sketch the need for new and different entropy measures that enable us to see how equilibrium spatial distributions can be generated as the outcomes of dynamic processes''\cite{Batty2010}. \\ 
 
 % what is entropy?
-In its essence, entropy in statistical mechanics is concerned with the ``number of ways [\ldots] by which a given macroscopic state can be realized''\cite{LiveEarthEntropy}.
+In its essence, entropy in statistical mechanics is concerned with the number of (microscopic) configurations of the individual elements of a system that lead to the same macroscopic state.\cite{LiveEarthEntropy}.
 If more combinations of the possible microstates of the elements in a system constitue the same macroscopic state of that system, that macroscopic state has higher entropy and is more likely to occur. The space of possible microstates of elements is called the phase space. The more evenly elements are distributed across the phase space, the greater the entropy.
-There are for example more ways to distribute molecules evenly in a room than to place them all in one corner. Molecules do float around randomly in space and randomly exchange energy, and so in a phase space with dimensions describing their position and momentum, they are most likely to be distributed as evenly as possible.\cite{GeneralPropertiesOfEntropy}\\
+There are for example more ways to distribute molecules evenly in a room than to place them all in one corner. Molecules  float around randomly in space and randomly exchange energy, and so in a phase space with dimensions describing their position and momentum, they are most likely to be distributed as evenly as possible.\cite{GeneralPropertiesOfEntropy}\\
 
 % phase space in cities?
 Buildings do not float around in space randomly, and they do not have a momentum. To define a relevant phase space for urban morphology, we must carefully consider the processes that produce the spatial patterns in cities. 
@@ -117,7 +116,7 @@ This interpretation answers the question: how uncertain is the characteristic of
 
 Entropy in an urban context also appears in Wilson's spatial interaction models\cite{Wilson1970}, and there are attempts to discuss the energy and resources entering and exiting an urban systems in releation to entropy.\cite{EcosystemEntropy} These approaches to entropy in cities are very remote from our approach and not discussed here.\\
 
-Entropy across multiple scales has been applied to measure complexity in time series, for example by Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} for medical time series. This ``has become a prevailing method to quantify the complexity of signals. It has been used successfully'' \cite{MultiscaleEntropyReview} in numerous fields of research, but to our knowledge not in a spatial context. In contrast to our approach, a single entropy value is produced from integrating over entropies after coarse graining at different scales. By adding the entropies, different scales are viewed as independent systems.\\ 
+Entropy across multiple scales has been applied to measure complexity in time series, for example by Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} for medical time series. It has been applied as a measure of complexity in numerous fields of research\cite{MultiscaleEntropyReview}, but to our knowledge not in a spatial context. In contrast to our approach, a single entropy value is produced from integrating over entropies after coarse graining at different scales. By adding the entropies, different scales are viewed as independent systems.\\ 
 % In practice this would capture that for example pattern e) in \ref{fig:synthetic} has a wide variety of values across all neighbourhood sizes, but ignore that small low value neighbourhoods lie very predictably in large low value neighbourhoods and vice versa.
 
 
@@ -165,7 +164,7 @@ If we make the least predictable, or, the maximum entropy choice in every step o
 
 \begin{figure}[ht]
    \centering
-   \includegraphics[width=\textwidth]{./paper_sr_format/linearpattern.png}
+   \includegraphics[width=0.8\textwidth]{./paper_sr_format/linearpattern.png}
    \caption{a linear pattern with equal probability to find any combination of 2 or 4 adjacent pixels (when divided into non overlapping segments)}
    \label{fig:linearpattern}
 \end{figure}
@@ -233,13 +232,13 @@ We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{
 %
 \begin{figure}[ht]
    \centering
-   \includegraphics[width=\textwidth]{./code/output/syntheticsynthetic_patterns.jpg}
+   \includegraphics[width=0.8\textwidth]{./code/output/syntheticsynthetic_patterns.jpg}
    \caption{patterns a) - g)}
    \label{fig:synthetic}
 \end{figure}
 %
 
-The patterns are selected to represent varying degrees of complexity. When we speak of ``complexity'' here, we mean patterns which could be described intuitively as having ``meaningful structural richness''.\cite{EnotComplex1}. Pattern a) has a spatially uniform probability for all pixels to be either white or black. It is fully random and arguably has no structure at all. The randomised checker boards b)-d) are essentially fully random patterns like pattern a), but pixels of each color appear in patches of increasing size. They are increasingly segregated and could be seen to be increasingly ordered with increasing patch size, but the order is very simple. Pattern e) is a sample from a uniform distribution between 0 and 1 (corresponding to black and white), sorted linearly from left to right and from top to bottom. There is structure, but no structural richness. Potentially viewed as slightly more complex might be pattern f), in which pixels are assigned a 1 or a 0 with the probability to find a black pixel decreasing linearly from left to right. It serves as the binary spatial counterpart to what Zhang\cite{ZhangPhaseSpaceApproach} considers a complex time series, but arguably does not differ greatly from pattern e) in terms of structural richness. Pattern g) results from a binarised additive cascade process, which produces patterns with multifractal self-similar properties stemming from ``complex processes'' \cite{cheng1999multifractality} that are regularily associetated with high complexity.\cite{cascadeComplex1,cascadeComplex2,cascadeComplex3}.
+The patterns are selected to represent varying degrees of complexity. When we speak of ``complexity'' here, we mean patterns which could be described intuitively as having ``meaningful structural richness''.\cite{EnotComplex1}. Pattern a) has a spatially uniform probability for all pixels to be either white or black. It is fully random and arguably has no structure at all. The randomised checker boards b)-d) are essentially fully random patterns like pattern a), but pixels of each color appear in patches of increasing size. They are increasingly segregated and could be seen to be increasingly ordered with increasing patch size, but the order is very simple. Pattern e) is a sample from a uniform distribution between 0 and 1 (corresponding to black and white), sorted linearly from left to right and from top to bottom. There is structure, but no structural richness. Potentially viewed as slightly more complex might be pattern f), in which pixels are assigned a 1 or a 0 with the probability to find a black pixel decreasing linearly from left to right. It serves as the binary spatial counterpart to what Zhang\cite{ZhangPhaseSpaceApproach} considers a complex time series, but arguably does not differ greatly from pattern e) in terms of structural richness. Pattern g) results from a binarised additive cascade process, which produces patterns with multifractal self-similar properties stemming from complex processes\cite{cheng1999multifractality} that are regularily associetated with high complexity.\cite{cascadeComplex1,cascadeComplex2,cascadeComplex3}.
 %
 \subsection*{existing measures}
 In the non spatial phase space observing only global characteristic proportions, we can directly tell that patterns display the same entropy as long as they differ only in the spatial configuration. If we consider only two states, values greater or smaller than $0.5$, all patterns' entropy according to equation \ref{eq:shannon_entropy} is $H_{non spatial} = \log(2)$ because in all patterns approximately half the pixels have a value greater than $0.5$. We could reduce the multiscale entropy phase space to this by using only the $x_i^{d_0,c}$ column on the left of $\Psi$.\\
@@ -247,17 +246,25 @@ In the non spatial phase space observing only global characteristic proportions,
 Measures of entropy using the geographical space directly as the phase space are essentially measures of how evenly elements are distributed across different zones. We split the patterns into square zones with a side length of \Sexpr{geospace_aggregationfactor} pixels, and count the number of black pixels as in figure \ref{fig:syntheticgeospace_zones}.\\ 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=\textwidth]{./code/output/syntheticgeospace_zones.jpg}
+    \includegraphics[width=0.8\textwidth]{./code/output/syntheticgeospace_zones.jpg}
    \caption{probability to find black pixels in zones for the geographical phase space}
    \label{fig:syntheticgeospace_zones}
 \end{figure}
 This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} a)), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} c) and d)).
-\begin{minipage}{.5\textwidth}
+
 \begin{figure}[ht]
-   \centering
-    \includegraphics[width=0.49\textwidth]{./code/output/syntheticgeospace_entropy.jpg}
-   \caption{Entropies for patterns in figure \ref{fig:synthetic} in the geographical phase space}
-   \label{fig:syntheticgeospace_entropy}
+	\begin{minipage}{.5\textwidth}
+	   \centering
+	    \includegraphics[width=0.8\textwidth]{./code/output/syntheticgeospace_entropy.jpg}
+	   \caption{Geographical phase space entropy, patterns fig. \ref{fig:synthetic}}
+	   \label{fig:syntheticgeospace_entropy}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+	   \centering
+	   \includegraphics[width=0.8\textwidth]{./code/output/syntheticboxplot.jpg}
+	   \caption{Multiscale entropy, patterns fig. \ref{fig:synthetic}}
+	   \label{fig:synthetic_boxplot}
+	\end{minipage}%
 \end{figure}
 
 
@@ -265,7 +272,7 @@ The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
+    \includegraphics[width=0.8\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
    \caption{black pixel frequencies in the zones of the geographical phase space, patterns a)-g) in figure \ref{fig:synthetic}}
    \label{fig:syntheticgeospace_frequency}
 \end{figure}
@@ -276,20 +283,12 @@ The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace
 The simulated patterns corresponding to the patterns in figure \ref{fig:synthetic} have the multiscale entropies shown in figure \ref{fig:synthetic_boxplot}.  
 
 
-\begin{figure}[ht]
-   \centering
-   \includegraphics[width=0.49\textwidth]{./code/output/syntheticboxplot.jpg}
-   \caption{multiscale entropy for patterns a) - g)}
-   \label{fig:synthetic_boxplot}
-\end{figure}
-
-
 To show how spatially complex patterns have the highest entropy if interactions between locations are taken into account, we take a closer look at the distributions in the multiscale phase space for the synthetic patterns. Figure \ref{fig:syntheticsynthetic_patterns_phasespace} shows two dimensions of the multiscale phase space, specifically at the scales of \Sexpr{lags[synth_phasespace_plot_scales[1]]} and \Sexpr{lags[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length.
 
 \begin{figure}[ht]
 
    \centering
-   \includegraphics[width=\textwidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
+   \includegraphics[width=0.8\textwidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
    \caption{phase space distributions for patterns a) - g) at scales of \Sexpr{lags[synth_phasespace_plot_scales[1]]} and \Sexpr{lags[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
    \label{fig:syntheticsynthetic_patterns_phasespace}
 \end{figure}
@@ -343,7 +342,7 @@ In terms of methodology the functional categories, the aggregation function, the
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=\textwidth]{./code/output/real_vs_null_entropies.jpg}
+    \includegraphics[width=0.5\textwidth]{./code/output/real_vs_null_entropies.jpg}
    \caption{Multiscale entropy in West London over time compared to 3 null models}
    \label{fig:real_vs_null_entropies}
 \end{figure}
@@ -352,7 +351,7 @@ In terms of methodology the functional categories, the aggregation function, the
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=\textwidth]{./code/output/real_vs_null_rasters.jpg}
+    \includegraphics[width=0.8\textwidth]{./code/output/real_vs_null_rasters.jpg}
    \caption{The probability of each pixel's state, and the corresponding spatial distribution of functions. From left to right: random pixel allocation, compact mixed use growth, compact segregated growth and observed data. Global proportion of functions and observed data correspond to \Sexpr{paste(years,collapse=", ")} from top to bottom. Grey: undeveloped or no data. Red: residential. Blue: commercial. Black: leisure. Grayscale images decreasing probability with increasing brightness (logarithmic)}
    \label{fig:real_vs_null_rasters}
 \end{figure}
@@ -366,7 +365,7 @@ The ambition of this work is to make a contribution to explaining how individual
 
 \emph{[...] ??? inconsistency because i moved parts to the introduction ...} The case study - that is arguably too small in scale and too simplified in its methodology to be generalisable in any way - suggest that West London did in fact display a higher entropy than the more extreme toy scenarios.\\
 
-The understanding of the relationship between entropy and complexity is highly incoherent in the literature.\cite{Shalizi2004} Attempts have been made to associate complexity with decreasing thermodynamic entropy \cite{DecreasingEntropyIsComplex1,DecreasingEntropyIsComplex2}, regarding the occuring order as higher complexity than the original randomness. Others regard fully unpredictable signals such as white noise as ``fully complex''\cite{EisComplex1} in contrast to fully ordered signals such as strictly periodical signals. This view is also adopted by Batty et al. for the context of cities.\cite{BattyMorphetKiril2012} In contradiction, Costa et al. conclude that ``if one supposes that greater entropy is characteristic of greater complexity, such results are profoundly misleading.''\cite{costa2000multiscale}.\\
+The understanding of the relationship between entropy and complexity is highly incoherent in the literature.\cite{Shalizi2004} Attempts have been made to associate complexity with decreasing thermodynamic entropy \cite{DecreasingEntropyIsComplex1,DecreasingEntropyIsComplex2}, regarding the occuring order as higher complexity than the original randomness. Others regard fully unpredictable signals such as white noise as fully complex\cite{EisComplex1} in contrast to fully ordered signals such as strictly periodical signals. This view is also adopted by Batty et al. for the context of cities.\cite{BattyMorphetKiril2012} In contradiction, Costa et al. conclude that ``if one supposes that greater entropy is characteristic of greater complexity, such results are profoundly misleading.''\cite{costa2000multiscale}.\\
 
 The point is that almost arbitrary results can be obtained depending on how the phase space is defined. The key is to define a phase space that is conceptually grounded in how the macroscopic state of the system is produced. We argue that in a system in which the microstates are spatially dependent, this must be considered. The analysis of synthetic patterns with multiscale spatial entropy shows that in that case, complex patterns have the highest entropy. We can thus partly explain the spatial complexity that is frequently observed in cities\cite{ScalingLaws,FractalCities,MultifractalBeijing,MultifractalZipf} - and more generally the complexity of patterns with interdependent observations -  as simply the kind of pattern we are most likely to observe because they can occur in more ways than others.\\
 
@@ -566,21 +565,23 @@ NECESSARY?
 
 % \noindent LaTeX formats citations and references automatically using the bibliography records in your .bib file, which you can edit via the project menu. Use the cite command for an inline citation, e.g.  \cite{Figueredo:2009dg}.
 
-% \section*{Acknowledgements (not compulsory)}
+\section*{Acknowledgements}
+Carlos, Clémentine, Hadrien, Mike(?)
+Mechanicity
+Elsa's money?
 
-% Acknowledgements should be brief, and should not include thanks to anonymous referees and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
-
-% \section*{Author contributions statement}
-
+\section*{Author contributions statement}
+?
 % Must include all authors, identified by initials, for example:
 % A.A. conceived the experiment(s),  A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results.  All authors reviewed the manuscript. 
 
-% \section*{Additional information}
+\section*{Additional information}
+The author(s) declare no competing financial interests.
+
 % To include, in this order: \textbf{Accession codes} (where applicable); \textbf{Competing financial interests} (mandatory statement). 
 
 % The corresponding author is responsible for submitting a \href{http://www.nature.com/srep/policies/index.html#competing}{competing financial interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file.
 
-% The author(s) declare no competing financial interests.
 
 
 % \begin{figure}[ht][ht]
@@ -605,6 +606,15 @@ NECESSARY?
 % \end{table}
 
 % Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
+
+
+
+
+
+
+
+
+
 
 
 \end{document}

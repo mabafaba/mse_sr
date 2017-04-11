@@ -10,6 +10,9 @@
  - [ ] fix subheadings (plots)
 
 * TO DO
+  - [ ] biases & sensitivities
+  - [ ] geospace subheadings
+  - [ ] geospace frequencies subheadings
   - [ ] "black pixel frequencies" -> "black pixel probabilities"
   - [ ] phase space plot labels a-c
   - [ ] parameters of entropy estimation in synthetic data
@@ -45,10 +48,6 @@
 
 
 
- * R ***********
- - [ ] many synthetic GEOGRAPHIC phase space box plots!
-
-
 
 
 
@@ -57,69 +56,12 @@
 * orgmode shortcuts
 -   apfl k 1: collapse
   - apfl k j: expand
-  - -c - [ ] 
+  - -c - [X] 
   - -cc - [X] 
   - -f --> CONTENT
   - ff => CONTENT
   - ~ REASON
   - d 2017-01-19 21:06 
-
-* meta
-
-
-* daily  
-
-
-
-* meta:
-  - first write with described plots and function names
-    -> then write plot functions
-    -> then write analysis
-
-
-
-***    todo [0/2]
-
-
-- [ ] add other methods
-  - [ ] non spatial shannon
-  - [ ] batty pure spatial
-  - [ ] Theil
-
- - [ ]  plots [0/3]
-  - [ ] decide which ones are needed. 
-  - [ ] add to text with description and nonexistent function names
-  - [ ] write plot functions  
-
- - [ ]  write 
-
-  - [ ] abstract
-    - [ ] why
-    - [ ] method
-    - [ ] results
-
-  - [ ] motivate method
-  - [ ] results
-        - more plots and details
-  - [ ] discussion
-        - from wilson!
-  - [ ] appendix
-
-
-
-
-
-*** TODO REORGANISED:
-  - [ ] learn: results vs. discussion?
-  - [ ] results content:
-    - explain artefacts
-    - state results
-    - non speculative reasons for results
-
-
-
-
-
 
 
 
