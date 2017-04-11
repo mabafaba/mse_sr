@@ -106,16 +106,17 @@ It is commonly understood in thermodynamics that if one refers to the Boltzman p
 \subsection*{Common Phase Space Definitions for Spatial Entropy}
 In contrast to thermodynamics where usually there is a general consesus about what the the parameters of a microstate are, there are fundamental differences between interpretations of entropy in cities, and they come down to different definitions of the phase space dimensions.
 \begin{itemize}
-\item{The first essential approach in the literature takes the word ``space'' literally and defines the phase space as the geographical space.\cite{SpatialEntropyBatty1974,Batty2010,BattyMorphetKiril2012} The highest entropy is then given by a pattern with a uniform distribution in geographical space as in pattern \Sexpr{synthfig_letters["unif"]} of figure \ref{fig:synthetic}. This interpretation answers the question: How uncertain is the absolute location of a place with a given characteristic?}
+\item{The first essential approach in the literature takes the word ``space'' literally and defines the phase space as the geographical space.\cite{SpatialEntropyBatty1974,Batty2010,BattyMorphetKiril2012} The highest entropy is then given by a pattern with a uniform distribution in geographical space
+%as in pattern \Sexpr{synthfig_letters["unif"]} of figure \ref{fig:synthetic}.
+This interpretation answers the question: How uncertain is the absolute location of a place with a given characteristic?}
 
-\item{The second basic phase space uses a characteristic of places or objects in space as the phase space.\cite{AgustGudmundsson2013} All patterns in figure \ref{fig:synthetic} have the same global proportions of black and white pixels and therefore, according to this phase space definition, the same entropy.
+\item{The second basic phase space uses a characteristic of places or objects in space as the phase space.\cite{AgustGudmundsson2013} All patterns
+% in figure \ref{fig:synthetic} have the same global proportions of black and white pixels and therefore, according to this phase space definition, the same entropy.
+with the same global proportions of occurences of different types have, according to this phase space definition, the same entropy.
 This interpretation answers the question: how uncertain is the characteristic of a given place or observed element in space in general, independent from the spatial configuration?}
 
 \item{Most reviewed approaches to spatial entropy use a combination of the two phase spaces above. They are measures of spatial evenness widely discussed in the literature on measures of segregation \cite{Theil1971,duncan1955,GiniIndex,DIndex,EtaSquared,White1983,morgan1983,Logan,LiebersonCarter,MasseyDanton,WongSegregation,Taeuber1969}. They have the highest entropy if entropy is maximised in both phase spaces above at the same time. It answers the question: how evenly are observations of different types or characteristics distributed geographically?}
 \end{itemize}
-
-
-
 
 Entropy in an urban context also appears in Wilson's spatial interaction models\cite{Wilson1970}, and there are attempts to discuss the energy and resources entering and exiting an urban systems in releation to entropy.\cite{EcosystemEntropy} These approaches to entropy in cities are very remote from our approach and not discussed here.\\
 

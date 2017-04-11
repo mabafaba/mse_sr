@@ -1,54 +1,46 @@
 
 //** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
-* TODO ALL [/]
+* ALL TO DO [/]
 
-** NOW [/]
 
 ** NEXT [0/8]
 
-
-  - APPENDIX
-    - [ ] data
-      - [ ] original data plot
-      - [ ] summary
-    - [ ] code description 
-
-
- - GLOBAL
-  - [ ] go through text again, fix grammar
-  - [ ] link all numbers with sweave (regex search Rnw file for numbers)
-  - [ ] proof read: Pattern letters ok?
-  - [ ] all appendix referrenced?
-
-
-
-
-
-
-** LATER [0/3]
-  - [ ] solve figure order. a) remove fig2 refs b) change order
   - [ ] Leibovichi ::: http://s3.amazonaws.com/academia.edu.documents/6823842/DL_2009COSIT09_LNCS.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1491864076&Signature=OcQuu%2BA1G5P0UhC7bax77gEUXeA%3D&response-content-disposition=inline%3B%20filename%3DDefining_spatial_entropy_from_multivaria.pdf
       - [ ] read
       - [ ] understand
       - [ ] add
-  - [ ] always log base 2
+
+  - [ ] original data plots
+
+  - [ ] split unactionable
+  - [ ] DO remove quotes in appendix (it has been decided)
 
 
 
-** REQUIRES DECISION
-  - [ ] remove quotes in appendix
-  - [ ] list of biases and sensitivities
+
+
+** REQUIRES DECISION [/]
   - [ ] sensitivity analysis decide parameters
       - [ ] half resolution
       - [ ] different (smaller if possible) or fewer radii
+
+
+
+
+** DO LAST [1/2]
+ - GLOBAL
+  - [ ] go through text again, fix grammar
+  - [ ] proof read: Pattern letters ok?
+  - [ ] all appendix referrenced?
   - [ ] rethink structure
 
 
 
 ** NOT ACTIONABLE (NEEDS SPLITTING) [0/2]
   - [ ] make it nice for the archive
-  - [ ] biases & sensitivities
+  - [ ] add biases & sensitivities to text
+  - [ ] sensitivity analysis
 
 
 
@@ -75,7 +67,7 @@
   - [ ] send cover letter examples :elsa:
 
 
-** ARCHIVED (since April 13) [14/14]
+** ARCHIVED (since April 13) [16/16]
   - [X] geospace subheadings
   - [X] geospace frequencies subheadings
   - [X] "black pixel frequencies" -> "black pixel probabilities"
@@ -88,6 +80,8 @@
   - [X] remove borders around pattern AGAIN.....
   - [X] remove zones y axis label
   - [X] phase space plot axis visiblity & correct labels
+  - [X] solve figure order. a) remove fig2 refs b) change order 2017-04-12 00:59
+  - [X] link all numbers with sweave (regex search Rnw file for numbers) 2017-04-12 01:04
 
 
 
