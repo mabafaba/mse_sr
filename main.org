@@ -55,7 +55,7 @@
 
 
 
-* NOT ACTIONABLE (NEEDS SPLITTING)
+** NOT ACTIONABLE (NEEDS SPLITTING)
   - [ ] make it nice for the archive
   - [ ] biases & sensitivities
 
@@ -71,10 +71,12 @@
 
 
 
+** IN THE END
 
 
 
-* OTHERS:
+
+** CHASE:
   - [ ] email kirril :elsa:
   - [ ] fellow of casa! :elsa:
   - [ ] send cover letter examples :elsa:
