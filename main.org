@@ -6,19 +6,9 @@
 ** NOW
 
 ** NEXT [12/16]
-  - [X] remove borders around pattern AGAIN.....
-  - [X] remove zones y axis label
-  - [X] phase space plot axis visiblity & correct labels
+
   - [ ] remove quotes in appendix
-  - [X] geospace subheadings
-  - [X] geospace frequencies subheadings
-  - [X] "black pixel frequencies" -> "black pixel probabilities"
-  - [X] figure 3 headings
-  - [X] phase space plot labels a-c
-  - [X] parameters of entropy estimation in synthetic data
-  - [X] say which log base in ∑ p log p
-  - [X] make plots float
-  - [X] letters for plots
+
   - [ ] list of biases and sensitivities
   - [ ] sensitivity analysis decide parameters
       - [ ] half resolution
@@ -75,6 +65,20 @@
 
 
 
+
+** ARCHIVED (since April 13)
+  - [X] geospace subheadings
+  - [X] geospace frequencies subheadings
+  - [X] "black pixel frequencies" -> "black pixel probabilities"
+  - [X] figure 3 headings
+  - [X] phase space plot labels a-c
+  - [X] parameters of entropy estimation in synthetic data
+  - [X] say which log base in ∑ p log p
+  - [X] make plots float
+  - [X] letters for plots
+  - [X] remove borders around pattern AGAIN.....
+  - [X] remove zones y axis label
+  - [X] phase space plot axis visiblity & correct labels
 
 ** CHASE:
   - [ ] email kirril :elsa:
