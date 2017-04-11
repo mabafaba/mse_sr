@@ -38,12 +38,7 @@ synthetic<-make_data(syntheticsize)
 results_synthetic<-analysis_synthetic(synthetic,lags=lags,geospace_aggregationfactor=geospace_aggregationfactor)
 synthetic_many_results<-analysis_synthetic_many(2)
 
-<<<<<<< HEAD
-plots(results,nullmod,"")
-plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
-dev.off.all()
-Sweave("main2.Rnw")
-=======
+
 
 dev.off.all()
 
@@ -52,5 +47,3 @@ plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
 dev.off.all()
 Sweave("main2.Rnw")
 
-
->>>>>>> 6patterns

@@ -76,7 +76,6 @@ plots<-function(results,nullmod,prefix, synth_phasespace_plot_scales){
 
 plots_synthetic<-function(results,prefix,synthetic_many_results){
 #plotting patterns only:
-<<<<<<< HEAD
 pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),15*length(results$entropies),17)
 par(mfrow=c(1,length(results$entropies))
 	,mai=c(2,1,0,0))
@@ -272,42 +271,7 @@ dev.off.all()
 
 
 # plotting geospace frequencies
-<<<<<<< HEAD
-pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),14,2)
-par(mfrow=c(1,7))
-par(mai=c(0.6,0.3,0.1,0))
-setParDefaults()
-maxv_frequencies<-max(unlist(results_synthetic$geospace$probs))
-for (i in c(1:7)) {
-	barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5,ylim=c(0,maxv_frequencies))
-		# title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
-		  title(main = NULL, sub = paste0(letters[i],")")
 
-		,cex.sub=2
-		,outer=FALSE
-		,line=+2)
-if(i==1){defaultaxis(yat=c(0,maxv_frequencies),ylab=c(0,round(maxv_frequencies,2)),plotx=FALSE)}
-par(mai=c(0.6,0.1,0.1,0))
-}
-dev.off.all()
-jpeg(paste0("./code/output/",prefix,"geospace_frequency.jpg"),14,2,res=100,units = 'in')
-par(mfrow=c(1,7))
-par(mai=c(0.6,0.3,0.1,0))
-setParDefaults()
-maxv_frequencies<-max(unlist(results_synthetic$geospace$probs))
-for (i in c(1:7)) {
-	barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5,ylim=c(0,maxv_frequencies))
-		# title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
-		  title(main = NULL, sub = paste0(letters[i],")")
-
-		,cex.sub=2
-		,outer=FALSE
-		,line=+2)
-if(i==1){defaultaxis(yat=c(0,maxv_frequencies),ylab=c(0,round(maxv_frequencies,2)),plotx=FALSE)}
-par(mai=c(0.6,0.1,0.1,0))
-}
-dev.off.all()
-=======
 	h<-3
 	pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),h2w(h),h)
 	par(mfrow=mfrowsynth)
@@ -345,7 +309,6 @@ dev.off.all()
 	setParDefaults()
 	plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
 	dev.off.all()
->>>>>>> 6patterns
 
 }
 
@@ -440,11 +403,7 @@ combined_data_raster_plot<-function(data,i,cropextend=NA){
 }
 plot_synthetic_geospace_zones<-function(results){
 # dev.new(width=length(results$data)*5, height=5)
-<<<<<<< HEAD
-par(mfrow=c(1,7))
-setParDefaults()
-lapply(results$geospace$aggregated,plotr,cols= gray.colors(100,start = 0.1, end = 1),bty="o")
-=======
+
 for(i in c(1:length(results$geospace$aggregated))){
 	plotr(results$geospace$aggregated[[i]],cols= gray.colors(100,start = 0.1, end = 1))
 		title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
@@ -453,7 +412,6 @@ for(i in c(1:length(results$geospace$aggregated))){
 			,line=+10)
 		box(which = "plot", lty = "solid",lwd=2)
 }
->>>>>>> 6patterns
 }
 # test<-geo_phase_space(synthetic,64)
 # par(mfrow=c(5,7))

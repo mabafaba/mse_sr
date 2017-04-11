@@ -250,11 +250,8 @@ Measures of entropy using the geographical space directly as the phase space are
    \caption{probability to find black pixels in zones for the geographical phase space}
    \label{fig:syntheticgeospace_zones}
 \end{figure}
-<<<<<<< HEAD
-This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} a)), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} c) and d)).
-=======
+
 This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["unif"]}), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["seglarge"]}).
->>>>>>> 6patterns
 
 \begin{figure}[ht]
 	\begin{minipage}{.5\textwidth}
@@ -570,15 +567,10 @@ NECESSARY?
 % \noindent LaTeX formats citations and references automatically using the bibliography records in your .bib file, which you can edit via the project menu. Use the cite command for an inline citation, e.g.  \cite{Figueredo:2009dg}.
 
 \section*{Acknowledgements}
-<<<<<<< HEAD
-Carlos, Clémentine, Hadrien, Mike?
-Mechanicity
-Elsa's money
-=======
+
 Carlos, Clémentine, Hadrien, Mike(?)
 Mechanicity
 Elsa's money?
->>>>>>> 6patterns
 
 \section*{Author contributions statement}
 ?
@@ -586,21 +578,13 @@ Elsa's money?
 % A.A. conceived the experiment(s),  A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results.  All authors reviewed the manuscript. 
 
 \section*{Additional information}
-<<<<<<< HEAD
 The authors declare no competing financial interests.
-=======
-The author(s) declare no competing financial interests.
->>>>>>> 6patterns
 
 % To include, in this order: \textbf{Accession codes} (where applicable); \textbf{Competing financial interests} (mandatory statement). 
 
 % The corresponding author is responsible for submitting a \href{http://www.nature.com/srep/policies/index.html#competing}{competing financial interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file.
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 6patterns
 % \begin{figure}[ht][ht]
 % \centering
 % \includegraphics[width=\linewidth]{stream}

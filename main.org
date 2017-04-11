@@ -10,15 +10,11 @@
  - [ ] fix subheadings (plots)
 
 * TO DO
-<<<<<<< HEAD
-  - [ ] phase space plots: axis labels not visible
-  - [ ] results legend outside plot
-=======
+
   - [ ] proof read: Pattern letters ok?
   - [ ] biases & sensitivities
   - [ ] geospace subheadings
   - [ ] geospace frequencies subheadings
->>>>>>> 6patterns
   - [ ] "black pixel frequencies" -> "black pixel probabilities"
   - [ ] figure 3 headings
   - [ ] phase space plot labels a-c
