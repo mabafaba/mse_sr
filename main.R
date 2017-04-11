@@ -16,6 +16,9 @@ lagsINmeters<-c(50,150,450,1350,4050)
 years<-c(1875,1895,1915,1935,1960,1985,2005)
 # synthetic_names<-c("uniform random","segregated 32x32 fields","segregated 8x8 fields","segregated 2x2 fields","sorted","1/f noise","additive cascade")
 synthetic_names<-c("uniform random","segregated 16x16 fields","segregated 2x2 fields","sorted","1/f noise","additive cascade")
+synthetic_names_abb<-c("unif","segmed","seglarge","sorted","1/f","casc")
+synthfig_letters<-paste0(letters[1:length(synthetic_names_abb)],")")
+names(synthfig_letters)<-synthetic_names_abb
 
 syntheticsize<-64
 pixelWidth<-200
@@ -36,9 +39,11 @@ results_synthetic<-analysis_synthetic(synthetic,lags=lags,geospace_aggregationfa
 synthetic_many_results<-analysis_synthetic_many(2)
 
 
-
+dev.off.all()
 
 plots(results,nullmod,"")
 plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
 dev.off.all()
 Sweave("main2.Rnw")
+
+

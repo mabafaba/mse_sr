@@ -103,7 +103,7 @@ It is commonly understood in thermodynamics that if one refers to the Boltzman p
 \subsection*{Common Phase Space Definitions for Spatial Entropy}
 In contrast to thermodynamics where usually there is a general consesus about what the the parameters of a microstate are, there are fundamental differences between interpretations of entropy in cities, and they come down to different definitions of the phase space dimensions.
 \begin{itemize}
-\item{The first essential approach in the literature takes the word ``space'' literally and defines the phase space as the geographical space.\cite{SpatialEntropyBatty1974,Batty2010,BattyMorphetKiril2012} The highest entropy is then given by a pattern with a uniform distribution in geographical space as in pattern a) of figure \ref{fig:synthetic}. This interpretation answers the question: How uncertain is the absolute location of a place with a given characteristic?}
+\item{The first essential approach in the literature takes the word ``space'' literally and defines the phase space as the geographical space.\cite{SpatialEntropyBatty1974,Batty2010,BattyMorphetKiril2012} The highest entropy is then given by a pattern with a uniform distribution in geographical space as in pattern \Sexpr{synthfig_letters["unif"]} of figure \ref{fig:synthetic}. This interpretation answers the question: How uncertain is the absolute location of a place with a given characteristic?}
 
 \item{The second basic phase space uses a characteristic of places or objects in space as the phase space.\cite{AgustGudmundsson2013} All patterns in figure \ref{fig:synthetic} have the same global proportions of black and white pixels and therefore, according to this phase space definition, the same entropy.
 This interpretation answers the question: how uncertain is the characteristic of a given place or observed element in space in general, independent from the spatial configuration?}
@@ -117,13 +117,13 @@ This interpretation answers the question: how uncertain is the characteristic of
 Entropy in an urban context also appears in Wilson's spatial interaction models\cite{Wilson1970}, and there are attempts to discuss the energy and resources entering and exiting an urban systems in releation to entropy.\cite{EcosystemEntropy} These approaches to entropy in cities are very remote from our approach and not discussed here.\\
 
 Entropy across multiple scales has been applied to measure complexity in time series, for example by Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} for medical time series. It has been applied as a measure of complexity in numerous fields of research\cite{MultiscaleEntropyReview}, but to our knowledge not in a spatial context. In contrast to our approach, a single entropy value is produced from integrating over entropies after coarse graining at different scales. By adding the entropies, different scales are viewed as independent systems.\\ 
-% In practice this would capture that for example pattern e) in \ref{fig:synthetic} has a wide variety of values across all neighbourhood sizes, but ignore that small low value neighbourhoods lie very predictably in large low value neighbourhoods and vice versa.
+% In practice this would capture that for example pattern \Sexpr{synthfig_letters["sorted"]} in \ref{fig:synthetic} has a wide variety of values across all neighbourhood sizes, but ignore that small low value neighbourhoods lie very predictably in large low value neighbourhoods and vice versa.
 
 
 
 % We can draw four random places from patterns a) and b) and look at their own values and their neighbourhoods as in figure \ref{fig:samples}
 % How much uncertainty is there about the value of the place itself and the mean value of its neighbourhood?
-% In both patterns we are equally likely to draw a black or a white pixel. But in pattern a)  we can be certain that it will be in an ``even mix'' type of neighbourhood. In pattern g) on the other hand the type of neigbhourhood is much harder to predict.
+% In both patterns we are equally likely to draw a black or a white pixel. But in pattern \Sexpr{synthfig_letters["unif"]}  we can be certain that it will be in an ``even mix'' type of neighbourhood. In pattern \Sexpr{synthfig_letters["casc"]} on the other hand the type of neigbhourhood is much harder to predict.
 
 
 % If we consider a binary pattern with N pixels, and distinguish all combinations precisely, there are $2^N$ possible patterns.
@@ -170,7 +170,7 @@ If we make the least predictable, or, the maximum entropy choice in every step o
 \end{figure}
 Again: the phase space here is \emph{not} the geographical space. We associate high entropy \emph{not} with randomness in absolut positions in a pattern, but instead  with randomness in the \emph{spatial configurations}. \\
 
-This makes sense intuitively if relate this back to cities. Imagine the patterns in figure \ref{fig:synthetic} were real cities, and black and white pixels would refer to residential and commercial buildings. Of course pattern a) is more evenly distributed in space, but this is not what we are interested in. Taking into account the surroundings of each pixel, pattern a) only has two different types of places: residential or commercial buildings, but always in mixed blocks in mixed neighbourhoods in mixed districts of a homogeneously mixed city. Pattern g) has a much larger variety of spatial configurations. If we pick a single place at random, we have the same probability to pick a ``residential'' or a ``commercial building'' in both cases, but in pattern g) there is much less certainty about the type of neighbourhood it is in. We want to extend the description used to compare individual buildings from ``a residential building'' to something like ``a residential building in a mixed use block which itself lies in a mainly commercial district that is surrounded by residential areas''. All of these surroundings at different scales should be part of the state of that place: if the direct surroundings and larger scale neighbourhoods of two places are identical, their function is more simmilar. In reverse, if two places are identical but their surroundings fundamentally different, they can be used in different ways and their states should differ. So what ``Multiple scales'' means is that the state of a place includes values describing not only the place's own characteristics, but some aggregate description of its environments within increasing distance: its immediate surroundings, its local neighbourhood and its larger scale environment. 
+This makes sense intuitively if relate this back to cities. Imagine the patterns in figure \ref{fig:synthetic} were real cities, and black and white pixels would refer to residential and commercial buildings. Of course pattern \Sexpr{synthfig_letters["unif"]} is more evenly distributed in space, but this is not what we are interested in. Taking into account the surroundings of each pixel, pattern \Sexpr{synthfig_letters["unif"]} only has two different types of places: residential or commercial buildings, but always in mixed blocks in mixed neighbourhoods in mixed districts of a homogeneously mixed city. pattern \Sexpr{synthfig_letters["casc"]} has a much larger variety of spatial configurations. If we pick a single place at random, we have the same probability to pick a ``residential'' or a ``commercial building'' in both cases, but in pattern \Sexpr{synthfig_letters["casc"]} there is much less certainty about the type of neighbourhood it is in. We want to extend the description used to compare individual buildings from ``a residential building'' to something like ``a residential building in a mixed use block which itself lies in a mainly commercial district that is surrounded by residential areas''. All of these surroundings at different scales should be part of the state of that place: if the direct surroundings and larger scale neighbourhoods of two places are identical, their function is more simmilar. In reverse, if two places are identical but their surroundings fundamentally different, they can be used in different ways and their states should differ. So what ``Multiple scales'' means is that the state of a place includes values describing not only the place's own characteristics, but some aggregate description of its environments within increasing distance: its immediate surroundings, its local neighbourhood and its larger scale environment. 
 
 Therefore we define for our quantitative measure the phase space like this: the first dimension of the phase space is the value of a place's own characteristic. We then add further phase space dimensions describing the place's surroundings at $n$ different scales. When we consider only one characteristic, the state of each place $x_i$ in the city is given by the vector
 \begin{equation}
@@ -233,12 +233,12 @@ We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{
 \begin{figure}[ht]
    \centering
    \includegraphics[width=0.8\textwidth]{./code/output/syntheticsynthetic_patterns.jpg}
-   \caption{patterns a) - g)}
+   \caption{patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]}}
    \label{fig:synthetic}
 \end{figure}
 %
 
-The patterns are selected to represent varying degrees of complexity. When we speak of ``complexity'' here, we mean patterns which could be described intuitively as having ``meaningful structural richness''.\cite{EnotComplex1}. Pattern a) has a spatially uniform probability for all pixels to be either white or black. It is fully random and arguably has no structure at all. The randomised checker boards b)-d) are essentially fully random patterns like pattern a), but pixels of each color appear in patches of increasing size. They are increasingly segregated and could be seen to be increasingly ordered with increasing patch size, but the order is very simple. Pattern e) is a sample from a uniform distribution between 0 and 1 (corresponding to black and white), sorted linearly from left to right and from top to bottom. There is structure, but no structural richness. Potentially viewed as slightly more complex might be pattern f), in which pixels are assigned a 1 or a 0 with the probability to find a black pixel decreasing linearly from left to right. It serves as the binary spatial counterpart to what Zhang\cite{ZhangPhaseSpaceApproach} considers a complex time series, but arguably does not differ greatly from pattern e) in terms of structural richness. Pattern g) results from a binarised additive cascade process, which produces patterns with multifractal self-similar properties stemming from complex processes\cite{cheng1999multifractality} that are regularily associetated with high complexity.\cite{cascadeComplex1,cascadeComplex2,cascadeComplex3}.
+The patterns are selected to represent varying degrees of complexity. When we speak of ``complexity'' here, we mean patterns which could be described intuitively as having ``meaningful structural richness''.\cite{EnotComplex1}. pattern \Sexpr{synthfig_letters["unif"]} has a spatially uniform probability for all pixels to be either white or black. It is fully random and arguably has no structure at all. The randomised checker boards \Sexpr{synthfig_letters["segmed"]} to \Sexpr{synthfig_letters["seglarge"]} are essentially fully random patterns like pattern \Sexpr{synthfig_letters["unif"]}, but pixels of each color appear in patches of increasing size. They are increasingly segregated and could be seen to be increasingly ordered with increasing patch size, but the order is very simple. pattern \Sexpr{synthfig_letters["sorted"]} is a sample from a uniform distribution between 0 and 1 (corresponding to black and white), sorted linearly from left to right and from top to bottom. There is structure, but no structural richness. Potentially viewed as slightly more complex might be pattern \Sexpr{synthfig_letters["1/f"]}, in which pixels are assigned a 1 or a 0 with the probability to find a black pixel decreasing linearly from left to right. It serves as the binary spatial counterpart to what Zhang\cite{ZhangPhaseSpaceApproach} considers a complex time series, but arguably does not differ greatly from pattern \Sexpr{synthfig_letters["sorted"]} in terms of structural richness. pattern \Sexpr{synthfig_letters["casc"]} results from a binarised additive cascade process, which produces patterns with multifractal self-similar properties stemming from complex processes\cite{cheng1999multifractality} that are regularily associetated with high complexity.\cite{cascadeComplex1,cascadeComplex2,cascadeComplex3}.
 %
 \subsection*{existing measures}
 In the non spatial phase space observing only global characteristic proportions, we can directly tell that patterns display the same entropy as long as they differ only in the spatial configuration. If we consider only two states, values greater or smaller than $0.5$, all patterns' entropy according to equation \ref{eq:shannon_entropy} is $H_{non spatial} = \log(2)$ because in all patterns approximately half the pixels have a value greater than $0.5$. We could reduce the multiscale entropy phase space to this by using only the $x_i^{d_0,c}$ column on the left of $\Psi$.\\
@@ -250,7 +250,7 @@ Measures of entropy using the geographical space directly as the phase space are
    \caption{probability to find black pixels in zones for the geographical phase space}
    \label{fig:syntheticgeospace_zones}
 \end{figure}
-This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} a)), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} c) and d)).
+This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["unif"]}), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["seglarge"]}).
 
 \begin{figure}[ht]
 	\begin{minipage}{.5\textwidth}
@@ -268,12 +268,12 @@ This approach is inherently different from our measure in its goals and results.
 \end{figure}
 
 
-The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace_frequency} show the conceptual difference to our measure. When the geographical space is used directly as the phase space, the spatially even distribution of pattern a) also gives an even distribution in the phase space. In contrast, we see an \emph{even distribution of frequencies} for the sorted patterns e) and f) and for the additive cascade g), which are favoured by a measure that is focused on how much places differ from each other.
+The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace_frequency} show the conceptual difference to our measure. When the geographical space is used directly as the phase space, the spatially even distribution of pattern \Sexpr{synthfig_letters["unif"]} also gives an even distribution in the phase space. In contrast, we see an \emph{even distribution of frequencies} for the sorted patterns \Sexpr{synthfig_letters["sorted"]} and \Sexpr{synthfig_letters["1/f"]} and for the additive cascade \Sexpr{synthfig_letters["casc"]}, which are favoured by a measure that is focused on how much places differ from each other.
 
 \begin{figure}[ht]
    \centering
     \includegraphics[width=0.8\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
-   \caption{black pixel frequencies in the zones of the geographical phase space, patterns a)-g) in figure \ref{fig:synthetic}}
+   \caption{black pixel frequencies in the zones of the geographical phase space, patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]} in figure \ref{fig:synthetic}}
    \label{fig:syntheticgeospace_frequency}
 \end{figure}
 
@@ -289,11 +289,11 @@ To show how spatially complex patterns have the highest entropy if interactions 
 
    \centering
    \includegraphics[width=0.8\textwidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
-   \caption{phase space distributions for patterns a) - g) at scales of \Sexpr{lags[synth_phasespace_plot_scales[1]]} and \Sexpr{lags[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
+   \caption{phase space distributions for patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]} at scales of \Sexpr{lags[synth_phasespace_plot_scales[1]]} and \Sexpr{lags[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
    \label{fig:syntheticsynthetic_patterns_phasespace}
 \end{figure}
 
-The relatively complex additive cascade is most evenly distributed in the phase space. The uniform probability in the geographical space of pattern a) is distributed relatively evenly on the very local scale, because locally, we are likely to find all possible combinations of pixel colors. However, all pixels lie in very similar mixed neighbourhoods, and so the distribution has little variation in the larger neighbourhoods of the y axis. The patterns b) to d), segregated on different scales, have increased variance on scales of observation close to their scale of segregation, but fail to maintain variance across multiple scales. The sorted uniform distribution of pattern e) is very evenly distributed on all scales individually. However, there is no variation in which type of small scale neighbourhood is combined with which type of larger scale neighbourhood. This effect also applies to the 1/f noise pattern: While there is some variation on all scales, small white pixel neighbourhoods are systematically more likely to lie in larger white pixel neighbourhoods and vice versa.\
+The relatively complex additive cascade is most evenly distributed in the phase space. The uniform probability in the geographical space of pattern \Sexpr{synthfig_letters["unif"]} is distributed relatively evenly on the very local scale, because locally, we are likely to find all possible combinations of pixel colors. However, all pixels lie in very similar mixed neighbourhoods, and so the distribution has little variation in the larger neighbourhoods of the y axis. The patterns \Sexpr{synthfig_letters["segmed"]} to \Sexpr{synthfig_letters["seglarge"]}, segregated on different scales, have increased variance on scales of observation close to their scale of segregation, but fail to maintain variance across multiple scales. The sorted uniform distribution of pattern \Sexpr{synthfig_letters["sorted"]} is very evenly distributed on all scales individually. However, there is no variation in which type of small scale neighbourhood is combined with which type of larger scale neighbourhood. This effect also applies to the 1/f noise pattern: While there is some variation on all scales, small white pixel neighbourhoods are systematically more likely to lie in larger white pixel neighbourhoods and vice versa.\
 
 Imagine we would try to change any of these patterns to spread the observations more evenly in the phase space and increase the entropy. We would need to add more and more layers of variation on different scales, while simultaneously trying to avoid creating simple random noise, and the result would be a spatially complex configuration similar to the additive cascade.
 
@@ -434,19 +434,19 @@ We repeat the randomised null models as well as the synthetic patterns 200 times
 
 The synthetic patterns are produced as follows:\\
 
-\textbf{pattern a) Uniformly random:}\\
+\textbf{pattern \Sexpr{synthfig_letters["unif"]} Uniformly random:}\\
 All pixels are set to 0 or 1 with equal probability.\\
 
-\textbf{pattern b)-d) Segregated:}\\
+\textbf{pattern \Sexpr{synthfig_letters["segmed"]} to \Sexpr{synthfig_letters["seglarge"]} Segregated:}\\
 We start with a smaller matrix of which a side length for which the target size is a multiple of. All pixels are set to 0 or 1 with equal probability, and each pixel is expanded to multiple pixels so that the target size is produced. This process can lead to a varying number of 0's and 1's with increasing scale of segregation.\\
 
-\textbf{pattern e) Sorted:}\\
+\textbf{pattern \Sexpr{synthfig_letters["sorted"]} Sorted:}\\
 A matrix is filled with a uniform distribution between 0 and 1 and sorted in x and y direction.\\
 
-\textbf{pattern f) 1/f noise:}\\
+\textbf{pattern \Sexpr{synthfig_letters["1/f"]} 1/f noise:}\\
 A matrix is filled with 0's an 1's, with the probability to receive a 1 increasing linearly from 0 to 1 with increasing x position.\\
 
-\textbf{pattern g) additive cascade:}\\
+\textbf{pattern \Sexpr{synthfig_letters["casc"]} additive cascade:}\\
 four different values are set and stored, their exact values are not relevant. A 2 by 2 matrix is created. Each pixel of the matrix is randomly set to one of the values. Each pixel is then expanded to 4 pixels, and randomly one of the four values is added to each of these. The process is repeated until the matrix target size is reached. Then, all values lower than the median are set to zero, all others to 1. 
 
 
