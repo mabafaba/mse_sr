@@ -5,7 +5,7 @@
 
 ** NOW
 
-** NEXT [11/16]
+** NEXT [12/16]
   - [X] remove borders around pattern AGAIN.....
   - [X] remove zones y axis label
   - [X] phase space plot axis visiblity & correct labels
@@ -16,7 +16,7 @@
   - [X] figure 3 headings
   - [X] phase space plot labels a-c
   - [X] parameters of entropy estimation in synthetic data
-  - [ ] say which log base in ∑ p log p
+  - [X] say which log base in ∑ p log p
   - [X] make plots float
   - [X] letters for plots
   - [ ] list of biases and sensitivities
@@ -38,7 +38,7 @@
   - [ ] rethink structure
   - [ ] link all numbers with sweave (regex search Rnw file for numbers)
   - [ ] proof read: Pattern letters ok?
- 
+  - [ ] all appendix referrenced?
 
 
 
