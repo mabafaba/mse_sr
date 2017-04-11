@@ -10,7 +10,7 @@
  - [ ] fix subheadings (plots)
 
 * TO DO
-
+  - [ ] remove qutes in appendix
   - [ ] proof read: Pattern letters ok?
   - [ ] biases & sensitivities
   - [ ] geospace subheadings
