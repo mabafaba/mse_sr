@@ -74,10 +74,11 @@ plots_synthetic<-function(results,prefix,synthetic_many_results){
 	h<-15*length(results$entropies)/2
 	pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),h2w(h),h+2)
 	par(mfrow=mfrowsynth
-		,mai=c(2,0,0,0))
+		,mai=c(2,0.5,0.5,0.5))
 	setParDefaults()
 	for( i in c(1:length(results$entropies)) ){
 			plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95))
+			box(which = "plot", lty = "solid",lwd=2)
 			title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 				,cex.sub=10
 				,outer=FALSE
@@ -87,10 +88,11 @@ plots_synthetic<-function(results,prefix,synthetic_many_results){
 
 	jpeg(paste0("./code/output/",prefix,"synthetic_patterns.jpg"),h2w(h),h+2,res=100,units = 'in')
 	par(mfrow=mfrowsynth
-		,mai=c(2,0,0,0))
+		,mai=c(2,0.5,0.5,0.5))
 	setParDefaults()
 	for( i in c(1:length(results$entropies)) ){
 			plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95))
+			box(which = "plot", lty = "solid",lwd=2)
 			title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 				,cex.sub=10
 				,outer=FALSE
@@ -104,14 +106,14 @@ plots_synthetic<-function(results,prefix,synthetic_many_results){
 
 	pdf(paste0("./code/output/",prefix,"geospace_zones.pdf"),h2w(h),h+2)
 	par(mfrow=mfrowsynth
-		,mai=c(2,0,0,0))
+		,mai=c(2,0.5,0.5,0.5))
 	setParDefaults()
 	plot_synthetic_geospace_zones(results)
 	dev.off.all()
 
 	jpeg(paste0("./code/output/",prefix,"geospace_zones.jpg"),h2w(h),h+2,res=100,units = 'in')
 par(mfrow=mfrowsynth
-		,mai=c(2,0,0,0))
+		,mai=c(2,0.5,0.5,0.5))
 	setParDefaults()
 	plot_synthetic_geospace_zones(results)
 	dev.off.all()
@@ -362,6 +364,7 @@ for(i in c(1:length(results$geospace$aggregated))){
 			,cex.sub=10
 			,outer=FALSE
 			,line=+10)
+		box(which = "plot", lty = "solid",lwd=2)
 }
 }
 # test<-geo_phase_space(synthetic,64)
