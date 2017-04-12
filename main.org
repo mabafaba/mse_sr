@@ -4,33 +4,29 @@
 * ALL TO DO [/]
 
 
-** NEXT [0/1]
-  - [ ] function to analyse for multiple parameters
-  - [ ] function to plot sensitivity
-  - [ ] split not actionable 
-
-** REQUIRES DECISION [/]
-** NOT ACTIONABLE (NEEDS SPLITTING) [1/2]
-
-  - [ ] sensitivity analysis
-      - [ ] sensitivity analysis decide parameters
-      - [ ] half resolution
-      - [ ] different (smaller if possible) or fewer radii
-      - [ ] write
-** DO LAST [0/4]
- - GLOBAL
+** NOW (IN ORDER) [2/8] 
+  - [ ] sens.runs not properly propagated from make_and_plot_sensitivity_all()
+  - [ ] add Binning sensitivity
+  - [ ] add sensitivity plots
+  - [ ] write sensitivity
+  - [ ] add all data plot
   - [ ] go through text again, fix grammar
   - [ ] proof read: Pattern letters ok?
   - [ ] all appendix referrenced?
+* NEXT [/]
+  - [ ] acknowledgements as good is I can
+  - [ ] check again https://www.researchgate.net/profile/Marjolein_Visser/publication/270398438_A_review_on_the_use_of_entropy_in_landscape_ecology_heterogeneity_unpredictability_scale_dependence_and_their_links_with_thermodynamics/links/54c6894f0cf2911c7a59033a.pdf
 
-  
- ** REQUIRES INFO [0/2]
+** REQUIRES DECISION [/]
+** NOT ACTIONABLE (NEEDS SPLITTING) [1/2]
+** DO LAST [0/4]
+** REQUIRES INFO [0/2]
   - [ ] acknowledgements final
   - [ ] LETTER :::
       - why suitable for the journal
       - why relevant to the reader
       - who to ask?
- ** CHASE [0/3]
+** CHASE [0/3]
   - [ ] email kirril :elsa:
   - [ ] fellow of casa! :elsa:
   - [ ] send cover letter examples :elsa:
@@ -70,6 +66,8 @@
   - [X] add biases & sensitivities to text 2017-04-12 16:31
     - [X] list biases & sensitivites 2017-04-12 16:31
 
+  - [X] function to plot sensitivity 2017-04-12 19:23
+  - [X] multiple parameters with simple loop! (or foreach) 2017-04-12 19:23
 
 
 
@@ -83,11 +81,6 @@
 
 * NOTES
 
-
-*** BIASES
-  - data selection for diversity
-  - city edge
-  - first outside, then inside
 
 
 

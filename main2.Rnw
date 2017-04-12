@@ -460,10 +460,6 @@ The patterns are produced and analysed \Sexpr{runs} times.
 
 
 \subsection*{sensitivity analysis}
-NECESSARY?
--sensitivity to rasterisation resolution\\
--sensitivity to scales\\
--sensitivity to binning\\
 
 
 

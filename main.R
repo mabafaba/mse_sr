@@ -35,15 +35,33 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 
 
 
+
+
+
+
+
+
+
 # parameters real
-	pixelWidth<-200
-	lagsINmeters<-c(50,150,450,1350,4050)
-	lags=lagsINmeters/pixelWidth
-	lags=2*round((lags+1)/2)-1
+	pixelWidth_real<-200
+	lagsINmeters_real<-c(50,150,450,1350,4050)
+	lags_real=lagsINmeters_real/pixelWidth_real
+	lags_real=2*round((lags_real+1)/2)-1
+
+
+
+ 	pixelWidth<-pixelWidth_real
+	lagsINmeters<-lagsINmeters_real
+	lags=lags_real
+
 # analysis real
 	data<-load_data(src,layerNames)
 	results<-analysis(data)
 	nullmod<-analysis_null(data,runs)
+
+
+
+
 
 # plots
 	dev.off.all()
@@ -52,3 +70,6 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 	dev.off.all()
 # sweave
 	Sweave("main2.Rnw")
+
+
+
