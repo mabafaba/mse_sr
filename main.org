@@ -4,67 +4,46 @@
 * ALL TO DO [/]
 
 
-** NEXT [0/8]
-
-  - [ ] Leibovichi ::: http://s3.amazonaws.com/academia.edu.documents/6823842/DL_2009COSIT09_LNCS.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1491864076&Signature=OcQuu%2BA1G5P0UhC7bax77gEUXeA%3D&response-content-disposition=inline%3B%20filename%3DDefining_spatial_entropy_from_multivaria.pdf
-      - [ ] read
-      - [ ] understand
-      - [ ] add
-
-  - [ ] original data plots
-
-  - [ ] split unactionable
-  - [ ] DO remove quotes in appendix (it has been decided)
-
-
-
-
+** NEXT [0/1]
+  - [ ] function to analyse for multiple parameters
+  - [ ] function to plot sensitivity
+  - [ ] split not actionable 
 
 ** REQUIRES DECISION [/]
-  - [ ] sensitivity analysis decide parameters
+** NOT ACTIONABLE (NEEDS SPLITTING) [1/2]
+
+  - [ ] sensitivity analysis
+      - [ ] sensitivity analysis decide parameters
       - [ ] half resolution
       - [ ] different (smaller if possible) or fewer radii
-
-
-
-
-** DO LAST [1/2]
+      - [ ] write
+** DO LAST [0/4]
  - GLOBAL
   - [ ] go through text again, fix grammar
   - [ ] proof read: Pattern letters ok?
   - [ ] all appendix referrenced?
-  - [ ] rethink structure
 
-
-
-** NOT ACTIONABLE (NEEDS SPLITTING) [0/2]
-  - [ ] make it nice for the archive
-  - [ ] add biases & sensitivities to text
-  - [ ] sensitivity analysis
-
-
-
-
-** REQUIRES INFO [0/2]
+  
+ ** REQUIRES INFO [0/2]
   - [ ] acknowledgements final
   - [ ] LETTER :::
       - why suitable for the journal
       - why relevant to the reader
       - who to ask?
-
-
-
-
-
-
-** IN THE END [/]
- 
-
-
-** CHASE [0/3]
+ ** CHASE [0/3]
   - [ ] email kirril :elsa:
   - [ ] fellow of casa! :elsa:
   - [ ] send cover letter examples :elsa:
+
+
+
+
+
+
+
+
+
+
 
 
 ** ARCHIVED (since April 13) [16/16]
@@ -82,12 +61,21 @@
   - [X] phase space plot axis visiblity & correct labels
   - [X] solve figure order. a) remove fig2 refs b) change order 2017-04-12 00:59
   - [X] link all numbers with sweave (regex search Rnw file for numbers) 2017-04-12 01:04
+  - [X] Leibovichi ::: http://s3.amazonaws.com/academia.edu.documents/6823842/DL_2009COSIT09_LNCS.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1491864076&Signature=OcQuu%2BA1G5P0UhC7bax77gEUXeA%3D&response-content-disposition=inline%3B%20filename%3DDefining_spatial_entropy_from_multivaria.pdf 2017-04-12 16:31
+      - [X] read
+      - [X] understand
+      - [X] add
+  - [X] original data plots 2017-04-12 16:31
+  - [X]  NOT remove quotes from appendix (it has been decided) 2017-04-12 16:31
+  - [X] add biases & sensitivities to text 2017-04-12 16:31
+    - [X] list biases & sensitivites 2017-04-12 16:31
 
 
 
 
-
-
+** NEXT LEVEL PREVIEW::
+    - rethink structure?  
+    - make it nice for the archive
 
 
 

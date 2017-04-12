@@ -9,6 +9,10 @@ shp2raster_fast<-function(file,uniquename,layer,resolution, where="1=1"){
 }
 
 
+
+
+
+
 plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,ylab="",bty="n"){
   # values must lie between 0 and 1
   raster[]<-round(raster[],6)
@@ -20,6 +24,8 @@ plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,yl
     image(raster,
           col=cols, breaks=seq(min,max,length.out=length(cols)+1)
           ,axes=FALSE
+          ,xlab=""
+          ,ylab=""
           ,useRaster=F
           ) 
     par(bty= bty,xpd=NA) # remove the box
@@ -27,8 +33,10 @@ plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,yl
     plot(raster, legend.only=TRUE
          , col=cols,
          breaks=breaks,
-         axes=FALSE,
-         legend.width = 2,
+         axes=FALSE
+         ,xlab=""
+         ,ylab=""
+         ,legend.width = 2,
          axis.args=list(at=seq(0,1,0.2),
                         labels=seq(0,1,0.2), 
                         cex.axis=0.6),
@@ -39,7 +47,8 @@ plotr<-function(raster,min=0,max=1,legend=F,cols=c("black","white"),breaks=NA,yl
     image(raster, legend.only=TRUE
          , col=cols,
          legend.width = 2,
-
+        xlab="",
+        ylab="",
          axis.args=list(at=seq(0,1,0.2),
                         labels=seq(0,1,0.2), 
                         cex.axis=0.6),

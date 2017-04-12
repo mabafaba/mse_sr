@@ -1,3 +1,55 @@
+
+
+
+sens.basecase<-list(
+	pixelWidth=pixelWidth,
+	lagsINmeters=lagsINmeters,
+	lags=lags
+	)
+
+
+sens.runs<-5
+	lags=lagsINmeters/pixelWidth
+	lags=2*round((lags+1)/2)-1
+sens.testpars.pixelWidth<-list(pixelWidth*2)
+sens.testpars.lagsINmeters<-list(lagsINmeters/2,lagsINmeters[-c(1:2)])
+sens.testpars.lags=sens.testpars.lagsINmeters/sens.testpars.pixelWidth
+sens.testpars.lags=2*round((sens.testpars.lags+1)/2)-1
+
+sens.testpars.pixelWidth
+sens.testpars.lagsINmeters
+sens.testpars.lags
+
+analyse_sensitivity_case<-function(basecase
+									,pixelWidth=basecase.pixelWidth
+									,lagsINmeters=basecase.lagsINmeters)
+
+
+
+sensitivity_cases<-list(
+	pixelWidth=c(50,100,200))
+
+
+# parameters real
+	pixelWidth<-200
+	lagsINmeters<-c(50,150,450,1350,4050)
+	lags=lagsINmeters/pixelWidth
+	lags=2*round((lags+1)/2)-1
+# analysis real
+	data<-load_data(src,layerNames)
+	results<-analysis(data)
+	nullmod<-analysis_null(data,runs)
+
+
+
+
+
+
+
+
+
+
+
 setParDefaults()
 plot(1,1,xlim=c(0,1),ylim=c(0,1),xaxt="n")
 l t n

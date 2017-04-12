@@ -23,3 +23,18 @@ allrasters_all<-lapply(as.list(layerNames),function(x){
 return(list(work=allrasters_working,live=allrasters_living,leisure=allrasters_leisure,all=allrasters_all))
 }
 
+
+
+load_data_as_vectors<-function(src,layerNames){
+data<-lapply(as.list(layerNames),function(layer){
+		return(readOGR(dsn = src, layer = layer))
+	})
+uniqueLabels<-levels(unlist(lapply(lapply(data,as.data.frame),function(x){x$LU})))
+
+return(list(data=data,
+			uniqueLabels=uniqueLabels)
+	)
+}
+
+
+

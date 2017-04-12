@@ -20,7 +20,8 @@ dev.off.all<-function(){
 
 }
 plots<-function(results,nullmod,prefix, synth_phasespace_plot_scales){
-
+	# plot original data in vector format:
+	plot_original_data_vector(src,layerNames)
 	# probability rasters:
 		# combined
 		dev.off.all()
@@ -222,6 +223,7 @@ dev.off.all()
 	}
 	dev.off.all()
 
+plot(data[[1]])
 
 
 
@@ -704,6 +706,46 @@ defaultaxis<-function(xat=NULL,yat=NULL,xlab=xat,ylab=yat,xcol.ticks="gray",ycol
 	par(xaxt=xaxtbefore,yaxt=yaxtbefore)
 }
 
+
+plot_original_data_vector<-function(dataV=NA,src="",layerNames=""){
+	dev.off.all()
+	# load data from source
+		if(is.na(dataV)){
+		dataV<-load_data_as_vectors(src,layerNames)
+		}
+	#colors
+		distinctcols<-read.csv("./code/scripts/64distinctColors.csv")
+		names(distinctcols)<-c("r","g","b")
+		distinctcols<-distinctcols/255
+		distinctcols<-apply(distinctcols,1,function(x){do.call(rgb,as.list(x))})
+		dataV$labelCols<-distinctcols[1:length(dataV$uniqueLabels)]
+		names(dataV$labelCols)<-dataV$uniqueLabels
+
+	# PLOT
+		laymat<-matrix(c(1:6),3,2,byrow=T)
+		laymat<-rbind(laymat,c(7,7))
+		laymat<-cbind(laymat,8)
+		widths=c(4/9,4/9,1/9)
+		heights=c(2/9,2/9,2/9,4/9)
+		hw<-c(sum(widths),sum(heights))*15
+		par(mai=rep(0,4),oma=rep(0,4))
+		pdf(paste0("./code/output/","original_data_vector.pdf"),hw[1],hw[2])
+		lo<-layout(laymat,widths=widths,heights=heights)
+		for (i in c(1:length(dataV$data))) {
+		print(i)
+		plot(dataV$data[[i]]
+			,col=dataV$labelCols[
+			as.character(dataV$data[[i]]$LU)
+			]
+			,border=NA,main=years[i])
+		}
+		print("legend")
+		plot(1,type="n",axes=FALSE,bty="n",xlab="",ylab="")
+		legend("left",legend=dataV$uniqueLabels,fill=dataV$labelCols,horiz=FALSE,cex=1,border=NA,bty="n")
+		dev.off.all()
+}
+
+plot_original_data_vector(dataV)   
 
 # plots(results,nullmod,"")
 # plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
