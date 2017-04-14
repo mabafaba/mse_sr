@@ -725,26 +725,27 @@ plot_original_data_vector<-function(dataV=NA,src="",layerNames=""){
 		heights=c(2/9,2/9,2/9,4/9)
 		# hw<-c(sum(widths[-3]),sum(heights))*15
 		hw<-c(432,504)
-		par(mai=rep(0,4),oma=rep(0,4))
-		pdf(paste0("./code/output/","original_data_vector.pdf"),hw[1],hw[2])
-		# lo<-layout(laymat,widths=widths,heights=heights)
+		par(mai=rep(0,4),oma=rep(0,4),fin=c(hw[1],hw[2]))
+		# pdf(paste0("./code/output/","original_data_vector.pdf"),hw[1],hw[2])
+		lo<-layout(laymat,widths=widths,heights=heights)
 		for (i in c(1:length(dataV$data))) {
 		print(i)
-		plot(dataV$data[[i]]
-			,col=dataV$labelCols[
-			as.character(dataV$data[[i]]$LU)
-			]
-			,border=NA,main=years[i])
+		# plot(dataV$data[[i]]
+		# 	,col=dataV$labelCols[
+		# 	as.character(dataV$data[[i]]$LU)
+		# 	]
+		# 	,border=NA,main=years[i])
+		plot(1,1)
+
 		}
 		print("legend")
 		plot(1,type="n",axes=FALSE,bty="n",xlab="",ylab="")
 		legend("left",legend=dataV$uniqueLabels,fill=dataV$labelCols,horiz=FALSE,cex=1,border=NA,bty="n")
 		# dev.off.all()
-}
-plot_original_data_vector()
+	}
 
-
-
+plot_original_data_vector(dataV=dataV)
+dataV<-load_data_as_vectors(src,layerNames)
 
 
 
