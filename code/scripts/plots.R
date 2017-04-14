@@ -154,26 +154,30 @@ for( i in c(1:length(results$lags)) ){
 		}
 	}
 dev.off.all()
-?par
+
+
 
 # plotting phase spaces:
-
 	h<-3*length(results$lags[[1]])/2
 	pdf(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.pdf"),h2w(h),h)
 	par(mfrow=mfrowsynth)
 	par(mar=c(4,3,4,3),oma=c(0,1.5,0,0))
 	setParDefaults()
 	subs=paste0("",letters[1:10],")")
+	plotdist1<-(lags_synthetic[synth_phasespace_plot_scales[1]]-1)/2
+	plotdist2<-(lags_synthetic[synth_phasespace_plot_scales[2]]-1)/2
+	xl<-bquote(x[i]^{d[.(synth_phasespace_plot_scales[1])]}~.(paste("=",plotdist1)))
+	yl<-bquote(x[i]^{d[.(synth_phasespace_plot_scales[2])]}~.(paste("=",plotdist2)))
 	for( i in c(1:length(results$entropies)) ){
 		par(xpd=NA)
 		eqscplot(as.vector(results$lags[[i]][[synth_phasespace_plot_scales[1]]]),as.vector(results$lags[[i]][[synth_phasespace_plot_scales[2]]])
 			,xlim=c(0,1),ylim=c(0,1)
-			,pch='.',col=rgb(0,0,0,0.05)
+			,pch='.',col=rgb(0,0,0,0.01)
 			,ratio = 1
 			,tol=0.04
 			,cex=5
-			,xlab=expression(x[i]^{d[1]})
-			,ylab=expression(x[i]^{d[2]})
+			,xlab=xl
+			,ylab=yl
 			,main=subs[i]
 			,xaxt="n"
 			,yaxt="n")
@@ -196,16 +200,20 @@ dev.off.all()
 	par(mar=c(4,3,4,3),oma=c(0,1.5,0,0))
 	setParDefaults()
 	subs=paste0("",letters[1:10],")")
+	plotdist1<-(lags_synthetic[synth_phasespace_plot_scales[1]]-1)/2
+	plotdist2<-(lags_synthetic[synth_phasespace_plot_scales[2]]-1)/2
+	xl<-bquote(x[i]^{d[.(synth_phasespace_plot_scales[1])]}~.(paste("=",plotdist1)))
+	yl<-bquote(x[i]^{d[.(synth_phasespace_plot_scales[2])]}~.(paste("=",plotdist2)))
 	for( i in c(1:length(results$entropies)) ){
 		par(xpd=NA)
 		eqscplot(as.vector(results$lags[[i]][[synth_phasespace_plot_scales[1]]]),as.vector(results$lags[[i]][[synth_phasespace_plot_scales[2]]])
 			,xlim=c(0,1),ylim=c(0,1)
-			,pch='.',col=rgb(0,0,0,0.05)
+			,pch='.',col=rgb(0,0,0,0.01)
 			,ratio = 1
 			,tol=0.04
 			,cex=5
-			,xlab=expression(x[i]^{d[1]})
-			,ylab=expression(x[i]^{d[2]})
+			,xlab=xl
+			,ylab=yl
 			,main=subs[i]
 			,xaxt="n"
 			,yaxt="n")
@@ -667,7 +675,7 @@ plot(synthetic_many_results$entropies_mean,xaxt="n",pch=20,cex=1
 	,ylim= c( min(synthetic_many_results$entropies_confidence_intervals)
 			  ,max(synthetic_many_results$entropies_confidence_intervals))
 	,xlab="pattern"
-	,ylab="Enropy (multiscale phase space)")
+	,ylab="Entropy (multiscale phase space)")
 par(xaxt="s",yaxt="s")
 defaultaxis(xat=1:length(synthetic_many_results$entropies_mean),xlab=paste0(letters[1:length(synthetic_names)],")"),xlas=1
 	,xcol.ticks=NA)
@@ -724,28 +732,27 @@ plot_original_data_vector<-function(dataV=NA,src="",layerNames=""){
 		widths=c(4/9,4/9,1/9)
 		heights=c(2/9,2/9,2/9,4/9)
 		# hw<-c(sum(widths[-3]),sum(heights))*15
-		hw<-c(432,504)
-		par(mai=rep(0,4),oma=rep(0,4),fin=c(hw[1],hw[2]))
-		# pdf(paste0("./code/output/","original_data_vector.pdf"),hw[1],hw[2])
+		hw<-c(432/5,504/5)
+		par(mai=rep(0,4),oma=rep(0,4))
+		# par(fin=c(hw[1],hw[2]))
+		pdf(paste0("./code/output/","original_data_vector.pdf"),hw[1],hw[2])
 		lo<-layout(laymat,widths=widths,heights=heights)
 		for (i in c(1:length(dataV$data))) {
 		print(i)
-		# plot(dataV$data[[i]]
-		# 	,col=dataV$labelCols[
-		# 	as.character(dataV$data[[i]]$LU)
-		# 	]
-		# 	,border=NA,main=years[i])
-		plot(1,1)
+		plot(dataV$data[[i]]
+			,col=dataV$labelCols[
+			as.character(dataV$data[[i]]$LU)
+			]
+			,border=NA,main=years[i])
+		# plot(10:1,type="l",axes=TRUE,bty="o",xlab="a",ylab="b")
 
 		}
 		print("legend")
-		plot(1,type="n",axes=FALSE,bty="n",xlab="",ylab="")
-		legend("left",legend=dataV$uniqueLabels,fill=dataV$labelCols,horiz=FALSE,cex=1,border=NA,bty="n")
-		# dev.off.all()
+		par(xpd=NA)
+		plot(1:10,type="n",axes=FALSE,bty="n",xlab="",ylab="")
+		legend("topleft",legend=dataV$uniqueLabels,fill=dataV$labelCols,horiz=FALSE,cex=15,border=NA,bty="n")
+		dev.off.all()
 	}
-
-plot_original_data_vector(dataV=dataV)
-dataV<-load_data_as_vectors(src,layerNames)
 
 
 

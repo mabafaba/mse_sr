@@ -13,20 +13,23 @@ makeallsynthetic_random<-function(width){
   cascade[which(cascade<cascmedian)]<-0
   cascade[which(cascade>=cascmedian)]<-1
   cascade<-raster(cascade)
-  segregated2<-raster(makesegregated_random(width,2))
-
-  # segregated8<-raster(makesegregated_random(width,8))
+  # segregated2<-raster(makesegregated_random(width,2))
+  halfhalf<-raster(makehalfhalf(width))
+  segregated8<-raster(makesegregated_random(width,8))
   # segregated32<-raster(makesegregated_random(width,32))
-  segregated16<-raster(makesegregated_random(width,32))
+  # segregated16<-raster(makesegregated_random(width,16))
   sorted<-(raster(matrix(c(1:width^2)/width^2,width,width)))
   oneoverf<-raster(makeOneOverF(width))
-  return(list(unif,segregated16,segregated2,sorted,oneoverf,cascade))
+  return(list(unif,segregated8,halfhalf,sorted,oneoverf,cascade))
 }
 
 
 
-
-
+makehalfhalf<-function(width){
+  halfhalf <- matrix(1,ncol=width,nrow=width,byrow = T)
+  halfhalf[,1:round(width/2)]<-0
+  return(halfhalf)
+}
 
 makecascade<-function(width,bins){
   cascade <- matrix(1,ncol=1,nrow=1,byrow = T)

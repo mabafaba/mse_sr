@@ -10,8 +10,7 @@
 
 \author[1,*]{Martin Barner}
 \author[2]{Elsa Arcaute}
-\affil[1]{funemployed}
-\affil[2]{Centre for Advanced Spatial Analysis, London, postcode, country}
+\affil[1,2]{Centre for Advanced Spatial Analysis, London, postcode, country}
 
 \affil[*]{barner.mar@gmail.com}
 
@@ -70,7 +69,7 @@ It follows that the states of individual places must be entangled spatially, bec
 Our new measure observes the characteristics of places, and takes relationships between places into account with a multiscale approach: We observe the characteristics of a place at multiple scales by aggregating the characteristics of neighbourhoods with different sizes around it. The resulting values then define its position in the phase space. The state of a place is then not only given by its own characteristic, but also the characteristics of the directly adjacent places, its local neighbourhood and larger scale surroundings.\\
 
 %% Multiscale entropy
-By no means we ever question that greater randomness and a more even probability distribution in the phase space results in higher entropy.  That is by definition a physical, statistical and mathematical fact. It must be very clear that the phase space here is not equivalent to the geographical space. Randomness in the phase space is not equivalent to randomness in the geographical space. There is no reason to assume that in cities spatially uniform patterns can occur through the largest number of combinations of individual use. There is no reason to assume that the geographical space should be the phase space, nor that spatial randomness should automatically mean randomness in the phase space. This does not in any way violate the fact that greater randomness of microstates and an even distribution in the phase space result in higher entropy.  Our methods and results are perfectly consistent with this.\\
+Greater randomness and a more even probability distribution in the phase space results in higher entropy, no matter how the phase space is defined. That is by definition a physical, statistical and mathematical fact. There is no reason to assume that the geographical space should be the phase space, nor that spatial randomness should automatically mean randomness in the phase space. It must be very clear that in our analysis the phase space is not equivalent to the geographical space. There is no reason to assume that in cities spatially uniform patterns can occur through the largest number of combinations of individual use. 
 
 That being said, our analysis of simulated patterns shows that urban structures that are completely randomised spatially do not simultaneously have the highest randomness in a phase space that describes the variety of available types of interdependent places. Instead, we can show that spatially complex patterns are most evenly distributed in the multiscale phase space and have the highest entropy. That they are not evenly distributed in geographical space is in perfect harmony with the fact that greater randomness means greater entropy, because \emph{the geographical space is not the phase space}. 
 In our case study we measure the change in multiscale entropy in land use patterns in West London in seven time steps from 1875 to 2005, and the results suggest that the observed polycentric sprawl can be explained as the growth pattern with the highest entropy. 
@@ -221,9 +220,9 @@ We then calculate the place state matrix $\Psi$ using the mean as the aggregatio
 
 We discretise the phase space by defining a discrete set of values for all the elements in matrix $\Psi$ that will be given by bining the values after the aggregation. Places are assumed to have the same state if and only if their state matrices are exactly identical. Because this simplified phase space is discrete, we can estimate the probability of discrete states directly from their frequency and estimate the system's entropy directly with equation \ref{eq:shannon_entropy}. \\
 
-Discretising the phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating eucledean distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions.\\
+Discretising the phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating eucledean distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions. Further details are in the appendix \ref{appendix:computation}.\\
 
-Let us now test this method on a range of simulated patterns in the following section.
+We test this method on a range of simulated patterns in the following section.
 
 \section*{Simulated patterns}
 Here we measure the entropy of synthetic spatial patterns according to the two essential phase space definitions in the literature, and according to our multiscale entropy measure. We first show how the results of our new method are inherently different from the non spatial phase space and the geographical phase space. We then compare the multiscale entropies of patterns with different structures and show that if interactions between places are accounted for, complex patterns have a higher entropy than simple ones.\\
@@ -238,7 +237,7 @@ We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{
 \end{figure}
 %
 
-The patterns are selected to represent varying degrees of complexity. When we speak of ``complexity'' here, we mean patterns which could be described intuitively as having ``meaningful structural richness''.\cite{EnotComplex1}. pattern \Sexpr{synthfig_letters["unif"]} has a spatially uniform probability for all pixels to be either white or black. It is fully random and arguably has no structure at all. The randomised checker boards \Sexpr{synthfig_letters["segmed"]} to \Sexpr{synthfig_letters["seglarge"]} are essentially fully random patterns like pattern \Sexpr{synthfig_letters["unif"]}, but pixels of each color appear in patches of increasing size. They are increasingly segregated and could be seen to be increasingly ordered with increasing patch size, but the order is very simple. pattern \Sexpr{synthfig_letters["sorted"]} is a sample from a uniform distribution between 0 and 1 (corresponding to black and white), sorted linearly from left to right and from top to bottom. There is structure, but no structural richness. Potentially viewed as slightly more complex might be pattern \Sexpr{synthfig_letters["1/f"]}, in which pixels are assigned a 1 or a 0 with the probability to find a black pixel decreasing linearly from left to right. It serves as the binary spatial counterpart to what Zhang\cite{ZhangPhaseSpaceApproach} considers a complex time series, but arguably does not differ greatly from pattern \Sexpr{synthfig_letters["sorted"]} in terms of structural richness. pattern \Sexpr{synthfig_letters["casc"]} results from a binarised additive cascade process, which produces patterns with multifractal self-similar properties stemming from complex processes\cite{cheng1999multifractality} that are regularily associated with high complexity.\cite{cascadeComplex1,cascadeComplex2,cascadeComplex3}.
+The patterns are selected to represent varying degrees of complexity. When we speak of ``complexity'' here, we mean patterns which could be described intuitively as having ``meaningful structural richness''.\cite{EnotComplex1}. pattern \Sexpr{synthfig_letters["unif"]} has a spatially uniform probability for all pixels to be either white or black. It is fully random and arguably has no structure at all. The randomised checker board \Sexpr{synthfig_letters["segmed"]} is essentially a fully random patterns like pattern \Sexpr{synthfig_letters["unif"]}, but pixels of each color appear in rectangular patches. It is locally segregated and could be seen to be increasingly ordered with increasing patch size, but the order is very simple. Pattern \Sexpr{synthfig_letters["halfhalf"]} is fully segregated between the left and right half, a most simple but strict spatial order. Pattern \Sexpr{synthfig_letters["sorted"]} is a sample from a uniform distribution between 0 and 1 (corresponding to black and white), sorted linearly from left to right and from top to bottom. There is structure, but no structural richness. Potentially viewed as slightly more complex might be pattern \Sexpr{synthfig_letters["1/f"]}, in which pixels are assigned a 1 or a 0 with the probability to find a black pixel decreasing linearly from left to right. It serves as the binary spatial counterpart to what Zhang\cite{ZhangPhaseSpaceApproach} considers a complex time series, but arguably does not differ greatly from pattern \Sexpr{synthfig_letters["sorted"]} in terms of structural richness. pattern \Sexpr{synthfig_letters["casc"]} results from a binarised additive cascade process, which produces patterns with multifractal self-similar properties stemming from complex processes\cite{cheng1999multifractality} that are regularily associated with high complexity.\cite{cascadeComplex1,cascadeComplex2,cascadeComplex3}. Further details on the simulated patterns are in the appendix \ref{appendix}. 
 %
 \subsection*{Existing measures}
 In the non spatial phase space observing only global characteristic proportions, we can directly tell that patterns display the same entropy as long as they differ only in the spatial configuration. If we consider only two states, values greater or smaller than $0.5$, all patterns' entropy according to equation \ref{eq:shannon_entropy} is $H_{non spatial} = \log(2)$ because in all patterns approximately half the pixels have a value greater than $0.5$. We could reduce the multiscale entropy phase space to this by using only the $x_i^{d_0,c}$ column on the left of $\Psi$.\\
@@ -251,7 +250,7 @@ Measures of entropy using the geographical space directly as the phase space are
    \label{fig:syntheticgeospace_zones}
 \end{figure}
 
-This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["unif"]}), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["seglarge"]}).
+This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (figure \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["unif"]}), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["halfhalf"]}).
 
 \begin{figure}[ht]
 	\begin{minipage}{.5\textwidth}
@@ -269,11 +268,11 @@ This approach is inherently different from our measure in its goals and results.
 \end{figure}
 
 
-The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace_frequency} show the conceptual difference to our measure. When the geographical space is used directly as the phase space, the spatially even distribution of pattern \Sexpr{synthfig_letters["unif"]} also gives an even distribution in the phase space. In contrast, we see an \emph{even distribution of frequencies} for the sorted patterns \Sexpr{synthfig_letters["sorted"]} and \Sexpr{synthfig_letters["1/f"]} and for the additive cascade \Sexpr{synthfig_letters["casc"]}, which are favoured by a measure that is focused on how much places differ from each other.
+The frequencies in the discrete geographical phase space in figure \ref{fig:syntheticgeospace_frequency} show the conceptual difference to our measure. When the geographical space is used directly as the phase space, the spatially even distribution of pattern \Sexpr{synthfig_letters["unif"]} also gives an even distribution in the phase space. In contrast, we see an \emph{even distribution of frequencies} for the sorted patterns \Sexpr{synthfig_letters["sorted"]} and \Sexpr{synthfig_letters["1/f"]} and for the additive cascade \Sexpr{synthfig_letters["casc"]}, which are favoured by a measure that is focused on how much places differ from each other.
 
 \begin{figure}[ht]
    \centering
-    \includegraphics[width=0.8\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
+    \includegraphics[width=0.5\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
    \caption{black pixel probabilities in the zones of the geographical phase space, patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]} in figure \ref{fig:synthetic}}
    \label{fig:syntheticgeospace_frequency}
 \end{figure}
@@ -281,10 +280,7 @@ The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace
 
 \subsection*{Multiscale entropy and complexity}
 
-The simulated patterns corresponding to the patterns in figure \ref{fig:synthetic} have the multiscale entropies shown in figure \ref{fig:synthetic_boxplot}.  
-
-
-To show how spatially complex patterns have the highest entropy if interactions between locations are taken into account, we take a closer look at the distributions in the multiscale phase space for the synthetic patterns. Figure \ref{fig:syntheticsynthetic_patterns_phasespace} shows two dimensions of the multiscale phase space, specifically at the scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length.
+The simulated patterns corresponding to the patterns in figure \ref{fig:synthetic} have the multiscale entropies shown in figure \ref{fig:synthetic_boxplot}. To show how spatially complex patterns have the highest entropy if interactions between locations are taken into account, we take a closer look at the distributions in the multiscale phase space for the synthetic patterns. Figure \ref{fig:syntheticsynthetic_patterns_phasespace} shows two dimensions of the multiscale phase space, specifically at the scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length.
 
 \begin{figure}[ht]
 
@@ -294,17 +290,16 @@ To show how spatially complex patterns have the highest entropy if interactions 
    \label{fig:syntheticsynthetic_patterns_phasespace}
 \end{figure}
 
-The relatively complex additive cascade is most evenly distributed in the phase space. The uniform probability in the geographical space of pattern \Sexpr{synthfig_letters["unif"]} is distributed relatively evenly on the very local scale, because locally, we are likely to find all possible combinations of pixel colors. However, all pixels lie in very similar mixed neighbourhoods, and so the distribution has little variation in the larger neighbourhoods of the y axis. The patterns \Sexpr{synthfig_letters["segmed"]} to \Sexpr{synthfig_letters["seglarge"]}, segregated on different scales, have increased variance on scales of observation close to their scale of segregation, but fail to maintain variance across multiple scales. The sorted uniform distribution of pattern \Sexpr{synthfig_letters["sorted"]} is very evenly distributed on all scales individually. However, there is no variation in which type of small scale neighbourhood is combined with which type of larger scale neighbourhood. This effect also applies to the 1/f noise pattern: While there is some variation on all scales, small white pixel neighbourhoods are systematically more likely to lie in larger white pixel neighbourhoods and vice versa.\
+The relatively complex additive cascade is most evenly distributed in the phase space. The uniform probability in the geographical space of pattern \Sexpr{synthfig_letters["unif"]} is distributed relatively evenly on the very local scale, because locally, we are likely to find all possible combinations of pixel colors. However, all pixels lie in very similar mixed neighbourhoods, and so the distribution has little variation in the larger neighbourhoods of the y axis. The pattern \Sexpr{synthfig_letters["segmed"]} has increased variance on scales of observation close to the scale of segregation, but fails to maintain variance across multiple scales. In the fully segregated pattern \Sexpr{synthfig_letters["halfhalf"]}, places only differ in their large scale environment, but locally almost all places are concentrated in the two extremes. The sorted uniform distribution of pattern \Sexpr{synthfig_letters["sorted"]} is very evenly distributed on all scales individually. However, there is no variation in which type of small scale neighbourhood is combined with which type of larger scale neighbourhood. This effect also applies to the 1/f noise pattern: While there is some variation on all scales, small white pixel neighbourhoods are systematically more likely to lie in larger white pixel neighbourhoods and vice versa.\
 
-Imagine we would try to change any of these patterns to spread the observations more evenly in the phase space and increase the entropy. We would need to add more and more layers of variation on different scales, while simultaneously trying to avoid creating simple random noise, and the result would be a spatially complex configuration similar to the additive cascade.
+Imagine we would try to change any of these patterns to spread the observations more evenly in the phase spaces as seen in figure \ref{fig:syntheticsynthetic_patterns_phasespace} and increase the entropy. We would need to add more and more layers of variation on different scales, while simultaneously trying to avoid creating simple random noise, and the result would be a spatially complex configuration similar to the additive cascade.
 
 This may seem rather abstract. However, it should apply to any system in which elements interact with and influence each other over multiple scales of some type of ``nearness'', to a degree at which they fundamentally change each others meaning. As discussed in the introduction this is certainly the case for places in cities. Under these circumstances, complex patterns have a higher entropy. Therefore, we can and should expect the whole system to eventually arrange in a complex pattern, simply because that is the most probable configuration. 
 
 
 \section*{Case study: London 1875 - 2005}
 \subsection*{Data}
-\noindent In the case study, we analyse the spatial patterns of land use in west London from 1875 - 2005. The dataset used in the analysis was originally built and provided by Stanilov et al.\cite{stanilovData1}. It covers 200 square kilometers, spanning 20km from east to west, from London's green belt in the west to the west end hyde park, and roughly 10km from north to south. The data provides the land use of individual building in 32 categories for seven moments in time; 1875, 1895, 1915, 1935, 1960, 1985 and 2005.
-For further details on the data collection see Stanilov et al.\cite{stanilovData1}
+\noindent In the case study, we analyse the spatial patterns of land use in west London from 1875 - 2005. The dataset used in the analysis was originally built and provided by Stanilov et al.\cite{stanilovData1}. It covers 200 square kilometers, spanning 20km from east to west, from London's green belt in the west to the west end hyde park, and roughly 10km from north to south. The data provides the land use of individual building in 32 categories for seven moments in time; 1875, 1895, 1915, 1935, 1960, 1985 and 2005. Details on the original data and maps can be found in figure \ref{fig:original_data_vector} of the appendix \ref{appendix}, and further in Stanilov et al.'s original publication\cite{stanilovData1}.
 
 \subsection*{Entropy estimation}
 To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters_real)} scales of observation at \Sexpr{paste(paste(lagsINmeters_real,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$ equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.\\
@@ -422,7 +417,7 @@ All parts of the analysis are performed in R.\cite{R} The spatial data, provided
 
 
 \subsection*{Method and computation}
-
+\label{appendix:computation}
 Then, the local values of all neighbourhood sizes are calculated and turned into a matrix in which there is a row for every point in space, and a column for the binned value of each category at each scale of observation. Identical rows are grouped, counted and translated to probabilities from which entropy is calculated.
 
 
@@ -439,8 +434,11 @@ The synthetic patterns have a side length of \Sexpr{syntheticsize} are produced 
 \textbf{pattern \Sexpr{synthfig_letters["unif"]} Uniformly random:}\\
 All pixels are set to 0 or 1 with equal probability.\\
 
-\textbf{pattern \Sexpr{synthfig_letters["segmed"]} to \Sexpr{synthfig_letters["seglarge"]} Segregated:}\\
+\textbf{pattern \Sexpr{synthfig_letters["segmed"]} locally segregated:}\\
 We start with a smaller matrix of which a side length for which the target size is a multiple of. All pixels are set to 0 or 1 with equal probability, and each pixel is expanded to multiple pixels so that the target size is produced. This process can lead to a varying number of 0's and 1's with increasing scale of segregation.\\
+
+\textbf{\Sexpr{synthfig_letters["halfhalf"]} globally segregated:}
+The left half is 0, the right half is 1.\\
 
 \textbf{pattern \Sexpr{synthfig_letters["sorted"]} Sorted:}\\
 A matrix is filled with a uniform distribution between 0 and 1 and sorted in x and y direction.\\

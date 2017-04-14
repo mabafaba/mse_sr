@@ -1,11 +1,13 @@
 
 //** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
-* ALL TO DO [/]
-    - [ ] By no means we ever question.. not defensive!
+* ALL TO DO [1/2]
+    - [X] By no means we ever question.. not defensive!
     - [ ] 
-** NOW (IN ORDER) [0/9] 
-  - [ ] fix discussion
+** NOW (IN ORDER) [2/10] 
+  - [X] fix large segregation pattern
+  - [X] fix discussion
+  - [ ] both phase space plots next to each other?
   - [ ] go through text again, fix grammar
   - [ ] proof read: Pattern letters ok?
   - [ ] all appendix referrenced?
