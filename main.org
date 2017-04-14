@@ -2,18 +2,21 @@
 //** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
 * ALL TO DO [/]
+    - [ ] By no means we ever question.. not defensive!
+    - [ ] 
+** NOW (IN ORDER) [1/10] 
 
-
-** NOW (IN ORDER) [2/8] 
-  - [ ] weird stuff happening in sensitivity results...
-  - [ ] update sweave expressions: lags_real, lags_sensitivity.. 
-  - [ ] add Binning sensitivity
-  - [ ] add sensitivity plots to Rnw
-  - [ ] write sensitivity
-  - [ ] add all data plot
   - [ ] go through text again, fix grammar
   - [ ] proof read: Pattern letters ok?
   - [ ] all appendix referrenced?
+  - [ ] fix discussion
+  - [ ] ref appendix
+* PROCRASTINATE
+  - [ ] weird stuff happening in sensitivity results...
+  - [ ] add Binning sensitivity
+  - [ ] add sensitivity plots to Rnw
+  - [ ] write sensitivity
+
 * NEXT [1/2]
   - [ ] acknowledgements as good is I can
   
@@ -43,7 +46,7 @@
 
 
 
-** ARCHIVED (since April 13) [16/16]
+** ARCHIVED (since April 13) [27/27]
   - [X] geospace subheadings
   - [X] geospace frequencies subheadings
   - [X] "black pixel frequencies" -> "black pixel probabilities"
@@ -69,8 +72,11 @@
 
   - [X] function to plot sensitivity 2017-04-12 19:23
   - [X] multiple parameters with simple loop! (or foreach) 2017-04-12 19:23
-- [X] check again https://www.researchgate.net/profile/Marjolein_Visser/publication/270398438_A_review_on_the_use_of_entropy_in_landscape_ecology_heterogeneity_unpredictability_scale_dependence_and_their_links_with_thermodynamics/links/54c6894f0cf2911c7a59033a.pdf 2017-04-14 12:02
-
+  - [X] check again https://www.researchgate.net/profile/Marjolein_Visser/publication/270398438_A_review_on_the_use_of_entropy_in_landscape_ecology_heterogeneity_unpredictability_scale_dependence_and_their_links_with_thermodynamics/links/54c6894f0cf2911c7a59033a.pdf 2017-04-14 12:02
+  - [X] synthetic patterns not gray 2017-04-14 12:21
+  - [X] update sweave expressions: lags_real, lags_sensitivity..  2017-04-14 12:22
+  - [X] add all data plot
+  - [X] ELSA MARKERS & PDF COMMENTS 2017-04-14 12:53
 
 ** NEXT LEVEL PREVIEW::
     - rethink structure?  

@@ -104,7 +104,7 @@ The highest entropy is always given by a uniform distribution in the phase space
 It is commonly understood in thermodynamics that if one refers to the Boltzman phase space, it usually relates to the six dimensional phase space that defines a particle's state by its location and momentum. Similarily, the Gibbs phase space relates to the 6N dimensional phase space describing the location and momentum of all N particles in the system.\cite{GibbsVSBoltzmann}
 
 \subsection*{Common Phase Space Definitions for Spatial Entropy}
-In contrast to thermodynamics where usually there is a general consesus about what the the parameters of a microstate are, there are fundamental differences between interpretations of entropy in cities, and they come down to different definitions of the phase space dimensions.
+In contrast to thermodynamics where usually there is a general consesus about what the parameters of a microstate are, there are fundamental differences between interpretations of entropy in cities, and they come down to different definitions of the phase space dimensions.
 \begin{itemize}
 \item{The first essential approach in the literature takes the word ``space'' literally and defines the phase space as the geographical space.\cite{SpatialEntropyBatty1974,Batty2010,BattyMorphetKiril2012} The highest entropy is then given by a pattern with a uniform distribution in geographical space
 %as in pattern \Sexpr{synthfig_letters["unif"]} of figure \ref{fig:synthetic}.
@@ -162,8 +162,8 @@ In contrast to the existing measures of entropy discussed above, we want to answ
 %\subsection*{Spatial dependence}
 In the following we demonstrate with a combinatorical example how spatial relationships can be taken into account by observering configurations at multiple scales.\\
 As a thought experiment, we construct a pattern by arranging individual pixels into groups of two, then arranging these groups into groups of four and so on. We observe the randomness involved in each step of the process.\newline
-Individual pixels can be white or black. The color of a random pixel can be very predictable (low entropy), for example if all pixels are black. Or it can be distributed in a less predictable, more random way, for example if half of the pixels are black and the other half white. So far this corresponds to the non spatial Shannon entropy, or group 2 in the common phase space definitions above.\newline
-The next step takes into account that each pixel's characteristic should also depend on what kind of pixel is next to it. We form pairs of two pixels that will be arranged next to each other in the final pattern. this can be done in a very predictable way: entropy is low if all 2-pixel combinations are exactly the same, for example if every single white pixel is next to one black pixel and vice versa. They could instead be combined in a less predictable way: for example if one third of the combinations has two black pixels, one third has one white and one black pixel and one third has two black pixels. There is clearly less certainty and higher entropy in the spatial combinations of the second case.\\
+Individual pixels can be white or black. The color of a random pixel can be very predictable (low entropy), for example if all pixels are black. Or it can be distributed in a less predictable, more random way, for example if half of the pixels are black and the other half white. So far this corresponds to the non spatial Shannon entropy, or the second of the common phase space definitions above.\newline
+The next step takes into account that each pixel's characteristic should also depend on what kind of pixel is next to it. We form pairs of two pixels that will be arranged next to each other in the final pattern. This can be done in a very predictable way: entropy is low if all 2-pixel combinations are exactly the same, for example if every single white pixel is next to one black pixel and vice versa. They could instead be combined in a less predictable way: for example if one third of the combinations has two black pixels, one third has one white and one black pixel and one third has two black pixels. There is clearly less certainty and higher entropy in the spatial combinations of the second case.\\
 These groups of two can then be combined into groups of four, again in more or less predictable ways and so on, until the pattern is complete.
 If we make the least predictable, or, the maximum entropy choice in every step of building the spatial configuration, we must end up with a nontrivial pattern like the linear pattern in figure \ref{fig:linearpattern}.
 
@@ -175,30 +175,30 @@ If we make the least predictable, or, the maximum entropy choice in every step o
 \end{figure}
 Again: the phase space here is \emph{not} the geographical space. We associate high entropy \emph{not} with randomness in absolut positions in a pattern, but instead  with randomness in the \emph{spatial configurations}. \\
 
-This makes sense intuitively if relate this back to cities. Imagine the patterns in figure \ref{fig:synthetic} were real cities, and black and white pixels would refer to residential and commercial buildings. Of course pattern \Sexpr{synthfig_letters["unif"]} is more evenly distributed in space, but this is not what we are interested in. Taking into account the surroundings of each pixel, pattern \Sexpr{synthfig_letters["unif"]} only has two different types of places: residential or commercial buildings, but always in mixed blocks in mixed neighbourhoods in mixed districts of a homogeneously mixed city. pattern \Sexpr{synthfig_letters["casc"]} has a much larger variety of spatial configurations. If we pick a single place at random, we have the same probability to pick a ``residential'' or a ``commercial building'' in both cases, but in pattern \Sexpr{synthfig_letters["casc"]} there is much less certainty about the type of neighbourhood it is in. We want to extend the description used to compare individual buildings from ``a residential building'' to something like ``a residential building in a mixed use block which itself lies in a mainly commercial district that is surrounded by residential areas''. All of these surroundings at different scales should be part of the state of that place: if the direct surroundings and larger scale neighbourhoods of two places are identical, their function is more simmilar. In reverse, if two places are identical but their surroundings fundamentally different, they can be used in different ways and their states should differ. So what ``Multiple scales'' means is that the state of a place includes values describing not only the place's own characteristics, but some aggregate description of its environments within increasing distance: its immediate surroundings, its local neighbourhood and its larger scale environment. 
+This makes sense intuitively if we relate it back to cities. Imagine the patterns in figure \ref{fig:synthetic} were real cities, and black and white pixels would refer to residential and commercial buildings. Of course pattern \Sexpr{synthfig_letters["unif"]} is more evenly distributed in space, but this is not what we are interested in. Taking into account the surroundings of each pixel, pattern \Sexpr{synthfig_letters["unif"]} only has two different types of places: residential or commercial buildings, but always in mixed blocks in mixed neighbourhoods in mixed districts of a homogeneously mixed city. pattern \Sexpr{synthfig_letters["casc"]} has a much larger variety of spatial configurations. If we pick a single place at random, we have the same probability to pick a ``residential'' or a ``commercial building'' in both cases, but in pattern \Sexpr{synthfig_letters["casc"]} there is much less certainty about the type of neighbourhood it is in. We want to extend the description used to compare individual buildings from ``a residential building'' to something like ``a residential building in a mixed use block which itself lies in a mainly commercial district that is surrounded by residential areas''. All of these surroundings at different scales should be part of the state of that place: if the direct surroundings and larger scale neighbourhoods of two places are identical, their function is more simmilar. In reverse, if two places are identical but their surroundings fundamentally different, they can be used in different ways and their states should differ. So what ``Multiple scales'' means is that the state of a place includes values describing not only the place's own characteristics, but some aggregate description of its environments within increasing distance: its immediate surroundings, its local neighbourhood and its larger scale environment. 
 
-Therefore we define for our quantitative measure the phase space like this: the first dimension of the phase space is the value of a place's own characteristic. We then add further phase space dimensions describing the place's surroundings at $n$ different scales. When we consider only one characteristic, the state of each place $x_i$ in the city is given by the vector
+Therefore we define for our quantitative measure the phase space like this: the first dimension of the phase space is the value of a place's own characteristic. We then add further phase space dimensions describing the place's surroundings at $N$ different scales. When we consider only one characteristic, the state of each place $x_i$ in the city observed at $N$ neighbourhood scales is given by the vector
 \begin{equation}
 \label{c_state_vector}	
-\vec{x_i} = (x_i^{d_0}, x_i^{d_1}, \ldots, x_i^{d_n})
+\vec{x_i} = (x_i^{d_0}, x_i^{d_1}, \ldots, x_i^{d_N})
 \end{equation} 
 \bigskip
 
-Where $x_i^{d_0}$ is the local value of characteristic of place $x_i$ itself, and $x_i^{d_n}$ is given by the local characteristics' values of all places within distance $d_n$ from $x_i$, aggregated by a function:
+where $x_i^{d_0}$ is the local value of a characteristic of place $x_i$ itself. The value $x_i^{d_n}$ at scale $n$ is given by the local characteristics' values of all places within distance $d_n$ from $x_i$, aggregated by a function:
 \begin{equation}
 \label{multiscale_vector}
 x_i^{d_n} = f(x_{k_1}^{d_0},x_{k_2}^{d_0}, \ldots, x_{k_m}^{d_0})
 \end{equation}
 for all $x_{k}^{d_0}$ of the $m$ places within distance $d_n$ from $x_i$. What this achieves is that we can distinguish between locally identical places based on what kind of area they are in, because the state of a place is literally a function of its surroundings. 
 
-Extending this to $c$ scalar characteristics, the whole state of a place in the system is given by the matrix
+Extending this to $C$ scalar characteristics, the whole state of a place in the system is given by the matrix
 \begin{equation}
 \label{placestatematrix}
 \Psi_i = \begin{pmatrix}
-x_i^{d_0,1} & x_i^{d_1,1} & \ldots & x_i^{d_n,1}\cr
-x_i^{d_0,2} & x_i^{d_1,2} & \ldots & x_i^{d_n,2}\cr
+x_i^{d_0,1} & x_i^{d_1,1} & \ldots & x_i^{d_N,1}\cr
+x_i^{d_0,2} & x_i^{d_1,2} & \ldots & x_i^{d_N,2}\cr
 \vdots &\vdots & \vdots & \vdots \cr
-x_i^{d_0,c} & x_i^{d_1,c} & \ldots & x_i^{d_n,c}\cr
+x_i^{d_0,C} & x_i^{d_1,C} & \ldots & x_i^{d_N,C}\cr
 \end{pmatrix}
 \end{equation}
 
@@ -206,7 +206,7 @@ x_i^{d_0,c} & x_i^{d_1,c} & \ldots & x_i^{d_n,c}\cr
 
 To exemplify how $\Psi$ adds the spatial context of a place to its state imagine a number of identical offices. One of them is in a central business district, one of them on the countryside, one on an oil platform and another in the dessert. The way they are or can be used is fundamentally different because the spatial context is. That context appears in $\Psi$. In reverse, the way the ocean / countryside / business district / dessert around them are used is altered as well, and the presence of the office building appears in their state matrices.
 
-Theoretically, the continuous phase space $\phi^{(n+1)*k}$ that includes $c$ characteristics at $n$ scales is then the space of all possible place state matrices $x \in \phi$.
+Theoretically, the continuous phase space $\phi^{(N+1)*C}$ has a unique dimension for each of the $C$ characteristics for all $N$ scales plus the not aggregated scale $d_0$. It is the the space of all possible place state matrices $\Psi \in \phi$.
 The states of all places in the system are distributed in $\phi$ with the probability density distribution
 $g$. The multiscale entropy $H_{ms}$ is then 
 \begin{equation}
@@ -215,7 +215,7 @@ H_{ms} = \int_{a \in \phi}{\! - g(a) \log{g(a)}} \, \mathrm{d}a
 \end{equation}
 for all possible states $a$ where $g(a)>0$.\\
 
-There are strong conceptual parallels to the difference between Boltzman's and Gibbs' phase space in statistical mechanics. For $c$ characteristics observed at $n$ scales, the phase space has $c * n$ dimensions, signifcantly more than the $c$ dimensional space that could be used if we ignored interactions between places. A similar increase in the number of dimensions happens when moving from the Boltzman phase space to the Gibbs phase space that deals with interacting particles in statistical mechanics. Nonetheless, we are not moving moving to a Gibbs space, and the relationship between the Boltzmann entropy and the Gibbs entropy is far more complex \cite{GibbsVSBoltzmann}, and their precise interpretations still debated \cite{GibbsDiscussion2015}. 
+There are strong conceptual parallels to the difference between Boltzman's and Gibbs' phase space in statistical mechanics. For $C$ characteristics observed at $N$ scales, the phase space has $C * N$ dimensions, signifcantly more than the $C$ dimensional space that could be used if we ignored interactions between places. A similar increase in the number of dimensions happens when moving from the Boltzman phase space to the Gibbs phase space that deals with interacting particles in statistical mechanics. Nonetheless, we are not moving moving to a Gibbs space, and the relationship between the Boltzmann entropy and the Gibbs entropy is far more complex \cite{GibbsVSBoltzmann}, and their precise interpretations still debated \cite{GibbsDiscussion2015}. 
 
 \subsection*{Multiscale Entropy Estimation}
 
@@ -223,12 +223,11 @@ The practical entropy estimation in our simulated patterns and case study is as 
 We use simplified square neighbourhoods with varying side length because it makes the results easy to trace, is computationally convenient and is sufficient to demonstrate the concept. \\
 We then calculate the place state matrix $\Psi$ using the mean as the aggregation function in equation \ref{multiscale_vector} for the same reasons.\\
 
-We discretise the phase space by defining a descrete set of values for all the elements in matrix $\Psi$ that will be given by bining the values after the aggregation. Places are assumed to have the same state if and only if their state matrices are exactly identical. Because this simplified phase space is discrete, we can estimate the probability of discrete states directly from their frequency and estimate the system's entropy directly with equation \ref{eq:shannon_entropy}. \\
+We discretise the phase space by defining a discrete set of values for all the elements in matrix $\Psi$ that will be given by bining the values after the aggregation. Places are assumed to have the same state if and only if their state matrices are exactly identical. Because this simplified phase space is discrete, we can estimate the probability of discrete states directly from their frequency and estimate the system's entropy directly with equation \ref{eq:shannon_entropy}. \\
 
-Discretising the phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating eucledian distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions.\\
+Discretising the phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating eucledean distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions.\\
 
-In the following chapter the multiscale entropy estimation method is applied to simulated patterns. 
-
+Let us now test this method on a range of simulated patterns in the following section.
 
 \section*{Simulated Patterns}
 Here we measure the entropy of synthetic spatial patterns according to the two essential phase space definitions in the literature, and according to our multiscale entropy measure. We first show how the results of our new method are inherently different from the non spatial phase space and the geographical phase space. We then compare the multiscale entropies of patterns with different structures and show that if interactions between places are accounted for, complex patterns have a higher entropy than simple ones.\\
@@ -391,7 +390,16 @@ What is ignored so far entirely, except for a vague notion of some interaction b
 
 
 \subsection*{Data and Preprocessing}
-Stanilov et al. \cite{stanilovData1} provide detailed information on the collection process of the data that involved digitising historical maps from Ordnance Survey (OS) on the scale 1:2,500. The land use classes were categorised manually. The process is described in detail by Stanilov et al.: ``The process of land use classification involved the interpretation of building footprints from the OS maps; verification of building type (for buildings still in existence) in Microsoft Virtual Earth (now Bing Maps 2D and 3D) and Google Street View; and cross-referencing the results with several land use databases for Greater London'' \cite{stanilovData1}, while for some categories label information was given in the OS maps. It is evalutated to be a ``representative sample of Londons metropolitan fabric''\cite{stanilovData1}, but differences are pointed out between different parts of London on the scale of the study area. As in this study the diversity of land uses is itself at the focus of attention, the biased choice of the study area towards the section with the largest variety may propagate to make it less representative of London for this works purpose.\\
+Stanilov et al. \cite{stanilovData1} provide detailed information on the collection process of the data set. The originally provided vector data is shown in figure \ref{fig:original_data_vector}.  that involved digitising historical maps from Ordnance Survey (OS) on the scale 1:2,500. The 32 land use classes were categorised manually. The process is described in detail by Stanilov et al.: ``The process of land use classification involved the interpretation of building footprints from the OS maps; verification of building type (for buildings still in existence) in Microsoft Virtual Earth (now Bing Maps 2D and 3D) and Google Street View; and cross-referencing the results with several land use databases for Greater London'' \cite{stanilovData1}, while for some categories label information was given in the OS maps. It is evalutated to be a ``representative sample of Londons metropolitan fabric''\cite{stanilovData1}, but differences are pointed out between different parts of London on the scale of the study area. As in this study the diversity of land uses is itself at the focus of attention, the biased choice of the study area towards the section with the largest variety may propagate to make it less representative of London for this works purpose.\\
+
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width=\textwidth]{./code/output/original_data_vector.pdf}
+   \caption{original data. Details on the land use categories in table \ref{tab:groups}}
+   \label{fig:original_data_vector}
+\end{figure}
+
 
 The functions in the original data are grouped into three main groups: residential, business and leisure (table \ref{tab:groups}). The chosen categories broadly reflect classifications used by geoinformation sciences \cite{categories1}, urban planning theory \cite{Jane} and practice \cite{categories2}, altered to cover a broader range of uses. ``Leisure'' is taken in the broadest sense of activities not related to workplace or home, including most categories not covered by the former two. A virtual fourth category appears in the data's empty space.
 \begin{table}[ht]
@@ -572,7 +580,7 @@ The patterns are produced and analysed \Sexpr{runs} times.
 
 \section*{Acknowledgements}
 
-Carlos, Clémentine, Hadrien, Mike(?)
+Carlos, Cl\'ementine, Hadrien, Mike(?), Robin (alphabetical)
 Mechanicity
 Elsa's money?
 

@@ -84,7 +84,7 @@ plots_synthetic<-function(results,prefix,synthetic_many_results){
 		,mai=c(2,0.5,0.5,0.5))
 	setParDefaults()
 	for( i in c(1:length(results$entropies)) ){
-			plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95),bty="o")
+			plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 1),bty="o")
 			title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 				,cex.sub=10
 				,outer=FALSE
@@ -98,7 +98,7 @@ plots_synthetic<-function(results,prefix,synthetic_many_results){
 		,mai=c(2,0.5,0.5,0.5))
 	setParDefaults()
 	for( i in c(1:length(results$entropies)) ){
-			plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 0.95),bty="o")
+			plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 1),bty="o")
 			box(which = "plot", lty = "solid",lwd=2)
 			title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 				,cex.sub=10
@@ -223,7 +223,6 @@ dev.off.all()
 	}
 	dev.off.all()
 
-plot(data[[1]])
 
 
 
@@ -691,8 +690,6 @@ segments(
 	x1 = c(1:7)+(horizontal_confidence_line_width/2),
 	y0 = synthetic_many_results$entropies_confidence_intervals[2,],
 	y1 = synthetic_many_results$entropies_confidence_intervals[2,])
-
-
 }
 
 defaultaxis<-function(xat=NULL,yat=NULL,xlab=xat,ylab=yat,xcol.ticks="gray",ycol.ticks="gray",ticks=1,xlas=1,plotx=TRUE,ploty=TRUE){
@@ -705,7 +702,6 @@ defaultaxis<-function(xat=NULL,yat=NULL,xlab=xat,ylab=yat,xcol.ticks="gray",ycol
 	if(ploty){axis(side=2,at  = yat,lwd=0,lwd.ticks=ticks,col.ticks=ycol.ticks,labels=ylab,tick=TRUE)}
 	par(xaxt=xaxtbefore,yaxt=yaxtbefore)
 }
-
 
 plot_original_data_vector<-function(dataV=NA,src="",layerNames=""){
 	dev.off.all()
@@ -722,14 +718,15 @@ plot_original_data_vector<-function(dataV=NA,src="",layerNames=""){
 		names(dataV$labelCols)<-dataV$uniqueLabels
 
 	# PLOT
-		# laymat<-matrix(c(1:6),3,2,byrow=T)
-		# laymat<-rbind(laymat,c(7,7))
-		# laymat<-cbind(laymat,8)
-		# widths=c(4/9,4/9,1/9)
-		# heights=c(2/9,2/9,2/9,4/9)
+		laymat<-matrix(c(1:6),3,2,byrow=T)
+		laymat<-rbind(laymat,c(7,7))
+		laymat<-cbind(laymat,8)
+		widths=c(4/9,4/9,1/9)
+		heights=c(2/9,2/9,2/9,4/9)
 		# hw<-c(sum(widths[-3]),sum(heights))*15
-		# par(mai=rep(0,4),oma=rep(0,4))
-		# pdf(paste0("./code/output/","original_data_vector.pdf"),hw[1],hw[2])
+		hw<-c(432,504)
+		par(mai=rep(0,4),oma=rep(0,4))
+		pdf(paste0("./code/output/","original_data_vector.pdf"),hw[1],hw[2])
 		# lo<-layout(laymat,widths=widths,heights=heights)
 		for (i in c(1:length(dataV$data))) {
 		print(i)
@@ -744,6 +741,7 @@ plot_original_data_vector<-function(dataV=NA,src="",layerNames=""){
 		legend("left",legend=dataV$uniqueLabels,fill=dataV$labelCols,horiz=FALSE,cex=1,border=NA,bty="n")
 		# dev.off.all()
 }
+plot_original_data_vector()
 
 
 
