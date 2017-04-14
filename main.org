@@ -4,12 +4,11 @@
 * ALL TO DO [/]
     - [ ] By no means we ever question.. not defensive!
     - [ ] 
-** NOW (IN ORDER) [1/10] 
-
+** NOW (IN ORDER) [0/9] 
+  - [ ] fix discussion
   - [ ] go through text again, fix grammar
   - [ ] proof read: Pattern letters ok?
   - [ ] all appendix referrenced?
-  - [ ] fix discussion
   - [ ] ref appendix
 * PROCRASTINATE
   - [ ] weird stuff happening in sensitivity results...
