@@ -1,8 +1,6 @@
 # runs
 runs_sens<-2
 
-# copy parameters real
- 	pixelWidth<-pixelWidth_real
 
 
 # parameters sensitivity: Pixelwidth
@@ -13,8 +11,14 @@ runs_sens<-2
 	data_sens_resolution<-load_data(src,layerNames)
 	results_sens_resolution<-analysis(data_sens_resolution)
 	nullmod_sens_resolution<-analysis_null(data_sens_resolution,runs_sens)
-	plots(results,nullmod,paste("sens_resolution_",pixelWidth))
-
+	dev.off.all()
+	pdf(paste0("./code/output/","sensitivity_resolution"
+		,pixelWidth
+		,paste(lagsINmeters,collapse="-")
+		,"real_vs_null_entropies.pdf"),7,7)
+		setParDefaults()
+		plot_real_vs_null_entropies(results_sens_resolution,nullmod_sens_resolution)
+		dev.off.all()
 
 # parameters sensitivity: Lags
 	pixelWidth<-pixelWidth_real
@@ -25,4 +29,11 @@ runs_sens<-2
 	data_sens_resolution<-load_data(src,layerNames)
 	results_sens_resolution<-analysis(data_sens_resolution)
 	nullmod_sens_resolution<-analysis_null(data_sens_resolution,runs_sens)
-	plots(results,nullmod,paste("sens_lags_",paste(lagsINmeters,collapse="-"))
+	dev.off.all()
+	pdf(paste0("./code/output/","sensitivity_lags"
+		,pixelWidth
+		,paste(lagsINmeters,collapse="-")
+		,"real_vs_null_entropies.pdf"),7,7)
+		setParDefaults()
+		plot_real_vs_null_entropies(results_sens_resolution,nullmod_sens_resolution)
+		dev.off.all()

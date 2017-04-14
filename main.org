@@ -5,9 +5,10 @@
 
 
 ** NOW (IN ORDER) [2/8] 
-  - [ ] sens.runs not properly propagated from make_and_plot_sensitivity_all()
+  - [ ] weird stuff happening in sensitivity results...
+  - [ ] update sweave expressions: lags_real, lags_sensitivity.. 
   - [ ] add Binning sensitivity
-  - [ ] add sensitivity plots
+  - [ ] add sensitivity plots to Rnw
   - [ ] write sensitivity
   - [ ] add all data plot
   - [ ] go through text again, fix grammar

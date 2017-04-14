@@ -44,7 +44,9 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 
 # parameters real
 	pixelWidth_real<-200
-	lagsINmeters_real<-c(50,150,450,1350,4050)
+	# lagsINmeters_real<-c(50,150,450,1350,4050)
+	lagsINmeters_real<-c(50,150,450)
+	
 	lags_real=lagsINmeters_real/pixelWidth_real
 	lags_real=2*round((lags_real+1)/2)-1
 
