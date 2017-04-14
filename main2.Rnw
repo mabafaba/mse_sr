@@ -9,8 +9,10 @@
 \title{Spatial Multiscale entropy}
 
 \author[1,*]{Martin Barner}
-\author[2]{Elsa Arcaute}
-\affil[1,2]{Centre for Advanced Spatial Analysis, London, postcode, country}
+\author[2,*]{Dr. Elsa Arcaute}
+\author[3]{Dr. Kiril Stanilov}
+
+\affil[1,2,3]{Centre for Advanced Spatial Analysis, University College London, 90 Tottenham Court Road, London W1N 6TR, UK}
 
 \affil[*]{barner.mar@gmail.com}
 
@@ -565,13 +567,10 @@ The patterns are produced and analysed \Sexpr{runs} times.
 
 \section*{Acknowledgements}
 
-Carlos, Cl\'ementine, Hadrien, Mike(?), Robin (alphabetical)
-Mechanicity
-Elsa's money?
+The Authors thank Prof. Mike Batty, Dr. Cl\'ementine Cottineau, Dr. R\'emi Louf, Dr. Carlos Molinero, Dr. (??) Robin Morphet, Hadrien Salat (alphabetically) for useful discussions and support, Susanne Gartner and Jan Arcaute for their patience. M.B. and E.A. were partly funded by the MECHANICITY Project (249393 ERC-2009-AdG) ??. E.A. was partly funded by ????? (current grant??) Did I forget anyone??
 
 \section*{Author contributions statement}
-?
-% Must include all authors, identified by initials, for example:
+M.B. was responsible for all main ideas, concept and design, conducted the experiment and data analysis and wrote the manuscript. E.A. critically revised the methodology and the manuscript. K.S. provided the data.% Must include all authors, identified by initials, for example:
 % A.A. conceived the experiment(s),  A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results.  All authors reviewed the manuscript. 
 
 \section*{Additional information}

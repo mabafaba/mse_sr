@@ -1,42 +1,85 @@
 
 //** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
+* PLAN
+  - today:
+    - [ ] read top to bottom
+    - [ ] mark all changes
+    - [ ] make changes
+    - [ ] decide parameters
+    - [ ] save parameters!
+    - [ ] run 150x real&null
+    - [ ] save
+    - [ ] remove confidence intervals from time plots 
+  -tomorrow:
+    - morning:
+      - [ ] read top to bottom
+        - [ ] spell check
+        - [ ] check pattern letters
+      - [ ] add Binning sensitivity
+      - [ ] decide sensitivity parameters
+
+      - lunch:
+        - [ ] split appendix
+        - [ ] fix appendix refs
+      
+      - afternoon:
+        - [ ] own layout!
+          - [ ] put style in own file
+
+      - evening:
+        - [ ] Make complete Scientific Reports Requirements checklist
+
+    -last:
+        - [ ] run sensitivity
+
 * ALL TO DO [1/2]
-    - [X] By no means we ever question.. not defensive!
+- [ ] Please do not refer to individual panels of supplementary figures.
+- [ ] fig. vs. figure;
+- [ ] Supplementary Fig. S2 online
     - [ ] 
-** NOW (IN ORDER) [2/10] 
-  - [X] fix large segregation pattern
-  - [X] fix discussion
+** NOW (IN ORDER) [2/11] 
+  - [ ] add p values
   - [ ] both phase space plots next to each other?
   - [ ] go through text again, fix grammar
-  - [ ] proof read: Pattern letters ok?
-  - [ ] all appendix referrenced?
-  - [ ] ref appendix
+
 * PROCRASTINATE
   - [ ] weird stuff happening in sensitivity results...
-  - [ ] add Binning sensitivity
   - [ ] add sensitivity plots to Rnw
   - [ ] write sensitivity
 
-* NEXT [1/2]
-  - [ ] acknowledgements as good is I can
+* NEXT [1/1]
   
 
 ** REQUIRES DECISION [/]
 ** NOT ACTIONABLE (NEEDS SPLITTING) [1/2]
 ** DO LAST [0/4]
+   - [ ] ref appendix
+
 ** REQUIRES INFO [0/2]
   - [ ] acknowledgements final
+  - [ ] contributions final
   - [ ] LETTER :::
       - why suitable for the journal
       - why relevant to the reader
       - who to ask?
+
+** CHASE NEW:
+  - [ ] elsa: acknowledgements? :elsa:
+  - [ ] elsa: contributions? :elsa:
+  - [ ] comments mike? :elsa:
+
 ** CHASE [0/3]
+
   - [ ] email kirril :elsa:
   - [ ] fellow of casa! :elsa:
   - [ ] send cover letter examples :elsa:
+  - [ ] recommend literature :elsa:
 
 
+** NEXT LEVEL:
+    [ ] clarify if structure ok for SR  
+    [ ] Shorten!!!
 
 
 
@@ -78,11 +121,10 @@
   - [X] update sweave expressions: lags_real, lags_sensitivity..  2017-04-14 12:22
   - [X] add all data plot
   - [X] ELSA MARKERS & PDF COMMENTS 2017-04-14 12:53
-
-** NEXT LEVEL PREVIEW::
-    - rethink structure?  
-    - make it nice for the archive
-
+    - [X] By no means we ever question.. not defensive!2017-04-15 00:41
+  - [X] acknowledgements as good is I can 2017-04-15 00:44
+    - [X] fix large segregation pattern 2017-04-15 00:59
+  - [X] fix discussion 2017-04-15 00:59
 
 
 
