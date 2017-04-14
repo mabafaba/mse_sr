@@ -79,10 +79,10 @@ In our case study we measure the change in multiscale entropy in land use patter
 \section*{A multiscale approach to entropy in cities}
 In this chapter we summarise existing research and introduce the multiscale entropy measure in detail. First, we give an overview over existing applications of entropy in cities, as well as scale dependent entropy measures. We then revisit the formal definition of entropy and the phase space in statistical mechanics and use them to summarize existing approaches to entropy in cities based on two typical interpretations of the phase space. We establish the shortcomings of the common phase space definitions, and recapulate our requirements for a new measure of entropy to observe place's characteristics and take into account their interactions. With a combinatorical example we show why a multiscale approach is suitable for this. Finally, we formally define the theoretical multiscale phase space in which each state is given by a matrix containing multiple characteristics aggregated in neighbourhoods of different sizes, and introduce simplifications to achieve a practical method for multiscale entropy estimation.\\
 
-\subsection*{Existing approches to spatial, scale dependent and urban Entropy}
+\subsection*{Existing approches to spatial, scale dependent and urban entropy}
 Entropy is applied extensively in spatial analysis. Vranken et al. \cite{Vranken2015} summarise 50 different measures of entropy in landscape ecology, some of which discuss scale depenence, usually in the context of the modifiable areal unit problem. They do not mention any relationship to statistical mechanics or thermodynamics, unless they directly relate to the energy contained in a biological system. Most relevant to our discussion are Johnson et al. \cite{conditionalEntropyProfiles} ``conditional entropy profiles'' for spatial data. They are scale dependent entropy curves. The entropy of raster pixel values at a given scale is calculated as the conditional entropy towards the non conditional entropy of a larger scale of aggregation. The authors have no interest in the measure's meaning in terms of statistical mechanics, and the measure is used to qualitatively evaluate the overall similarity of spatial pattern. Entropy across multiple scales is used to measure complexity in time series, for example by Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} for medical time series. It has been applied as a measure of complexity in numerous fields of research\cite{MultiscaleEntropyReview}. In contrast to our approach, a single entropy value is produced from integrating over entropies after coarse graining at different scales. By adding the entropies, different scales are viewed as independent systems. Entropy in an urban context also appears in Wilson's spatial interaction models\cite{Wilson1970}, and there are attempts to discuss the energy and resources entering and exiting an urban systems in releation to entropy.\cite{EcosystemEntropy} Finally, there are methodological and conceptual parallels of our approach to methods for estimating fractal dimensions \cite{mandelbrot}, specifically box counting \cite{boxcounting} that could be worth exploring further.\\
 
-\subsection*{Entropy in Statistical Mechanics}
+\subsection*{Entropy in statistical mechanics}
 In statistical mechanics, entropy is defined as\cite{Shannon}
 \begin{equation}
 \label{eq:continuous_entropy}
@@ -106,7 +106,7 @@ The highest entropy is always given by a uniform distribution in the phase space
 
 It is commonly understood in thermodynamics that if one refers to the Boltzman phase space, it usually relates to the six dimensional phase space that defines a particle's state by its location and momentum. Similarily, the Gibbs phase space relates to the 6N dimensional phase space describing the location and momentum of all N particles in the system.\cite{GibbsVSBoltzmann}
 
-\subsection*{Common Phase Space Definitions for Spatial Entropy}
+\subsection*{Common phase space definitions for spatial entropy}
 In contrast to thermodynamics where usually there is a general consesus about what the parameters of a microstate are, there are fundamental differences between interpretations of entropy in cities, and they come down to different definitions of the phase space dimensions.
 \begin{itemize}
 \item{The first essential approach in the literature takes the word ``space'' literally and defines the phase space as the geographical space.\cite{SpatialEntropyBatty1974,Batty2010,BattyMorphetKiril2012} The highest entropy is then given by a pattern with a uniform distribution in geographical space
@@ -148,7 +148,7 @@ This interpretation answers the question: how uncertain is the characteristic of
 
 
 
-\subsection*{The Multiscale Entropy Phase Space}
+\subsection*{The multiscale entropy phase space}
 In contrast to the existing measures of entropy discussed above, we want to answer the question: how uncertain is what a randomly selected resident does, based on the structure of the city? For places in the city this would mean: how uncertain are the characteristics of places a person could be in, considering that the characteristics of a place are defined not only by its own value, but also by the characteristics of the places around it? In that sense, none of the approaches described above is a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phaenomena. Instead we need a measure that fulfills the following requirements:
 \begin{itemize}
 \item{It should observe how places are distributed across characteristics, to reflect the certainty about what people do in them.}
@@ -213,7 +213,7 @@ for all possible states $a$ where $g(a)>0$.\\
 
 There are strong conceptual parallels to the difference between Boltzman's and Gibbs' phase space in statistical mechanics. For $C$ characteristics observed at $N$ scales, the phase space has $C * N$ dimensions, signifcantly more than the $C$ dimensional space that could be used if we ignored interactions between places. A similar increase in the number of dimensions happens when moving from the Boltzman phase space to the Gibbs phase space that deals with interacting particles in statistical mechanics. Nonetheless, we are not moving moving to a Gibbs space, and the relationship between the Boltzmann entropy and the Gibbs entropy is far more complex \cite{GibbsVSBoltzmann}, and their precise interpretations still debated \cite{GibbsDiscussion2015}. 
 
-\subsection*{Multiscale Entropy Estimation}
+\subsection*{Multiscale entropy estimation}
 
 The practical entropy estimation in our simulated patterns and case study is as simple as possible without compromising the general concept. 
 We use simplified square neighbourhoods with varying side length because it makes the results easy to trace, is computationally convenient and is sufficient to demonstrate the concept. \\
@@ -225,7 +225,7 @@ Discretising the phase space has multiple advantages. First, we avoid properties
 
 Let us now test this method on a range of simulated patterns in the following section.
 
-\section*{Simulated Patterns}
+\section*{Simulated patterns}
 Here we measure the entropy of synthetic spatial patterns according to the two essential phase space definitions in the literature, and according to our multiscale entropy measure. We first show how the results of our new method are inherently different from the non spatial phase space and the geographical phase space. We then compare the multiscale entropies of patterns with different structures and show that if interactions between places are accounted for, complex patterns have a higher entropy than simple ones.\\
 
 We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{fig:synthetic}. The patterns are \Sexpr{syntheticsize} pixels wide and high. Each pixel corresponds to a "place". Each pixel is assigned a value from 0 to 1 (black to white), defining the only characteristic of that place. For ``neighbourhoods'' that go over the edge of the pattern, the invisible part is assumed to have the same proportion of values as the visible part. We bin the mean values in three categories: mainly low values (mean 0-0.33), mixed (mean 0.33-0.66) and mainly high values (mean 0.66-1.0). We use \Sexpr{length(lags_synthetic)} different scales with neighbourhood side lengths with \Sexpr{paste(paste(lags_synthetic[-length(lags_synthetic)],collapse = ", "), "and", lags[length(lags_synthetic)])} pixels.
@@ -240,7 +240,7 @@ We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{
 
 The patterns are selected to represent varying degrees of complexity. When we speak of ``complexity'' here, we mean patterns which could be described intuitively as having ``meaningful structural richness''.\cite{EnotComplex1}. pattern \Sexpr{synthfig_letters["unif"]} has a spatially uniform probability for all pixels to be either white or black. It is fully random and arguably has no structure at all. The randomised checker boards \Sexpr{synthfig_letters["segmed"]} to \Sexpr{synthfig_letters["seglarge"]} are essentially fully random patterns like pattern \Sexpr{synthfig_letters["unif"]}, but pixels of each color appear in patches of increasing size. They are increasingly segregated and could be seen to be increasingly ordered with increasing patch size, but the order is very simple. pattern \Sexpr{synthfig_letters["sorted"]} is a sample from a uniform distribution between 0 and 1 (corresponding to black and white), sorted linearly from left to right and from top to bottom. There is structure, but no structural richness. Potentially viewed as slightly more complex might be pattern \Sexpr{synthfig_letters["1/f"]}, in which pixels are assigned a 1 or a 0 with the probability to find a black pixel decreasing linearly from left to right. It serves as the binary spatial counterpart to what Zhang\cite{ZhangPhaseSpaceApproach} considers a complex time series, but arguably does not differ greatly from pattern \Sexpr{synthfig_letters["sorted"]} in terms of structural richness. pattern \Sexpr{synthfig_letters["casc"]} results from a binarised additive cascade process, which produces patterns with multifractal self-similar properties stemming from complex processes\cite{cheng1999multifractality} that are regularily associated with high complexity.\cite{cascadeComplex1,cascadeComplex2,cascadeComplex3}.
 %
-\subsection*{existing measures}
+\subsection*{Existing measures}
 In the non spatial phase space observing only global characteristic proportions, we can directly tell that patterns display the same entropy as long as they differ only in the spatial configuration. If we consider only two states, values greater or smaller than $0.5$, all patterns' entropy according to equation \ref{eq:shannon_entropy} is $H_{non spatial} = \log(2)$ because in all patterns approximately half the pixels have a value greater than $0.5$. We could reduce the multiscale entropy phase space to this by using only the $x_i^{d_0,c}$ column on the left of $\Psi$.\\
 
 Measures of entropy using the geographical space directly as the phase space are essentially measures of how evenly elements are distributed across different zones. We split the patterns into square zones with a side length of \Sexpr{geospace_aggregationfactor} pixels, and count the number of black pixels as in figure \ref{fig:syntheticgeospace_zones}.\\ 
@@ -279,7 +279,7 @@ The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace
 \end{figure}
 
 
-\subsection*{multiscale entropy and complexity}
+\subsection*{Multiscale entropy and complexity}
 
 The simulated patterns corresponding to the patterns in figure \ref{fig:synthetic} have the multiscale entropies shown in figure \ref{fig:synthetic_boxplot}.  
 
@@ -301,12 +301,12 @@ Imagine we would try to change any of these patterns to spread the observations 
 This may seem rather abstract. However, it should apply to any system in which elements interact with and influence each other over multiple scales of some type of ``nearness'', to a degree at which they fundamentally change each others meaning. As discussed in the introduction this is certainly the case for places in cities. Under these circumstances, complex patterns have a higher entropy. Therefore, we can and should expect the whole system to eventually arrange in a complex pattern, simply because that is the most probable configuration. 
 
 
-\section*{Case Study: London 1875 - 2005}
-\subsection*{data}
+\section*{Case study: London 1875 - 2005}
+\subsection*{Data}
 \noindent In the case study, we analyse the spatial patterns of land use in west London from 1875 - 2005. The dataset used in the analysis was originally built and provided by Stanilov et al.\cite{stanilovData1}. It covers 200 square kilometers, spanning 20km from east to west, from London's green belt in the west to the west end hyde park, and roughly 10km from north to south. The data provides the land use of individual building in 32 categories for seven moments in time; 1875, 1895, 1915, 1935, 1960, 1985 and 2005.
 For further details on the data collection see Stanilov et al.\cite{stanilovData1}
 
-\subsection*{entropy estimation}
+\subsection*{Entropy estimation}
 To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters_real)} scales of observation at \Sexpr{paste(paste(lagsINmeters_real,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$ equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.\\
 
 We compare the observed patterns with three null models that are constructed to preserve the global amount of different land uses and differ only in the spatial configuration. The configurations for comparison are shown in figure \ref{fig:real_vs_null_rasters}
@@ -320,7 +320,7 @@ We also compute the non spatial entropy of the global proportion of functions fo
 
 Further details on the data, preprocessing and the construction of the null models can be found in the supplementary material \ref{appendix}.
 
-\subsection*{results}
+\subsection*{Results}
 Figure \ref{fig:real_vs_null_entropies}  shows the development of entropy over time in comparison to three null models and non spatial entropy.
 
 For all cases, entropy generally increases until 1935, stagnates around 1965 and then slightly decreases until 2005. This is based on the non spatial entropy of the global distribution of functions, as almost the entire area is undeveloped in the beginning and almost filled entirely in the end.\\
@@ -357,7 +357,7 @@ In terms of methodology the functional categories, the aggregation function, the
 
 
 
-\section*{discussion}
+\section*{Discussion}
 
 
 The ambition of this work is to make a contribution to explaining how individual actions shape cities and establish a more coherent relationship between entropy and complexity. Further, the general framework of thinking may be used as a strategy to deal with uncertainty and unpredictability in planning practice. The case study - that is arguably too small in scale and too simplified in its methodology to be generalisable in any way - suggest that West London did in fact display a higher entropy than the more extreme toy scenarios.\\
@@ -372,11 +372,11 @@ What is ignored so far entirely except for a vague notion of some interaction be
 \bibliography{master}
 % \addcontentsline{toc}{chapter}{Bibliography}
 
-\section*{supplementary material}
+\section*{Supplementary material}
 \label{appendix}
 
 
-\subsection*{Data and Preprocessing}
+\subsection*{Data and preprocessing}
 Stanilov et al. \cite{stanilovData1} provide detailed information on the collection process of the data set. The originally provided vector data is shown in figure \ref{fig:original_data_vector}.  that involved digitising historical maps from Ordnance Survey (OS) on the scale 1:2,500. The 32 land use classes were categorised manually. The process is described in detail by Stanilov et al.: ``The process of land use classification involved the interpretation of building footprints from the OS maps; verification of building type (for buildings still in existence) in Microsoft Virtual Earth (now Bing Maps 2D and 3D) and Google Street View; and cross-referencing the results with several land use databases for Greater London'' \cite{stanilovData1}, while for some categories label information was given in the OS maps. It is evalutated to be a ``representative sample of Londons metropolitan fabric''\cite{stanilovData1}, but differences are pointed out between different parts of London on the scale of the study area. As in this study the diversity of land uses is itself at the focus of attention, the biased choice of the study area towards the section with the largest variety may propagate to make it less representative of London for this works purpose.\\
 
 
@@ -421,7 +421,7 @@ The functions in the original data are grouped into three main groups: residenti
 All parts of the analysis are performed in R.\cite{R} The spatial data, provided in Shapefile format (.shp), is imported and transformed from the global positioning system (GPS) into the Universal Transverse Mercator coordinate system (UTM). It is then rasterized as a grid with at a resolution of \Sexpr{pixelWidth_real}m.
 
 
-\subsection*{Method and Computation}
+\subsection*{Method and computation}
 
 Then, the local values of all neighbourhood sizes are calculated and turned into a matrix in which there is a row for every point in space, and a column for the binned value of each category at each scale of observation. Identical rows are grouped, counted and translated to probabilities from which entropy is calculated.
 
@@ -433,7 +433,7 @@ We then count how many vectors of each unique combination we find in the data an
 
 We repeat the randomised null models as well as the synthetic patterns \Sexpr{runs} times. The confidence intervals of the null models are too small to be visible in the plot because the number of pixels is a large sample within each randomised run already.
 
-\subsection*{Simulated Patterns}
+\subsection*{Simulated patterns}
 The synthetic patterns have a side length of \Sexpr{syntheticsize} are produced as follows:\\
 
 \textbf{pattern \Sexpr{synthfig_letters["unif"]} Uniformly random:}\\
@@ -455,7 +455,7 @@ The patterns are produced and analysed \Sexpr{runs} times.
 
 
 
-\subsection*{sensitivity analysis}
+\subsection*{Sensitivity analysis}
 
 
 
