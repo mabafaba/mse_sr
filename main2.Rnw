@@ -233,7 +233,7 @@ In the following chapter the multiscale entropy estimation method is applied to 
 \section*{Simulated Patterns}
 Here we measure the entropy of synthetic spatial patterns according to the two essential phase space definitions in the literature, and according to our multiscale entropy measure. We first show how the results of our new method are inherently different from the non spatial phase space and the geographical phase space. We then compare the multiscale entropies of patterns with different structures and show that if interactions between places are accounted for, complex patterns have a higher entropy than simple ones.\\
 
-We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{fig:synthetic}. The patterns are \Sexpr{syntheticsize} pixels wide and high. Each pixel corresponds to a "place". Each pixel is assigned a value from 0 to 1 (black to white), defining the only characteristic of that place. For ``neighbourhoods'' that go over the edge of the pattern, the invisible part is assumed to have the same proportion of values as the visible part. We bin the mean values in three categories: mainly low values (mean 0-0.33), mixed (mean 0.33-0.66) and mainly high values (mean 0.66-1.0). We use \Sexpr{length(lags_synthetic)} different scales with neighbourhood side lengths with \Sexpr{paste(paste(lags[-length(lags)],collapse = ", "), "and", lags[length(lags)])} pixels.
+We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{fig:synthetic}. The patterns are \Sexpr{syntheticsize} pixels wide and high. Each pixel corresponds to a "place". Each pixel is assigned a value from 0 to 1 (black to white), defining the only characteristic of that place. For ``neighbourhoods'' that go over the edge of the pattern, the invisible part is assumed to have the same proportion of values as the visible part. We bin the mean values in three categories: mainly low values (mean 0-0.33), mixed (mean 0.33-0.66) and mainly high values (mean 0.66-1.0). We use \Sexpr{length(lags_synthetic)} different scales with neighbourhood side lengths with \Sexpr{paste(paste(lags_synthetic[-length(lags_synthetic)],collapse = ", "), "and", lags[length(lags_synthetic)])} pixels.
 %
 \begin{figure}[ht]
    \centering
@@ -289,13 +289,13 @@ The frequencies in the discrete phase space in figure \ref{fig:syntheticgeospace
 The simulated patterns corresponding to the patterns in figure \ref{fig:synthetic} have the multiscale entropies shown in figure \ref{fig:synthetic_boxplot}.  
 
 
-To show how spatially complex patterns have the highest entropy if interactions between locations are taken into account, we take a closer look at the distributions in the multiscale phase space for the synthetic patterns. Figure \ref{fig:syntheticsynthetic_patterns_phasespace} shows two dimensions of the multiscale phase space, specifically at the scales of \Sexpr{lags[synth_phasespace_plot_scales[1]]} and \Sexpr{lags[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length.
+To show how spatially complex patterns have the highest entropy if interactions between locations are taken into account, we take a closer look at the distributions in the multiscale phase space for the synthetic patterns. Figure \ref{fig:syntheticsynthetic_patterns_phasespace} shows two dimensions of the multiscale phase space, specifically at the scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length.
 
 \begin{figure}[ht]
 
    \centering
    \includegraphics[width=0.8\textwidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
-   \caption{phase space distributions for patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]} at scales of \Sexpr{lags[synth_phasespace_plot_scales[1]]} and \Sexpr{lags[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
+   \caption{phase space distributions for patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]} at scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
    \label{fig:syntheticsynthetic_patterns_phasespace}
 \end{figure}
 
@@ -312,7 +312,7 @@ This may seem rather abstract. However, it should apply to any system in which e
 For further details on the data collection see Stanilov et al.\cite{stanilovData1}
 
 \subsection*{entropy estimation}
-To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters)} scales of observation at \Sexpr{paste(paste(lagsINmeters,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$ equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.\\
+To keep the number of dimensions reasonably low, the 32 land uses are grouped into three categories of "business", "residential" and "leisure" and we use \Sexpr{length(lagsINmeters_real)} scales of observation at \Sexpr{paste(paste(lagsINmeters_real,"m",sep=""),collapse=", ")}. We discretise the values in the place state $\Psi$ equidistantly in three bins. The data is rasterized at a resolution of 50m. Neighbourhood parts outside the bounding box are assumed to have the same proportion as the parts within.\\
 
 We compare the observed patterns with three null models that are constructed to preserve the global amount of different land uses and differ only in the spatial configuration. The configurations for comparison are shown in figure \ref{fig:real_vs_null_rasters}
 \begin{itemize}
@@ -423,7 +423,7 @@ The functions in the original data are grouped into three main groups: residenti
 \end{table}
 
 
-All parts of the analysis are performed in R.\cite{R} The spatial data, provided in Shapefile format (.shp), is imported and transformed from the global positioning system (GPS) into the Universal Transverse Mercator coordinate system (UTM). It is then rasterized as a grid with at a resolution of \Sexpr{pixelWidth}m.
+All parts of the analysis are performed in R.\cite{R} The spatial data, provided in Shapefile format (.shp), is imported and transformed from the global positioning system (GPS) into the Universal Transverse Mercator coordinate system (UTM). It is then rasterized as a grid with at a resolution of \Sexpr{pixelWidth_real}m.
 
 
 \subsection*{Method and Computation}
@@ -431,7 +431,7 @@ All parts of the analysis are performed in R.\cite{R} The spatial data, provided
 Then, the local values of all neighbourhood sizes are calculated and turned into a matrix in which there is a row for every point in space, and a column for the binned value of each category at each scale of observation. Identical rows are grouped, counted and translated to probabilities from which entropy is calculated.
 
 
-The rasterised data is split into subsets containing each only one of the categories. We calculate the mean number of pixels of each category within a square moving window with the selected neighbourhood sizes:\Sexpr{paste(paste(lagsINmeters,"m",sep=""),collapse=", ")}. The choice of neighbourhood size requires further investigation in the future. For now, the number of scales is picked to keep a reasonable proportion between unique values for the place state matrix and the number of observed pixels. The largest size is selected to cover a substantial area of the total space, while still allowing for a sufficient number of non overlapping large scale areas. For neighbourhoods close to the edge, the missing neighbourhood area is assumed to have the same proportion of functions than in the available part. While this is preferable to a wrap-around torus, due to the asymetric nature of the data, it can lead to edge effects, making extreme values more likely along the edges. In a visual analysis of the probabilities of pixels in synthetic patterns and the study data, we found no considerable anomalies near the edges.\\
+The rasterised data is split into subsets containing each only one of the categories. We calculate the mean number of pixels of each category within a square moving window with the selected neighbourhood sizes:\Sexpr{paste(paste(lagsINmeters_real,"m",sep=""),collapse=", ")}. The choice of neighbourhood size requires further investigation in the future. For now, the number of scales is picked to keep a reasonable proportion between unique values for the place state matrix and the number of observed pixels. The largest size is selected to cover a substantial area of the total space, while still allowing for a sufficient number of non overlapping large scale areas. For neighbourhoods close to the edge, the missing neighbourhood area is assumed to have the same proportion of functions than in the available part. While this is preferable to a wrap-around torus, due to the asymetric nature of the data, it can lead to edge effects, making extreme values more likely along the edges. In a visual analysis of the probabilities of pixels in synthetic patterns and the study data, we found no considerable anomalies near the edges.\\
 
 We now have a spatial matrix for each category at each scale of observation. The values are transformed into a single matrix with a row for each pixel, and column for each scale, giving a vector for each pixel with the total proportion of each category at each scale as a value between 0 and 1. The values are discretised in 3 equidistant bins, split at $1/3$ and $2/3$. The number of bins changes the total number of possible states and should return a reasonable proportion between possible states and observations. The binning is more than a technical question; One could ask how different two places need to be in their proportion of functions to have different states.
 We then count how many vectors of each unique combination we find in the data and calculate the entropy from the probabilities directly. All entropies are calculated with log base 2.\\

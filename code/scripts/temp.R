@@ -29,22 +29,10 @@ make_and_plot_sensitivity_all<-function(pixelWidth_multi,lagsInMeters_multi,sens
     lags=lags
     )
 
-  # define different parameters to test
-  # sens.testpars.pixelWidth<-list(pixelWidth*2)
-  # sens.testpars.lagsINmeters<-list(lagsINmeters/2,lagsINmeters[-c(1:2)])
-  # sens.testpars.lags=sens.testpars.lagsINmeters/sens.testpars.pixelWidth
-  # sens.testpars.lags=2*round((sens.testpars.lags+1)/2)-1
-
-  # sens.testpars.pixelWidth
-  # sens.testpars.lagsINmeters
-  # sens.testpars.lags
-
-  # test different rasterisation resolution:
-  
   for (i in c(1:length(pixelWidth_multi))) {
   	print(pixelWidth_multi[[i]])
-  	analyse_sensitivity_case(basecase=basecase,pixelWidth=pixelWidth_multi[[i]],sens.runs=sens.runs)
-    real_vs_null_for_sensitivity(,prefix=paste0("resultion",i)) 
+  	sensresultsResolution<-analyse_sensitivity_case(basecase=basecase,pixelWidth=pixelWidth_multi[[i]],sens.runs=sens.runs)
+    real_vs_null_for_sensitivity(sensresultsResolution,prefix=paste0("resultion",i)) 
   }  
 
   # for (i in c(1:length(lagsInMeters_multi))) {

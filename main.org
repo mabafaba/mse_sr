@@ -14,9 +14,9 @@
   - [ ] go through text again, fix grammar
   - [ ] proof read: Pattern letters ok?
   - [ ] all appendix referrenced?
-* NEXT [/]
+* NEXT [1/2]
   - [ ] acknowledgements as good is I can
-  - [ ] check again https://www.researchgate.net/profile/Marjolein_Visser/publication/270398438_A_review_on_the_use_of_entropy_in_landscape_ecology_heterogeneity_unpredictability_scale_dependence_and_their_links_with_thermodynamics/links/54c6894f0cf2911c7a59033a.pdf
+  
 
 ** REQUIRES DECISION [/]
 ** NOT ACTIONABLE (NEEDS SPLITTING) [1/2]
@@ -69,7 +69,7 @@
 
   - [X] function to plot sensitivity 2017-04-12 19:23
   - [X] multiple parameters with simple loop! (or foreach) 2017-04-12 19:23
-
+- [X] check again https://www.researchgate.net/profile/Marjolein_Visser/publication/270398438_A_review_on_the_use_of_entropy_in_landscape_ecology_heterogeneity_unpredictability_scale_dependence_and_their_links_with_thermodynamics/links/54c6894f0cf2911c7a59033a.pdf 2017-04-14 12:02
 
 
 ** NEXT LEVEL PREVIEW::
