@@ -14,7 +14,7 @@ src<-"./code/data/all_LU.shp"
 layerNames<-c("lu_ 1875_all","lu_1895_all","lu_1915_all","lu_1935_all","lu_1960_all","lu_1985_all","lu_2005_all")
 years<-c(1875,1895,1915,1935,1960,1985,2005)
 # parameters both
-	runs=2
+	runs=200
 
 # parameters synthetic
 	# synthetic_names<-c("uniform random","segregated 32x32 fields","segregated 8x8 fields","segregated 2x2 fields","sorted","1/f noise","additive cascade")
@@ -23,7 +23,7 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 	synthfig_letters<-paste0(letters[1:length(synthetic_names_abb)],")")
 	names(synthfig_letters)<-synthetic_names_abb
 	syntheticsize<-512
-	geospace_aggregationfactor = 64
+	geospace_aggregationfactor = 128
 	lags_synthetic=c(3,13,65)
 	synth_phasespace_plot_scales=c(2,3)
 # analysis synthetic
@@ -35,9 +35,9 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 	plots_synthetic(results_synthetic,"synthetic",synthetic_many_results)
 
 # parameters real
-	pixelWidth_real<-200
-	# lagsINmeters_real<-c(50,150,450,1350,4050)
-	lagsINmeters_real<-c(50,150,450)
+	pixelWidth_real<-50
+	lagsINmeters_real<-c(50,150,450,1350,4050)
+	# lagsINmeters_real<-c(50,150,450)
 	
 	lags_real=lagsINmeters_real/pixelWidth_real
 	lags_real=2*round((lags_real+1)/2)-1
@@ -50,8 +50,9 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 	data<-load_data(src,layerNames)
 	results<-analysis(data)
 	nullmod<-analysis_null(data,runs)
-
-
+	saveRDS(results,"results_april_16.RDS")
+	saveRDS(nullmod,"nullmods_april_16.RDS")
+    saveRDS(list(pw=pixelWidth,linm=lagsINmeters,lags=lags,runs=runs),"parameters_april_16.RDS")
 
 
 

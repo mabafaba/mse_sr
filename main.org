@@ -34,6 +34,12 @@
         - [ ] run sensitivity
 
 * ALL TO DO [1/2]
+- [ ] second leibovici paper (robin)
+- [ ] 3. phase space typ?
+- [ ] itemize appendix patterns
+- [ ] properly acknowledge the one paper that does exactly the same (does it though? -> understand them with thought experiment!)
+    - [ ] essential: they ask: does larger scale follow from smaller scale?
+    - [ ] I say: larger scale IS composition of smaller scale, and the smaller scale around..
 - [ ] Please do not refer to individual panels of supplementary figures.
 - [ ] fig. vs. figure;
 - [ ] Supplementary Fig. S2 online
