@@ -1,49 +1,42 @@
 
 //** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
+
+
+* BRANCH ARCHIV
+  - [ ] figure *
+  - [ ] tabular *
+  - [ ] twocolumn
+  - [ ] delete title info
+  - [ ] [sc]{titlesec}
+  - [ ] real_vs_null_ents size \textwidth
+  - [ ] caption: [figurename=Fig.
 * PLAN
-  - today:
-    - [ ] read top to bottom
-    - [ ] mark all changes
-    - [ ] make changes
-    - [ ] decide parameters
-    - [ ] save parameters!
-    - [ ] run 150x real&null
-    - [ ] save
-    - [ ] remove confidence intervals from time plots 
-  -tomorrow:
-    - morning:
-      - [ ] read top to bottom
-        - [ ] spell check
-        - [ ] check pattern letters
-      - [ ] add Binning sensitivity
-      - [ ] decide sensitivity parameters
 
-      - lunch:
-        - [ ] split appendix
-        - [ ] fix appendix refs
-      
-      - afternoon:
-        - [ ] own layout!
-          - [ ] put style in own file
-
-      - evening:
-        - [ ] Make complete Scientific Reports Requirements checklist
-
-    -last:
-        - [ ] run sensitivity
+    - [X] remove confidence intervals from time plots 
+    - [ ] spell check
+    - [ ] check pattern letters
+    - [ ] add Binning sensitivity
+    - [ ] decide sensitivity parameters
+    - [ ] split appendix
+    - [ ] fix appendix refs
+    - [ ] own layout!
+    - [ ] put style in own file
+    - [ ] Make complete Scientific Reports Requirements checklist
+    - [ ] run sensitivity
+    - [ ] tags
 
 * ALL TO DO [1/2]
 - [ ] second leibovici paper (robin)
-- [ ] 3. phase space typ?
+- [X] 3. phase space typ
 - [ ] itemize appendix patterns
-- [ ] properly acknowledge the one paper that does exactly the same (does it though? -> understand them with thought experiment!)
-    - [ ] essential: they ask: does larger scale follow from smaller scale?
-    - [ ] I say: larger scale IS composition of smaller scale, and the smaller scale around..
+- [X] properly acknowledge the one paper that does exactly the same (does it though? -> understand them with thought experiment!)
+    - [X] essential: they ask: does larger scale follow from smaller scale?
+    - [X] I say: larger scale IS composition of smaller scale, and the smaller scale around..
 - [ ] Please do not refer to individual panels of supplementary figures.
 - [ ] fig. vs. figure;
 - [ ] Supplementary Fig. S2 online
-    - [ ] 
+
 ** NOW (IN ORDER) [2/11] 
   - [ ] add p values
   - [ ] both phase space plots next to each other?
@@ -131,7 +124,10 @@
   - [X] acknowledgements as good is I can 2017-04-15 00:44
     - [X] fix large segregation pattern 2017-04-15 00:59
   - [X] fix discussion 2017-04-15 00:59
-
+  - [X] read top to bottom
+    - [X] mark all changes
+    - [X] make changes
+  
 
 
 

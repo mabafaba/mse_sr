@@ -21,7 +21,7 @@ dev.off.all<-function(){
 }
 plots<-function(results,nullmod,prefix, synth_phasespace_plot_scales){
 	# plot original data in vector format:
-	plot_original_data_vector(src,layerNames)
+	plot_original_data_vector(src=src,layerNames=layerNames)
 	# probability rasters:
 		# combined
 		dev.off.all()
@@ -77,7 +77,7 @@ plots<-function(results,nullmod,prefix, synth_phasespace_plot_scales){
 
 plots_synthetic<-function(results,prefix,synthetic_many_results){
 #plotting patterns only:
-
+print("patterns")
 	h<-15*length(results$entropies)/2
 	pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),h2w(h),h+2)
 	par(mfrow=mfrowsynth
@@ -110,6 +110,7 @@ plots_synthetic<-function(results,prefix,synthetic_many_results){
 
 
 # plotting geospace zones:
+print("geospace zones")
 	h<-15*length(results$entropies)/2
 
 	pdf(paste0("./code/output/",prefix,"geospace_zones.pdf"),h2w(h),h+2)
@@ -133,6 +134,7 @@ par(mfrow=mfrowsynth
 
 
 #plotting patterns aggregated:
+print("patterns aggregated")
 pdf(paste0("./code/output/",prefix,"synthetic_patterns_aggregated.pdf"),15*length(results$lags[[1]]),15*length(results$lags))
 par(mfrow=c(length(results$lags),length(results$lags[[1]])))
 setParDefaults()
@@ -158,6 +160,7 @@ dev.off.all()
 
 
 # plotting phase spaces:
+print("phase spaces")
 	h<-3*length(results$lags[[1]])/2
 	pdf(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.pdf"),h2w(h),h)
 	par(mfrow=mfrowsynth)
@@ -233,19 +236,20 @@ dev.off.all()
 
 
 
-
 # plotting geospace entropies
-	pdf(paste0("./code/output/",prefix,"geospace_entropy.pdf"),5,5)
+	print("geospace entropy")
+	pdf(paste0("./code/output/",prefix,"geospace_entropy.pdf"),5,5*2/3)
 	setParDefaults()
 	plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 	dev.off.all()
 
-	jpeg(paste0("./code/output/",prefix,"geospace_entropy.jpg"),5,5,res=100,units = 'in')
+	jpeg(paste0("./code/output/",prefix,"geospace_entropy.jpg"),5,5*2/3,res=100,units = 'in')
 	setParDefaults()
 	plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 	dev.off.all()
 
 # plotting geospace entropies WIDE
+	print("geospace entropy wide")
 pdf(paste0("./code/output/",prefix,"geospace_entropy_WIDE.pdf"),14,3)
 setParDefaults()
 plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
@@ -258,7 +262,7 @@ dev.off.all()
 
 
 # plotting geospace frequencies
-
+	print("geospace frequencies")
 	h<-3
 	pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),h2w(h),h)
 	par(mfrow=mfrowsynth)
@@ -288,11 +292,11 @@ dev.off.all()
 		
 	}
 	dev.off.all()
-	pdf(paste0("./code/output/",prefix,"boxplot.pdf"),5,5)
+	pdf(paste0("./code/output/",prefix,"boxplot.pdf"),5,5*2/3)
 	setParDefaults()
 	plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
 	dev.off.all()
-	jpeg(paste0("./code/output/",prefix,"boxplot.jpg"),5,5,res=100,units = 'in')
+	jpeg(paste0("./code/output/",prefix,"boxplot.jpg"),5,5*2/3,res=100,units = 'in')
 	setParDefaults()
 	plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
 	dev.off.all()
@@ -418,8 +422,8 @@ for(i in c(1:length(results$geospace$aggregated))){
 
 
 
-
-
+dev.off.all()
+setParDefaults()
 # plotting nullmodel and data results:::
 plot_real_vs_null_entropies<-function(results,nullmod){
 	par(mfrow=c(1,1))
@@ -443,16 +447,15 @@ plot_real_vs_null_entropies<-function(results,nullmod){
 
 	abline(v=years,col="grey",lwd=0.5)
 # confidence intervals:
-	 polygon(c(years,rev(years)),c(nullmod$compactmixed_many_confidence_intervals[1,],rev(nullmod$compactmixed_many_confidence_intervals[2,]))
-	 	,col = rgb(0,0,0,0.3), border = FALSE)
-	 polygon(c(years,rev(years)),c(nullmod$randomised_many_confidence_intervals[1,],rev(nullmod$randomised_many_confidence_intervals[2,]))
-	 	,col = rgb(0,0,0,0.3), border = FALSE)
-	 # segregated model doesn't have confidence intervals
-	 # polygon(c(years,rev(years)),c(nullmod$compactsegregated_many_confidence_intervals[1,],rev(nullmod$compactsegregated_many_confidence_intervals[2,]))
-	 # 	,col = rgb(0.5,0.5,0.5), border = FALSE)
+	 # polygon(c(years,rev(years)),c(nullmod$compactmixed_many_confidence_intervals[1,],rev(nullmod$compactmixed_many_confidence_intervals[2,]))
+	 # 	,col = rgb(0,0,0,0.3), border = FALSE)
+	 # polygon(c(years,rev(years)),c(nullmod$randomised_many_confidence_intervals[1,],rev(nullmod$randomised_many_confidence_intervals[2,]))
+	 # 	,col = rgb(0,0,0,0.3), border = FALSE)
+	 # # segregated model doesn't have confidence intervals
+	 # # polygon(c(years,rev(years)),c(nullmod$compactsegregated_many_confidence_intervals[1,],rev(nullmod$compactsegregated_many_confidence_intervals[2,]))
+	 # # 	,col = rgb(0.5,0.5,0.5), border = FALSE)
 	 lines(years, nullmod$compactmixed_many_entropies_mean, lwd = 2,col=rgb(0,1,0),type="b",pch=20)
 	 lines(years, nullmod$randomised_many_entropies_mean, lwd = 2,col=rgb(1,0,0),type="b",pch=20)
-	 lines(years, nullmod$compactsegregated_many_entropies_mean, lwd = 2,col=rgb(0,0,1),type="b",pch=20)
 	 lines(years, nullmod$compactsegregated_many_entropies_mean, lwd = 2,col=rgb(0,0,1),type="b",pch=20)
 	 lines(years,results$entropies$aspatial$entropies,col="black",lty=3,type="b",pch=20)
 	# many lines:
@@ -462,17 +465,49 @@ plot_real_vs_null_entropies<-function(results,nullmod){
  	#add red lines on borders of polygon
  	#lines(years, nullmod$compactmixed_many_confidence_intervals[2,], col="red",lty=2)
  	#lines(years, nullmod$compactmixed_many_confidence_intervals[1,], col="red",lty=2)
+
+	many_mean<-c("compactmixed_many_entropies_mean","randomised_many_entropies_mean","compactsegregated_many_entropies_mean")
+	confints<-c("compactmixed_many_confidence_intervals","randomised_many_confidence_intervals","compactsegregated_many_confidence_intervals")
+	cols<-c(rgb(0,1,0),rgb(1,0,0),rgb(0,0,1))
+
+
+	for(i in 1:2){
+	# confidence interval I's:
+	 segments(years
+	,nullmod[[confints[i]]][1,]
+	,years
+	,nullmod[[confints[i]]][2,]
+	,lwd=0.5,col=cols[i])
+	horizontal_confidence_line_width<-(years[7]-years[1])/7*0.2
+	segments(
+		x0 = years-(horizontal_confidence_line_width/2),
+		x1 = years+(horizontal_confidence_line_width/2),
+		y0 = 	nullmod[[confints[i]]][1,],
+		y1 = 	nullmod[[confints[i]]][1,]
+		,lwd=0.5
+		,col=cols[i]
+			)
+	segments(
+		x0 = years-(horizontal_confidence_line_width/2),
+		x1 = years+(horizontal_confidence_line_width/2),
+		y0 = 	nullmod[[confints[i]]][2,],
+		y1 = 	nullmod[[confints[i]]][2,]
+		,lwd=0.5
+		,col=cols[i]
+			)
+	}
+
 # legend:
 	 par(xpd=NA)
 	 legend("topleft",
 	 	# max(unlist(lapply(
 					# results$entropies$combined
 					# ,function(x){x$entropy})))
-	 	,legend= c("observed","random spread","random compact","segregated","non spatial","0.05 confidence")
-	 	,col = c(rgb(0,0,0),rgb(1,0,0),rgb(0,1,0),rgb(0,0,1),rgb(0,0,0),rgb(0,0,0,0.3))
+	 	,legend= c("observed","random spread","random compact","segregated","non spatial")
+	 	,col = c(rgb(0,0,0),rgb(1,0,0),rgb(0,1,0),rgb(0,0,1),rgb(0,0,0))
        ,border = NA
-       ,lwd=c(rep(2,5),10)
-       ,lty=c(rep(1,4),3,1)
+       ,lwd=c(rep(2,5))
+       ,lty=c(rep(1,4),3)
        ,bty = "n"
        ,xjust = 0
        , yjust = 0)
