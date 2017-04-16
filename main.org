@@ -1,59 +1,45 @@
 
-//** SCIENTIFIC REPORT SUBMISSION GUIDELINES
 
+* ALL TO DO [1/11]
 
-
-
-* PLAN
-
-    - [ ] spell check
-    - [ ] add Binning sensitivity
-    - [ ] fix appendix refs
-    - [ ] own layout!
-
-    - [ ] Make complete Scientific Reports Requirements checklist
-    - [ ] run sensitivity
-    - [ ] tags
-
-* ALL TO DO [1/2]
-- [ ] arxiv layout: section title numbers
-- [ ] figures in good location
-
-- [ ] fig. vs. figure;
-- [ ] Supplementary Fig. S2 online
-- [ ] rewrite abstract
-** NOW (IN ORDER) [1/6] 
-  - [ ] add p values
-  - [ ] go through text again, fix grammar
-
-* PROCRASTINATE
-  - [ ] weird stuff happening in sensitivity results...
-  - [ ] add sensitivity plots to Rnw
+** now
+  - [ ] fix appendix refs (sr guidelines)
   - [ ] write sensitivity
+  - [ ] add Binning sensitivity
+  - [ ] rewrite abstract
+  - [ ] add p values (???)
+  - [ ] tags (sr guidelines)
+  - [ ] Make complete Scientific Reports Requirements checklist
+  - [ ] remove comments
+  - [ ] arxiv layout: section title numbers
+  - [ ] figures in good location
+  - [ ] compile supplementary information incl data and code
 
+
+
+
+
+
+* CANT DO NOW [0/1]
+    - [ ] run sensitivity
+    - [ ] kürzen
+    - [ ] remove references
+    - [ ] make sure Sexpr variables are in correct state!!!
 * NEXT [1/1]
   
 
 ** REQUIRES DECISION [/]
-** NOT ACTIONABLE (NEEDS SPLITTING) [1/2]
+** NOT ACTIONABLE (NEEDS SPLITTING) [/]
 ** DO LAST [0/4]
-   - [ ] ref appendix
-
 ** REQUIRES INFO [0/2]
   - [ ] acknowledgements final
   - [ ] contributions final
-  - [ ] LETTER :::
-      - why suitable for the journal
-      - why relevant to the reader
-      - who to ask?
-
 ** CHASE NEW:
   - [ ] elsa: acknowledgements? :elsa:
   - [ ] elsa: contributions? :elsa:
   - [ ] comments mike? :elsa:
   - [ ] grant number correct? :elsa:
 ** CHASE [0/3]
-
   - [ ] email kirril :elsa:
   - [ ] fellow of casa! :elsa:
   - [ ] send cover letter examples :elsa:
@@ -61,9 +47,12 @@
 
 
 ** NEXT LEVEL:
-    [ ] clarify if structure ok for SR  
-    [ ] Shorten!!!
-
+  - [ ] clarify if structure ok for SR  
+  - [ ] Shorten!!!
+  - [ ] LETTER :::
+      - why suitable for the journal
+      - why relevant to the reader
+      - who to ask?
 
 
 
@@ -138,6 +127,20 @@
     - [X] decide sensitivity parameters
     - [X] split appendix
     - [X] check pattern letters
+  - [X] fig. vs. figure 2017-04-16 14:33
+  - [X] add sensitivity plots to Rnw 2017-04-16 14:33
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 * NOTES

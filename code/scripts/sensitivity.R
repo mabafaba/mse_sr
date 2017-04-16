@@ -1,18 +1,44 @@
-# runs
+# parameters:
 runs_sens<-100
 
+sens_resolution_pixelWidth<-pixelWidth_real*2
+sens_resolution_lagsINmeters<-c(100,200,400,1400,4000)
+sens_resolution_lags<-sens_resolution_lagsINmeters/sens_resolution_pixelWidth
+sens_resolution_lags<-2*round((sens_resolution_lags+1)/2)-1
+
+sens_neighbourhoods_pixelWidth<-pixelWidth_real
+sens_neighbourhoods_lagsINmeters<-c(50,100,300,700,2000)
+sens_neighbourhoods_lags<-sens_neighbourhoods_lagsINmeters/sens_neighbourhoods_pixelWidth
+sens_neighbourhoods_lags<-2*round((sens_neighbourhoods_lags+1)/2)-1
+
+sens_resolution_pixelWidth
+sens_resolution_lagsINmeters
+sens_resolution_lags
+sens_resolution_lags
+sens_neighbourhoods_pixelWidth
+sens_neighbourhoods_lagsINmeters
+sens_neighbourhoods_lags
+sens_neighbourhoods_lags
 
 
-# parameters sensitivity: Pixelwidth
-	pixelWidth<-pixelWidth_real*2
-	lagsINmeters<-c(100,200,400,1400,4000)
-	lags=lags_real
-# analysis sensitivity: Pixelwidth
-	data_sens_resolution_1<-load_data(src,layerNames)
-	results_sens_resolution_1<-analysis(data_sens_resolution)
-	nullmod_sens_resolution_1<-analysis_null(data_sens_resolution,runs_sens)
-	saveRDS(results_sens_resolution_1,"sens_res_results_april_16.RDS")
-	saveRDS(nullmod_sens_resolution_1,"sens_res_nullmods_april_16.RDS")
+
+
+
+
+# RESOLUTION
+# activate paramters: Resolution
+pixelWidth<-sens_resolution_pixelWidth
+lagsINmeters<-sens_resolution_lagsINmeters
+lags<-sens_resolution_lags
+
+# analysis sensitivity: 
+	sens_resolution_pixelWidth
+	sens_resolution_lags
+	data_sens_resolution<-load_data(src,layerNames)
+	results_sens_resolution<-analysis(data_sens_resolution)
+	nullmod_sens_resolution<-analysis_null(data_sens_resolution,runs_sens)
+	saveRDS(results_sens_resolution,"sens_res_results_april_16.RDS")
+	saveRDS(nullmod_sens_resolution,"sens_res_nullmods_april_16.RDS")
     saveRDS(list(pw=pixelWidth,linm=lagsINmeters,lags=lags,runs=runs_sens),"sens_res_parameters_april_16.RDS")
 
 
@@ -26,11 +52,13 @@ runs_sens<-100
 		plot_real_vs_null_entropies(results_sens_resolution_1,nullmod_sens_resolution_1)
 		dev.off.all()
 
+
+
+# NEIGHBOURHOOD SIZES
 # parameters sensitivity: Lags
-	pixelWidth<-pixelWidth_real
-	lagsINmeters<-c(50,100,300,700,2000)
-	lags=lagsINmeters/pixelWidth
-	lags=2*round((lags+1)/2)-1
+pixelWidth<-sens_neighbourhoods_pixelWidth
+lagsINmeters<-sens_neighbourhoods_lagsINmeters
+lags<-sens_neighbourhoods_lags
 # analysis sensitivity: Lags
 	data_sens_resolution<-load_data(src,layerNames)
 	results_sens_resolution<-analysis(data_sens_resolution)
@@ -49,3 +77,10 @@ runs_sens<-100
 		setParDefaults()
 		plot_real_vs_null_entropies(results_sens_resolution,nullmod_sens_resolution)
 		dev.off.all()
+
+
+
+# RESET ACTIVE PARAMETERS TO REAL
+pixelWidth<-pixelWidth_real
+lagsINmeters<-lagsINmeters_real
+lags<-lags_real

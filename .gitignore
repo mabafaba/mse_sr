@@ -6,11 +6,16 @@
 
 # except folders:
 !code/
-
 !code/scripts/*
 code/data
 code/run_temp
 code_output
+
+!paper_sr_format/
+paper_sr_format/*
+!wlscirep.cls
+!wlscirepappendix.cls
+
 # except files:
 !main2.Rnw
 !master.bib
