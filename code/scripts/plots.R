@@ -1,7 +1,10 @@
 h2w<-function(height){
-return(height*3/2)
+# return(height*3/2)
+return(height*6)
 }
-mfrowsynth<-c(2,3)
+
+mfrowsynth<-c(1,6)
+scaleplots=0.5
 setParDefaults<-function(font=TRUE,border=TRUE,axis=TRUE,xpd=FALSE){
 	if(font){par(family = "serif")}
 	if(border){par(bty="n")}
@@ -79,9 +82,9 @@ plots_synthetic<-function(results,prefix,synthetic_many_results){
 #plotting patterns only:
 print("patterns")
 	h<-15*length(results$entropies)/2
-	pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),h2w(h),h+2)
+	pdf(paste0("./code/output/",prefix,"synthetic_patterns.pdf"),h2w(h)*scaleplots,(h+2)*scaleplots)
 	par(mfrow=mfrowsynth
-		,mai=c(2,0.5,0.5,0.5))
+		,mai=c(2*scaleplots,0.5*scaleplots,0.5*scaleplots,0.5*scaleplots))
 	setParDefaults()
 	for( i in c(1:length(results$entropies)) ){
 			plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 1),bty="o")
@@ -95,7 +98,7 @@ print("patterns")
 
 	jpeg(paste0("./code/output/",prefix,"synthetic_patterns.jpg"),h2w(h),h+2,res=100,units = 'in')
 	par(mfrow=mfrowsynth
-		,mai=c(2,0.5,0.5,0.5))
+		,mai=c(2*scaleplots,0.5*scaleplots,0.5*scaleplots,0.5*scaleplots))
 	setParDefaults()
 	for( i in c(1:length(results$entropies)) ){
 			plotr(results$data[[i]],cols=gray.colors(500, start = 0, end = 1),bty="o")
@@ -113,16 +116,16 @@ print("patterns")
 print("geospace zones")
 	h<-15*length(results$entropies)/2
 
-	pdf(paste0("./code/output/",prefix,"geospace_zones.pdf"),h2w(h),h+2)
+	pdf(paste0("./code/output/",prefix,"geospace_zones.pdf"),h2w(h)*scaleplots,(h+2)*scaleplots)
 	par(mfrow=mfrowsynth
-		,mai=c(2,0.5,0.5,0.5))
+		,mai=c(2*scaleplots,0.5*scaleplots,0.5*scaleplots,0.5*scaleplots))
 	setParDefaults()
 	plot_synthetic_geospace_zones(results)
 	dev.off.all()
 
 	jpeg(paste0("./code/output/",prefix,"geospace_zones.jpg"),h2w(h),h+2,res=100,units = 'in')
 par(mfrow=mfrowsynth
-		,mai=c(2,0.5,0.5,0.5))
+		,mai=c(2*scaleplots,0.5*scaleplots,0.5*scaleplots,0.5*scaleplots))
 	setParDefaults()
 	plot_synthetic_geospace_zones(results)
 	dev.off.all()
@@ -133,38 +136,38 @@ par(mfrow=mfrowsynth
 
 
 
-#plotting patterns aggregated:
-print("patterns aggregated")
-pdf(paste0("./code/output/",prefix,"synthetic_patterns_aggregated.pdf"),15*length(results$lags[[1]]),15*length(results$lags))
-par(mfrow=c(length(results$lags),length(results$lags[[1]])))
-setParDefaults()
-for( i in c(1:length(results$lags)) ){
-	for( j in c(1:length(results$lags[[1]])) ){
+#plotting geospace:
+# print("patterns aggregated")
+# pdf(paste0("./code/output/",prefix,"synthetic_patterns_aggregated.pdf"),15*length(results$lags[[1]]),15*length(results$lags))
+# par(mfrow=c(length(results$lags),length(results$lags[[1]])))
+# setParDefaults()
+# for( i in c(1:length(results$lags)) ){
+# 	for( j in c(1:length(results$lags[[1]])) ){
 
-		plotr(results$lags[[i]][[j]], cols=gray.colors(100,start = 0.1, end = 1),bty="o")
-		}
-	}
-dev.off.all()
+# 		plotr(results$lags[[i]][[j]], cols=gray.colors(100,start = 0.1, end = 1),bty="o")
+# 		}
+# 	}
+# dev.off.all()
 
-jpeg(paste0("./code/output/",prefix,"synthetic_patterns_aggregated.jpg"),15*length(results$lags[[1]]),15*length(results$lags),res=100,units = 'in')
-par(mfrow=c(length(results$lags),length(results$lags[[1]])))
-setParDefaults()
-for( i in c(1:length(results$lags)) ){
-	for( j in c(1:length(results$lags[[1]])) ){
+# jpeg(paste0("./code/output/",prefix,"synthetic_patterns_aggregated.jpg"),15*length(results$lags[[1]]),15*length(results$lags),res=100,units = 'in')
+# par(mfrow=c(length(results$lags),length(results$lags[[1]])))
+# setParDefaults()
+# for( i in c(1:length(results$lags)) ){
+# 	for( j in c(1:length(results$lags[[1]])) ){
 
-		plotr(results$lags[[i]][[j]], cols=gray.colors(100,start = 0.1, end = 1),bty="o")
-		}
-	}
-dev.off.all()
+# 		plotr(results$lags[[i]][[j]], cols=gray.colors(100,start = 0.1, end = 1),bty="o")
+# 		}
+# 	}
+# dev.off.all()
 
 
 
 # plotting phase spaces:
 print("phase spaces")
 	h<-3*length(results$lags[[1]])/2
-	pdf(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.pdf"),h2w(h),h)
+	pdf(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.pdf"),h2w(h)*scaleplots,h*scaleplots)
 	par(mfrow=mfrowsynth)
-	par(mar=c(4,3,4,3),oma=c(0,1.5,0,0))
+	par(mar=c(4,3,4,3)*scaleplots,oma=c(0,1.5,0,0)*scaleplots)
 	setParDefaults()
 	subs=paste0("",letters[1:10],")")
 	plotdist1<-(lags_synthetic[synth_phasespace_plot_scales[1]]-1)/2
@@ -198,9 +201,9 @@ print("phase spaces")
 	}
 	dev.off.all()
 
-	jpeg(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.jpg"),h2w(h),h,res=100,units = 'in')
+	jpeg(paste0("./code/output/",prefix,"synthetic_patterns_phasespace.jpg"),h2w(h)*scaleplots,h*scaleplots,res=100,units = 'in')
 	par(mfrow=mfrowsynth)
-	par(mar=c(4,3,4,3),oma=c(0,1.5,0,0))
+	par(mar=c(4,3,4,3)*scaleplots,oma=c(0,1.5,0,0)*scaleplots)
 	setParDefaults()
 	subs=paste0("",letters[1:10],")")
 	plotdist1<-(lags_synthetic[synth_phasespace_plot_scales[1]]-1)/2
@@ -238,12 +241,13 @@ print("phase spaces")
 
 # plotting geospace entropies
 	print("geospace entropy")
-	pdf(paste0("./code/output/",prefix,"geospace_entropy.pdf"),5,5*2/3)
+	h<-5*2/3
+	pdf(paste0("./code/output/",prefix,"geospace_entropy.pdf"),h2w(h)*scaleplots,h*scaleplots)
 	setParDefaults()
 	plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 	dev.off.all()
 
-	jpeg(paste0("./code/output/",prefix,"geospace_entropy.jpg"),5,5*2/3,res=100,units = 'in')
+	jpeg(paste0("./code/output/",prefix,"geospace_entropy.jpg"),h2w(h)*scaleplots,h*scaleplots,res=100,units = 'in')
 	setParDefaults()
 	plot_synthetic_entropies_geospace_points_w_confidence(synthetic_many_results)
 	dev.off.all()
@@ -263,8 +267,8 @@ dev.off.all()
 
 # plotting geospace frequencies
 	print("geospace frequencies")
-	h<-3
-	pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),h2w(h),h)
+	h<-6
+	pdf(paste0("./code/output/",prefix,"geospace_frequency.pdf"),h2w(h)*scaleplots,h*scaleplots)
 	par(mfrow=mfrowsynth)
 	setParDefaults()
 	for (i in c(1:length(results$geospace$probs))) {
@@ -292,7 +296,8 @@ dev.off.all()
 		
 	}
 	dev.off.all()
-	pdf(paste0("./code/output/",prefix,"boxplot.pdf"),5,5*2/3)
+	h<-5*2/3
+	pdf(paste0("./code/output/",prefix,"boxplot.pdf"),h2w(h),h)
 	setParDefaults()
 	plot_synthetic_entropies_points_w_confidence(synthetic_many_results)
 	dev.off.all()
@@ -524,8 +529,8 @@ layout_m <- matrix(c((1:(8*7)),rep((7*8)+1,8)),nrow = 8,ncol = 8,byrow = TRUE)
 thislayout<-layout(mat = layout_m,heights=c(rep(1,7),0.3))
 	par(
 		#mfrow=c(7,8),
-		mar=c(0.5,0.5,0.5,0.5)
-		,oma=c(0,10,10,0))
+		mar=c(0.5,0.5,0.5,0.5)*scaleplots
+		,oma=c(0,10,10,0))*scaleplots
 
 
   		par(xpd=NA)

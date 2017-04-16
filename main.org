@@ -2,25 +2,21 @@
 
 * ALL TO DO [1/11]
 
-** now  
-  - [ ] write sensitivity
-  - [ ] rewrite abstract
-  - [ ] tags (no sr guidelines found)
-  - [ ] arxiv layout: section title numbers
-  - [ ] figures in good location
-  - [ ] compile supplementary information incl data and code
-  - [ ] data availability statement
+** now  [1/7]
   - [ ] geophasespace labels size
-  - [ ] figures in one line for arxiv
+  - [ ] arxiv layout: figures in one line
+  - [ ] arxiv layout: section title numbers
+  - [ ] arxiv layout: figures in good location
+  - [ ] run sensitivity
+  - [ ] write sensitivity
 
 
 
-
-* CANT DO NOW [0/1]
-    - [ ] run sensitivity
-    - [ ] kürzen
-    - [ ] remove references
-    - [ ] make sure Sexpr variables are in correct state!!!
+* CANT DO NOW [0/4]
+  - [ ] kürzen
+  - [ ] remove references
+  - [ ] make sure Sexpr variables are in correct state!!!
+  - [ ] compile supplementary information incl data and code
 * NEXT [1/1]
   
 
@@ -35,6 +31,8 @@
   - [ ] elsa: contributions? :elsa:
   - [ ] comments mike? :elsa:
   - [ ] grant number correct? :elsa:
+  - [ ] data availability statement
+
 ** CHASE [0/3]
   - [ ] email kirril :elsa:
   - [ ] fellow of casa! :elsa:
@@ -127,7 +125,8 @@
   - [X] add sensitivity plots to Rnw 2017-04-16 14:33
   - [X] fix appendix refs (sr guidelines)
   - [X] add Binning sensitivity
-
+  - [X] tags (no sr guidelines found)
+  - [X] rewrite abstract
 
 
 

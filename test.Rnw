@@ -26,12 +26,25 @@
 
 \keywords{entropy, spatial, cities, complexity, urban}
 
+% \begin{abstract}
+% We propose a multiscale measure of entropy for spatial configurations in the context of cities. Existing approaches usually use entropy as a proxy for spatial evenness or disorder, and translate the phase space from statistical mechanics literally to the geographical space. In contrast, we focus on building an interpretation of entropy that is conceptually consistent with statistical mechanics as well as the view of cities as complex systems. For this, we focus on the characteristics of places and, most importantly, take into account interactions between them.
+% By comparing synthetic patterns, we show that if elements of a system interact spatially, complex spatial patterns display higher entropy. We can thus partly explain morphological complexity in cities as simply the most probable configuration. Further, we conduct a case study of entropy in the spatial distribution of buildings with different functions in West London over a period of 130 years. We find that the polycentric sprawl increases entropy compared to spatially random spread, compact mixed-use growth or fully segregated patterns. This work offers a new approach to explaining how morphological complexity in cities emerges from individual behaviour. Furthermore, it may be helpful in dealing with uncertainty in planning.
+
+% \end{abstract}
+
+
+
+
 \begin{abstract}
-We propose a multiscale measure of entropy for spatial configurations in the context of cities. Existing approaches usually use entropy as a proxy for spatial evenness or disorder, and translate the phase space from statistical mechanics literally to the geographical space. In contrast, we focus on building an interpretation of entropy that is conceptually consistent with statistical mechanics as well as the view of cities as complex systems. For this, we focus on the characteristics of places and, most importantly, take into account interactions between them.
-By comparing synthetic patterns, we show that if elements of a system interact spatially, complex spatial patterns display higher entropy. We can thus partly explain morphological complexity in cities as simply the most probable configuration. Further, we conduct a case study of entropy in the spatial distribution of buildings with different functions in West London over a period of 130 years. We find that the polycentric sprawl increases entropy compared to spatially random spread, compact mixed-use growth or fully segregated patterns. This work offers a new approach to explaining how morphological complexity in cities emerges from individual behaviour. Furthermore, it may be helpful in dealing with uncertainty in planning.
+% We propose a multiscale measure of entropy for spatial configurations in the context of cities. Existing approaches usually use entropy as a proxy for spatial evenness or disorder, and translate the phase space from statistical mechanics literally to the geographical space. In contrast, we focus on building an interpretation of entropy that is conceptually consistent with statistical mechanics as well as the view of cities as complex systems. For this, we focus on the characteristics of places and, most importantly, take into account interactions between them.
+% By comparing synthetic patterns, we show that if elements of a system interact spatially, complex spatial patterns display higher entropy. We can thus partly explain morphological complexity in cities as simply the most probable configuration. Further, we conduct a case study of entropy in the spatial distribution of buildings with different functions in West London over a period of 130 years. We find that the polycentric sprawl increases entropy compared to spatially random spread, compact mixed-use growth or fully segregated patterns. This work offers a new approach to explaining how morphological complexity in cities emerges from individual behaviour. Furthermore, it may be helpful in dealing with uncertainty in planning.
 
+
+Entropy relates the fast, microscopic behaviour of the elements in a system to its slow, macroscopic state. We propose to use it to explain how, as complexity theory suggests, small scale decisions of individuals form cities. For this, we offer the first interpretation of urban entropy for cities that takes into account that interaction between different places should be reflected in interdependently entangled states, and do so with a multiscale approach.
+With simulated patterns we show that structural complexity in spatial systems can be the most probable configuration if the elements of a system interact across multiple scales.
+In the case study that observes the distribution of functions in West London from 1875 to 2005, we can partly explain the observed polycentric sprawl as a result of higher entropy compared to spatially random spread, compact mixed-use growth or fully segregated patterns.
+This work contributes to understanding why cities are morphologically complex, and gives a consistent relationship between entropy and complexity that solves contradictions in the literature. Finally, because we evaluate the constraints urban morphology imposes on possible ways to use the city, the general framework of thinking could be applied to better deal with uncertainty about people, cities and the future in planning practice.
 \end{abstract}
-
 
 \flushbottom
 \maketitle
