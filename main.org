@@ -2,12 +2,12 @@
 
 * ALL TO DO [1/11]
 
-** now  [1/7]
-  - [ ] geophasespace labels size
-  - [ ] arxiv layout: figures in one line
+** now  [3/6]
+  - [X] geophasespace labels size
+  - [X] arxiv layout: figures in one line
   - [ ] arxiv layout: section title numbers
   - [ ] arxiv layout: figures in good location
-  - [ ] run sensitivity
+  - [X] run sensitivity
   - [ ] write sensitivity
 
 
@@ -123,10 +123,10 @@
     - [X] check pattern letters
   - [X] fig. vs. figure 2017-04-16 14:33
   - [X] add sensitivity plots to Rnw 2017-04-16 14:33
-  - [X] fix appendix refs (sr guidelines)
-  - [X] add Binning sensitivity
-  - [X] tags (no sr guidelines found)
-  - [X] rewrite abstract
+  - [X] fix appendix refs (sr guidelines) 2017-04-17 01:35
+  - [X] add Binning sensitivity 2017-04-17 01:35
+  - [X] tags (no sr guidelines found) 2017-04-17 01:35
+  - [X] rewrite abstract 2017-04-17 01:35
 
 
 

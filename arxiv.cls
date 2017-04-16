@@ -173,7 +173,7 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 
 \newlength{\tocsep} 
 \setlength\tocsep{1.5pc} % Sets the indentation of the sections in the table of contents
-\setcounter{tocdepth}{3} % Show only three levels in the table of contents section: sections, subsections and subsubsections
+%\setcounter{tocdepth}{3} % Show only three levels in the table of contents section: sections, subsections and subsubsections
 
 \usepackage{lipsum} % Required to insert dummy text
 %-----------------------------------------------

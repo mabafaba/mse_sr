@@ -1,5 +1,5 @@
 # parameters:
-runs_sens<-2
+runs_sens<-50
 
 sens_resolution_pixelWidth<-pixelWidth_real*2
 sens_resolution_lagsINmeters<-c(100,500,1300,4100)
@@ -14,7 +14,7 @@ sens_neighbourhoods_lags<-2*round((sens_neighbourhoods_lags+1)/2)-1
 sens_bins_pixelWidth<-pixelWidth_real
 sens_bins_lagsINmeters<-lagsINmeters_real
 sens_bins_lags<-lags_real
-sens_bins_lags=10
+sens_bins_bins=6
 
 
 # RESOLUTION
@@ -24,8 +24,6 @@ lagsINmeters<-sens_resolution_lagsINmeters
 lags<-sens_resolution_lags
 
 # analysis sensitivity: 
-	sens_resolution_pixelWidth
-	sens_resolution_lags
 	data_sens_resolution<-load_data(src,layerNames)
 	results_sens_resolution<-analysis(data_sens_resolution)
 	nullmod_sens_resolution<-analysis_null(data_sens_resolution,runs_sens)
@@ -41,7 +39,7 @@ lags<-sens_resolution_lags
 		,paste(lagsINmeters,collapse="-")
 		,"real_vs_null_entropies.pdf"),7,7)
 		setParDefaults()
-		plot_real_vs_null_entropies(results_sens_resolution_1,nullmod_sens_resolution_1)
+		plot_real_vs_null_entropies(results_sens_resolution,nullmod_sens_resolution)
 		dev.off.all()
 
 
@@ -52,11 +50,11 @@ pixelWidth<-sens_neighbourhoods_pixelWidth
 lagsINmeters<-sens_neighbourhoods_lagsINmeters
 lags<-sens_neighbourhoods_lags
 # analysis sensitivity: Lags
-	data_sens_resolution<-load_data(src,layerNames)
-	results_sens_resolution<-analysis(data_sens_resolution)
-	nullmod_sens_resolution<-analysis_null(data_sens_resolution,runs_sens)
-	saveRDS(results_sens_resolution,"sens_lags_results_april_16.RDS")
-	saveRDS(nullmod_sens_resolution,"sens_lags_nullmods_april_16.RDS")
+	data_sens_lags<-load_data(src,layerNames)
+	results_sens_lags<-analysis(data_sens_lags)
+	nullmod_sens_lags<-analysis_null(data_sens_lags,runs_sens)
+	saveRDS(results_sens_lags,"sens_lags_results_april_16.RDS")
+	saveRDS(nullmod_sens_lags,"sens_lags_nullmods_april_16.RDS")
     saveRDS(list(pw=pixelWidth,linm=lagsINmeters,lags=lags,runs=runs_sens),"sens_lags_parameters_april_16.RDS")
 
 
@@ -67,7 +65,7 @@ lags<-sens_neighbourhoods_lags
 		,paste(lagsINmeters,collapse="-")	
 		,"real_vs_null_entropies.pdf"),7,7)
 		setParDefaults()
-		plot_real_vs_null_entropies(results_sens_resolution,nullmod_sens_resolution)
+		plot_real_vs_null_entropies(results_sens_lags,nullmod_sens_lags)
 		dev.off.all()
 
 
@@ -75,16 +73,16 @@ lags<-sens_neighbourhoods_lags
 
 # BINS
 # parameters sensitivity: bins
-
+plot_real_vs_null_entropies
 pixelWidth<-sens_bins_pixelWidth
 lagsINmeters<-sens_bins_lagsINmeters
 lags<-sens_bins_lags
-sens_bins_lags=10
+sens_bins_bins=sens_bins_bins
 
 # analysis sensitivity: bins
 	data_sens_bins<-load_data(src,layerNames)
-	results_sens_bins<-analysis(data_sens_bins,bins=sens_bins_lags)
-	nullmod_sens_bins<-analysis_null(data_sens_bins,runs_sens,bins=sens_bins_lags)
+	results_sens_bins<-analysis(data_sens_bins,bins=sens_bins_bins)
+	nullmod_sens_bins<-analysis_null(data_sens_bins,runs_sens,bins=sens_bins_bins)
 	saveRDS(results_sens_bins,"sens_lags_results_april_16.RDS")
 	saveRDS(nullmod_sens_bins,"sens_lags_nullmods_april_16.RDS")
     saveRDS(list(pw=pixelWidth,linm=lagsINmeters,lags=lags,runs=runs_sens,bins=sens_bins_lags),"sens_lags_parameters_april_16.RDS")
