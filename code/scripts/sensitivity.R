@@ -11,18 +11,10 @@ sens_neighbourhoods_lagsINmeters<-c(50,100,300,700,2000)
 sens_neighbourhoods_lags<-sens_neighbourhoods_lagsINmeters/sens_neighbourhoods_pixelWidth
 sens_neighbourhoods_lags<-2*round((sens_neighbourhoods_lags+1)/2)-1
 
-sens_resolution_pixelWidth
-sens_resolution_lagsINmeters
-sens_resolution_lags
-sens_resolution_lags
-sens_neighbourhoods_pixelWidth
-sens_neighbourhoods_lagsINmeters
-sens_neighbourhoods_lags
-sens_neighbourhoods_lags
-
-
-
-
+sens_bins_pixelWidth<-pixelWidth_real
+sens_bins_lagsINmeters<-lagsINmeters_real
+sens_bins_lags<-lags_real
+sens_bins_lags=10
 
 
 # RESOLUTION
@@ -79,6 +71,31 @@ lags<-sens_neighbourhoods_lags
 		dev.off.all()
 
 
+
+
+# BINS
+# parameters sensitivity: bins
+
+pixelWidth<-sens_bins_pixelWidth
+lagsINmeters<-sens_bins_lagsINmeters
+lags<-sens_bins_lags
+sens_bins_lags=10
+
+# analysis sensitivity: bins
+	data_sens_bins<-load_data(src,layerNames)
+	results_sens_bins<-analysis(data_sens_bins,bins=sens_bins_lags)
+	nullmod_sens_bins<-analysis_null(data_sens_bins,runs_sens,bins=sens_bins_lags)
+	saveRDS(results_sens_bins,"sens_lags_results_april_16.RDS")
+	saveRDS(nullmod_sens_bins,"sens_lags_nullmods_april_16.RDS")
+    saveRDS(list(pw=pixelWidth,linm=lagsINmeters,lags=lags,runs=runs_sens,bins=sens_bins_lags),"sens_lags_parameters_april_16.RDS")
+	dev.off.all()
+	pdf(paste0("./code/output/","sensitivity_lags"
+		,pixelWidth
+		,paste(lagsINmeters,collapse="-")	
+		,"real_vs_null_entropies.pdf"),7,7)
+		setParDefaults()
+		plot_real_vs_null_entropies(results_sens_bins,nullmod_sens_bins)
+	dev.off.all()
 
 # RESET ACTIVE PARAMETERS TO REAL
 pixelWidth<-pixelWidth_real

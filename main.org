@@ -2,19 +2,16 @@
 
 * ALL TO DO [1/11]
 
-** now
-  - [X] fix appendix refs (sr guidelines)
+** now  
   - [ ] write sensitivity
-  - [ ] add Binning sensitivity
   - [ ] rewrite abstract
-  - [ ] tags (sr guidelines)
-  - [ ] Make complete Scientific Reports Requirements checklist
-  - [ ] remove comments
+  - [ ] tags (no sr guidelines found)
   - [ ] arxiv layout: section title numbers
   - [ ] figures in good location
   - [ ] compile supplementary information incl data and code
   - [ ] data availability statement
-
+  - [ ] geophasespace labels size
+  - [ ] figures in one line for arxiv
 
 
 
@@ -52,7 +49,7 @@
       - why suitable for the journal
       - why relevant to the reader
       - who to ask?
-
+  - [ ] check off submission guidelines
 
 
 
@@ -128,6 +125,8 @@
     - [X] check pattern letters
   - [X] fig. vs. figure 2017-04-16 14:33
   - [X] add sensitivity plots to Rnw 2017-04-16 14:33
+  - [X] fix appendix refs (sr guidelines)
+  - [X] add Binning sensitivity
 
 
 

@@ -1,11 +1,11 @@
-analysis<-function(data){
+analysis<-function(data,bins=3){
 	print("lags")
 	lags_live<-lapply(data$live,function(x){return(specifiedlags_matrix(x,lags))})
 	lags_work<-lapply(data$work,function(x){return(specifiedlags_matrix(x,lags))})
 	lags_leisure<-lapply(data$leisure,function(x){return(specifiedlags_matrix(x,lags))})
 	# lags_all<-lapply(data$all,function(x){return(specifiedlags_matrix(x,lags))})
   # print("entropies")
-	# e_live<-lapply(lags_live,raster_entropy_reps)
+	# e_live<-labipply(lags_live,raster_entropy_reps)
 	# e_work<-lapply(lags_work,raster_entropy_reps)
 	# e_leisure<-lapply(lags_leisure,raster_entropy_reps)
 	# e_all<-lapply(lags_all,raster_entropy_reps)
@@ -15,7 +15,7 @@ analysis<-function(data){
 		e_combined<-c(e_combined,
 		  	list(multiraster_entropy_reps(
 		    list(lags_live[[i]],lags_work[[i]],lags_leisure[[i]])
-		    )
+		    ,bins=bins)
 	  	)
 	  )
 	}
@@ -49,7 +49,7 @@ analysis<-function(data){
 
 
 
-analysis_null<-function(data,runs=1){
+analysis_null<-function(data,runs=1,bins=3){
 # matrices to store results
 randomised_many<-matrix(NA,runs,7)
 compactmixed_many<-matrix(NA,runs,7)
@@ -62,8 +62,8 @@ randomised<-randomise_spatially(data)
 compactmixed<-compact_mixed_use(data)
 
 # analyse randomised data
-randomised_results<-analysis(randomised)
-compactmixed_results<-analysis(compactmixed)
+randomised_results<-analysis(randomised,bins)
+compactmixed_results<-analysis(compactmixed,bins)
 
 # pull out entropy only:
 randomised_many[i,]<-unlist(lapply(randomised_results$entropies$combined,function(x){return(x$entropy)}))
@@ -75,7 +75,7 @@ compactmixed_many_confidence_intervals<-apply(compactmixed_many,2,confidence_int
 }
 compactsegregated_many<-matrix(NA,1,7)
 compactsegregated<-compact_segregated(data)
-compactsegregated_results<-analysis(compactsegregated)
+compactsegregated_results<-analysis(compactsegregated,bins)
 compactsegregated_many[1,]<-unlist(lapply(compactsegregated_results$entropies$combined,function(x){return(x$entropy)}))
 compactsegregated_many_confidence_intervals<-NA
 

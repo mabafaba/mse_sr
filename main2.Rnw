@@ -1,32 +1,15 @@
-% \SweaveOpts{prefix.string=../sweavegraphic}
 \documentclass[article,10pt]{./paper_sr_format/wlscirep}
 \usepackage{float}
 \usepackage[utf8]{inputenc}
-% \setcounter{secnumdepth}{10}
-%\setcounter{tocdepth}{10}
-%\usepackage[nomarkers,figuresonly]{float}
-
-% custom local margins:
-\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist 
-
-
-
-
-
 
 \title{Multiscale Entropy in the Spatial Context of Cities}
-
 \author[1,*]{Martin Barner}
 \author[2,*]{Dr. Elsa Arcaute}
 \author[3]{Dr. Kiril Stanilov}
 
 \affil[1,2,3]{Centre for Advanced Spatial Analysis, University College London, 90 Tottenham Court Road, London W1N 6TR, UK}
-
 \affil[*]{barner.mar@gmail.com}
-
 % \affil[+]{these authors contributed equally to this work}
-
 \keywords{entropy, spatial, cities, complexity, urban}
 
 \begin{abstract}
@@ -38,23 +21,14 @@ By comparing synthetic patterns, we show that if elements of a system interact s
 
 \flushbottom
 \maketitle
-% * <john.hammersley@gmail.com> 2015-02-09T12:07:31.197Z:
-%
-%  Click the title above to edit the author information and abstract
-%
 % \tableofcontents
-
 \thispagestyle{empty}
 \setlength\parindent{0pt}
-%%%%%%%% ARCHIV
-
-%%%%%%%% ARCHIV
 
 \section*{Introduction}
 % why entropy?
 Entropy in thermodynamics is a concept relating the fast, microscopic behaviour to the slow, macroscopic dynamics of a system.\cite{fastslowentropy} We therefore see it as a suitable tool to be used in studying the relationship between the fast dynamics of individual behaviour and the slow, larger scale dynamics of change in urban structures.
-%Batty recognises not only a ``literature gap'', but ``an entirely new research agenda'' for spatial entropy measures for cities and states that ``substantive interpretations of entropy measures [\ldots] have not been well developed. [\ldots] I sketch the need for new and different entropy measures that enable us to see how equilibrium spatial distributions can be generated as the outcomes of dynamic processes''\cite{Batty2010}. \\ 
-Batty recognised that there are no substantive interpretations of entropy for cities yet and calls for a whole new research agenda.\cite{Batty2010}
+Batty recognised that there are no substantive interpretations of entropy for cities yet and calls for a whole new research agenda.\cite{Batty2010}\\
 
 % what is entropy?
 In its essence, entropy in statistical mechanics is concerned with the number of (microscopic) configurations of the individual elements of a system that lead to the same macroscopic state.\cite{LiveEarthEntropy}.
@@ -63,11 +37,12 @@ There are for example more ways to distribute molecules evenly in a room than to
 
 % phase space in cities?
 Buildings do not float around in space randomly, and they do not collide and randomly exchange energy. To define a relevant phase space for urban morphology, we must carefully consider the processes that produce the spatial patterns in cities. 
-
 % existing measures
 Most of the existing measures of entropy in an urban context are either non-spatial, or literally adopt part of the phase space in thermodynamics and use the geographical space directly as the phase space. Entropy then becomes a proxy for spatial evenness. While on the surface this phase space is very similar to thermodynamics, it is not necessarily representative of how the macroscopic state of a city evolves.\\
+
 %multiscale entropy: differences
 In this paper, we attempt to formulate a measure of entropy that is conceptually consistent with entropy in statistical mechanics and an understanding of cities as complex systems. Two fundamental aspects thus differentiate our approach from existing spatial measures of entropy:\\
+
 %1. complex systems:  Characteristics
 First, the phase space dimensions reflect characteristics of places instead of absolute locations, because cities are complex systems: 
 Viewing cities as complex systems brought a fundamental shift in our understanding of how cities function, grow, and change over time\cite{Jane,NewScience,CitiesAndComplexity,allen1997cities}.
@@ -91,8 +66,7 @@ In this chapter we summarise existing research and introduce the multiscale entr
 
 \subsection*{Existing approaches to spatial, scale dependent and urban entropy}
 Entropy is applied extensively in spatial analysis. It appears in Wilson's spatial interaction models\cite{Wilson1970} that use entropy maximisation to predict traffic and financial flows. Further, there are attempts to discuss the energy and resources entering and exiting an urban systems in relation to entropy.\cite{EcosystemEntropy}. Vranken et al. \cite{Vranken2015} summarise 50 different measures of entropy in landscape ecology, some of which discuss scale dependence, usually in the context of the modifiable areal unit problem. They do not mention any relationship to statistical mechanics or thermodynamics, unless they directly relate to the energy contained in a biological system. \\
-Further, entropy across multiple scales appears in measures of complexity in time series, for example by Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} for medical time series. It has been applied as a measure of complexity in numerous fields of research\cite{MultiscaleEntropyReview}.
-%In contrast to our approach, a single entropy value is produced from integrating over entropies after coarse graining at different scales. By adding the entropies, different scales are viewed as independent systems.  
+Further, entropy across multiple scales appears in measures of complexity in time series, for example by Zhang \cite{ZhangPhaseSpaceApproach} and Costa et al. \cite{costa2000multiscale,costa2002multiscale,costa2005multiscale,costa2015generalized} for medical time series. It has been applied as a measure of complexity in numerous fields of research\cite{MultiscaleEntropyReview}.  
 Finally, there are methodological and conceptual parallels of our approach to methods for estimating fractal dimensions \cite{mandelbrot}, specifically box counting \cite{boxcounting} that could be worth exploring further.\\
 
 \subsection*{Entropy in statistical mechanics}
@@ -135,31 +109,6 @@ This interpretation answers the question: how uncertain is the characteristic of
 
 \item {Finally, there are approaches that define spatial co-occurrences of different elements or characteristics as different states in the phase space.\cite{leibovici2009defining}. They generally have higher entropy if observations are distributed more evenly in space, and if there is no spatial correlation between observations of different types. They partly look at varying scales, mainly in terms of index sensitivity\cite{leiboviciLocalGlobal} and do not discuss interpretations in terms of thermodynamics or statistical mechanics. Most closely related to our approach are Johnson et al.'s conditional entropy profiles\cite{conditionalEntropyProfiles} that evaluate how well observations at a given resolution predict observations at a finer resolution. Expressing this conditional entropy in terms of information theory, one could say they evaluate how much of the information at a given resolution is contained in observations at a coarser resolution. The authors do not discuss the measure's meaning in terms of statistical mechanics. This group of phase spaces broadly answers the question: How well does the spatial distribution of one type of observations predict the distribution of another?}
 \end{itemize}
-% We can draw four random places from patterns a) and b) and look at their own values and their neighbourhoods as in figure \ref{fig:samples}
-% How much uncertainty is there about the value of the place itself and the mean value of its neighbourhood?
-% In both patterns we are equally likely to draw a black or a white pixel. But in pattern \Sexpr{synthfig_letters["unif"]}  we can be certain that it will be in an ``even mix'' type of neighbourhood. In pattern \Sexpr{synthfig_letters["casc"]} on the other hand the type of neigbhourhood is much harder to predict.
-
-
-% If we consider a binary pattern with N pixels, and distinguish all combinations precisely, there are $2^N$ possible patterns.
-
-% This is consistent with recombining groups until reaching a group size of N pixels, where the total number of possible configurations C is given as the recursive function
-
-% $$C(N) = C(N/2)^2 \quad \text{with} \quad C(1) = 2  $$
-
-% Then $$ C(N)= 2^N$$
-
-
-% The maximum entropy with $2^N$ states is $\log{\left(2^N\right)}$. There are $\log_2{N}$ steps of combining groups, and each steps adds an entropy of $\log{2}$. We can split the total entropy $\log{\left(2^N\right)}$ in the partial entropies added by each step of combining groups:
-
-% $$\log{\left(2^N\right)} = \log_2{\left(N\right)} \log(2)$$
-
-% Each step is the entropy at that step minus the entropy from the previous step:
-% $$H(x)-H(x-1)= \log{n(x)} - \log{\frac{n(x)}{2}} = \log{2}$$
-
-% This cancels out all entropies except for the last step. But we want to capture the amount of randomness at all scales of the spatial configuration. The multiscale entropy has then a maximum entropy of 
-% $$\log(2)$$
-
-
 
 \subsection*{The multiscale entropy phase space}
 In contrast to the existing measures of entropy discussed above, we want to answer the question: how uncertain is what a randomly selected resident does, based on the structure of the city? For places in the city this would mean: how uncertain are the characteristics of places a person could be in, considering that the characteristics of a place are defined not only by its own value, but also by the characteristics of the places around it? In that sense, none of the approaches described above is a conceptually consistent interpretation of entropy that reflects the idea of cities as emergent phenomena. Instead we need a measure that fulfills the following requirements:
@@ -383,16 +332,14 @@ The point we make is that almost arbitrary results can be obtained depending on 
 Beyond these theoretical considerations, the general framework of thinking in terms of urban entropy may give a useful perspective on practical planning and design decisions.\\
 
 What is ignored entirely so far except for a vague notion of some interaction between different places, is essentially everything else we already know about cities: how people use them, or how social and economic processes shape their structure. Paradoxically, that is precisely why this might be a powerful concept. It allows us to make \emph{the statistically best guess about what we do not know.} From a planners perspective, we would try to optimise our planning effort based on some assumptions about people and societies, how they should or want to use cities, and beyond that based on some prediction about the future and an assessment of what should be considered a ``good'' city. There is a limit to how certain we can be about these assumptions.  We could increase the probability to build ``good'' cities even if our assumptions were wrong, if circumstances change unexpectedly or if what is considered a ``good'' city changes: If we believe to know a number of things with varying certainty, a conceptually consistent theory of urban entropy could be used to make plans that are less likely to fail by \emph{physically expressing uncertainty in the structures we build.}. 
-%A strict segregation of functions similar to the segregated null model in this study (fig. \ref{fig:real_vs_null_rasters} for example was advocated by the Charter of Athens, heavily criticised later\cite{Jacobs}. 
+
 
 \section*{Acknowledgements}
 
 The Authors thank Prof. Mike Batty, Dr. Cl\'ementine Cottineau, Dr. R\'emi Louf, Dr. Carlos Molinero, Dr. (??) Robin Morphet, Hadrien Salat (alphabetically) for useful discussions and support, Susanne Gartner and Jan Arcaute for their patience. M.B. and E.A. were partly funded by the MECHANICITY Project (249393 ERC-2009-AdG) ??. E.A. was partly funded by ????? (current grant??) Did I forget anyone??
 
 \section*{Author contributions statement}
-M.B. was responsible for all main ideas, concept and design, conducted the experiment and data analysis and wrote the manuscript. E.A. critically revised the methodology and the manuscript. K.S. provided the data.% Must include all authors, identified by initials, for example:
-% A.A. conceived the experiment(s),  A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results.  All authors reviewed the manuscript. 
-
+M.B. was responsible for all main ideas, conceived and conducted the experiments and data analysis, analysed the results and wrote the manuscript. E.A. critically revised the methodology and the manuscript. K.S. provided the data.
 \section*{Additional information}
 The authors declare no competing financial interests.
 
