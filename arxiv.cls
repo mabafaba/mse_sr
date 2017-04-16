@@ -71,7 +71,7 @@
 %
 % section/subsection/paragraph set-up
 %
-\RequirePackage[sc,center,medium,compact]{titlesec}
+\RequirePackage[sc,center,small,compact]{titlesec}
   
 
 

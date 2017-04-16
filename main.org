@@ -17,17 +17,19 @@
     - [ ] spell check
     - [ ] check pattern letters
     - [ ] add Binning sensitivity
-    - [ ] decide sensitivity parameters
-    - [ ] split appendix
+    - [X] decide sensitivity parameters
+    - [X] split appendix
     - [ ] fix appendix refs
     - [ ] own layout!
-    - [ ] put style in own file
+
     - [ ] Make complete Scientific Reports Requirements checklist
     - [ ] run sensitivity
     - [ ] tags
 
 * ALL TO DO [1/2]
-- [ ] second leibovici paper (robin)
+- [ ] arxiv layout: section title numbers
+- [ ] figures in good location
+- [X] second leibovici paper (robin)
 - [X] 3. phase space typ
 - [ ] itemize appendix patterns
 - [X] properly acknowledge the one paper that does exactly the same (does it though? -> understand them with thought experiment!)
@@ -36,7 +38,7 @@
 - [ ] Please do not refer to individual panels of supplementary figures.
 - [ ] fig. vs. figure;
 - [ ] Supplementary Fig. S2 online
-
+- [ ] rewrite abstract
 ** NOW (IN ORDER) [2/11] 
   - [ ] add p values
   - [ ] both phase space plots next to each other?
@@ -67,7 +69,7 @@
   - [ ] elsa: acknowledgements? :elsa:
   - [ ] elsa: contributions? :elsa:
   - [ ] comments mike? :elsa:
-
+  - [ ] grant number correct? :elsa:
 ** CHASE [0/3]
 
   - [ ] email kirril :elsa:

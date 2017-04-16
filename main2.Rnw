@@ -1,5 +1,5 @@
 % \SweaveOpts{prefix.string=../sweavegraphic}
-\documentclass[article,twocolumn,10pt]{./arxiv}
+\documentclass[article,10pt]{./paper_sr_format/wlscirep}
 \usepackage{float}
 \usepackage[utf8]{inputenc}
 % \setcounter{secnumdepth}{10}
@@ -133,7 +133,7 @@ This interpretation answers the question: how uncertain is the characteristic of
 
 \item{Most reviewed approaches to spatial entropy use a combination of the two phase spaces above. They are measures of spatial evenness widely discussed in the literature on measures of segregation \cite{Theil1971,duncan1955,GiniIndex,DIndex,EtaSquared,White1983,morgan1983,Logan,LiebersonCarter,MasseyDanton,WongSegregation,Taeuber1969}. They have the highest entropy if entropy is maximised in both phase spaces above at the same time while trying to overcome the modifiable areal unit problem\cite{maup}. Nonetheless, they all try to answer the question: how evenly are observations of different types or characteristics distributed geographically?}
 
-\item {Finally, there are approaches that define spatial co-occurances of different elements or characteristics as different states in the phase space.\cite{leibovici2009defining}\cite{leiboviciRobin}. They have higher entropy if observations are distributed more evenly in space, and if there is no spatial correlation between observations of different types. Most closely related to our approach are Johnson et al.'s conditional entropy profiles\cite{conditionalEntropyProfiles} that evaluate how well observations at a given resolution predict observations at a finer resolution, including the possibility that the former are given by a function of the latter. The authors do not discuss the measure's meaning in terms of statistical mechanics. This group of phase spaces answers the question: How well does the spatial distribution of one type of observations predict the distribution of another?}
+\item {Finally, there are approaches that define spatial co-occurances of different elements or characteristics as different states in the phase space.\cite{leibovici2009defining}. They generally have higher entropy if observations are distributed more evenly in space, and if there is no spatial correlation between observations of different types. They partly look at varying scales, mainly in terms of index sensitivity\cite{leiboviciLocalGlobal} and do not discuss interpretations in terms of thermodynamics or statistical mechanics. Most closely related to our approach are Johnson et al.'s conditional entropy profiles\cite{conditionalEntropyProfiles} that evaluate how well observations at a given resolution predict observations at a finer resolution. Expressing this conditional entropy in terms of information theory, one could say they evaluate how much of the information at a given resolution is contained in observations at a coarser resolution. The authors do not discuss the measure's meaning in terms of statistical mechanics. This group of phase spaces broadly answers the question: How well does the spatial distribution of one type of observations predict the distribution of another?}
 \end{itemize}
 % We can draw four random places from patterns a) and b) and look at their own values and their neighbourhoods as in figure \ref{fig:samples}
 % How much uncertainty is there about the value of the place itself and the mean value of its neighbourhood?
@@ -385,206 +385,6 @@ Beyond these theoretical considerations, the general framework of thinking in te
 What is ignored entirely so far except for a vague notion of some interaction between different places, is essentially everything else we already know about cities: how people use them, or how social and economic processes shape their structure. Paradoxically, that is precisely why this might be a powerful concept. It allows us to make \emph{the statistically best guess about what we do not know.} From a planners perspective, we would try to optimise our planning effort based on some assumptions about people and societies, how they should or want to use cities, and beyond that based on some prediction about the future and an assessment of what should be considered a ``good'' city. There is a limit to how certain we can be about these assumptions.  We could increase the probability to build ``good'' cities even if our assumptions were wrong, if circumstances change unexpectedly or if what is considered a ``good'' city changes: If we believe to know a number of things with varying certainty, a conceptually consistent theory of urban entropy could be used to make plans that are less likely to fail by \emph{physically expressing uncertainty in the structures we build.}. 
 %A strict segregation of functions similar to the segregated null model in this study (fig. \ref{fig:real_vs_null_rasters} for example was advocated by the Charter of Athens, heavily criticised later\cite{Jacobs}. 
 
-\newpage
-\bibliography{master}
-% \addcontentsline{toc}{chapter}{Bibliography}
-
-\section*{Supplementary material}
-\label{appendix}
-
-
-\subsection*{Data and preprocessing}
-Stanilov et al. \cite{stanilovData1} provide detailed information on the collection process of the data set. The originally provided vector data is shown in figure \ref{fig:original_data_vector}.  that involved digitising historical maps from Ordnance Survey (OS) on the scale 1:2,500. The 32 land use classes were categorised manually. The process is described in detail by Stanilov et al.: ``The process of land use classification involved the interpretation of building footprints from the OS maps; verification of building type (for buildings still in existence) in Microsoft Virtual Earth (now Bing Maps 2D and 3D) and Google Street View; and cross-referencing the results with several land use databases for Greater London'' \cite{stanilovData1}, while for some categories label information was given in the OS maps. It is evalutated to be a ``representative sample of Londons metropolitan fabric''\cite{stanilovData1}, but differences are pointed out between different parts of London on the scale of the study area. As in this study the diversity of land uses is itself at the focus of attention, the biased choice of the study area towards the section with the largest variety may propagate to make it less representative of London for this works purpose.\\
-
-
-\begin{figure}[ht]
-   \centering
-   \includegraphics[width=\textwidth]{./code/output/original_data_vector.pdf}
-   \caption{original data. Details on the land use categories in table \ref{tab:groups}}
-   \label{fig:original_data_vector}
-\end{figure}
-
-
-The functions in the original data are grouped into three main groups: residential, business and leisure (table \ref{tab:groups}). The chosen categories broadly reflect classifications used by geoinformation sciences \cite{categories1}, urban planning theory \cite{Jane} and practice \cite{categories2}, altered to cover a broader range of uses. ``Leisure'' is taken in the broadest sense of activities not related to workplace or home, including most categories not covered by the former two. A virtual fourth category appears in the data's empty space.
-\begin{table}[ht]
-	\begin{center}
-		\begin{tabular}{|c|c||c|c||c|c|}
- 			\hline
-			\multicolumn{2}{|c||}{\textbf{Business}}&\multicolumn{2}{|c||}{\textbf{Residential}}&\multicolumn{2}{|c|}{\textbf{Leisure}}\\
-			 \hline
-			INS & institutional & APT & apartments & GEN & mixed/commercial\\
-			INSL & large institutional & APTH & high rise apt & RET & big box retail\\
-			O & office & COT & cottages & OLD & old fabric/mix\\
-			GAR & garages & DET & detached housing & AGR & alotment gardens \\
-			IND & industrial & DETH & high density detached & CEM & cemeteries \\
-			UTL & utilities & MEW & mews & EST & land estates \\
-			AIR & airport & SDT & semi-detached housing & FRM & farm structures \\
-			RRS & rail stations & TER & terraced housing & NRS & tree nurseries \\
-			  & & LDG & lodges / hotel & PRK & parks \\
-			  & & & & REC & recreational \\
-			  & & & & CHR & religious \\
-			  & & & & WAT & water \\
-			  & & & & STA & stadia \\
-			  & & & & SCH & schools \\
-			  & & & & CLR & cleared \\
- 			\hline
-		\end{tabular} 
-	\end{center}
-	\caption{Data Preprocessing: Functional categories grouping}
-	\label{tab:groups}
-\end{table}
-
-
-All parts of the analysis are performed in R.\cite{R} The spatial data, provided in Shapefile format (.shp), is imported and transformed from the global positioning system (GPS) into the Universal Transverse Mercator coordinate system (UTM). It is then rasterized as a grid with at a resolution of \Sexpr{pixelWidth_real}m.
-
-
-\subsection*{Method and computation}
-\label{appendix:computation}
-Then, the local values of all neighbourhood sizes are calculated and turned into a matrix in which there is a row for every point in space, and a column for the binned value of each category at each scale of observation. Identical rows are grouped, counted and translated to probabilities from which entropy is calculated.
-
-
-The rasterised data is split into subsets containing each only one of the categories. We calculate the mean number of pixels of each category within a square moving window with the selected neighbourhood sizes:\Sexpr{paste(paste(lagsINmeters_real,"m",sep=""),collapse=", ")}. The choice of neighbourhood size requires further investigation in the future. For now, the number of scales is picked to keep a reasonable proportion between unique values for the place state matrix and the number of observed pixels. The largest size is selected to cover a substantial area of the total space, while still allowing for a sufficient number of non overlapping large scale areas. For neighbourhoods close to the edge, the missing neighbourhood area is assumed to have the same proportion of functions than in the available part. While this is preferable to a wrap-around torus, due to the asymetric nature of the data, it can lead to edge effects, making extreme values more likely along the edges. In a visual analysis of the probabilities of pixels in synthetic patterns and the study data, we found no considerable anomalies near the edges.\\
-
-We now have a spatial matrix for each category at each scale of observation. The values are transformed into a single matrix with a row for each pixel, and column for each scale, giving a vector for each pixel with the total proportion of each category at each scale as a value between 0 and 1. The values are discretised in 3 equidistant bins, split at $1/3$ and $2/3$. The number of bins changes the total number of possible states and should return a reasonable proportion between possible states and observations. The binning is more than a technical question; One could ask how different two places need to be in their proportion of functions to have different states.
-We then count how many vectors of each unique combination we find in the data and calculate the entropy from the probabilities directly. All entropies are calculated with log base 2.\\
-
-We repeat the randomised null models as well as the synthetic patterns \Sexpr{runs} times. The confidence intervals of the null models are too small to be visible in the plot because the number of pixels is a large sample within each randomised run already.
-
-\subsection*{Simulated patterns}
-The synthetic patterns have a side length of \Sexpr{syntheticsize} are produced as follows:\\
-
-\textbf{pattern \Sexpr{synthfig_letters["unif"]} Uniformly random:}\\
-All pixels are set to 0 or 1 with equal probability.\\
-
-\textbf{pattern \Sexpr{synthfig_letters["segmed"]} locally segregated:}\\
-We start with a smaller matrix of which a side length for which the target size is a multiple of. All pixels are set to 0 or 1 with equal probability, and each pixel is expanded to multiple pixels so that the target size is produced. This process can lead to a varying number of 0's and 1's with increasing scale of segregation.\\
-
-\textbf{\Sexpr{synthfig_letters["halfhalf"]} globally segregated:}
-The left half is 0, the right half is 1.\\
-
-\textbf{pattern \Sexpr{synthfig_letters["sorted"]} Sorted:}\\
-A matrix is filled with a uniform distribution between 0 and 1 and sorted in x and y direction.\\
-
-\textbf{pattern \Sexpr{synthfig_letters["1/f"]} 1/f noise:}\\
-A matrix is filled with 0's an 1's, with the probability to receive a 1 increasing linearly from 0 to 1 with increasing x position.\\
-
-\textbf{pattern \Sexpr{synthfig_letters["casc"]} additive cascade:}\\
-four different values are set and stored, their exact values are not relevant. A 2 by 2 matrix is created. Each pixel of the matrix is randomly set to one of the values. Each pixel is then expanded to 4 pixels, and randomly one of the four values is added to each of these. The process is repeated until the matrix target size is reached. Then, all values lower than the median are set to zero, all others to 1. 
-
-The patterns are produced and analysed \Sexpr{runs} times. 
-
-
-
-\subsection*{Sensitivity analysis}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%
-% \subsection*{Subsection}
-
-
-% \begin{itemize}
-% \item First item
-% \item Second item
-% \end{itemize}
-
-% \subsubsection*{Third-level section}
- 
-% Topical subheadings are allowed.
-
-% \section*{Discussion}
-
-% The Discussion should be succinct and must not contain subheadings.
-
-% \section*{Methods}
-
-% Topical subheadings are allowed. Authors must ensure that their Methods section includes adequate experimental and characterization data necessary for others in the field to reproduce their work.
-
-% \bibliography{sample}
-
-% \noindent LaTeX formats citations and references automatically using the bibliography records in your .bib file, which you can edit via the project menu. Use the cite command for an inline citation, e.g.  \cite{Figueredo:2009dg}.
-
 \section*{Acknowledgements}
 
 The Authors thank Prof. Mike Batty, Dr. Cl\'ementine Cottineau, Dr. R\'emi Louf, Dr. Carlos Molinero, Dr. (??) Robin Morphet, Hadrien Salat (alphabetically) for useful discussions and support, Susanne Gartner and Jan Arcaute for their patience. M.B. and E.A. were partly funded by the MECHANICITY Project (249393 ERC-2009-AdG) ??. E.A. was partly funded by ????? (current grant??) Did I forget anyone??
@@ -596,36 +396,8 @@ M.B. was responsible for all main ideas, concept and design, conducted the exper
 \section*{Additional information}
 The authors declare no competing financial interests.
 
-% To include, in this order: \textbf{Accession codes} (where applicable); \textbf{Competing financial interests} (mandatory statement). 
-
-% The corresponding author is responsible for submitting a \href{http://www.nature.com/srep/policies/index.html#competing}{competing financial interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file.
-
-
-% \begin{figure}[ht][ht]
-% \centering
-% \includegraphics[width=\linewidth]{stream}
-% \caption{Legend (350 words max). Example legend text.}
-% \label{fig:stream}
-% \end{figure}
-
-% \begin{table}[ht]
-% \centering
-% \begin{tabular}{|l|l|l|}
-% \hline
-% Condition & n & p \\
-% \hline
-% A & 5 & 0.1 \\
-% \hline
-% B & 10 & 0.01 \\
-% \hline
-% \end{tabular}
-% \caption{\label{tab:example}Legend (350 words max). Example legend text.}
-% \end{table}
-
-% Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
-
-
-
+\newpage
+\bibliography{master}
 
 
 
