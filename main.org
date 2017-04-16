@@ -3,18 +3,17 @@
 * ALL TO DO [1/11]
 
 ** now
-  - [ ] fix appendix refs (sr guidelines)
+  - [X] fix appendix refs (sr guidelines)
   - [ ] write sensitivity
   - [ ] add Binning sensitivity
   - [ ] rewrite abstract
-  - [ ] add p values (???)
   - [ ] tags (sr guidelines)
   - [ ] Make complete Scientific Reports Requirements checklist
   - [ ] remove comments
   - [ ] arxiv layout: section title numbers
   - [ ] figures in good location
   - [ ] compile supplementary information incl data and code
-
+  - [ ] data availability statement
 
 
 
