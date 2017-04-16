@@ -3,22 +3,11 @@
 
 
 
-* BRANCH ARCHIV
-  - [ ] figure *
-  - [ ] tabular *
-  - [ ] twocolumn
-  - [ ] delete title info
-  - [ ] [sc]{titlesec}
-  - [ ] real_vs_null_ents size \textwidth
-  - [ ] caption: [figurename=Fig.
+
 * PLAN
 
-    - [X] remove confidence intervals from time plots 
     - [ ] spell check
-    - [ ] check pattern letters
     - [ ] add Binning sensitivity
-    - [X] decide sensitivity parameters
-    - [X] split appendix
     - [ ] fix appendix refs
     - [ ] own layout!
 
@@ -29,19 +18,12 @@
 * ALL TO DO [1/2]
 - [ ] arxiv layout: section title numbers
 - [ ] figures in good location
-- [X] second leibovici paper (robin)
-- [X] 3. phase space typ
-- [ ] itemize appendix patterns
-- [X] properly acknowledge the one paper that does exactly the same (does it though? -> understand them with thought experiment!)
-    - [X] essential: they ask: does larger scale follow from smaller scale?
-    - [X] I say: larger scale IS composition of smaller scale, and the smaller scale around..
-- [ ] Please do not refer to individual panels of supplementary figures.
+
 - [ ] fig. vs. figure;
 - [ ] Supplementary Fig. S2 online
 - [ ] rewrite abstract
-** NOW (IN ORDER) [2/11] 
+** NOW (IN ORDER) [1/6] 
   - [ ] add p values
-  - [ ] both phase space plots next to each other?
   - [ ] go through text again, fix grammar
 
 * PROCRASTINATE
@@ -91,6 +73,21 @@
 
 
 
+
+
+* BRANCH ARCHIV
+  - figure *
+  - tabular *
+  - twocolumn
+  - delete title info
+  - [sc]{titlesec}
+  - real_vs_null_ents size \textwidth
+  - caption: [figurename=Fig.
+
+
+
+
+
 ** ARCHIVED (since April 13) [27/27]
   - [X] geospace subheadings
   - [X] geospace frequencies subheadings
@@ -129,8 +126,18 @@
   - [X] read top to bottom
     - [X] mark all changes
     - [X] make changes
-  
-
+  - [X] second leibovici paper (robin) 2017-04-16 12:57
+- [X] 3. phase space typ 2017-04-16 12:57
+- [X] itemize appendix patterns 2017-04-16 12:57
+- [X] properly acknowledge the one paper d that does exactly the same (does it though? -> understand them with thought experiment!) 2017-04-16 12:57
+    - [X] essential: they ask: does larger scale follow from smaller scale?
+    - [X] I say: larger scale IS composition of smaller scale, and the smaller scale around..
+- [X] Please do not refer to individual panels of supplementary figures. 2017-04-16 12:57
+  - [X] both phase space plots next to each other? 2017-04-16 12:57
+    - [X] remove confidence intervals from time plots 2017-04-16 12:58
+    - [X] decide sensitivity parameters
+    - [X] split appendix
+    - [X] check pattern letters
 
 
 * NOTES
