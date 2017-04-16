@@ -188,7 +188,7 @@ In contrast to the existing measures of entropy discussed above, we want to answ
 
 % \begin{figure}[h]
 %    \centering
-%    \includegraphics[width=0.8\linewidth]{./paper_sr_format/linearpattern.png}
+%    \includegraphics[width=\linewidth]{./paper_sr_format/linearpattern.png}
 %    \caption{a linear pattern with equal probability to find any combination of 2 or 4 adjacent pixels (when divided into non overlapping segments)}
 %    \label{fig:linearpattern}
 % \end{figure}
@@ -254,7 +254,7 @@ We use the \Sexpr{length(synthetic_names)} artificial patterns from figure \ref{
 %
 \begin{figure*}[h]
    \centering
-   \includegraphics[width=0.8\linewidth]{./code/output/syntheticsynthetic_patterns.jpg}
+   \includegraphics[width=\linewidth]{./code/output/syntheticsynthetic_patterns.jpg}
    \caption{patterns a) - \Sexpr{synthfig_letters[length(synthfig_letters)]}}
    \label{fig:synthetic}
 \end{figure*}
@@ -268,30 +268,45 @@ Before applying the new multiscale entropy measure, we show the behaviour of the
 In the non spatial phase space observing only global characteristic proportions, we can directly tell that patterns display the same entropy as long as they differ only in the spatial configuration. If we consider only two states, values greater or smaller than $0.5$, all patterns' entropy according to equation \ref{eq:shannon_entropy} is $H_{non spatial} = \log(2)$ because in all patterns approximately half the pixels have a value greater than $0.5$. We could reduce the multiscale entropy phase space to this by using only the $x_i^{d_0,c}$ column on the left of $\Psi$.\\
 
 Measures of entropy using the geographical space directly as the phase space are essentially measures of how evenly elements are distributed across different zones. We split the patterns into square zones with a side length of \Sexpr{geospace_aggregationfactor} pixels, and count the number of black pixels as in figure \ref{fig:syntheticgeospace_zones}.\\ 
-\begin{figure}[h]
+\begin{figure*}[h]
    \centering
     \includegraphics[width=\linewidth]{./code/output/syntheticgeospace_zones.jpg}
    \caption{probability to find black pixels in zones for the geographical phase space}
    \label{fig:syntheticgeospace_zones}
-\end{figure}
+\end{figure*}
 
 This approach is inherently different from our measure in its goals and results. As expected from a measure of spatial evenness, the geographical phase space entropy (results in fig. \ref{fig:syntheticgeospace_entropy}) is highest for the uniform distribution (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["unif"]}), and lowest for patterns segregated spatially at a larger scale than the used zones (figure \ref{fig:synthetic} \Sexpr{synthfig_letters["halfhalf"]}).
 
+% \begin{figure*}[h]
+% 	\begin{minipage}{\linewidth}
+% 	   \centering
+% 	    \includegraphics[width=\linewidth]{./code/output/syntheticgeospace_entropy.jpg}
+% 	   \caption{Geographical phase space entropy\\patterns fig. \ref{fig:synthetic}}
+% 	   \label{fig:syntheticgeospace_entropy}
+% 	\end{minipage}%
+% 	%
+% 	\begin{minipage}{\linewidth}
+%    \centering
+%     \includegraphics[width=\linewidth]{./code/output/syntheticgeospace_frequency.jpg}
+%    \caption{Distribution in the geographical phase space\\patterns fig. \ref{fig:synthetic}}
+%    \label{fig:syntheticgeospace_frequency}
+% 	\end{minipage}%
+% \end{figure*}
+
+
 \begin{figure*}[h]
-	\begin{minipage}{.5\linewidth}
-	   \centering
-	    \includegraphics[width=.95\linewidth]{./code/output/syntheticgeospace_entropy.jpg}
-	   \caption{Geographical phase space entropy\\patterns fig. \ref{fig:synthetic}}
-	   \label{fig:syntheticgeospace_entropy}
-	\end{minipage}%
-	%
-	\begin{minipage}{.5\linewidth}
    \centering
-    \includegraphics[width=.95\linewidth]{./code/output/syntheticgeospace_frequency.jpg}
+    \includegraphics[width=\linewidth]{./code/output/syntheticgeospace_frequency.jpg}
    \caption{Distribution in the geographical phase space\\patterns fig. \ref{fig:synthetic}}
    \label{fig:syntheticgeospace_frequency}
-	\end{minipage}%
 \end{figure*}
+
+\begin{figure}[h]
+	   \centering
+	    \includegraphics[width=\linewidth]{./code/output/syntheticgeospace_entropy.jpg}
+	   \caption{Geographical phase space entropy\\patterns fig. \ref{fig:synthetic}}
+	   \label{fig:syntheticgeospace_entropy}
+\end{figure}
 
 The frequencies in the discrete geographical phase space in figure \ref{fig:syntheticgeospace_frequency} show the conceptual difference to our measure. When the geographical space is used directly as the phase space, the spatially even distribution of pattern \Sexpr{synthfig_letters["unif"]} also gives an even distribution in the phase space. In contrast, we see an \emph{even distribution of frequencies} for the sorted patterns \Sexpr{synthfig_letters["sorted"]} and \Sexpr{synthfig_letters["1/f"]} and for the additive cascade \Sexpr{synthfig_letters["casc"]}, which are favoured by a measure that is focused on how much places differ from each other.
 
@@ -301,20 +316,34 @@ In the analysis, for ``neighbourhoods'' that go over the edge of the patterns, t
 
 Figure \ref{fig:synthetic} shows the multiscale entropies for the patterns in figure \ref{fig:synthetic_boxplot}. we discuss them considering the distributions in the multiscale phase space (fig. \ref{fig:syntheticsynthetic_patterns_phasespace} which shows two dimensions, specifically at the scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length.
 
-\begin{figure*}[h]
-	\begin{minipage}{.5\linewidth}
+% \begin{figure*}[h]
+% 	\begin{minipage}{\linewidth}
+% 	   \centering
+% 	    \includegraphics[width=\linewidth]{./code/output/syntheticboxplot.jpg}
+% 	   \caption{Multiscale entropy\\ patterns fig. \ref{fig:synthetic}}
+% 	   \label{fig:syntheticgeospace_entropy}
+% 	\end{minipage}%
+% 	%
+% 	\begin{minipage}{\linewidth}
+% 		\centering
+%    		\includegraphics[width=\linewidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
+%    		\caption{Multiscale phase space distribution\\ patterns fig. \ref{fig:synthetic} at scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
+%    		\label{fig:syntheticsynthetic_patterns_phasespace}
+% 	\end{minipage}%
+% \end{figure*}
+
+
+\begin{figure}[h]
 	   \centering
-	    \includegraphics[width=0.9\linewidth]{./code/output/syntheticboxplot.jpg}
+	    \includegraphics[width=\linewidth]{./code/output/syntheticboxplot.jpg}
 	   \caption{Multiscale entropy\\ patterns fig. \ref{fig:synthetic}}
 	   \label{fig:syntheticgeospace_entropy}
-	\end{minipage}%
-	%
-	\begin{minipage}{.5\linewidth}
+\end{figure}
+\begin{figure*}[h]
 		\centering
-   		\includegraphics[width=0.9\linewidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
+   		\includegraphics[width=\linewidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
    		\caption{Multiscale phase space distribution\\ patterns fig. \ref{fig:synthetic} at scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
    		\label{fig:syntheticsynthetic_patterns_phasespace}
-	\end{minipage}%
 \end{figure*}
 
 
@@ -326,7 +355,7 @@ Imagine we would try to change any of these patterns to spread the observations 
 This may seem rather abstract. However, it should apply to any system in which elements interact with and influence each other to a degree at which they fundamentally change each others meaning over multiple scales of some type of ``nearness''. As discussed in the introduction this is certainly the case for places in cities. Under these circumstances, complex patterns have a higher entropy. Therefore, we can and should expect the whole system to eventually arrange in a complex pattern, simply because that is the most probable configuration. 
 
 
-\section*{Case study: London 1875 - 2005}
+\section*{London 1875 - 2005}
 \subsection*{Data}
 \noindent In the case study, we analyse the spatial patterns of land use in west London from 1875 - 2005. The dataset used in the analysis was originally built and provided by Stanilov et al.\cite{stanilovData1}. It covers 200 square kilometers, spanning 20km from east to west, from London's green belt in the west to hyde park's west corner, and roughly 10km from north to south. The data provides the land use of individual buildings in 32 categories for seven moments in time, namely 1875, 1895, 1915, 1935, 1960, 1985 and 2005. Details on the original data and maps can be found in figure \ref{fig:appendix:original_data_vector} of the Supplementary material, and further in Stanilov et al.'s publication\cite{stanilovData1}.
 

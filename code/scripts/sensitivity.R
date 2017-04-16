@@ -1,8 +1,8 @@
 # parameters:
-runs_sens<-100
+runs_sens<-2
 
 sens_resolution_pixelWidth<-pixelWidth_real*2
-sens_resolution_lagsINmeters<-c(100,200,400,1400,4000)
+sens_resolution_lagsINmeters<-c(100,500,1300,4100)
 sens_resolution_lags<-sens_resolution_lagsINmeters/sens_resolution_pixelWidth
 sens_resolution_lags<-2*round((sens_resolution_lags+1)/2)-1
 
@@ -89,7 +89,7 @@ sens_bins_lags=10
 	saveRDS(nullmod_sens_bins,"sens_lags_nullmods_april_16.RDS")
     saveRDS(list(pw=pixelWidth,linm=lagsINmeters,lags=lags,runs=runs_sens,bins=sens_bins_lags),"sens_lags_parameters_april_16.RDS")
 	dev.off.all()
-	pdf(paste0("./code/output/","sensitivity_lags"
+	pdf(paste0("./code/output/","sensitivity_bins"
 		,pixelWidth
 		,paste(lagsINmeters,collapse="-")	
 		,"real_vs_null_entropies.pdf"),7,7)

@@ -60,7 +60,7 @@
 
 * BRANCH ARCHIV
   - figure *
-  - tabular *
+  - all figures 1\linewidth, * for full, no * for half
   - twocolumn
   - delete title info
   - [sc]{titlesec}

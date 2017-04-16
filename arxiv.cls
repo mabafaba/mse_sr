@@ -71,14 +71,37 @@
 %
 % section/subsection/paragraph set-up
 %
-\RequirePackage[sc,center,small,compact]{titlesec}
+\RequirePackage[sf,center,small]{titlesec}
   
 
 
-\titlespacing*{\section}{0pc}{3ex \@plus4pt \@minus3pt}{5pt}
-\titlespacing*{\subsection}{0pc}{2.5ex \@plus3pt \@minus2pt}{0pt}
-\titlespacing*{\subsubsection}{0pc}{2ex \@plus2.5pt \@minus1.5pt}{0pt}
-\titlespacing*{\paragraph}{0pc}{1.5ex \@plus2pt \@minus1pt}{10pt}
+%\titleformat{\section}%
+%	{\large\usefont{OT1}{pag}{b}{n}}
+%	{\thesection}
+%  	{1em}
+%  	{\MakeUppercase}
+%\titleformat{\subsection}
+%	{\bfseries\usefont{OT1}{pag}{m}{n}}
+%	{\thesubsection}
+%	{1em}
+%	{\MakeUppercase}
+
+\titleformat{\section}[block]
+  {\fontsize{12}{15}\usefont{OT1}{pag}{b}{n}\filcenter}
+  {\thesection}
+  {1em}
+  {\MakeUppercase}
+\titleformat{\subsection}[hang]
+  {\fontsize{12}{15}\usefont{OT1}{pag}{m}{n}}
+  {\thesubsection}
+  {1em}
+  {}
+
+
+%\titlespacing*{\section}{0pc}{3ex \@plus4pt \@minus3pt}{5pt}
+%\titlespacing*{\subsection}{0pc}{2.5ex \@plus3pt \@minus2pt}{0pt}
+%\titlespacing*{\subsubsection}{0pc}{2ex \@plus2.5pt \@minus1.5pt}{0pt}
+%\titlespacing*{\paragraph}{0pc}{1.5ex \@plus2pt \@minus1pt}{10pt}
 
 %
 % tableofcontents set-up
