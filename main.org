@@ -3,14 +3,11 @@
 * ALL TO DO [1/11]
 
 ** now  [3/6]
-  - [X] geophasespace labels size
-  - [X] arxiv layout: figures in one line
-  - [ ] arxiv layout: section title numbers
-  - [ ] arxiv layout: figures in good location
-  - [X] run sensitivity
   - [ ] write sensitivity
-
-
+  - [ ] layout final??
+  - [ ] check again acknowledgements
+  - [ ] check again arxiv layout: figures in good location
+  - [ ] arxiv layout: section title numbers
 
 * CANT DO NOW [0/4]
   - [ ] kürzen
@@ -18,10 +15,11 @@
   - [ ] make sure Sexpr variables are in correct state!!!
   - [ ] compile supplementary information incl data and code
 * NEXT [1/1]
-  
 
 ** REQUIRES DECISION [/]
 ** NOT ACTIONABLE (NEEDS SPLITTING) [/]
+  - [ ] finalise layout
+
 ** DO LAST [0/4]
 ** REQUIRES INFO [0/2]
   - [ ] acknowledgements final
@@ -127,7 +125,9 @@
   - [X] add Binning sensitivity 2017-04-17 01:35
   - [X] tags (no sr guidelines found) 2017-04-17 01:35
   - [X] rewrite abstract 2017-04-17 01:35
-
+  - [X] geophasespace labels size 2017-04-17 01:43
+  - [X] arxiv layout: figures in one line 2017-04-17 01:43
+  - [X] run sensitivity 2017-04-17 01:43
 
 
 
