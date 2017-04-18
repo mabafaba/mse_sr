@@ -2,13 +2,9 @@
 
 * ALL TO DO [1/11]
 
-** now  [3/6]
-  - [ ] write sensitivity
-  - [ ] layout final??
-  - [ ] check again acknowledgements
+** now  [3/5]
   - [ ] check again arxiv layout: figures in good location
-  - [ ] arxiv layout: section title numbers
-
+ 
 * CANT DO NOW [0/4]
   - [ ] kürzen
   - [ ] remove references
@@ -18,8 +14,6 @@
 
 ** REQUIRES DECISION [/]
 ** NOT ACTIONABLE (NEEDS SPLITTING) [/]
-  - [ ] finalise layout
-
 ** DO LAST [0/4]
 ** REQUIRES INFO [0/2]
   - [ ] acknowledgements final
@@ -60,14 +54,20 @@
   - figure *
   - all figures 1\linewidth, * for full, no * for half
   - twocolumn
-  - delete title info
-  - [sc]{titlesec}
   - real_vs_null_ents size \textwidth
-  - caption: [figurename=Fig.
+  - 0.8\textwidth -> \textwidth
+  - no minipage; remove 0.95\textwidth
+  - no * figures \textwidth->\linewidth
+  - one figure[t] enviroment: fig:synthetic, 
+fig:syntheticgeospace_frequency,fig:syntheticsynthetic_patterns_phasespace
+ 
+  - syntheticgeospace_entropy: before: "The frequencies in the discrete"
 
+  - fig:synthetic_boxplot: before: "The relatively complex additive cascade is"
 
+- fig:real_vs_null_entropies before "For all cases, entropy"
 
-
+- real_vs_null_rasters before \subsection*{Results}\\
 
 ** ARCHIVED (since April 13) [27/27]
   - [X] geospace subheadings

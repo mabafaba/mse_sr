@@ -14,7 +14,7 @@ src<-"./code/data/all_LU.shp"
 layerNames<-c("lu_ 1875_all","lu_1895_all","lu_1915_all","lu_1935_all","lu_1960_all","lu_1985_all","lu_2005_all")
 years<-c(1875,1895,1915,1935,1960,1985,2005)
 # parameters both
-	runs=200
+	runs=10
 
 # parameters synthetic
 	# synthetic_names<-c("uniform random","segregated 32x32 fields","segregated 8x8 fields","segregated 2x2 fields","sorted","1/f noise","additive cascade")
@@ -50,9 +50,11 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 	data<-load_data(src,layerNames)
 	results<-analysis(data)
 	nullmod<-analysis_null(data,runs)
-	saveRDS(results,"results_april_16.RDS")
-	saveRDS(nullmod,"nullmods_april_16.RDS")
-    saveRDS(list(pw=pixelWidth,linm=lagsINmeters,lags=lags,runs=runs),"parameters_april_16.RDS")
+ #    saveRDS(results,"results_april_16.RDS")
+	# saveRDS(nullmod,"nullmods_april_16.RDS")
+ #    saveRDS(list(pw=pixelWidth,linm=lagsINmeters,lags=lags,runs=runs),"parameters_april_16.RDS")
+	
+	
 
 
 

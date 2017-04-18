@@ -440,7 +440,8 @@ plot_real_vs_null_entropies<-function(results,nullmod){
 	plot(years,unlist(lapply(
 					results$entropies$combined
 					,function(x){x$entropy}))
-		,type="b",ylim=c(minvalue,maxvalue)
+		,type="b",pch=20,
+		ylim=c(minvalue,maxvalue)
 		,xlab="year"
 		,ylab="multiscale entropy"
 		,xaxt="n"
