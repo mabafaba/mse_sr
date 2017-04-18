@@ -2,8 +2,8 @@
 
 * ALL TO DO [1/11]
 
-** now  [3/5]
-  - [ ] check again arxiv layout: figures in good location
+** now  [1/1]
+  - [X] check again arxiv layout: figures in good location
  
 * CANT DO NOW [0/4]
   - [ ] kürzen
