@@ -22,7 +22,7 @@
 \keywords{entropy, spatial, cities, complexity, urban}
 
 \begin{abstract}
-Entropy relates the fast, microscopic behaviour of the elements in a system to its slow, macroscopic state. We propose to use it to explain how, as complexity theory suggests, small scale decisions of individuals form cities. For this, we offer the first interpretation of urban entropy for cities that takes into account that interaction between different places should be reflected in interdependently entangled states, and do so with a multiscale approach.
+Entropy relates the fast, microscopic behaviour of the elements in a system to its slow, macroscopic state. We propose to use it to explain how, as complexity theory suggests, small scale decisions of individuals form cities. For this, we offer the first interpretation of urban entropy for cities that takes into account that interaction between different places should be reflected in interdependently linked states, and do so with a multiscale approach.
 With simulated patterns we show that structural complexity in spatial systems can be the most probable configuration if the elements of a system interact across multiple scales.
 In the case study that observes the distribution of functions in West London from 1875 to 2005, we can partly explain the observed polycentric sprawl as a result of higher entropy compared to spatially random spread, compact mixed use growth or fully segregated patterns.
 This work contributes to understanding why cities are morphologically complex, and gives a consistent relationship between entropy and complexity that solves contradictions in the literature. Finally, because we evaluate the constraints urban morphology imposes on possible ways to use the city, the general framework of thinking could be applied to better deal with uncertainty about people, cities and the future in planning practice.
@@ -59,7 +59,7 @@ Essential to this view is that the global order of a city emerges from the small
 
 % 2. Interactions.
 Second, the phase space dimensions must reflect that places in a city are inherently dependent on each other.: Boltzmann's entropy assumes that interactions between particles are negligible. Existing measures of entropy inherit this for cities, and assume that there were no interactions between places. We recognise that different places are highly dependent on each other due to flows and interactions between the people in them. This interdependence between places is widely recognised in geography in general\cite{Tobler1970}, urban theory\cite{Jane,NotATree} and quantitatively demonstrated for example in the success of spatial interaction models\cite{WilsonFamily,SpatialInteraction1,GisModels,WilsonSIMretail}, and further in the study of agglomeration economics \cite{agglomerationEconomics} and neighbourhood effects \cite{neighbourhoodeffects}.
-It follows that the states of individual places must be entangled spatially, because in terms of how they are used, places in a city are entangled spatially as well. In that sense the state of an observed place should in some way also incorporate the characteristics of surrounding places. Our new measure observes the characteristics of places, and takes relationships between places into account with a multiscale approach: we observe the characteristics of a place at multiple scales by aggregating the characteristics of neighbourhoods with different sizes around it. The resulting values then define its position in the phase space. The state of a place is then not only given by its own characteristic, but also the characteristics of the directly adjacent places, its local neighbourhood and larger scale surroundings.\\
+It follows that the states of individual places must be connected spatially, because in terms of how they are used, places in a city are connected spatially as well. In that sense the state of an observed place should in some way also incorporate the characteristics of surrounding places. Our new measure observes the characteristics of places, and takes relationships between places into account with a multiscale approach: we observe the characteristics of a place at multiple scales by aggregating the characteristics of neighbourhoods with different sizes around it. The resulting values then define its position in the phase space. The state of a place is then not only given by its own characteristic, but also the characteristics of the directly adjacent places, its local neighbourhood and larger scale surroundings.\\
 
 % Greater randomness and a more even probability distribution in the phase space results in higher entropy, no matter how the phase space is defined. That is by definition a physical, statistical and mathematical fact. There is no reason to assume that the geographical space should be the phase space, nor that spatial randomness should automatically mean randomness in the phase space. It must be very clear that in our analysis the phase space is not equivalent to the geographical space. There is no reason to assume that in cities spatially uniform patterns can occur through the largest number of combinations of individual use.
 
@@ -163,28 +163,31 @@ x_i^{d_0,2} & x_i^{d_1,2} & \ldots & x_i^{d_N,2}\cr
 x_i^{d_0,C} & x_i^{d_1,C} & \ldots & x_i^{d_N,C}\cr
 \end{pmatrix}
 \end{equation}
-To exemplify how $\Psi$ adds the spatial context of a place to its state imagine two identical offices. One of them is in a central business district, one of them on the countryside. The way they are or can be used is fundamentally different because the spatial context is. That context appears in $\Psi$. In reverse, the way the central business district / countryside around them are used is altered as well, and the presence of the office building appears in their state matrices.\\
 
-Theoretically, the continuous phase space $\mu^{(N+1)C}$ has a unique dimension for each of the $C$ characteristics for all $N$ scales plus the not aggregated scale $d_0$. It is the the space of all possible place state matrices $\Psi \in \mu$.
-The states of all places in the system are distributed in $\mu$ with the probability density distribution
-$g$. The multiscale entropy $H_{ms}$ is then 
-\begin{equation}
-\label{eq:theoretical_multiscale_phasespace}
-H_{ms} = \int_{a \in \mu}{\! - g(a) \log{g(a)}} \, \mathrm{d}a
-\end{equation}
-for all possible states $a$ where $g(a)>0$.\\
+We discretise the phase space by defining a discrete set of values for all the elements in matrix $\Psi$ that will be given by binning the values after aggregation. Two places are assumed to have the same state if and only if their state matrices are exactly identical. Because this simplified phase space is discrete, we can estimate the probability of discrete states directly from their frequency, and the system's entropy with equation \ref{eq:shannon_entropy}. \\
 
-There are strong conceptual parallels to the difference between Boltzmann's and Gibbs' phase space in statistical mechanics. For $C$ characteristics observed locally and at $N$ scales of aggregation, the phase space has $C(N+1)$ dimensions, significantly more than the $C$ dimensional space that could be used if we ignored interactions between places. A similar increase in the number of dimensions happens when moving from the Boltzmann phase space to the Gibbs phase space that deals with interacting particles in statistical mechanics. Nonetheless, we are not moving to a Gibbs space, and the relationship between the Boltzmann entropy and the Gibbs entropy is far more complex \cite{GibbsVSBoltzmann}, and their precise interpretations still debated \cite{GibbsDiscussion2015}. 
-
-\subsection*{Multiscale entropy estimation}
+A discrete phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating euclidean distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions. The Supplementary material online contains further details. In the following section we test this method on a range of simulated patterns.
 
 The practical entropy estimation in our simulated patterns and case study is as simple as possible without compromising the general concept. 
 We use simplified square neighbourhoods with varying side length because it makes the results easy to trace, is computationally convenient and is sufficient to demonstrate the concept. \\
 We then calculate the place state matrix $\Psi$ using the mean as the aggregation function in equation \ref{multiscale_vector} for the same reasons.\\
 
-We discretise the phase space by defining a discrete set of values for all the elements in matrix $\Psi$ that will be given by binning the values after aggregation. Places are assumed to have the same state if and only if their state matrices are exactly identical. Because this simplified phase space is discrete, we can estimate the probability of discrete states directly from their frequency, and the system's entropy with equation \ref{eq:shannon_entropy}. \\
 
-Discretising the phase space has multiple advantages. First, we avoid properties of the unit dependent\cite{differentialEntropyCoordinateSystem} continuous entropy such as negative entropy\cite{negativeEntropy1,negativeEntropy2} that are difficult to interpret in terms of statistical mechanics. Furthermore, it removes the difficulty of evaluating euclidean distances between values of different place characteristics for equation \ref{eq:theoretical_multiscale_phasespace}. Finally, it allows us to avoid discussing complicated estimators for multivariate continuous data\cite{Voronoi,KdEntropy}. They are unreliable for high dimensional data because they work with the spaces between observations, and the number of data points on the edges of the phase space increases exponentially with increasing dimensions. The Supplementary material online contains further details. In the following section we test this method on a range of simulated patterns.
+
+
+% To exemplify how $\Psi$ adds the spatial context of a place to its state imagine two identical offices. One of them is in a central business district, one of them on the countryside. The way they are or can be used is fundamentally different because the spatial context is. That context appears in $\Psi$. In reverse, the way the central business district / countryside around them are used is altered as well, and the presence of the office building appears in their state matrices.\\
+
+% Theoretically, the continuous phase space \mu, $R^{(N+1)C}$ has a unique dimension for each of the $C$ characteristics for all $N$ scales plus the not aggregated scale $d_0$. It is the the space of all possible place state matrices $\Psi \in \mu$.
+% The states of all places in the system are distributed in $\mu$ with the probability density distribution
+% $g$. The multiscale entropy $H_{ms}$ is then 
+% \begin{equation}
+% \label{eq:theoretical_multiscale_phasespace}
+% H_{ms} = \int_{a \in \mu}{\! - g(a) \log{g(a)}} \, \mathrm{d}a
+% \end{equation}
+% for all possible states $a$ where $g(a)>0$.\\
+
+% There are strong conceptual parallels to the difference between Boltzmann's and Gibbs' phase space in statistical mechanics. For $C$ characteristics observed locally and at $N$ scales of aggregation, the phase space has $C(N+1)$ dimensions, significantly more than the $C$ dimensional space that could be used if we ignored interactions between places. A similar increase in the number of dimensions happens when moving from the Boltzmann phase space to the Gibbs phase space that deals with interacting particles in statistical mechanics. Nonetheless, we are not moving to a Gibbs space, and the relationship between the Boltzmann entropy and the Gibbs entropy is far more complex \cite{GibbsVSBoltzmann}, and their precise interpretations still debated \cite{GibbsDiscussion2015}. 
+
 
 \section*{Simulated patterns}
 %

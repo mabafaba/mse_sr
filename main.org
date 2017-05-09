@@ -19,17 +19,17 @@ xi itself.
 
   [X] after colon no capital letters
   [ ] typos
-  [ ] entangelment different word: interdepence
+  [X] entangelment different word: interdepence
   [ ] show how phase space is defined in the context
   [ ] to much emphasis "discuss interpretation"
   [X] uncertainty
-  [ ] symbol: \phi phase space
-  [ ] R^(N+1)*C 
-  [ ] Gibbs
-  [ ] R^N 
-  [ ] PSI 
-  [ ] define very clearly what is a state. : all possible values Psi
-  [ ] delete continuous.
+  [X] symbol: \phi phase space
+  [X] R^(N+1)*C 
+  [X] Gibbs
+  [X] R^N 
+  [X] PSI 
+  [X] define very clearly what is a state. : all possible values Psi
+  [X] delete continuous.
   [ ] point directly supplementary material section
   [ ] further details ABOUT WHAT
   [ ] supplementary material in order it is talked about in paper.
