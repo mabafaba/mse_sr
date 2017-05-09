@@ -2,15 +2,91 @@
 
 * ALL TO DO [1/11]
 
+
+* meeting carlos & elsa
+  [X] scalar characteristics: for example..
+
+
+  [ ] MATRIX: equivalent to where xd0 is the local value of a characteristic of place i dn
+xi itself.
+
+
+  [ ] future work (discussion)
+  [X]  no titles in acknowledgements
+  [X] same superscript for same affiliation
+  [X] Carlos name!
+  [X] Clémentine
+
+  [X] after colon no capital letters
+  [ ] typos
+  [ ] entangelment different word: interdepence
+  [ ] show how phase space is defined in the context
+  [ ] to much emphasis "discuss interpretation"
+  [X] uncertainty
+  [ ] symbol: \phi phase space
+  [ ] R^(N+1)*C 
+  [ ] Gibbs
+  [ ] R^N 
+  [ ] PSI 
+  [ ] define very clearly what is a state. : all possible values Psi
+  [ ] delete continuous.
+  [ ] point directly supplementary material section
+  [ ] further details ABOUT WHAT
+  [ ] supplementary material in order it is talked about in paper.
+  [ ] Methods and computation; Simulated patterns;
+  [ ] schematic explanation: one pattern how computed, visual
+  [ ] suppl mat. order
+
+  [ ] don't start sentence with Then....
+
+  [ ] figure captions left align
+  [ ] figure 3 
+  [ ] figure 2: sorted not by space
+  [ ] how much places differ from each other... "favoured by a measure" is bad
+
+  [ ] cities are the outcome of all the interactions... emergent patterns ... evolved to more complex ... high entropy!!!
+
+  [ ] complexity patterns human 
+  [ ] results: clear why decline
+  [ ] don't mention confidence intervals
+  [X] remove confidence intervals
+  [ ] why is segregated higher entropy than random
+  [ ] suppl no bold captions
+  [ ] compact mixed etc. names 
+  [ ] all legends too small!
+  [X] remove URL's 
+  [X] boltzman small somewhere
+
+  [X] carlos 2nd; no doctors; 
+  [ ] :authorship:
+  [X] no asterisk in multiplications
+  [ ] 
+
+
+
+
 ** now  [1/1]
-  - [X] check again arxiv layout: figures in good location
- 
+  - [ ] abstract kürzen! (<=200 words!)
+  - [ ]  
 * CANT DO NOW [0/4]
   - [ ] kürzen
   - [ ] remove references
   - [ ] make sure Sexpr variables are in correct state!!!
   - [ ] compile supplementary information incl data and code
 * NEXT [1/1]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ** REQUIRES DECISION [/]
 ** NOT ACTIONABLE (NEEDS SPLITTING) [/]
@@ -25,8 +101,8 @@
   - [ ] grant number correct? :elsa:
   - [ ] data availability statement
 
-** CHASE [0/3]
-  - [ ] email kirril :elsa:
+** CHASE [1/8]
+  - [X] email kiril :elsa:
   - [ ] fellow of casa! :elsa:
   - [ ] send cover letter examples :elsa:
   - [ ] recommend literature :elsa:

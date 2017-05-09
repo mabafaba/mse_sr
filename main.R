@@ -10,6 +10,7 @@ source("./code/scripts/prep_data.R")
 source("./code/scripts/analysis.R")
 source("./code/scripts/plots.R")
 source("./code/scripts/gis.R")
+
 src<-"./code/data/all_LU.shp"
 layerNames<-c("lu_ 1875_all","lu_1895_all","lu_1915_all","lu_1935_all","lu_1960_all","lu_1985_all","lu_2005_all")
 years<-c(1875,1895,1915,1935,1960,1985,2005)
@@ -65,6 +66,7 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 	dev.off.all()
 # sweave
 	Sweave("main2.Rnw")
+	Sweave("test.Rnw")
 
 
 
