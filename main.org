@@ -3,6 +3,56 @@
 * ALL TO DO [1/11]
 
 
+* notes Clementine 
+
+
+   [ ]The only major change I would suggest is to suppress the paragraph "existing approaches to spatial, scale-dependent and urban entropy" and to start directly with the statistical physics. It is the same as in your dissertation, you have too many entry points to the subject and it confuses the reader a little in my opinion. Instead, you could reference the existing approaches in the next section on common phase space. The idea is not to talk about the history and diversity of the field, but to cite works when it helps you make you point.
+
+   [ ]Similarly, the introduction does not make the best possible impact because you start in too many directions. I think the second paragraph on entropy in statistical physics is too long and disconnected from the rest, and could open the argument if shorted, so that when you start talking about cities, we stay on cities for good, having the context set up nicely once and for all.
+
+   [ ]Still in the intro, there is a missing link and transition between the two arguments that differentiate your approach from others. (before "second, the phase space" ... on page2, you should add some sort of transition)
+
+   [ ]In the last paragraph of intro p2: I would reformulate into "the results show that the observed polycentric sprawl corresponds to the growth pattern with the highest entropy and thus suggest that urban development tends towards a maximisation of entropy (compared to random patterns)." or something like that. The key idea is that results show something and that you need to interpret on top of that.
+
+   [ ]the section on common phase space definitions p3 is really nice and clear. well done
+
+   [ ]next section, first paragraph. I think you should be careful. Your research question formulated here (and a little as well in conclusion) sort of suggests that you're looking at individuals in the city, how they move and what they do. On a very abstract level, that is not untrue but i find it misleading. I would rather say that the question you answer is : how uncertain is the urban function of a randomly selected piece of land (because even buildings are evacuated from the analysis).
+
+   [ ]the rest of this section is great.
+
+   [ ]remark: has Elsa mentioned Phil Chodrow to you? He has done a nice multiscale measure of segregation (with the R package compx) using the theory of information and games of condition probabilities. Worth checking.
+
+   [ ]page 4 column 2: maybe worth mentioning that the radius of the successive neighbourhoods are plain and not donuts (to mention and to justify, because you might be asked why you keep the central bit and double/triple count it)
+
+   [ ]after equation 6: the example is not a bad idea but you must develop it otherwise it's useless.
+
+   [ ]I didn't get you point about Gibbs and Boltzmann at the beginning of page 5. Is it really relevant here? Maybe a footnote would be sufficient.
+
+   [ ]the way you describe the discretisation of the phase space is not very clear.
+
+   [ ]2nd column of page 5 : Great!
+
+   [ ]figure 1 : great
+
+   [ ]figure 3 : good
+
+   [ ]figure 2: I am still not sure I get what is plotted and along which dimensions...
+
+   [ ]fig 4 and 5 + their interpretation: great.
+
+   [ ]about the London results in general, have you ever considered using a multiple aggregatino for the categories as well? In the same way as you use scales of neighbourhood, having different resolution levels for the function classification...
+
+   [ ]figre 6 and 7: you should harmonise the names of the patterns to ease the reading (now they don't match)
+
+   [ ]discussion: same here. In my opinion you should refocus from the individual to the aggregate relationships between socioeconomic behaviour and the morphological structure of the city (which is what you relly studied).
+
+   [ ]first paragraph page 10: at the end of it, I would add that this exercise was a process of validation of your measure and that now you can use it for comparison etc.
+
+   [ ]it is a shame, because your last last sentence is very unclear. I would end it before if I were you.
+
+   [ ]finally, the abstract should be re-worked a little as I find it very complicated (even knowing where you want to go).
+
+
 * meeting carlos & elsa
   [X] scalar characteristics: for example..
 
@@ -12,24 +62,10 @@ xi itself.
 
 
   [ ] future work (discussion)
-  [X]  no titles in acknowledgements
-  [X] same superscript for same affiliation
-  [X] Carlos name!
-  [X] Clémentine
-
-  [X] after colon no capital letters
   [ ] typos
-  [X] entangelment different word: interdepence
+  [ ] consistent names for patterns and null models
   [ ] show how phase space is defined in the context
   [ ] to much emphasis "discuss interpretation"
-  [X] uncertainty
-  [X] symbol: \phi phase space
-  [X] R^(N+1)*C 
-  [X] Gibbs
-  [X] R^N 
-  [X] PSI 
-  [X] define very clearly what is a state. : all possible values Psi
-  [X] delete continuous.
   [ ] point directly supplementary material section
   [ ] further details ABOUT WHAT
   [ ] supplementary material in order it is talked about in paper.
@@ -37,18 +73,13 @@ xi itself.
   [ ] schematic explanation: one pattern how computed, visual
   [ ] suppl mat. order
 
-  [ ] don't start sentence with Then....
-
-  [ ] figure captions left align
-  [ ] figure 3 
-  [ ] figure 2: sorted not by space
-  [ ] how much places differ from each other... "favoured by a measure" is bad
+by a measure" is bad
 
   [ ] cities are the outcome of all the interactions... emergent patterns ... evolved to more complex ... high entropy!!!
 
   [ ] complexity patterns human 
-  [ ] results: clear why decline
-  [ ] don't mention confidence intervals
+  [X] results: clear why decline
+  [X] don't mention confidence intervals
   [X] remove confidence intervals
   [ ] why is segregated higher entropy than random
   [ ] suppl no bold captions
@@ -60,7 +91,6 @@ xi itself.
   [X] carlos 2nd; no doctors; 
   [ ] :authorship:
   [X] no asterisk in multiplications
-  [ ] 
 
 
 

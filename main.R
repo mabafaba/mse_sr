@@ -67,6 +67,7 @@ years<-c(1875,1895,1915,1935,1960,1985,2005)
 # sweave
 	Sweave("main2.Rnw")
 	Sweave("test.Rnw")
+	Sweave("supplementary_material.Rnw")
 
 
 

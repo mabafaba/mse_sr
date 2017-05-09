@@ -2,6 +2,8 @@
 \documentclass[article,twocolumn,10pt]{./arxiv}
 \usepackage{float}
 \usepackage[utf8]{inputenc}
+\usepackage{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false}
 \setcounter{secnumdepth}{10}
 \setcounter{tocdepth}{10}
 %\usepackage[nomarkers,figuresonly]{float}
@@ -12,6 +14,7 @@
 
 \author[1,*]{Martin Barner}
 \author[1]{Dr. Carlos Molinero}
+\author[1]{Dr. Cl\'ementine Cottineau}
 \author[2]{Dr. Kiril Stanilov (\emph{approval pending})}
 \author[1]{Dr. Elsa Arcaute (\emph{approval pending})}
 
@@ -199,12 +202,12 @@ We then calculate the place state matrix $\Psi$ using the mean as the aggregatio
 % 
    \centering
     \includegraphics[width=\textwidth]{./code/output/syntheticgeospace_frequency.jpg}
-   \caption{Distribution in the geographical phase space\\patterns fig. \ref{fig:synthetic}}
+   \caption{Distribution in the geographical phase space; States sorted by frequency - patterns fig. \ref{fig:synthetic}}
    \label{fig:syntheticgeospace_frequency}
 % 
 	\centering
 	\includegraphics[width=\textwidth]{./code/output/syntheticsynthetic_patterns_phasespace.jpg}
-	\caption{Multiscale phase space distribution\\ patterns fig. \ref{fig:synthetic} at scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
+	\caption{Multiscale phase space distribution - patterns fig. \ref{fig:synthetic} at scales of \Sexpr{lags_synthetic[synth_phasespace_plot_scales[1]]} and \Sexpr{lags_synthetic[synth_phasespace_plot_scales[2]]} pixels neighbourhood side length}
 	\label{fig:syntheticsynthetic_patterns_phasespace}
 \end{figure*}
 %
@@ -228,11 +231,11 @@ This approach is inherently different from our measure in its goals and results.
  \begin{figure}[!ht]
 	   \centering
 	    \includegraphics[width=\linewidth]{./code/output/syntheticgeospace_entropy.jpg}
-	   \caption{Geographical phase space entropy\\patterns fig. \ref{fig:synthetic}}
+	   \caption{Geographical phase space entropy - patterns fig. \ref{fig:synthetic}}
 	   \label{fig:syntheticgeospace_entropy}
  \end{figure}
 
-The frequencies in the discrete geographical phase space in figure \ref{fig:syntheticgeospace_frequency} show the conceptual difference to our measure. When the geographical space is used directly as the phase space, the spatially even distribution of pattern \Sexpr{synthfig_letters["unif"]} also gives an even distribution in the phase space. In contrast, we see an \emph{even distribution of frequencies} for the sorted patterns \Sexpr{synthfig_letters["sorted"]} and \Sexpr{synthfig_letters["1/f"]} and for the additive cascade \Sexpr{synthfig_letters["casc"]}, which are favoured by a measure that is focused on how much places differ from each other.
+The frequencies in the discrete geographical phase space in figure \ref{fig:syntheticgeospace_frequency} show the conceptual difference to our measure. When the geographical space is used directly as the phase space, the spatially even distribution of pattern \Sexpr{synthfig_letters["unif"]} also gives an even distribution in the phase space. In contrast, we see an \emph{even distribution of frequencies} for the sorted patterns \Sexpr{synthfig_letters["sorted"]} and \Sexpr{synthfig_letters["1/f"]} and for the additive cascade \Sexpr{synthfig_letters["casc"]}, which recieve higher entropy in a phase space that is focused on how much places differ from each other.
 
 \subsection*{Multiscale entropy and complexity}
 Now we apply our new multiscale entropy measure to the simulated patterns in fig. \ref{fig:synthetic} and show that if interactions between locations are taken into account, spatially complex patterns have higher entropy.
@@ -243,7 +246,7 @@ Figure \ref{fig:synthetic} shows the multiscale entropies for the patterns in fi
 \begin{figure}[!ht]
 	   \centering
 	    \includegraphics[width=\linewidth]{./code/output/syntheticboxplot.jpg}
-	   \caption{Multiscale entropy\\ patterns fig. \ref{fig:synthetic}}
+	   \caption{Multiscale entropy - patterns fig. \ref{fig:synthetic}}
 	   \label{fig:synthetic_boxplot}
 \end{figure}
 \begin{figure*}[!ht]
@@ -287,7 +290,7 @@ Figure \ref{fig:real_vs_null_entropies}  shows the development of entropy over t
    \caption{Multiscale entropy in West London over time compared to 3 null models}
    \label{fig:real_vs_null_entropies}
 \end{figure}
-For all cases, entropy generally increases until 1935, stagnates around 1965 and then slightly decreases until 2005. This is based on the non spatial entropy of the global distribution of functions: almost the entire area is undeveloped in the beginning, giving very little potential for variation in general. It is filled almost entirely later on, and entropy stagnates with a general stagnation  of change.\\
+For all cases, entropy generally increases until 1935, stagnates around 1965 and then slightly decreases until 2005. This is based on the non spatial entropy of the global distribution of functions: almost the entire area is undeveloped in the beginning, giving very little potential for variation in general. It is filled almost entirely later on, and entropy stagnates with a general stagnation  of change. In the end, entropy slightly declines because there are almost no ``empty'' areas left; there are no more places in states with low values on all land use categories in the observed area.\\
 
 The multiscale entropies in figure \ref{fig:real_vs_null_entropies} show that the observed multiscale entropy of West London is substantially higher than all three null models. Especially between 1915 and 1960, entropy increases considerably in the observed data, while the null models stagnate. \\
 
@@ -313,10 +316,10 @@ The point we make is that almost arbitrary results can be obtained depending on 
 
 Beyond these theoretical considerations, the general framework of thinking in terms of urban entropy may give a useful perspective on practical planning and design decisions. What is ignored entirely so far except for a vague notion of some interaction between different places is essentially everything else we already know about cities: how people use them, or how social and economic processes shape their structure. Paradoxically, that is precisely why this might be a powerful concept. It allows us to make the statistically best guess about what we do not know. From a planner's perspective, we would try to optimise our planning effort based on some assumptions about people and societies, how they should or want to use cities, and beyond that based on some prediction about the future and an assessment of what should be considered a ``good'' city. There is a limit to how certain we can be about these assumptions.  We could increase the probability to build ``good'' cities even if our assumptions were wrong, if circumstances change unexpectedly or if what is considered a ``good'' city changes: if we believe to know a number of things with varying certainty, a conceptually consistent theory of urban entropy could be used to make plans that are less likely to fail by physically expressing uncertainty in the structures we build. 
 \section*{Acknowledgements}
-The Authors thank Mike Batty, Cl\'ementine Cottineau, R\'emi Louf, Robin Morphet, Hadrien Salat (alphabetically) for useful discussions and support. 
+The Authors thank Mike Batty, R\'emi Louf, Robin Morphet, Hadrien Salat (alphabetically) for useful discussions and support. 
 % M.B. and E.A. were partly funded by the MECHANICITY Project (249393 ERC-2009-AdG) ??. E.A. was partly funded by ??. K.S. was funded by ??. Did I forget anyone??
 \section*{Author contributions statement}
-M.B. was responsible for all main ideas, conceived and conducted the experiments and data analysis, analysed the results and wrote the manuscript. E.A. critically revised the methodology and the manuscript. K.S. provided the data.
+M.B. was responsible for all main ideas, conceived and conducted the experiments and data analysis, analysed the results and wrote the manuscript. E.A., C.C. and C.M. critically revised the methodology and the manuscript. K.S. provided the data. All authors provided comments to the final manuscript.
 \section*{Additional information}
 The authors declare no competing financial interests.
 \bibliography{master}
