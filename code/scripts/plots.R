@@ -272,7 +272,11 @@ dev.off.all()
 	par(mfrow=mfrowsynth)
 	setParDefaults()
 	for (i in c(1:length(results$geospace$probs))) {
-		barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5)
+		if(i==1){
+		barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5,xlab="zones")
+	}else{
+		barplot(sort(results$geospace$probs[[i]]),col="black",space=0.5,ylab="relative frequency",xlab="zones")
+	}
 			# title(main = NULL, sub = paste0(letters[i],") ", synthetic_names[i])
 			  title(main = NULL, sub = paste0(letters[i],")")
 
@@ -509,7 +513,7 @@ plot_real_vs_null_entropies<-function(results,nullmod){
 	 	# max(unlist(lapply(
 					# results$entropies$combined
 					# ,function(x){x$entropy})))
-	 	,legend= c("observed","random spread","random compact","segregated","non spatial")
+	 	,legend= c("observed","uniform random","compact mixed use","compact segregated","non spatial")
 	 	,col = c(rgb(0,0,0),rgb(1,0,0),rgb(0,1,0),rgb(0,0,1),rgb(0,0,0))
        ,border = NA
        ,lwd=c(rep(2,5))
@@ -520,7 +524,6 @@ plot_real_vs_null_entropies<-function(results,nullmod){
 
 }
 dev.off.all()
-
 
 
 # probability rasters:
@@ -538,12 +541,12 @@ thislayout<-layout(mat = layout_m,heights=c(rep(1,7),0.3))
 	for(i in c(1:7)){
 	par(xpd=NA)
 		combined_data_raster_plot(nullmod$randomised,i)
-	if(i==1){mtext("randomised spatially",3,cex=5,line=3)}
+	if(i==1){mtext("uniform random",3,cex=5,line=3)}
 	mtext(years[i],2,cex=5,line=3)
 	localProbabilities(nullmod$randomised_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
 
 	combined_data_raster_plot(nullmod$compactmixed,i)
-	if(i==1){mtext("compact mixed",3,cex=5,line=3)}
+	if(i==1){mtext("compact mixed use growth",3,cex=5,line=3)}
 	localProbabilities(nullmod$compactmixed_results$entropies$combined[[i]]$mrep,results$data$all[[i]],quants=0.01,log=log)
 
 	combined_data_raster_plot(nullmod$compactsegregated,i)
@@ -636,6 +639,7 @@ plot_top_entropy <-function(results,howmanytop=5,howmanyflop=5,whichyears=c(1:7)
 	}
 }
 
+uniform random, compact mixed use, compact segregated, 
 
 plot_synthetic_entropies_barchart_w_confidence<-function(synthetic_many_results){
 barplot(synthetic_many_results$entropies_mean,col="black")

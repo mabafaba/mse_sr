@@ -1,7 +1,12 @@
 
 
-* ALL TO DO [1/11]
+* ALL TO DO [18/26]
 
+   [X] kiril affiliation ucl
+
+* comments Kiril
+   [X] justify radii
+   [X] general shape same, difference in slope: depends strongly on total amount of development
 
 * notes Clementine 
 
@@ -12,43 +17,43 @@
 
    [ ]Still in the intro, there is a missing link and transition between the two arguments that differentiate your approach from others. (before "second, the phase space" ... on page2, you should add some sort of transition)
 
-   [ ]In the last paragraph of intro p2: I would reformulate into "the results show that the observed polycentric sprawl corresponds to the growth pattern with the highest entropy and thus suggest that urban development tends towards a maximisation of entropy (compared to random patterns)." or something like that. The key idea is that results show something and that you need to interpret on top of that.
+   [X]In the last paragraph of intro p2: I would reformulate into "the results show that the observed polycentric sprawl corresponds to the growth pattern with the highest entropy and thus suggest that urban development tends towards a maximisation of entropy (compared to random patterns)." or something like that. The key idea is that results show something and that you need to interpret on top of that.
 
-   [ ]the section on common phase space definitions p3 is really nice and clear. well done
+   [X]the section on common phase space definitions p3 is really nice and clear. well done
 
-   [ ]next section, first paragraph. I think you should be careful. Your research question formulated here (and a little as well in conclusion) sort of suggests that you're looking at individuals in the city, how they move and what they do. On a very abstract level, that is not untrue but i find it misleading. I would rather say that the question you answer is : how uncertain is the urban function of a randomly selected piece of land (because even buildings are evacuated from the analysis).
+   [X]next section, first paragraph. I think you should be careful. Your research question formulated here (and a little as well in conclusion) sort of suggests that you're looking at individuals in the city, how they move and what they do. On a very abstract level, that is not untrue but i find it misleading. I would rather say that the question you answer is : how uncertain is the urban function of a randomly selected piece of land (because even buildings are evacuated from the analysis).
 
-   [ ]the rest of this section is great.
+   [X]the rest of this section is great.
 
    [ ]remark: has Elsa mentioned Phil Chodrow to you? He has done a nice multiscale measure of segregation (with the R package compx) using the theory of information and games of condition probabilities. Worth checking.
 
-   [ ]page 4 column 2: maybe worth mentioning that the radius of the successive neighbourhoods are plain and not donuts (to mention and to justify, because you might be asked why you keep the central bit and double/triple count it)
+   [X]page 4 column 2: maybe worth mentioning that the radius of the successive neighbourhoods are plain and not donuts (to mention and to justify, because you might be asked why you keep the central bit and double/triple count it)
 
-   [ ]after equation 6: the example is not a bad idea but you must develop it otherwise it's useless.
+   [X] after equation 6: the example is not a bad idea but you must develop it otherwise it's useless.
 
-   [ ]I didn't get you point about Gibbs and Boltzmann at the beginning of page 5. Is it really relevant here? Maybe a footnote would be sufficient.
+   [X] I didn't get you point about Gibbs and Boltzmann at the beginning of page 5. Is it really relevant here? Maybe a footnote would be sufficient.
 
-   [ ]the way you describe the discretisation of the phase space is not very clear.
+   [X]the way you describe the discretisation of the phase space is not very clear.
 
-   [ ]2nd column of page 5 : Great!
+   [X]2nd column of page 5 : Great!
 
-   [ ]figure 1 : great
+   [X]figure 1 : great
 
-   [ ]figure 3 : good
+   [X]figure 3 : good
 
-   [ ]figure 2: I am still not sure I get what is plotted and along which dimensions...
+   [X]figure 2: I am still not sure I get what is plotted and along which dimensions...
 
-   [ ]fig 4 and 5 + their interpretation: great.
+   [X]fig 4 and 5 + their interpretation: great.
 
-   [ ]about the London results in general, have you ever considered using a multiple aggregatino for the categories as well? In the same way as you use scales of neighbourhood, having different resolution levels for the function classification...
+   [X]about the London results in general, have you ever considered using a multiple aggregatino for the categories as well? In the same way as you use scales of neighbourhood, having different resolution levels for the function classification...
 
-   [ ]figre 6 and 7: you should harmonise the names of the patterns to ease the reading (now they don't match)
+   [X]figre 6 and 7: you should harmonise the names of the patterns to ease the reading (now they don't match)
 
-   [ ]discussion: same here. In my opinion you should refocus from the individual to the aggregate relationships between socioeconomic behaviour and the morphological structure of the city (which is what you relly studied).
+   [X]discussion: same here. In my opinion you should refocus from the individual to the aggregate relationships between socioeconomic behaviour and the morphological structure of the city (which is what you relly studied).
 
    [ ]first paragraph page 10: at the end of it, I would add that this exercise was a process of validation of your measure and that now you can use it for comparison etc.
 
-   [ ]it is a shame, because your last last sentence is very unclear. I would end it before if I were you.
+   [X]it is a shame, because your last last sentence is very unclear. I would end it before if I were you.
 
    [ ]finally, the abstract should be re-worked a little as I find it very complicated (even knowing where you want to go).
 
@@ -57,18 +62,18 @@
   [X] scalar characteristics: for example..
 
 
-  [ ] MATRIX: equivalent to where xd0 is the local value of a characteristic of place i dn
+  [X] MATRIX: equivalent to where xd0 is the local value of a characteristic of place i dn
 xi itself.
 
 
   [ ] future work (discussion)
   [ ] typos
-  [ ] consistent names for patterns and null models
+  [X] consistent names for patterns and null models
   [ ] show how phase space is defined in the context
-  [ ] to much emphasis "discuss interpretation"
+  [X] to much emphasis "discuss interpretation"
   [ ] point directly supplementary material section
   [ ] further details ABOUT WHAT
-  [ ] supplementary material in order it is talked about in paper.
+  [ ] supplementary material in the order it is talked about in paper.
   [ ] Methods and computation; Simulated patterns;
   [ ] schematic explanation: one pattern how computed, visual
   [ ] suppl mat. order
@@ -139,8 +144,6 @@ by a measure" is bad
 
 
 ** NEXT LEVEL:
-  - [ ] clarify if structure ok for SR  
-  - [ ] Shorten!!!
   - [ ] LETTER :::
       - why suitable for the journal
       - why relevant to the reader
