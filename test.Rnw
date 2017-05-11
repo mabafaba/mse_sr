@@ -19,7 +19,7 @@
 \author[1]{Dr. Elsa Arcaute}
 
 \affil[1]{Centre for Advanced Spatial Analysis, University College London, 90 Tottenham Court Road, London W1N 6TR, UK}
-\affil[2]{Department of Architecture, University of Cambridge, 1-5 Scroope Terrace, Cambridge, CB2 1PX, UK}
+% \affil[2]{Department of Architecture, University of Cambridge, 1-5 Scroope Terrace, Cambridge, CB2 1PX, UK}
 \affil[*]{martin.barner.14@ucl.ac.uk }
 
 \keywords{entropy, spatial, cities, complexity, urban}

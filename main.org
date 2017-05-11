@@ -69,7 +69,7 @@ xi itself.
   [ ] future work (discussion)
   [ ] typos
   [X] consistent names for patterns and null models
-  [ ] show how phase space is defined in the context
+  [X] show how phase space is defined in the context
   [X] to much emphasis "discuss interpretation"
   [ ] point directly supplementary material section
   [ ] further details ABOUT WHAT
