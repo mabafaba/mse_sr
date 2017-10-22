@@ -109,20 +109,6 @@ by a measure" is bad
   - [ ] make sure Sexpr variables are in correct state!!!
   - [ ] compile supplementary information incl data and code
 * NEXT [1/1]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ** REQUIRES DECISION [/]
 ** NOT ACTIONABLE (NEEDS SPLITTING) [/]
 ** DO LAST [0/4]
@@ -149,15 +135,6 @@ by a measure" is bad
       - why relevant to the reader
       - who to ask?
   - [ ] check off submission guidelines
-
-
-
-
-
-
-
-
-
 
 * BRANCH ARCHIV
   - figure *
@@ -250,14 +227,6 @@ fig:syntheticgeospace_frequency,fig:syntheticsynthetic_patterns_phasespace
 
 
 * NOTES
-
-
-
-
-
-
-
-
 
 * orgmode shortcuts
 -   apfl k 1: collapse

@@ -4,7 +4,7 @@ return(height*6)
 }
 
 mfrowsynth<-c(1,6)
-scaleplots=0.5
+scaleplots=0.7
 setParDefaults<-function(font=TRUE,border=TRUE,axis=TRUE,xpd=FALSE){
 	if(font){par(family = "serif")}
 	if(border){par(bty="n")}
@@ -311,6 +311,9 @@ dev.off.all()
 	dev.off.all()
 
 }
+
+
+
 
 
 plot_combined<-function(results){
@@ -639,7 +642,6 @@ plot_top_entropy <-function(results,howmanytop=5,howmanyflop=5,whichyears=c(1:7)
 	}
 }
 
-uniform random, compact mixed use, compact segregated, 
 
 plot_synthetic_entropies_barchart_w_confidence<-function(synthetic_many_results){
 barplot(synthetic_many_results$entropies_mean,col="black")
