@@ -5,13 +5,12 @@ setwd("/Users/m/paper_january17")
   # set analysis parameters
 source("./code/scripts/init.R")
 
-
 # if you don't have a lot of hours to run the whole analysis you can:
   # a) minimise the number of null model repititions (default 10) with:
   # runs = 2
 
 # read the results from saved files by running
-# source("./code/scripts/load_saved_results_data.R)
+ source("./code/scripts/load_saved_results_data.R")
 # then skip and only plot at the bottom
 
 

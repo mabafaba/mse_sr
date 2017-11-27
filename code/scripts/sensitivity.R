@@ -15,7 +15,6 @@ sens_bins_pixelWidth<-pixelWidth_real
 sens_bins_lagsINmeters<-lagsINmeters_real
 sens_bins_lags<-lags_real
 sens_bins_bins=6
-
 # RESOLUTION
 # activate paramters: Resolution
 pixelWidth<-sens_resolution_pixelWidth
